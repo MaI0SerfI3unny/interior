@@ -1,0 +1,113 @@
+.designPanel{
+    display: flex;
+    justify-content: center;
+    margin: 60px 0;
+    margin-bottom: 120px;
+    .designPanelContainer{
+        width: 100%;
+        max-width: 1216px;
+        margin: 0 20px;
+        h2{
+            color: #1D1C20;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 48px;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 16px;
+        }
+        .designPanelContainerDesc{
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-bottom: 60px;
+            p{
+                max-width: 694px;
+                font-size: 18px;
+                font-weight: 400;
+                color: #1D1C20;
+                line-height: 28px;
+            }
+        }
+        .designPanelContainerList{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 592px), 1fr));
+            gap: 32px;
+            justify-content: center;
+            .designPanelContainerListView{
+                background: #F2F0F0;
+                img{
+                    width: 100%;
+                    aspect-ratio: 1/1;
+                    height: 287px;
+                }
+                .designPanelContainerListInfo{
+                    padding: 32px;
+                    .designPanelContainerListInfoTitle{
+                        font-weight: 500;
+                        font-size: 32px;
+                        margin-bottom: 8px;
+                    }
+                    .designPanelContainerListInfoDesc{
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 28px;
+                        max-width: 468px;
+                    }
+                }
+            }
+            .designPanelContainerListControl{
+
+            }
+        }
+        .designPanelContainerListControl{
+            .designPanelContainerListControlList{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 32px;
+                .designPanelContainerListControlListItem{
+                    display: inline-block;
+                    max-width: 100%;
+                    background: transparent;
+                    cursor: pointer;
+                    border: 1px solid #E1E1E1;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    color: #1D1C20;
+                    font-weight: 400;
+                    height: 48px;
+                    padding: 0 24px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .active{
+                    transition: 0.5s;
+                    border: 1px solid #1D1C20;
+                    background: #F1F1F1;
+                }
+            }
+            .designPanelContainerListControlButton{
+                margin-top: 48px;
+                background: #1D1C20;
+                height: 56px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 231px;
+                border-radius: 8px;
+                font-size: 18px;
+                font-weight: 600;
+                color: white;
+                text-decoration: none;
+                border: 2px solid #1D1C20;
+                &:hover{
+                    transition: 0.5s;
+                    background: transparent;
+                    color: #1D1C20;
+                }
+            }
+        }
+    }
+}

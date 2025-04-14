@@ -1,0 +1,50 @@
+.whyWe{
+    background: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    margin-bottom: 60px;
+    .whyWeContainer{
+        width: 100%;
+        max-width: 1216px;
+        margin: 0 20px;
+        h2{
+            margin: 0;
+            text-align: center;
+            color: black;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 48px;
+            margin-bottom: 16px;
+        }
+        .whyWeContainerDescription{
+            color: black;
+            font-size: 18px;
+            width: 100%;
+            line-height: 28px;
+            font-weight: 400;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        .whyWeContainerList {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 384px), 1fr));
+            gap: 64px 32px;
+            justify-content: center;
+            color: black;
+            img{
+                margin-bottom: 24px;
+            }
+            .whyWeContainerListTitle{
+                font-weight: 600;
+                font-size: 20px;
+            }
+            .whyWeContainerListDesc{
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 400;
+
+            }
+        }
+    }
+}

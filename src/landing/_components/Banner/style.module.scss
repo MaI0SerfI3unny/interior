@@ -1,0 +1,89 @@
+.banner{
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+
+    .bannerContainer{
+        display: grid;
+        text-align: center;
+        margin: 0 20px;
+        .bannerContainerLayout{
+            width: 100%;
+            display: flex;
+            justify-content: center;   
+        }
+        h1{
+            font-family: 'Satoshi', sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+            color: black;
+            line-height: 60px;
+            text-align: center;
+            max-width: 664px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            min-height: 120px;
+        }
+        p{
+            max-width: 695px;
+            color: black;
+            line-height: 28px;
+            font-weight: 400;
+
+        }
+        .button{
+            display: flex;
+            justify-content: center;
+            margin-top: 32px;
+            margin-bottom: 64px;
+        }
+        a{
+            background: #1D1C20;
+            height: 56px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 162px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-transform: capitalize;
+            cursor: pointer;
+            border: 2px solid #1D1C20;
+            &:hover{
+                transition: 0.5s;
+                background: transparent;
+                color: #1D1C20;
+            }
+        }
+        .bannerContainerSlider{
+            width: 100%;
+            max-width: 1006px;
+            border-radius: 32px;
+            margin-bottom: 60px;
+            div[data-rcs="root"] {
+                border-radius: 32px;
+            }
+            :global{
+                .__rcs-handle-line{
+                    background-color: black !important;
+                }
+                .__rcs-handle-button{
+                    border-radius: 0 !important;
+                    border: 1px solid black !important;
+                    width: 21px !important;
+                    height: 72px !important;
+                    cursor: pointer !important;
+                    background-color: transparent !important;
+                }
+                .__rcs-handle-arrow{
+                    color: black !important;
+
+                    border-right: 5px solid !important;
+                }
+            }
+
+        }
+    }
+}

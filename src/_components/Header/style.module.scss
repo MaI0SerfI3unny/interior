@@ -1,0 +1,48 @@
+.header{
+    position: fixed;
+    width: 100%;
+    height: 72px;
+    background: #D1D1D1B2;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 2;
+    .headerContainer{
+        width: 100%;
+        max-width: 1216px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 20px;
+        .headerContainerLinkContainer{
+            display: flex;
+            width: 100%;
+            max-width: 359px;
+            justify-content: space-between;
+            a{
+                text-transform: uppercase;
+                color: #1D1C20;
+                text-decoration: none;
+                &:hover{
+                    transition: 0.5s;
+                    color: #848484;
+                }
+            }
+        }
+        .signBtn{
+            width: 174px;
+            height: 45px;
+            background: #414141;
+            color: white;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            &:hover{
+                transition: 0.5s;
+                background: #1D1C20;
+            }
+        }
+    }
+}
