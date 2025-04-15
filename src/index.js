@@ -1,13 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './global.scss';
-import { LandingPage } from './landing/LandingPage';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import "./global.scss";
+import { App } from "./_components/App/App.jsx";
+// import { LandingPage } from "./landing/LandingPage";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <LandingPage />
+    <BrowserRouter>
+      <App />
+      {/* <LandingPage /> */}
+    </BrowserRouter>
   </React.StrictMode>
 );
 
