@@ -1,18 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import "./global.scss";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+// import { PersistGate } from "redux-persist/integration/react";
 import { App } from "./_components/App/App.jsx";
+import "./global.scss";
 // import { LandingPage } from "./landing/LandingPage";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+console.log(store, "store");
+
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-      {/* <LandingPage /> */}
-    </BrowserRouter>
+    <Provider store={store}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
+      <BrowserRouter>
+        <App />
+        {/* <LandingPage /> */}
+      </BrowserRouter>
+      {/* </PersistGate> */}
+    </Provider>
   </React.StrictMode>
 );
 
