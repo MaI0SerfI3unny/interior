@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import style from "./style.module.scss";
 import logo from "@/assets/logo.png";
 
@@ -13,7 +13,7 @@ export const Header = () => {
           <a href="">Головна</a>
           <a href="">Генерація</a>
           <a href="">Тарифи</a>
-          <a href="">FAQ</a>
+          <NavLink to="/faq">FAQ</NavLink>
         </div>
         <Link className={style.signBtn} to="/signin">
           Вхід/Реєстрація
