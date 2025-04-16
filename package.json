@@ -11,7 +11,9 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.8.4",
+    "clsx": "^2.1.1",
     "dotenv": "^16.4.7",
+    "formik": "^2.4.6",
     "react": "^19.1.0",
     "react-compare-slider": "^3.1.0",
     "react-dom": "^19.1.0",
@@ -24,7 +26,8 @@
     "redux-persist": "^6.0.0",
     "sass": "^1.86.3",
     "swiper": "^11.2.6",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.6.1"
   },
   "scripts": {
     "start": "craco start",

@@ -1,13 +1,24 @@
-
 @font-face {
-  font-family: 'Satoshi';
-  src: url('./assets/fonts/Satoshi/Satoshi-BlackItalic.woff2') format('woff2'),
-       url('./assets/fonts/Satoshi/Satoshi-BlackItalic.woff') format('woff');
+  font-family: "Satoshi";
+  src: url("./assets/fonts/Satoshi/Satoshi-BlackItalic.woff2") format("woff2"),
+    url("./assets/fonts/Satoshi/Satoshi-BlackItalic.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
 
-*{
+:root {
+  --primary-color-black: #2f2f2f;
+  --border-primary: rgba(209, 213, 219, 1);
+  --border-secondary: rgba(229, 231, 235, 1);
+  --text-placeholder: rgba(107, 114, 128, 1);
+  --text-heading-secondary: rgba(55, 65, 81, 1);
+  --background-bg-primary: rgba(255, 255, 255, 1);
+  --text-body: rgba(75, 85, 99, 1);
+  --buttons-link: rgba(0, 114, 222, 1);
+  --buttons-primary: rgba(29, 28, 32, 1);
+}
+
+* {
   margin: 0;
   padding: 0;
 }
@@ -21,7 +32,7 @@ body {
 }
 
 .swiper-pagination-bullet-active {
-  background: #1D1C20 !important;
+  background: #1d1c20 !important;
 }
 
 .stepsGrid {
