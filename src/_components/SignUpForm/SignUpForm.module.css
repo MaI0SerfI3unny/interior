@@ -165,12 +165,8 @@
   color: red;
 }
 
-.forgotPwd {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0%;
-  color: var(--buttons-link);
+.placeholder {
+  color: var(--text-placeholder);
 }
 
 .button {
@@ -192,6 +188,11 @@
 .button:active {
   box-shadow: none;
   cursor: pointer;
+}
+
+.button:disabled {
+  background-color: var(--button-disable-backgraund);
+  color: var(--button-disable-text);
 }
 
 .link {

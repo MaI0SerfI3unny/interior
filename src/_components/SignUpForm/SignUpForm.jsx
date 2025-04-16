@@ -5,8 +5,7 @@ import * as Yup from "yup";
 import { useId } from "react";
 import clsx from "clsx";
 import { useState } from "react";
-import css from "./SignInForm.module.css";
-// import { login } from "@/redux/user/operations";
+import css from "./SignUpForm.module.css";
 
 import { ReactComponent as Logo } from "../../assets/icons/true.svg";
 import { GoogleLoginButton } from "../GoogleLoginButton/GoogleLoginButton.jsx";
@@ -15,6 +14,10 @@ import { GoogleLoginButton } from "../GoogleLoginButton/GoogleLoginButton.jsx";
 const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 const SigninSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, "The name must be at least 2 characters long")
+    .max(64, "The name must be no longer than 64 characters")
+    .required("Name required"),
   email: Yup.string()
     .matches(emailRegEx, "Enter a valid email address")
     .required("Email required"),
@@ -24,7 +27,7 @@ const SigninSchema = Yup.object().shape({
     .required("Password required"),
 });
 
-const SignInForm = () => {
+const SignUpForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   //   const isLoading = useSelector(selectIsLoading);
   //   const dispatch = useDispatch();
@@ -32,9 +35,10 @@ const SignInForm = () => {
   const pwdFieldId = useId();
 
   const handleSubmit = (values, actions) => {
-    if (values.email === "" || values.password === "") return;
+    if (values.email === "" || values.password === "" || values.name === "")
+      return;
 
-    console.log(values, "values signin form");
+    console.log(values, "values signup form");
     // dispatch(login(values));
     actions.resetForm();
   };
@@ -47,17 +51,41 @@ const SignInForm = () => {
     <div className={css.pageContainer}>
       <div className={css.formContainer}>
         <Formik
-          initialValues={{ email: "", password: "", rememberMe: false }}
+          initialValues={{
+            name: "",
+            email: "",
+            password: "",
+            conditions: false,
+          }}
           onSubmit={handleSubmit}
           validationSchema={SigninSchema}
         >
-          {({ touched, errors }) => (
+          {({ touched, errors, values }) => (
             <Form className={css.form}>
               <Logo />
-              <h2 className={css.title}>Welcome back!</h2>
+              <h2 className={css.title}>Get started now</h2>
               <p className={css.discription}>
-                Please enter your details to get started
+                Sign up now for a seamless and rewarding experience
               </p>
+              <label className={css.label}>
+                Name
+                <Field
+                  className={
+                    touched.name && errors.name
+                      ? clsx(css.input, css.inputError)
+                      : css.input
+                  }
+                  name="name"
+                  type="text"
+                  placeholder="Enter your name"
+                  id={emailFieldId}
+                />
+                <ErrorMessage
+                  className={css.error}
+                  name="name"
+                  component="span"
+                />
+              </label>
               <label className={css.label}>
                 Email
                 <Field
@@ -87,7 +115,7 @@ const SignInForm = () => {
                   }
                   name="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="Enter your password"
+                  placeholder="Create a password"
                   id={pwdFieldId}
                 />
                 <svg
@@ -109,25 +137,31 @@ const SignInForm = () => {
                   className={css.error}
                   name="password"
                   component="span"
-                />
+                />{" "}
+                <p className={css.placeholder}>
+                  Must be at least 8 characters.
+                </p>
               </label>
               <div className={css.remember}>
                 <label className={css.customCheckbox}>
-                  <Field type="checkbox" name="rememberMe" />
-                  <span className={css.checkmark}></span>Remember me
+                  <Field type="checkbox" name="conditions" />
+                  <span className={css.checkmark}></span>I agree to the terms
+                  and conditions.
                 </label>
-
-                <span className={css.forgotPwd}>Forgot password?</span>
               </div>
-              <button className={css.button} type="submit">
-                Sign in
+              <button
+                className={css.button}
+                type="submit"
+                disabled={!values.conditions}
+              >
+                Get started
                 {/* {isLoading ? <Loader /> : "Sign in"} */}
               </button>
               <span className={css.or}>Or</span> <GoogleLoginButton />
               <div className={css.alredyHave}>
-                <p className={css.question}>Don’t have an account?</p>
-                <Link to="/signup" className={css.link}>
-                  Sign up
+                <p className={css.question}>Already have an account?</p>
+                <Link to="/signin" className={css.link}>
+                  Sign in
                 </Link>
               </div>
             </Form>
@@ -147,4 +181,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default SignUpForm;

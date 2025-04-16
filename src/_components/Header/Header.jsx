@@ -15,7 +15,7 @@ export const Header = () => {
           <a href="">Тарифи</a>
           <a href="">FAQ</a>
         </div>
-        <Link className={style.signBtn} to="/login">
+        <Link className={style.signBtn} to="/signin">
           Вхід/Реєстрація
         </Link>
       </div>

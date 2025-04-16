@@ -10,7 +10,6 @@ import "./global.scss";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log(store, "store");
 
 root.render(
   <React.StrictMode>
