@@ -4,7 +4,7 @@ import classNames from "classnames";
 // import { ChevronDownIcon } from "@radix-ui/react-icons";
 import { PlusIcon } from "@radix-ui/react-icons";
 import { MinusIcon } from "@radix-ui/react-icons";
-import styles from "./Accordion.module.css";
+import styles from "./Accordion.module.scss";
 
 const AccordionDemo = () => (
   <Accordion.Root className={styles.Root} type="multiple">

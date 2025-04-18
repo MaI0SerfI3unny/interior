@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import { useId } from "react";
 import clsx from "clsx";
 import { useState } from "react";
-import css from "./SignUpForm.module.css";
+import css from "./SignUpForm.module.scss";
 
 import { ReactComponent as Logo } from "../../assets/icons/true.svg";
 import { GoogleLoginButton } from "../GoogleLoginButton/GoogleLoginButton.jsx";

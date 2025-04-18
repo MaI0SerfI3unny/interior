@@ -1,19 +1,21 @@
+@use "../../scss/common/vars" as *;
+
 .button {
   box-sizing: border-box;
-  height: 44px;
+  height: 52px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
   width: 100%;
   padding: 10px 18px;
-  border-radius: 8px;
-  border: 1px solid var(--border-primary);
-  background-color: var(--background-bg-primary);
+  border-radius: 4px;
+  border: 1px solid $stroke-main;
+  background-color: $default-white;
 
-  color: var(--text-heading-secondary);
+  color: $typography-primary;
 
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
 }

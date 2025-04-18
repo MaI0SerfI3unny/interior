@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import css from "./GoogleLoginButton.module.css";
+import css from "./GoogleLoginButton.module.scss";
 
 import { ReactComponent as FcGoogle } from "@/assets/icons/google.svg";
 

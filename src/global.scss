@@ -1,3 +1,11 @@
+@use "./scss/common/breakpoints";
+
+@use "./scss/common/mixins";
+
+@use "./scss/common/reset";
+
+@use "./scss/common/vars";
+
 @font-face {
   font-family: "Satoshi";
   src: url("./assets/fonts/Satoshi/Satoshi-BlackItalic.woff2") format("woff2"),
@@ -6,18 +14,12 @@
   font-style: normal;
 }
 
-:root {
-  --primary-color-black: #2f2f2f;
-  --border-primary: rgba(209, 213, 219, 1);
-  --border-secondary: rgba(229, 231, 235, 1);
-  --text-placeholder: rgba(107, 114, 128, 1);
-  --text-heading-secondary: rgba(55, 65, 81, 1);
-  --background-bg-primary: rgba(255, 255, 255, 1);
-  --text-body: rgba(75, 85, 99, 1);
-  --buttons-link: rgba(0, 114, 222, 1);
-  --buttons-primary: rgba(29, 28, 32, 1);
-  --button-disable-backgraund: rgba(160, 156, 153, 1);
-  --button-disable-text: rgba(67, 67, 67, 1);
+@font-face {
+  font-family: "Cormorant";
+  src: url("./assets/fonts/Cormorant/CormorantInfant-SemiBold.ttf")
+    format("ttf");
+  font-weight: 600;
+  font-style: normal;
 }
 
 * {
@@ -31,6 +33,8 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: vars.$default-white;
 }
 
 .swiper-pagination-bullet-active {
