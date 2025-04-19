@@ -1,13 +1,19 @@
 @use "../../scss/common/vars" as *;
-
-.formContainer {
-  width: 100%;
-  height: 100vh;
-  background-color: $default-white;
-}
+@use "../../scss/common/breakpoints" as *;
+@use "../../scss/common/mixins" as *;
 
 .form {
-  padding: 0 32px;
+  position: relative;
+  width: 320px;
+
+  @include media(tablet) {
+    width: 384px;
+  }
+
+  @include media(desctop) {
+    padding: 0 32px;
+  }
+
   /* background-color: var(--default-white); */
   /* display: flex;
   flex-direction: column;
@@ -16,39 +22,72 @@
 
 .arrowBack {
   height: 32px;
-  /* padding: 6px 0px; */
   align-items: center;
   display: flex;
   gap: 4px;
   font-size: 14px;
   line-height: 20px;
+
+  @include media(tablet) {
+    position: absolute;
+    left: -160px;
+  }
+
+  @include media(desktop) {
+    position: relative;
+    left: 0;
+  }
 }
 
 .linkHome {
   color: $typography-action;
   text-decoration: none;
 }
+
 .title {
   font-family: "Cormorant";
   font-weight: 600;
-  font-size: 40px;
-  line-height: 48px;
+  font-size: 28px;
+  line-height: 36px;
+  margin-top: 20px;
+  margin-bottom: 4px;
+
   text-transform: uppercase;
   text-align: center;
   color: $typography-primary;
 
-  margin-top: 32px;
-  margin-bottom: 8px;
+  @include media(tablet) {
+    font-size: 32px;
+    line-height: 40px;
+    margin-top: 52px;
+    margin-bottom: 8px;
+  }
+
+  @include media(desktop) {
+    font-size: 40px;
+    line-height: 48px;
+    margin-top: 32px;
+    margin-bottom: 8px;
+  }
 }
 
 .discription {
   font-family: Inter;
   font-weight: 400;
   font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0%;
-  margin-bottom: 40px;
+  line-height: 22px;
+  margin-bottom: 28px;
   text-align: center;
+
+  @include media(tablet) {
+    margin-bottom: 32px;
+  }
+
+  @include media(desktop) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 40px;
+  }
 }
 
 .label {
@@ -58,31 +97,56 @@
   flex-direction: column;
   align-items: flex-start;
   font-size: 14px;
-  font-weight: 500;
-  gap: 8px;
-  margin-bottom: 28px;
+  line-height: 18px;
+  gap: 4px;
+  margin-bottom: 16px;
   color: $typography-primary;
+
+  @include media(tablet) {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  @include media(desctop) {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 28px;
+  }
 }
 
 .input {
   box-sizing: border-box;
   width: 100%;
-  height: 52px;
-  padding: 10px 12px;
+  height: 48px;
+  padding: 13px 14px;
   border-radius: 4px;
   border: 1px solid $stroke-secondary;
   color: $typography-secondary;
   background-color: $backgraund-inputs;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 150%;
+  line-height: 22px;
+
+  @include media(desctop) {
+    padding: 12px 14px;
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .remember {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
+
+  @include media(tablet) {
+    margin-bottom: 24px;
+  }
+
+  @include media(desctop) {
+    margin-bottom: 28px;
+  }
 }
 .checkbox {
   width: 24;
@@ -91,6 +155,7 @@
   border-width: 1px;
   padding: 4px;
 }
+
 .customCheckbox {
   display: flex;
   align-items: center;
@@ -99,13 +164,11 @@
   position: relative;
 
   user-select: none;
-  font-size: 16px;
-
+  font-size: 12px;
+  line-height: 16px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0%;
-  color: var(--text-body);
+
+  color: $typography-primary;
 }
 
 .customCheckbox input[type="checkbox"] {
@@ -116,8 +179,8 @@
 
 .customCheckbox .checkmark {
   left: 0;
-  height: 16px;
-  width: 16px;
+  height: 20px;
+  width: 20px;
   background-color: $backgraund-inputs;
   border-radius: 4px;
 
@@ -135,7 +198,8 @@
 }
 
 .customCheckbox .checkmark::after {
-  left: 5px;
+  left: 8px;
+  top: 4px;
   width: 5px;
   height: 10px;
   border: solid rgba(43, 42, 41, 1);
@@ -193,14 +257,20 @@
   background-color: $backgraund-button;
   color: $backgraund-inputs;
 
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 18px;
   font-weight: 600;
+
+  @include media(desktop) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .button:hover {
   box-shadow: 0 4px 14px 0 var(--shadow-color-hover);
   cursor: pointer;
+  background-color: $backgraund-button-hover;
 }
 
 .button:active {
@@ -209,7 +279,6 @@
 }
 
 .link {
-  font-weight: 600;
   color: $typography-action;
   text-decoration: none;
 }
@@ -224,7 +293,7 @@
 
 .icon {
   position: absolute;
-  top: 46px;
+  top: 38px;
   right: 16px;
   stroke: var(--primary-color-blue);
   fill: none;
@@ -236,11 +305,19 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0%;
-  margin: 16px 0;
+  margin: 20px 0;
   color: $typography-secondary;
   display: flex;
   align-items: center;
   gap: 12px;
+
+  @include media(tablet) {
+    margin: 24px 0;
+  }
+
+  @include media(desktop) {
+    margin: 28px 0;
+  }
 }
 
 .or::before,
@@ -258,23 +335,11 @@
   gap: 4px;
   margin-top: 24px;
 
-  font-weight: 400;
   font-size: 14px;
-  line-height: 20px;
-}
+  line-height: 22px;
 
-/* @media screen and (min-width: 768px) {
-  .formContainer {
+  @include media(desctop) {
+    font-size: 16px;
+    line-height: 24px;
   }
-
-  .button {
-    /* height: 44px;
-    font-size: 18px;
-    line-height: 133%; */
-/* }
 }
-
-@media screen and (min-width: 1440px) {
-  .formContainer {
-  }
-} */

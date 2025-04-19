@@ -11,7 +11,7 @@ import { ReactComponent as Arrow } from "../../assets/icons/arrow.svg";
 
 import { GoogleLoginButton } from "../GoogleLoginButton/GoogleLoginButton.jsx";
 import { ReactComponent as Eye } from "../../assets/icons/eye24.svg";
-import { ReactComponent as Hide } from "../../assets/icons/hide 1.svg";
+import { ReactComponent as Hide } from "../../assets/icons/hide24.svg";
 
 // import { selectIsLoading } from "@/redux/user/selectors.js";
 
