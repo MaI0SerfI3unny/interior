@@ -1,13 +1,28 @@
+@use "./scss/common/breakpoints";
+
+@use "./scss/common/mixins";
+
+@use "./scss/common/reset";
+
+@use "./scss/common/vars";
 
 @font-face {
-  font-family: 'Satoshi';
-  src: url('./assets/fonts/Satoshi/Satoshi-BlackItalic.woff2') format('woff2'),
-       url('./assets/fonts/Satoshi/Satoshi-BlackItalic.woff') format('woff');
+  font-family: "Satoshi";
+  src: url("./assets/fonts/Satoshi/Satoshi-BlackItalic.woff2") format("woff2"),
+    url("./assets/fonts/Satoshi/Satoshi-BlackItalic.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
 
-*{
+@font-face {
+  font-family: "Cormorant";
+  src: url("./assets/fonts/Cormorant/CormorantInfant-SemiBold.ttf")
+    format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+* {
   margin: 0;
   padding: 0;
 }
@@ -18,10 +33,12 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: vars.$default-white;
 }
 
 .swiper-pagination-bullet-active {
-  background: #1D1C20 !important;
+  background: #1d1c20 !important;
 }
 
 .stepsGrid {

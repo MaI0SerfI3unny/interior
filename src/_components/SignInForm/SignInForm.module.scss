@@ -1,0 +1,345 @@
+@use "../../scss/common/vars" as *;
+@use "../../scss/common/breakpoints" as *;
+@use "../../scss/common/mixins" as *;
+
+.form {
+  position: relative;
+  width: 320px;
+
+  @include media(tablet) {
+    width: 384px;
+  }
+
+  @include media(desctop) {
+    padding: 0 32px;
+  }
+
+  /* background-color: var(--default-white); */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.arrowBack {
+  height: 32px;
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 20px;
+
+  @include media(tablet) {
+    position: absolute;
+    left: -160px;
+  }
+
+  @include media(desktop) {
+    position: relative;
+    left: 0;
+  }
+}
+
+.linkHome {
+  color: $typography-action;
+  text-decoration: none;
+}
+
+.title {
+  font-family: "Cormorant";
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  margin-top: 20px;
+  margin-bottom: 4px;
+
+  text-transform: uppercase;
+  text-align: center;
+  color: $typography-primary;
+
+  @include media(tablet) {
+    font-size: 32px;
+    line-height: 40px;
+    margin-top: 52px;
+    margin-bottom: 8px;
+  }
+
+  @include media(desktop) {
+    font-size: 40px;
+    line-height: 48px;
+    margin-top: 32px;
+    margin-bottom: 8px;
+  }
+}
+
+.discription {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 28px;
+  text-align: center;
+
+  @include media(tablet) {
+    margin-bottom: 32px;
+  }
+
+  @include media(desktop) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+.label {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 18px;
+  gap: 4px;
+  margin-bottom: 16px;
+  color: $typography-primary;
+
+  @include media(tablet) {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  @include media(desctop) {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 28px;
+  }
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+  padding: 13px 14px;
+  border-radius: 4px;
+  border: 1px solid $stroke-secondary;
+  color: $typography-secondary;
+  background-color: $backgraund-inputs;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+
+  @include media(desctop) {
+    padding: 12px 14px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.remember {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+
+  @include media(tablet) {
+    margin-bottom: 24px;
+  }
+
+  @include media(desctop) {
+    margin-bottom: 28px;
+  }
+}
+.checkbox {
+  width: 24;
+  height: 24;
+  border-radius: 2px;
+  border-width: 1px;
+  padding: 4px;
+}
+
+.customCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+
+  user-select: none;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+
+  color: $typography-primary;
+}
+
+.customCheckbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.customCheckbox .checkmark {
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: $backgraund-inputs;
+  border-radius: 4px;
+
+  border: 1px solid $stroke-secondary;
+}
+
+.customCheckbox .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.customCheckbox input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.customCheckbox .checkmark::after {
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid rgba(43, 42, 41, 1);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.input:active {
+  color: $stroke-dark;
+  border-color: $stroke-dark;
+}
+
+.input:focus {
+  color: $stroke-dark;
+  border-color: $stroke-dark;
+  outline: none;
+}
+.inputError {
+  /* border-radius: 6px;
+  padding: 10px 12px;
+  width: 100%;
+  height: 44px;
+  font-weight: 400;
+  font-size: 16px; */
+
+  color: $typography-error;
+  border: 1px solid $typography-error;
+  background: $backgraund-inputs;
+}
+
+.error {
+  position: absolute;
+  top: 79px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  color: $typography-error;
+}
+
+.forgotPwd {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: $typography-action;
+}
+
+.button {
+  width: 100%;
+  /* height: 44px; */
+  padding: 14px 24px;
+
+  border-radius: 4px;
+  border: none;
+  background-color: $backgraund-button;
+  color: $backgraund-inputs;
+
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+
+  @include media(desktop) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.button:hover {
+  box-shadow: 0 4px 14px 0 var(--shadow-color-hover);
+  cursor: pointer;
+  background-color: $backgraund-button-hover;
+}
+
+.button:active {
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.link {
+  color: $typography-action;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--secondary-color-orange);
+}
+
+.forgotPwd:hover {
+  color: var(--secondary-color-orange);
+}
+
+.icon {
+  position: absolute;
+  top: 38px;
+  right: 16px;
+  stroke: var(--primary-color-blue);
+  fill: none;
+  cursor: pointer;
+}
+
+.or {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  margin: 20px 0;
+  color: $typography-secondary;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @include media(tablet) {
+    margin: 24px 0;
+  }
+
+  @include media(desktop) {
+    margin: 28px 0;
+  }
+}
+
+.or::before,
+.or::after {
+  content: "";
+  width: 172px;
+  height: 1px;
+  background-color: $stroke-secondary;
+}
+
+.alredyHave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 24px;
+
+  font-size: 14px;
+  line-height: 22px;
+
+  @include media(desctop) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

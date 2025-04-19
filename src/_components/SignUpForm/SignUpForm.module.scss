@@ -1,0 +1,266 @@
+.pageContainer {
+  width: 1440px;
+  height: 904px;
+}
+
+.formContainer {
+  width: 720px;
+  height: 904px;
+  background-color: var(--background-bg-primary);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  width: 384px;
+
+  padding: 0 32px;
+  background-color: var(--background-bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: 0%;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.discription {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  margin-bottom: 40px;
+}
+
+.label {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 8px;
+  margin-bottom: 24px;
+  color: var(--text-heading-secondary);
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-primary);
+  color: var(--text-placeholder);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.remember {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 24px;
+}
+.checkbox {
+  width: 24;
+  height: 24;
+  border-radius: 2px;
+  border-width: 1px;
+  padding: 4px;
+}
+.customCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+
+  user-select: none;
+  font-size: 16px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: var(--text-body);
+}
+
+.customCheckbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.customCheckbox .checkmark {
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: var(--background-bg-primary);
+  border-radius: 4px;
+
+  border: 1px solid var(--border-primary);
+}
+
+.customCheckbox .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.customCheckbox input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.customCheckbox .checkmark::after {
+  left: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid rgba(43, 42, 41, 1);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.input:active {
+  color: var(--primary-color-black);
+}
+
+.input:focus {
+  color: var(--primary-color-black);
+  outline: none;
+}
+.inputError {
+  /* border-radius: 6px;
+  padding: 10px 12px;
+  width: 100%;
+  height: 44px;
+  font-weight: 400;
+  font-size: 16px; */
+
+  color: red;
+  border: 1px solid red;
+  background: var(--primary-color-white);
+}
+
+.error {
+  position: absolute;
+  top: 73px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  color: red;
+}
+
+.placeholder {
+  color: var(--text-placeholder);
+}
+
+.button {
+  width: 100%;
+  height: 44px;
+  padding: 10px 18px;
+
+  border-radius: 8px;
+  border: none;
+  background-color: var(--buttons-primary);
+  color: var(--background-bg-primary);
+
+  font-size: 16px;
+}
+.button:hover {
+  box-shadow: 0 4px 14px 0 var(--shadow-color-hover);
+  cursor: pointer;
+}
+.button:active {
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.button:disabled {
+  background-color: var(--button-disable-backgraund);
+  color: var(--button-disable-text);
+}
+
+.link {
+  font-weight: 600;
+  color: var(--buttons-link);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--secondary-color-orange);
+}
+
+.forgotPwd:hover {
+  color: var(--secondary-color-orange);
+}
+
+.icon {
+  position: absolute;
+  top: 46px;
+  right: 16px;
+  stroke: var(--primary-color-blue);
+  fill: none;
+  cursor: pointer;
+}
+
+.or {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  margin: 16px 0;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.or::before,
+.or::after {
+  content: "";
+  width: 172px;
+  height: 1px;
+  background-color: var(--border-secondary);
+}
+
+.alredyHave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 24px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* @media screen and (min-width: 768px) {
+  .formContainer {
+  }
+
+  .button {
+    /* height: 44px;
+    font-size: 18px;
+    line-height: 133%; */
+/* }
+}
+
+@media screen and (min-width: 1440px) {
+  .formContainer {
+  }
+} */
