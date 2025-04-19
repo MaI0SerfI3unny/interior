@@ -2,33 +2,34 @@
     margin: 60px 0;
     display: flex;
     justify-content: center;
-    margin-bottom: 180px;
+    margin-bottom: 160px;
     .galleryContainer{
         width: 100%;
         max-width: 1216px;
         margin: 0 20px;
-        h2{
-            color: #1D1C20;
-            font-size: 40px;
-            font-weight: bold;
-            line-height: 48px;
-            text-align: center;
-            margin: 0;
-            margin-bottom: 16px;
-        }
-        .galleryContainerDesc{
-            width: 100%;
+        .galleryContainerHead{
             display: flex;
-            text-align: center;
-            justify-content: center;
-            margin-bottom: 60px;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            h2{
+                color: #2B2A29;
+                font-size: 48px;
+                font-weight: bold;
+                line-height: 56px;
+                text-transform: uppercase;
+                font-family: "Cormorant Infant", sans-serif;
+                width: 70%;
+                margin: 0;
+            }
             p{
-                max-width: 648px;
+                text-align: end;
+                max-width: 384px;
                 font-size: 18px;
                 font-weight: 400;
-                color: #1D1C20;
-                line-height: 28px;
+                color: #494643;
+                line-height: 26px;
             }
+            
         }
         .galleryContainerGrid{
             display: grid;

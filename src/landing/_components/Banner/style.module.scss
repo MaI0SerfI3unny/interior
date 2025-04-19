@@ -1,8 +1,7 @@
 .banner{
-    margin-top: 64px;
     display: flex;
     justify-content: center;
-
+    margin-bottom: 160px;
     .bannerContainer{
         display: grid;
         text-align: center;
@@ -13,69 +12,69 @@
             justify-content: center;   
         }
         h1{
-            font-family: 'Satoshi', sans-serif;
-            font-weight: 900;
-            font-size: 48px;
-            color: black;
+            font-family: "Cormorant Infant", sans-serif;
+            font-size: 64px;
+            font-weight: 600;
+            color: #2B2A29;
             line-height: 60px;
             text-align: center;
-            max-width: 664px;
+            max-width: 830px;
             text-transform: uppercase;
-            margin-bottom: 16px;
-            min-height: 120px;
+            margin-bottom: 24px;
+            min-height: 144px;
+            line-height: 72px;
         }
         p{
-            max-width: 695px;
-            color: black;
+            max-width: 662px;
+            color: #494643;
             line-height: 28px;
             font-weight: 400;
-
+            font-size: 20px;
         }
         .button{
             display: flex;
             justify-content: center;
-            margin-top: 32px;
-            margin-bottom: 64px;
+            margin-top: 48px;
+            margin-bottom: 80px;
         }
         a{
-            background: #1D1C20;
+            background: #2B2A29;
             height: 56px;
-            border-radius: 8px;
+            border-radius: 4px;
             font-size: 16px;
             font-weight: 600;
-            width: 162px;
+            width: 216px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #FEFDFC;
             text-transform: capitalize;
             cursor: pointer;
-            border: 2px solid #1D1C20;
+            border: 2px solid #2B2A29;
             &:hover{
                 transition: 0.5s;
                 background: transparent;
-                color: #1D1C20;
+                color: #2B2A29;
             }
         }
         .bannerContainerSlider{
             width: 100%;
-            max-width: 1006px;
-            border-radius: 32px;
-            margin-bottom: 60px;
+            max-width: 1216px;
+            border-radius: 4px;
             div[data-rcs="root"] {
-                border-radius: 32px;
+                border-radius: 12px;
             }
             :global{
                 .__rcs-handle-line{
-                    background-color: black !important;
+                    background-color: #FFFFFF !important;
                 }
                 .__rcs-handle-button{
-                    border-radius: 0 !important;
-                    border: 1px solid black !important;
-                    width: 21px !important;
-                    height: 72px !important;
+                    border-radius: 100% !important;
+                    border: 1px solid #FFFFFF !important;
+                    width: 32px !important;
+                    height: 32px !important;
                     cursor: pointer !important;
-                    background-color: transparent !important;
+                    background-color: white !important;
                 }
                 .__rcs-handle-arrow{
                     color: black !important;

@@ -1,5 +1,6 @@
 
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
+import { Link } from "react-router-dom";
 import { Typewriter } from 'react-simple-typewriter';
 import before from "@/assets/before.webp"
 import now from "@/assets/now.webp"
@@ -22,11 +23,11 @@ export const Banner = () => {
                     </h1>
                 </div>
                 <div className={style.bannerContainerLayout}>
-                    <p>Задай параметри, обери стиль — і отримай візуалізацію простору, що надихає. 
-                        Штучний інтелект створює дизайн, ти обираєш настрій.</p>
+                    <p>Перетвори мрії про ідеальний інтер'єр у реальність за лічені секунди. 
+                        Отримай персоналізовану візуалізацію простору, що надихає!</p>
                 </div>
                 <div className={style.button}>
-                    <a>згенерувати</a>
+                    <Link to="/signin">Згенерувати інтер’єр</Link>
                 </div>
                 <div className={style.bannerContainerSlider}>
                     <ReactCompareSlider

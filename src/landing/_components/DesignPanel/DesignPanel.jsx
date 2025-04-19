@@ -2,6 +2,7 @@ import photo from "@/assets/design_panel.png"
 import { design_list } from "../../../mock/landing"
 import style from "./style.module.scss"
 import { useState } from "react"
+import { Link } from "react-router-dom";
 
 export const DesignPanel = () => {
     const [ currentDesign, setCurrentDesign ] = useState(0)
@@ -10,9 +11,9 @@ export const DesignPanel = () => {
     return(
         <div className={style.designPanel}>
             <div className={style.designPanelContainer}>
-                <h2>Стильовий гід</h2>
-                <div className={style.designPanelContainerDesc}>
-                    <p>Ознайомся з популярними стилями дизайну та обирай той, що найкраще підходить саме тобі!</p>
+            <div className={style.designPanelContainerHead}>
+                    <h2>Стильовий гід</h2>
+                    <p>Ознайомся з популярними стилями дизайну та обирай той, який підходить саме тобі!</p>
                 </div>
 
                 <div className={style.designPanelContainerList}>
@@ -24,14 +25,16 @@ export const DesignPanel = () => {
                         </div>
                     </div>
                     <div className={style.designPanelContainerListControl}>
-                        <div className={style.designPanelContainerListControlList}>
-                            {design_list.map(({name},key) =>  
-                                <div 
-                                    key={key} 
-                                    onClick={() => setCurrentDesign(key)}
-                                    className={`${style.designPanelContainerListControlListItem} ${currentDesign === key && style.active}`}>{name}</div>)}
+                        <div className={style.designPanelContainerListControlContainer}>
+                            <div className={style.designPanelContainerListControlList}>
+                                {design_list.map(({name},key) =>  
+                                    <div 
+                                        key={key} 
+                                        onClick={() => setCurrentDesign(key)}
+                                        className={`${style.designPanelContainerListControlListItem} ${currentDesign === key && style.active}`}>{name}</div>)}
+                            </div>
+                            <Link to="/signin" className={style.designPanelContainerListControlButton}>Згенерувати інтер’єр</Link>
                         </div>
-                        <a href="" className={style.designPanelContainerListControlButton}>Згенерувати дизайн</a>
                     </div>
                 </div>
             </div>

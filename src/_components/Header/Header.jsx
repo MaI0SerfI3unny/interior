@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import style from "./style.module.scss";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.svg";
 
 export const Header = () => {
   return (
@@ -12,12 +12,10 @@ export const Header = () => {
         <div className={style.headerContainerLinkContainer}>
           <a href="">Головна</a>
           <a href="">Генерація</a>
-          <a href="">Тарифи</a>
+          <a href="">Підписка</a>
           <NavLink to="/faq">FAQ</NavLink>
         </div>
-        <Link className={style.signBtn} to="/signin">
-          Вхід/Реєстрація
-        </Link>
+        <Link className={style.signBtn} to="/signin">Вхід/Реєстрація</Link>
       </div>
     </div>
   );

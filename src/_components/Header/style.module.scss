@@ -1,19 +1,23 @@
 .header{
     position: fixed;
     width: 100%;
-    height: 72px;
-    background: #D1D1D1B2;
     justify-content: center;
     align-items: center;
     display: flex;
     z-index: 2;
+    margin-top: 20px;
     .headerContainer{
         width: 100%;
         max-width: 1216px;
+        background: #F4F1EC;
+        box-shadow: 6px 6px 32px 0px rgba(43, 42, 41, 0.06);
+        height: 76px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin: 0 20px;
+        padding: 0 16px;
+        border-radius: 16px;
         .headerContainerLinkContainer{
             display: flex;
             width: 100%;
@@ -21,7 +25,8 @@
             justify-content: space-between;
             a{
                 text-transform: uppercase;
-                color: #1D1C20;
+                color: #2B2A29;
+                font-size: 16px;
                 text-decoration: none;
                 &:hover{
                     transition: 0.5s;
@@ -30,11 +35,13 @@
             }
         }
         .signBtn{
-            width: 174px;
-            height: 45px;
-            background: #414141;
-            color: white;
-            font-size: 16px;
+            width: 148px;
+            height: 48px;
+            background: transparent;
+            color: #2B2A29;
+            border: 1px solid #2B2A29;
+            border-radius: 4px;
+            font-size: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -42,6 +49,7 @@
             &:hover{
                 transition: 0.5s;
                 background: #1D1C20;
+                color: #F4F1EC;
             }
         }
     }

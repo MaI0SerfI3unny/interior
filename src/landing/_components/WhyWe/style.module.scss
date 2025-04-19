@@ -2,20 +2,22 @@
     background: #F2F2F2;
     display: flex;
     justify-content: center;
-    padding: 60px 0;
-    margin-bottom: 60px;
+    margin-bottom: 160px;
     .whyWeContainer{
         width: 100%;
         max-width: 1216px;
         margin: 0 20px;
         h2{
+            font-family: "Cormorant Infant", sans-serif;
             margin: 0;
-            text-align: center;
-            color: black;
-            font-size: 40px;
+            text-align: left;
+            color: #2B2A29;
+            font-size: 48px;
             font-weight: bold;
-            line-height: 48px;
+            line-height: 56px;
             margin-bottom: 16px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
         }
         .whyWeContainerDescription{
             color: black;
@@ -29,15 +31,40 @@
         .whyWeContainerList {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(min(100%, 384px), 1fr));
-            gap: 64px 32px;
             justify-content: center;
             color: black;
+            div{
+                padding: 0 32px;
+                padding-right: 40px;
+                padding-bottom: 32px;
+                border-right: 1px solid #A09C99;
+                border-bottom: 1px solid #A09C99;
+                &:nth-child(3),
+                &:nth-child(6) {
+                    border-right: none;
+                }
+            
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6) {
+                    padding-top: 32px;
+                    border-bottom: none;
+                }
+
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(5),
+                &:nth-child(6) {
+                    padding-left: 48px;
+                }
+            }
             img{
-                margin-bottom: 24px;
+                margin-bottom: 32px;
             }
             .whyWeContainerListTitle{
                 font-weight: 600;
                 font-size: 20px;
+                margin-bottom: 16px;
             }
             .whyWeContainerListDesc{
                 font-size: 16px;
