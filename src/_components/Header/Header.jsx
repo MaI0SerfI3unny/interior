@@ -11,7 +11,7 @@ export const Header = () => {
         </div>
         <div className={style.headerContainerLinkContainer}>
           <a href="">Головна</a>
-          <a href="">Генерація</a>
+          <a href="/generating">Генерація</a>
           <a href="">Підписка</a>
           <NavLink to="/faq">FAQ</NavLink>
         </div>
