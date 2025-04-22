@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderContainerStyles = styled.div`
+export const DownloadFileContainerStyles = styled.div`
 display : flex;
 justify-content : space-between;
 `

@@ -2,7 +2,7 @@ import  {  useRef, useState } from "react";
 import { ReactComponent as DownloadFileIcon } from '../../svg/file-upload-line.svg';
 import { DownloadIconContainer, DownloadFileInputContainer, DownloadFileInputStyles, ImagePreview  } from './DownloadFileInputStyles.styled';
 import DownloadText from "./DownloadText/DownloadText";
-import HeaderContainer from "./HeaderContainer/HeaderContainer";
+import DownloadFileContainer from "./DownloadFileContainer/DownloadFileContainer";
 
 const DownloadFileInput = ({ onChange, value, onDeletePhoto }) => {
   const [imagePreview, setImagePreview] = useState(null);
@@ -52,7 +52,7 @@ const DownloadFileInput = ({ onChange, value, onDeletePhoto }) => {
 
   return (
     <div>
-      <HeaderContainer deleteImage={deleteImage} photo={value} />
+      <DownloadFileContainer deleteImage={deleteImage} photo={value} />
 
 
       <DownloadFileInputContainer
