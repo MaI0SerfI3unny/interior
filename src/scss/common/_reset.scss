@@ -45,3 +45,12 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(254, 253, 252, 1) inset !important;
+  box-shadow: 0 0 0px 1000px white inset !important;
+  transition: background-color 9999s ease-in-out 0s;
+  -webkit-text-fill-color: #000 !important;
+}

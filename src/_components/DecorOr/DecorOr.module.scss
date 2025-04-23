@@ -1,0 +1,31 @@
+@use "../../scss/common/vars" as *;
+@use "../../scss/common/mixins" as *;
+
+.or {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  margin: 20px 0;
+  color: $typography-secondary;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @include media(tablet) {
+    margin: 24px 0;
+  }
+
+  @include media(desktop) {
+    margin: 28px 0;
+    width: 384px;
+  }
+}
+
+.or::before,
+.or::after {
+  content: "";
+  width: 172px;
+  height: 1px;
+  background-color: $stroke-secondary;
+}
