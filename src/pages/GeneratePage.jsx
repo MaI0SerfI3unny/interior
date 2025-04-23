@@ -1,7 +1,6 @@
 // import { useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
 import GeneratingForm from '../_components/GeneratingForm/GeneratingForm';
-// import GeneratingAnswer from '../components/GeneratingAnswer/GeneratingAnswer'
+import GeneratingAnswer from '../_components/GeneratingAnswer/GeneratingAnswer'
 import { GeneratingPageStyles } from './styles/GeneratingPage.styled'
 // import ModalExit from '../components/GeneratingAnswer/ModalExit/ModalExit'
 // import { useBlocker } from '../hooks/useBlocker'
@@ -27,10 +26,6 @@ const GeneratePage = () => {
 
   return (
     <>
-      <div>
-        Generate Page
-        <Link to='/'>Home page</Link>
-      </div>
       <GeneratingPageStyles>
         <section>
           <GeneratingForm 
@@ -38,7 +33,7 @@ const GeneratePage = () => {
            />
         </section>
         <section>
-          {/* <GeneratingAnswer /> */}
+          <GeneratingAnswer />
         </section>
         {/* {isShowModal && (
           <ModalExit

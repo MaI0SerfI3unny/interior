@@ -8,8 +8,6 @@ const DownloadFileInput = ({ onChange, value, onDeletePhoto }) => {
   const [imagePreview, setImagePreview] = useState(null);
   const inputRef = useRef();
 
- 
-
   const deleteImage = () => {
     inputRef.value = '';
     onDeletePhoto();
@@ -26,7 +24,6 @@ const DownloadFileInput = ({ onChange, value, onDeletePhoto }) => {
       alert("Файл слишком большой. Максимум 150kb.");
       return;
     }
-
 
     if (file) {
       onChange({target : {value : file, name : 'photo'}});
