@@ -6,7 +6,7 @@ margin-right: auto;
 margin-left: auto;
 padding-left: 112px;
 padding-right: 112px;
-padding-top: 58px;
+padding-top: 176px;
 padding-bottom: 53px;
 
 display : flex;

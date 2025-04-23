@@ -10,9 +10,9 @@ export const Header = () => {
           <img src={logo} alt="logo" />
         </div>
         <div className={style.headerContainerLinkContainer}>
-          <a href="">Головна</a>
-          <a href="/generating">Генерація</a>
-          <a href="">Підписка</a>
+          <NavLink to='/'>Головна</NavLink>
+          <NavLink to='/generating'>Генерація</NavLink>
+          <a href="/">Підписка</a>
           <NavLink to="/faq">FAQ</NavLink>
         </div>
         <Link className={style.signBtn} to="/signin">Вхід/Реєстрація</Link>
