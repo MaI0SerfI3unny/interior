@@ -11,7 +11,7 @@ import { RoadMap } from "./_components/RoadMap/RoadMap";
 export const LandingPage = () => {
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <div className={style.main}>
           <Banner/>
           <WhyWe/>
@@ -20,7 +20,7 @@ export const LandingPage = () => {
           <Gallery/>
           <Comment/>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }
