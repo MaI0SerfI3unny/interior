@@ -8,7 +8,7 @@ import SignInForm from "../_components/SignInForm/SignInForm.jsx";
 export const SignInPage = () => {
   return (
     <FormContainer>
-      <ButtonBack />
+      <ButtonBack path="/" />
       <SignInForm />
       <DecorOr />
       <GoogleLoginButton />

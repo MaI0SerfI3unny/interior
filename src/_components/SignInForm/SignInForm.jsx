@@ -110,7 +110,7 @@ const SignInForm = () => {
               <span className={css.checkmark}></span>Remember me
             </label>
 
-            <Link to="/forgotPwd" className={css.forgotPwd}>
+            <Link to="/sendemail" className={css.forgotPwd}>
               Forgot password?
             </Link>
           </div>

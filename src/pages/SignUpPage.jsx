@@ -8,7 +8,7 @@ import SignUpForm from "../_components/SignUpForm/SignUpForm.jsx";
 export const SignUpPage = () => {
   return (
     <FormContainer>
-      <ButtonBack />
+      <ButtonBack path="/" />
       <SignUpForm />
       <DecorOr />
       <GoogleLoginButton />
