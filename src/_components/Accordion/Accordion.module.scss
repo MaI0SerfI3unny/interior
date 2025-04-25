@@ -1,4 +1,5 @@
 @use "../../scss/common/vars" as *;
+@use "../../scss/common/mixins" as *;
 
 .Root {
   border-radius: 6px;
@@ -10,10 +11,7 @@
 .Item {
   overflow: hidden;
   margin-top: 1px;
-
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28px;
+  max-width: 320px;
 
   &:first-child {
     margin-top: 0;
@@ -33,6 +31,30 @@
   }
 }
 
+.itemBox {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  width: 276px;
+
+  @include media(tablet) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.itemNumber {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+
+  @include media(tablet) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
 .Header {
   all: unset;
   display: flex;
@@ -42,15 +64,16 @@
   all: unset;
   font-family: inherit;
   background-color: transparent;
-  padding: 24px 20px 32px 20px;
+  padding: 12px 0px;
 
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28px;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
 
   border-top: 1px solid $stroke-secondary;
 
@@ -81,13 +104,17 @@
 }
 
 .ContentText {
-  padding: 0 20px 32px 20px;
+  padding: 0px 46px 12px 50px;
+  font-size: 14px;
+  line-height: 20px;
+  color: $typography-secondary;
 }
 
 .Chevron {
   color: var(--violet-10);
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 1;
   .Trigger[data-state="open"] > & {
     display: none;
   }
@@ -100,6 +127,7 @@
     display: none;
   }
 }
+
 @keyframes slideDown {
   from {
     height: 0;
@@ -119,5 +147,5 @@
 }
 
 .list {
-  padding-left: 30px;
+  padding-left: 12px;
 }

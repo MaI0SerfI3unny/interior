@@ -5,7 +5,7 @@ import { Header } from "../Header/Header.jsx";
 export const SharedLayout = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main>
         <Outlet />
       </main>

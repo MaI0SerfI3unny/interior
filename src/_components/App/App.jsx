@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { LandingPage } from "@/landing/LandingPage.jsx";
 import { SignInPage } from "../../pages/SignInPage.jsx";
 import { SignUpPage } from "../../pages/SignUpPage.jsx";
-import { FAQPage } from "../../pages/FAQPage/FAQPage.jsx";
+import { FAQPage } from "../../pages/FAQPage.jsx";
 import { SharedLayout } from "../SharedLayout/SharedLayout.jsx";
 import { SendRecoveryEmail } from "../../pages/SendRecoveryEmail.jsx";
 import { RecoveryPwd } from "../../pages/RecoveryPwd.jsx";

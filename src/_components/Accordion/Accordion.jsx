@@ -10,7 +10,8 @@ const AccordionDemo = () => (
   <Accordion.Root className={styles.Root} type="multiple">
     <Accordion.Item className={styles.Item} value="item-1">
       <AccordionTrigger>
-        Як працює генератор дизайну інтер'єрів?
+        <p className={styles.itemNumber}>01/</p>Як працює генератор дизайну
+        інтер'єрів?
       </AccordionTrigger>
       <AccordionContent>
         Наш генератор використовує потужні алгоритми штучного інтелекту для
@@ -21,23 +22,25 @@ const AccordionDemo = () => (
     </Accordion.Item>
 
     <Accordion.Item className={styles.Item} value="item-2">
-      <AccordionTrigger>Що таке promt і як його писати?</AccordionTrigger>
+      <AccordionTrigger>
+        <p className={styles.itemNumber}>02/</p>Що таке promt і як його писати?
+      </AccordionTrigger>
       <AccordionContent>
         Промт — це ваше завдання або запит до генератору дизайна (наприклад, щоб
         створити зображення, текст чи щось пояснити). Щоб отримати хороший
         результат, варто чітко та зрозуміло описати, що ви хочете. Ось кілька
         порад, як написати вдалий промт:
         <ol className={styles.list}>
-          <li>
+          <li key="1">
             Пишіть просто та конкретно.Замість “намалюй щось гарне” краще:
             “створи зображення затишної кімнати з дерев’яною підлогою, світлими
             стінами та великим вікном”.
           </li>
-          <li>
+          <li key="2">
             Додайте деталі. Чим більше деталей (кольори, стиль, емоції, час доби
             тощо) — тим точніше результат.
           </li>
-          <li>
+          <li key="3">
             Не бійтеся пробувати!Якщо з першого разу результат не влаштовує —
             змініть або уточніть свій запит. Це нормально.
           </li>
@@ -47,6 +50,7 @@ const AccordionDemo = () => (
 
     <Accordion.Item className={styles.Item} value="item-3">
       <AccordionTrigger>
+        <p className={styles.itemNumber}>03/</p>
         Чи можу я використовувати платформу без реєстрації?
       </AccordionTrigger>
       <AccordionContent>
@@ -59,6 +63,7 @@ const AccordionDemo = () => (
 
     <Accordion.Item className={styles.Item} value="item-4">
       <AccordionTrigger>
+        <p className={styles.itemNumber}>04/</p>
         Чи можу я змінювати дизайн після того, як він був створений?
       </AccordionTrigger>
       <AccordionContent>
@@ -69,6 +74,7 @@ const AccordionDemo = () => (
 
     <Accordion.Item className={styles.Item} value="item-5">
       <AccordionTrigger>
+        <p className={styles.itemNumber}>05/</p>
         Де зберігаються мої згенеровані картинки?
       </AccordionTrigger>
       <AccordionContent>
@@ -80,6 +86,7 @@ const AccordionDemo = () => (
 
     <Accordion.Item className={styles.Item} value="item-6">
       <AccordionTrigger>
+        <p className={styles.itemNumber}>06/</p>
         Чи є обмеження на кількість створених дизайнів?
       </AccordionTrigger>
       <AccordionContent>
@@ -91,7 +98,9 @@ const AccordionDemo = () => (
     </Accordion.Item>
 
     <Accordion.Item className={styles.Item} value="item-7">
-      <AccordionTrigger>Як можна змінити тарифний план?</AccordionTrigger>
+      <AccordionTrigger>
+        <p className={styles.itemNumber}>07/</p>Як можна змінити тарифний план?
+      </AccordionTrigger>
       <AccordionContent>
         Ви можете змінити свій тарифний план у будь-який час, перейшовши в
         розділ "Мій акаунт" і вибравши відповідний варіант. Зміна тарифу буде
