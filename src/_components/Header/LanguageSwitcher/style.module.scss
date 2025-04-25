@@ -1,0 +1,21 @@
+.langSwitcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;  
+    span {
+      cursor: pointer;
+      font-size: 16px;
+      color: #706D6A;
+      transition: color 0.3s;
+    }
+  
+    .active {
+      color: #2B2A29;
+      font-weight: 600;
+    }
+  
+    .separator {
+      color: #DFDAD6;
+    }
+  }
+  

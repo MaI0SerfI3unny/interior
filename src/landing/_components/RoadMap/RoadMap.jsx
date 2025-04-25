@@ -12,7 +12,7 @@ export const RoadMap = () => {
                 <div className={style.wrap}>
                     <div>
                         {steps.map(({title, desc}, key) => 
-                            <div className={style.wrapItem}>
+                            <div key={key} className={style.wrapItem}>
                                 <div className={style.wrapItemCount}>
                                     <p>0{key+1}/</p>
                                 </div>

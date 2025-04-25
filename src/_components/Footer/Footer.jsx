@@ -27,6 +27,25 @@ export const Footer = () => {
                             <a href="">FAQ</a>
                         </div>
                     </div>
+
+                    <div className={style.footerMainContainerLinkTablet}>
+                        <div>
+                            <a href="">Головна</a>
+                            <a href="">Чому ми</a>
+                        </div>
+                        <div>
+                            <a href="">Як згенерувати</a>
+                            <a href="">Генерація</a>
+                        </div>
+                        <div>
+                            <a href="">Галерея</a>
+                            <a href="">Відгуки</a>
+                        </div>
+                        <div>
+                            <a href="">FAQ</a>
+                            <a href="">Підписка</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className={style.footerAdditional}>

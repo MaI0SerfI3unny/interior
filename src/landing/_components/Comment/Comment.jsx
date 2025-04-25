@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import { comment } from "@/mock/landing"
+import left from "@/assets/icons/left.svg"
+import right from "@/assets/icons/right.svg"
 import ReactStars from "react-rating-stars-component";
 import comma from "@/assets/icons/comment.svg"
 import style from "./style.module.scss"
@@ -18,9 +20,23 @@ export const Comment = () => {
                     slidesPerView={3}
                     spaceBetween={24}
                     pagination={{ clickable: true }}
-                    modules={[Pagination]}
-                    >
-                    {comment.map(({name, date,desc}, index) => (
+                    navigation={{
+                        nextEl: '.swiper-button-next-custom',
+                        prevEl: '.swiper-button-prev-custom',
+                    }}
+                    breakpoints={{
+                        0: {
+                          slidesPerView: 1
+                        },
+                        643: {
+                          slidesPerView: 2
+                        },
+                        1256: {
+                          slidesPerView: 3
+                        }
+                    }}
+                    modules={[Pagination, Navigation]}>
+                    {[...comment, ...comment].map(({name, date,desc}, index) => (
                         <SwiperSlide key={index}>
                         <div className={style.sliderItem}>
                             <img className={style.sliderItemComma} src={comma} alt="comma"/>
@@ -41,6 +57,10 @@ export const Comment = () => {
                         </div>
                         </SwiperSlide>
                     ))}
+                    <div className={style.navigationButtons}>
+                        <div className="swiper-button-prev-custom"><img src={left} alt="left arrow"/></div>
+                        <div className="swiper-button-next-custom"><img src={right} alt="left arrow"/></div>
+                    </div>
                 </Swiper>
             </div>
         </div>
