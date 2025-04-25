@@ -13,6 +13,7 @@
         display: flex;
         justify-content: space-between;
         padding-bottom: 80px;
+        
         .footerMainContainerInfo{
             width: 100%;
             max-width: 342px;
@@ -27,7 +28,8 @@
                 max-width: 294px;
             }
         }
-        .footerMainContainerLink{
+        .footerMainContainerLink,
+        .footerMainContainerLinkTablet{
             width: 100%;
             max-width: 538px;
             display: flex;
@@ -42,6 +44,41 @@
                         color: #848484;
                     }
                 }
+            }
+        }
+        .footerMainContainerLinkTablet{
+            display: none;
+        }
+        @media (max-width: 1255px) {
+            margin: 0 30px;
+            max-width: 704px;
+            display: block;
+            .footerMainContainerLink{
+                display: none;
+            }
+            .footerMainContainerLinkTablet{
+                margin-top: 32px;
+                display: flex;
+                justify-content: space-between;
+                max-width: 663px;
+            }
+            .footerMainContainerInfo{
+                max-width: fit-content;
+                img{
+                    margin-bottom: 8px;
+                }
+                p {
+                    max-width: fit-content;
+                }
+            }
+        }
+        @media (max-width: 550px) {
+            margin: 0 20px;
+            .footerMainContainerLinkTablet{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, auto); 
+                gap: 20px;
             }
         }
     }
@@ -73,6 +110,33 @@
             &:hover{
                 transition: 0.5s;
                 color: #848484;
+            }
+        }
+        @media (max-width: 1255px) {
+            margin: 0 30px;
+            max-width: 704px;
+        }
+        @media (max-width: 550px) {
+            margin: 0 20px;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            flex-direction: column-reverse;
+            gap: 0;
+            justify-content: left;
+            div{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 12px;
+                width: 100%;
+
+                a{
+                    margin: 0;                    
+                }
+            }
+            .footerAdditionalContainerCopy{
+                width: 100%;
+                text-align: left;
             }
         }
     }

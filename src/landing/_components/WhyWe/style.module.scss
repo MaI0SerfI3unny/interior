@@ -1,5 +1,4 @@
 .whyWe{
-    background: #F2F2F2;
     display: flex;
     justify-content: center;
     margin-bottom: 160px;
@@ -62,8 +61,9 @@
                 margin-bottom: 32px;
             }
             .whyWeContainerListTitle{
+                margin-top: 32px;
                 font-weight: 600;
-                font-size: 20px;
+                font-size: 24px;
                 margin-bottom: 16px;
             }
             .whyWeContainerListDesc{
@@ -72,6 +72,107 @@
                 font-weight: 400;
 
             }
+            @media (max-width: 1255px) {
+                grid-template-columns: repeat(2, 1fr);
+                .whyWeContainerListTitle{
+                    margin-top: 20px;
+                    margin-bottom: 16px;
+                }
+                div{
+                    border-right: 1px solid #A09C99;
+                    border-bottom: 1px solid #A09C99;
+                    padding: 20px;
+                    &:nth-child(1),
+                    &:nth-child(2){
+                        padding-top: 0;
+                    }
+
+                    &:nth-child(1),
+                    &:nth-child(3),
+                    &:nth-child(5) {
+                        border-bottom: 1px solid #A09C99;
+                        border-right: 1px solid #A09C99;
+                        padding-right: 22px;
+                    }
+
+                    &:nth-child(2),
+                    &:nth-child(4),
+                    &:nth-child(6) {
+                        border-bottom: 1px solid #A09C99;
+                        border-right: none;
+                        padding-left: 22px;
+                    }
+
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(6) {
+                        padding-top: 20px;
+                        padding-left: 20px;
+                    }
+
+                    &:nth-child(5),
+                    &:nth-child(6) {
+                        border-bottom: none ;
+                    }
+                }
+
+            }
+            @media (max-width: 550px) {
+                grid-template-columns: 1fr;
+                .whyWeContainerListTitle{
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+                }
+                div{
+                    &:nth-child(1),
+                    &:nth-child(2),
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(6){
+                        border: none;
+                        border-bottom: 1px solid #A09C99;
+                        padding: 20px 0;
+                    }
+
+                    &:nth-child(1){
+                        padding-top: 0;
+                    }
+                }
+            }
         }
+        @media (max-width: 1255px) {
+            margin: 0 30px;
+            max-width: 704px;
+            h2{
+                font-size: 40px;
+                margin-bottom: 32px;
+            }
+        }
+        @media (max-width: 550px) {
+            margin: 0 20px;
+            h2{
+                font-size: 28px;
+                font-weight: bold;
+                line-height: 36px;
+                margin-bottom: 24px;
+            }
+        }
+    }
+    @media (max-width: 1255px) {
+        margin-bottom: 120px;
+    }
+    @media (max-width: 550px) {
+        margin-bottom: 80px;
+    }
+}
+
+.whyWeIcon{
+    width: 80px;
+    height: 80px;
+    @media (max-width: 1255px) {
+        width: 62px;
+        height: 62px;    
     }
 }

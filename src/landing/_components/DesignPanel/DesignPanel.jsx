@@ -1,4 +1,3 @@
-import photo from "@/assets/design_panel.png"
 import { design_list } from "../../../mock/landing"
 import style from "./style.module.scss"
 import { useState } from "react"
@@ -18,7 +17,7 @@ export const DesignPanel = () => {
 
                 <div className={style.designPanelContainerList}>
                     <div className={style.designPanelContainerListView}>
-                        <img src={photo} alt="design photo"/>
+                        <img src={current.img} alt="design photos"/>
                         <div className={style.designPanelContainerListInfo}>
                             <p className={style.designPanelContainerListInfoTitle}>{current.name}</p>
                             <p className={style.designPanelContainerListInfoDesc}>{current.desc}</p>

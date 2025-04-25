@@ -9,7 +9,13 @@ export const WhyWe = () => {
                 <div className={style.whyWeContainerList}>
                     {why_me.map(({name,desc,img},key) => 
                         <div key={key}>
-                            <img src={img} alt="why we argument"/>
+                            <lord-icon
+                                src={img}
+                                trigger="loop"
+                                delay="2500"
+                                colors="primary:#2b2a29,secondary:#2b2a29"
+                                className={style.whyWeIcon}>
+                            </lord-icon>
                             <p className={style.whyWeContainerListTitle}>{name}</p>
                             <p className={style.whyWeContainerListDesc}>{desc}</p>
                         </div>)}

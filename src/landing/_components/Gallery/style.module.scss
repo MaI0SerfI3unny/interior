@@ -31,6 +31,20 @@
             }
             
         }
+        .more{
+            margin-top: 20px;
+            display: none;
+            justify-content: flex-end;
+            color: #2B2A29;
+            font-size: 20px;
+            img{
+                width: 11px;
+                margin-left: 10px;
+            }
+            @media (max-width: 1255px) {
+                display: flex;
+            }
+        }
         .galleryContainerGrid{
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -49,7 +63,68 @@
               object-fit: cover;
               display: block;
             }
-          }
+        }
+
+        @media (max-width: 1255px) {
+            max-width: 704px;
+            margin: 0 30px;
+            .galleryContainerHead{
+                display: block;
+                h2,p{
+                    text-align: left;
+                }
+                p{
+                    max-width: fit-content;
+                }
+                h2{
+                    width: 100%;
+                }
+            }
+        }
+        @media (max-width: 550px) {
+            padding: 0 20px;
+        }
+    }
+    @media (max-width: 1255px) {
+        margin-bottom: 120px;
+        .galleryContainer{
+            .galleryContainerHead{
+                margin-bottom: 32px;
+                h2{
+                    font-size: 40px;
+                    margin-bottom: 12px;
+                    line-height: normal;
+                }
+            }
+            .galleryContainerGrid{
+                & > div:nth-child(n + 7) {
+                    display: none;
+                }
+            }
+        }
+    }
+    @media (max-width: 550px) {
+        margin-bottom: 80px;
+        .galleryContainer{
+            margin: 0 20px;
+            .galleryContainerHead{
+                margin-bottom: 24px;
+                h2{
+                    font-size: 28px;
+                    font-weight: bold;
+                    line-height: 36px;
+                    margin-bottom: 12px;
+                }
+                p{
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+            .galleryContainerGrid,
+            .more{
+                display: none;
+            }
+        }
     }
 }
   
@@ -61,4 +136,17 @@
 }
 .h4 {
     grid-row: span 4;
+}
+
+.galleryContainerMobile{
+    display: none;
+    .galleryContainerGridItem{
+        margin-bottom: 40px;
+        img{
+            height: 420px !important;
+        }
+    }
+    @media (max-width: 550px) {
+        display: block;
+    }
 }
