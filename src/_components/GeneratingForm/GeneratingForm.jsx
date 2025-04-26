@@ -16,7 +16,7 @@ const initialValue = {
   
 }
 
-const GeneratingForm = ({setResult}) => {
+const GeneratingForm = () => {
     const [data, setData] = useState(initialValue)
 
     function onDeletePhoto () {
@@ -35,9 +35,9 @@ const GeneratingForm = ({setResult}) => {
     }
 
   function handleSubmit (e) {
-    console.log(data)
     e.preventDefault();
-    setResult(data)
+    console.log(data)
+    // setResult(data)
   }
 
   const {photo, prompt, style, room} = data;
