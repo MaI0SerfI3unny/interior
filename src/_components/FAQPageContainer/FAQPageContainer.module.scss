@@ -1,0 +1,20 @@
+@use "../../scss/common/mixins" as *;
+
+.pageContainer {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+
+  max-width: 360px;
+  padding: 112px 20px 40px 20px;
+
+  @include media(tablet) {
+    min-width: 768px;
+    padding: 128px 32px 60px 32px;
+  }
+
+  @include media(desktop) {
+    padding: 144px 110px 80px 110px;
+    max-width: 1440px;
+  }
+}

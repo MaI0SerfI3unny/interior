@@ -1,0 +1,29 @@
+@use "../../scss/common/vars" as *;
+@use "../../scss/common/mixins" as *;
+
+.alredyHave {
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 24px;
+
+  font-size: 14px;
+  line-height: 22px;
+
+  @include media(desktop) {
+    font-size: 16px;
+    line-height: 24px;
+    width: 384px;
+  }
+}
+
+.link {
+  color: $typography-action;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

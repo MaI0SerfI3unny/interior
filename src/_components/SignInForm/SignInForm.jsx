@@ -1,17 +1,17 @@
 import { Form, Field, Formik, ErrorMessage } from "formik";
 // import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+
 import * as Yup from "yup";
 import { useId } from "react";
 import clsx from "clsx";
 import { useState } from "react";
 import css from "./SignInForm.module.scss";
-import { ReactComponent as Arrow } from "../../assets/icons/arrow.svg";
+
 // import { login } from "@/redux/user/operations";
 
-import { GoogleLoginButton } from "../GoogleLoginButton/GoogleLoginButton.jsx";
 import { ReactComponent as Eye } from "../../assets/icons/eye24.svg";
 import { ReactComponent as Hide } from "../../assets/icons/hide24.svg";
+import { Link } from "react-router-dom";
 
 // import { selectIsLoading } from "@/redux/user/selectors.js";
 
@@ -54,12 +54,6 @@ const SignInForm = () => {
     >
       {({ touched, errors }) => (
         <Form className={css.form}>
-          <div className={css.arrowBack}>
-            <Arrow />
-            <Link to="/" className={css.linkHome}>
-              Back
-            </Link>
-          </div>
           <h2 className={css.title}>Welcome back!</h2>
           <p className={css.discription}>
             Please enter your details to get started
@@ -76,6 +70,7 @@ const SignInForm = () => {
               type="email"
               placeholder="Enter your email"
               id={emailFieldId}
+              autoComplete="off"
             />
             <ErrorMessage className={css.error} name="email" component="span" />
           </label>
@@ -89,7 +84,7 @@ const SignInForm = () => {
               }
               name="password"
               type={showPassword ? "text" : "password"}
-              placeholder="Enter your password"
+              placeholder="********"
               id={pwdFieldId}
             />
             <span
@@ -115,31 +110,17 @@ const SignInForm = () => {
               <span className={css.checkmark}></span>Remember me
             </label>
 
-            <span className={css.forgotPwd}>Forgot password?</span>
+            <Link to="/sendemail" className={css.forgotPwd}>
+              Forgot password?
+            </Link>
           </div>
           <button className={css.button} type="submit">
             Sign in
             {/* {isLoading ? <Loader /> : "Sign in"} */}
           </button>
-          <span className={css.or}>Or</span> <GoogleLoginButton />
-          <div className={css.alredyHave}>
-            <p className={css.question}>Don’t have an account?</p>
-            <Link to="/signup" className={css.link}>
-              Sign up
-            </Link>
-          </div>
         </Form>
       )}
     </Formik>
-
-    // {/* <span className={css.forgotPwd} onClick={"openModal"}>
-    //     Forgot password
-    //   </span> */}
-    // {/* {isModalOpen && (
-    //   <ModalContainer>
-    //     <ForgotPasswordForm onClose={closeModal} />
-    //   </ModalContainer>
-    // )} */}
   );
 };
 

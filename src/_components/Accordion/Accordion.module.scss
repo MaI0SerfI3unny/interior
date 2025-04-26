@@ -1,17 +1,33 @@
+@use "../../scss/common/vars" as *;
+@use "../../scss/common/mixins" as *;
+
 .Root {
   border-radius: 6px;
-  width: 648px;
+  width: 320px;
   background-color: var(--mauve-6);
   box-shadow: 0 2px 10px var(--black-a4);
+
+  @include media(tablet) {
+    width: 704px;
+  }
+
+  @include media(desktop) {
+    width: 1220px;
+  }
 }
 
 .Item {
   overflow: hidden;
   margin-top: 1px;
+  max-width: 320px;
 
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28px;
+  @include media(tablet) {
+    max-width: 704px;
+  }
+
+  @include media(desktop) {
+    max-width: 1220px;
+  }
 
   &:first-child {
     margin-top: 0;
@@ -31,6 +47,43 @@
   }
 }
 
+.itemBox {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  width: 276px;
+
+  @include media(tablet) {
+    font-size: 20px;
+    line-height: 28px;
+    width: 660px;
+  }
+
+  @include media(desktop) {
+    gap: 32px;
+    width: 1164px;
+  }
+}
+
+.itemNumber {
+  min-width: 33px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+
+  @include media(tablet) {
+    min-width: 161px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  @include media(desktop) {
+    min-width: 492px;
+  }
+}
+
 .Header {
   all: unset;
   display: flex;
@@ -40,64 +93,71 @@
   all: unset;
   font-family: inherit;
   background-color: transparent;
-  padding: 24px 20px 32px 20px;
+  padding: 12px 0px;
 
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28px;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
 
-  border-top: 1px solid var(--border-secondary);
-
-  color: var(--violet-11);
-  box-shadow: 0 1px 0 var(--mauve-6);
-  background-color: var(--mauve-1);
-  &:hover {
-    background-color: var(--mauve-2);
-  }
+  border-top: 1px solid $stroke-secondary;
 }
 
 .Content {
   overflow: hidden;
-  font-size: 15px;
-
-  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 
-  color: var(--text-body);
-  background-color: var(--mauve-2);
   &[data-state="open"] {
     animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+    animation-fill-mode: forwards;
   }
   &[data-state="closed"] {
     animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+    animation-fill-mode: forwards;
   }
 }
 
 .ContentText {
-  padding: 0 20px 32px 20px;
+  padding: 0px 46px 12px 53px;
+  font-size: 14px;
+  line-height: 20px;
+  color: $typography-secondary;
+
+  @include media(tablet) {
+    padding: 0 44px 24px 181px;
+  }
+
+  @include media(desktop) {
+    padding: 0 0 24px 520px;
+
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .Chevron {
-  color: var(--violet-10);
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+
   .Trigger[data-state="open"] > & {
     display: none;
   }
 }
 
 .Minus {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+
   .Trigger[data-state="closed"] > & {
     display: none;
   }
 }
+
 @keyframes slideDown {
   from {
     height: 0;
@@ -117,5 +177,5 @@
 }
 
 .list {
-  padding-left: 30px;
+  padding-left: 12px;
 }

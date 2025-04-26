@@ -1,0 +1,44 @@
+@use "../../scss/common/mixins" as *;
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  @include media(tablet) {
+    margin-bottom: 32px;
+  }
+
+  @include media(desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+  }
+}
+
+.title {
+  font-family: "Cormorant";
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  text-transform: uppercase;
+
+  @include media(tablet) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  @include media(desktop) {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}

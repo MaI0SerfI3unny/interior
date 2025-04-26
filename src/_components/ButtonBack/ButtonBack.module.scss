@@ -1,0 +1,31 @@
+@use "../../scss/common/vars" as *;
+@use "../../scss/common/mixins" as *;
+
+.arrowBack {
+  height: 32px;
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  color: $typography-action;
+  border-bottom: 1px solid transparent;
+
+  @include media(tablet) {
+    position: absolute;
+    left: 32px;
+    z-index: 99;
+    top: 64px;
+  }
+
+  @include media(desktop) {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+}
+
+.arrowBack:hover span,
+.arrowBack:focus span {
+  border-bottom: 1px solid $typography-action;
+}
