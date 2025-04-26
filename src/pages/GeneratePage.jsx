@@ -1,0 +1,51 @@
+// import { useState, useRef } from 'react'
+import GeneratingForm from '../_components/GeneratingForm/GeneratingForm';
+import GeneratingAnswer from '../_components/GeneratingAnswer/GeneratingAnswer'
+import { GeneratingPageStyles } from './styles/GeneratingPage.styled'
+// import ModalExit from '../components/GeneratingAnswer/ModalExit/ModalExit'
+// import { useBlocker } from '../hooks/useBlocker'
+
+const GeneratePage = () => {
+  // const [result, setResult] = useState(null)
+  // const [isShowModal, setIsShowModal] = useState(false);
+  // const retryRef = useRef(null);
+
+
+
+  // function toggleModal(value) {
+  //   setIsShowModal(value)
+  //     retryRef.current();
+    
+  // }
+
+  // useBlocker((tx) => {
+  //   retryRef.current = tx.retry; 
+  //   setIsShowModal(true); 
+  // }, !!result)
+
+
+  return (
+    <>
+      <GeneratingPageStyles>
+        <section>
+          <GeneratingForm 
+          // setResult={setResult}
+           />
+        </section>
+        <section>
+          <GeneratingAnswer />
+        </section>
+        {/* {isShowModal && (
+          <ModalExit
+            toggleModal={toggleModal}
+            setResult={setResult}
+            retryRef={retryRef} 
+            result={result}
+          />
+        )} */}
+      </GeneratingPageStyles>
+    </>
+  );
+};
+
+export default GeneratePage;
