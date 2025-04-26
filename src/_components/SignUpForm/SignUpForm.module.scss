@@ -237,6 +237,7 @@
 .button:disabled {
   background-color: $stroke-main;
   color: var(--button-disable-text);
+  cursor: none;
 }
 
 .agreement {
