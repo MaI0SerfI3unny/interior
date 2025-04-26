@@ -7,7 +7,7 @@ import logo from "@/assets/logo.svg";
 
 const navItems = [
   { path: "/", key: "nav.home" },
-  { path: "/signin", key: "nav.generate" },
+  { path: "/generating", key: "nav.generate" },
   { path: "/subscribes", key: "nav.subscribe" },
   { path: "/faq", key: "nav.faq" },
 ];
@@ -74,3 +74,4 @@ export const Header = () => {
     </div>
   );
 };
+
