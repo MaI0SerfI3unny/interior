@@ -2,10 +2,9 @@ import SelectStyleInput from "./SelectStyleInput/SelectStyleInput"
 import { SelectStyleLabelStyles } from "./SelectStyleLabelStyles.styled"
 import SelectStyleCustomInput from "./SelectStyleInput/SelectStyleCustomInput"
 
-const SelectStyleLabel = ({ value, text, selectedValue, onChange, name}) => {
-
+const SelectStyleLabel = ({ value, text, isSelected, onChange, name}) => {
   return (
-    <SelectStyleLabelStyles $selectedValue={selectedValue} $value={value}>
+    <SelectStyleLabelStyles $selectedValue={isSelected} $value={value}>
       <SelectStyleInput value={value} name={name} onChange={onChange}  />
       <SelectStyleCustomInput/>
       {text}

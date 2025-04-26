@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Field } from "formik";
 
-export const TextAreaPrompt = styled.textarea`
+export const TextAreaPrompt = styled(Field)`
 width: 100%;
 height: 88px;
 resize : none;

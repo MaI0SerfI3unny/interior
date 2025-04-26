@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { Form } from "formik";
 
 
-export const GeneratingFormStyles = styled.form`
+export const GeneratingFormStyles = styled(Form)`
     width: 384px;
 
     display: flex;
