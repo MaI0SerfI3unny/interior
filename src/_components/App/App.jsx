@@ -7,19 +7,23 @@ import GeneratePage from "../../pages/GeneratePage.jsx";
 import Layout from "../Layout/Layout.jsx";
 import { SendRecoveryEmail } from "../../pages/SendRecoveryEmail.jsx";
 import { RecoveryPwd } from "../../pages/RecoveryPwd.jsx";
+import { ScrollToTop } from "../ScrollToTop/ScrollToTop.jsx";
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/signup" element={<SignUpPage />} />
-      <Route path="/signin" element={<SignInPage />} />
-      <Route path="/sendemail" element={<SendRecoveryEmail />} />
-      <Route path="/recoverypwd" element={<RecoveryPwd />} />
-      <Route path='/' element={<Layout />}>
-        <Route index element={<LandingPage />} />
-        <Route path="/faq" element={<FAQPage />} />
-        <Route path="/generating" element={<GeneratePage />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/signin" element={<SignInPage />} />
+        <Route path="/sendemail" element={<SendRecoveryEmail />} />
+        <Route path="/recoverypwd" element={<RecoveryPwd />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<LandingPage />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/generating" element={<GeneratePage />} />
+        </Route>
+      </Routes>
+    </>
   );
 };

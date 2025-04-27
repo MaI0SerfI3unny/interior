@@ -4,7 +4,7 @@
 
 @use "./scss/common/reset";
 
-@use "./scss/common/vars";
+@use "./scss/common/vars" as *;
 
 @font-face {
   font-family: "Satoshi";
@@ -32,6 +32,7 @@ body {
   font-family: "Manrope", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $default-white;
 }
 
 .swiper-pagination-bullet-active {
@@ -60,14 +61,14 @@ body {
   position: absolute;
   width: 100%;
   height: 1px;
-  background-color: #2B2A29;
+  background-color: #2b2a29;
 }
 .menu__btn > span::before {
-  content: '';
+  content: "";
   top: -5px;
 }
 .menu__btn > span::after {
-  content: '';
+  content: "";
   top: 5px;
 }
 
@@ -83,21 +84,21 @@ body {
   padding: 80px 0;
   list-style: none;
   text-align: center;
-  background-color: #ECEFF1;
-  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  background-color: #eceff1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 }
 
 .menu__item {
   display: block;
   padding: 12px 24px;
   color: #333;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
 }
 .menu__item:hover {
-  background-color: #CFD8DC;
+  background-color: #cfd8dc;
 }
 
 #menu__toggle_checked ~ .menu__btn > span {
@@ -119,11 +120,11 @@ body {
 .menu__btn > span,
 .menu__btn > span::before,
 .menu__btn > span::after {
-  transition-duration: .25s;
+  transition-duration: 0.25s;
 }
 .menu__box {
-  transition-duration: .25s;
+  transition-duration: 0.25s;
 }
 .menu__item {
-  transition-duration: .25s;
+  transition-duration: 0.25s;
 }
