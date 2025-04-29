@@ -11,10 +11,11 @@ export const SelectElementContainerStyles = styled.div`
         width : 100%;
         padding : 14px 16px;
         border: 1px solid rgb(238,239,243);
-        border-radius : 12px;
+        border-radius : 4px;
         font-size : 14px;
     line-height : 1.6;
     color : rgb(142,145,160);
+    outline : none;
 
     }
 `

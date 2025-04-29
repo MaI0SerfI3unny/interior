@@ -8,8 +8,8 @@ padding : 100px 104px 234px 104px;
 
 .title {
     font-weight : 600;
-    font-size : 20px;
-    line-height : 1.2;
+    font-size : 28px;
+    line-height : 1.25;
 
     text-align: center;
     margin-bottom: 24px;

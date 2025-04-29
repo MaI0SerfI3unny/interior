@@ -8,7 +8,7 @@ export const GeneratingFormStyles = styled(Form)`
 
     display: flex;
     flex-direction: column;
-    row-gap: 24px;
+    row-gap: 28px;
 
     h2 {
         font-size: 14px; 

@@ -17,7 +17,7 @@ export const ImagePreview = styled.img`
 export const DownloadFileInputContainer = styled.div`
     position: relative;
     width: 100%;
-    height: 179px;
+    height: 254px;
     border: 1px solid ${theme.buttonBorder};
     padding: 36px 51.5px;
     display: flex;
@@ -26,6 +26,7 @@ export const DownloadFileInputContainer = styled.div`
     row-gap: 16px;
     cursor: pointer;
     background-color: white;
+    border-radius : 4px;
 
 `
 

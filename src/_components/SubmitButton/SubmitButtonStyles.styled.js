@@ -5,7 +5,7 @@ export const SubmitButtonStyles = styled.button`
     width : 100%;
     background-color : ${theme.background.button};
     border : none;
-    border-radius : 12px; 
+    border-radius : 4px; 
     display : flex;
     column-gap: 12px;
     justify-content : center;

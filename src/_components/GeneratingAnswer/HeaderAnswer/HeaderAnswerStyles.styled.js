@@ -8,6 +8,7 @@ export const HeaderAnswerStyles = styled.div`
     align-items : flex-end;
     width : 100%;
     margin-bottom : 8px;
+    margin-top: -28px;
 
 
 

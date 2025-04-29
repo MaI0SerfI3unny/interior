@@ -8,6 +8,7 @@ height: 88px;
 resize : none;
 padding: 12px 16px;
 border: 1px solid ${theme.buttonBorder};
-border-radius: 12px;
+border-radius: 4px;
+outline: none;
 
 `
