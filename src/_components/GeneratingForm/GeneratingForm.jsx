@@ -46,9 +46,10 @@ const validationSchema = Yup.object({
 
 
 
-const GeneratingForm = () => {
+const GeneratingForm = ({setResult}) => {
   const handleSubmit = (values) => {
     console.log(values);
+    setResult(values)
   };
 
   return (

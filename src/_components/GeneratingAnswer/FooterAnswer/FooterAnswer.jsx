@@ -6,7 +6,7 @@ import ShareResultButton from "./ShareResultButton/ShareResultButton"
 const FooterAnswer = () => {
   return (
     <FooterAnswerStyles>
-        <SaveResultButton pdS={24} />
+        <SaveResultButton pdS={21} />
         <DownloadResultButton />
         <ShareResultButton />
     </FooterAnswerStyles>

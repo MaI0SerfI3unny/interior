@@ -1,4 +1,4 @@
-// import { useState, useRef } from 'react'
+import { useState } from 'react'
 import GeneratingForm from '../_components/GeneratingForm/GeneratingForm';
 import GeneratingAnswer from '../_components/GeneratingAnswer/GeneratingAnswer'
 import { GeneratingPageStyles } from './styles/GeneratingPage.styled'
@@ -6,7 +6,7 @@ import { GeneratingPageStyles } from './styles/GeneratingPage.styled'
 // import { useBlocker } from '../hooks/useBlocker'
 
 const GeneratePage = () => {
-  // const [result, setResult] = useState(null)
+  const [result, setResult] = useState(null)
   // const [isShowModal, setIsShowModal] = useState(false);
   // const retryRef = useRef(null);
 
@@ -29,11 +29,12 @@ const GeneratePage = () => {
       <GeneratingPageStyles>
         <section>
           <GeneratingForm 
-          // setResult={setResult}
+          setResult={setResult}
            />
         </section>
         <section>
-          <GeneratingAnswer />
+          <GeneratingAnswer
+          result={result} />
         </section>
         {/* {isShowModal && (
           <ModalExit

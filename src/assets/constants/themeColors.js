@@ -14,6 +14,7 @@ export const theme = {
     background: {
       inputs: 'rgba(254, 253, 252, 1)',
       button: 'rgba(43, 42, 41, 1)',
+      secondaryButton: 'rgb(254,253,252) ',
       buttonHover: 'rgba(5, 0, 41, 1)',
       
     },
