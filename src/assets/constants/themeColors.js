@@ -7,7 +7,8 @@ export const theme = {
       secondaryAction : 'rgb(29,98,236)',
       smallText : 'rgb(97,102,122)',
       secondarySmallText: 'rgb(73,70,67)',
-      titleText : 'rgb(87,87,87)'
+      titleText : 'rgb(87,87,87)',
+      placeholders: 'rgb(112,109,106)'
     },
     defaultWhite: 'rgba(244, 241, 236, 1)',
     buttonBorder : 'rgb(238,239,243)',
