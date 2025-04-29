@@ -1,0 +1,39 @@
+name: React Build and Deploy with Yarn
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "23.9.0"
+
+            - name: Install Yarn
+              run: npm install -g yarn
+
+            - name: Install dependencies with Yarn
+              run: yarn install
+
+            - name: Build the project
+              run: yarn build
+
+            - name: Upload files via SFTP
+              uses: appleboy/scp-action@v1
+              with:
+                  host: ${{ secrets.SFTP_HOST }}
+                  username: ${{ secrets.SFTP_USER }}
+                  password: ${{ secrets.SFTP_PASSWORD }}
+                  port: 22
+                  source: "./build/*"
+                  target: "/public_html/"
+                  strip_components: 1
