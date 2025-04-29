@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import { theme } from "../../../assets/constants/themeColors"
 
 export const DownloadTextContainer = styled.div`
     display : flex;
@@ -8,13 +8,17 @@ export const DownloadTextContainer = styled.div`
     align-items: center;
     flex-wrap : wrap;
 
+    svg {
+        margin-right : 8px;
+    }
+
     div:first-child {
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .download-text {
-        color: rgb(29, 98,236);
+        color: ${theme.typography.secondaryAction};
         line-height : 1.33;
         letter-spacing: 0%;
         margin-left: 0.5px;
@@ -29,7 +33,7 @@ export const DownloadTextContainer = styled.div`
 
     .format {
         font-size: 12px;
-        color: rgb(97,102,122);
+        color: ${theme.typography.smallText};
         line-height : 1.33;
         letter-spacing: 0%;
     }

@@ -1,16 +1,17 @@
 import styled from "styled-components";
+import {theme} from '../../../../assets/constants/themeColors'
 
 export const UpgradeButtonStyles = styled.button`
-    font-weight : 700;
+    font-weight : 600;
     font-size : 16px;
     line-height : 1.33;
-    letter-spacing : 0%;
+    letter-spacing: 0;
 
     padding : 12px 24px;
-    background-color : rgb(238,239,243);
+    background-color : ${theme.background.button};
     border : none;
-    border-radius : 12px;
+    border-radius : 4px;
     cursor: pointer;
 
-    color : rgb(64,64,64)
+    color : ${theme.typography.buttonText}
 `

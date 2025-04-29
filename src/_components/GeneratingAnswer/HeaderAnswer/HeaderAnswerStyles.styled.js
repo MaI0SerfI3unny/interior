@@ -1,31 +1,24 @@
 import styled from "styled-components";
+import { theme } from "../../../assets/constants/themeColors";
 
 
 export const HeaderAnswerStyles = styled.div`
     display : flex;
-    justify-content : space-between;
+    justify-content : flex-end;
     align-items : flex-end;
     width : 100%;
     margin-bottom : 8px;
+    margin-top: -28px;
 
-   .text-count, .count {
-    font-size : 16px;
-    line-height : 1.33;
-    letter-spacing : 0;
-    
-   }
 
-   .text-count {
-    font-weight : 600;
-    color : rgb(29,28,32)
-
-   }
 
 
    .right-side-container {
         padding-left: 20px;
-        border : 1px solid rgb(238,239,243);
+        border : 1px solid ${theme.buttonBorder};
         border-radius : 12px;
+        
+        background-color: white;
 
         display: flex;
         align-items : center;
@@ -36,7 +29,8 @@ export const HeaderAnswerStyles = styled.div`
 
    .count {
     font-weight : 700;
-    color : rgb(64,64,64)
+    color : rgb(64,64,64);
+
 
    }
 
@@ -45,6 +39,8 @@ export const HeaderAnswerStyles = styled.div`
         display : flex;
         align-items : center;
         column-gap : 4px;
+        background-color: white;
+
         
     }
 

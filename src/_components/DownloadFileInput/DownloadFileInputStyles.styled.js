@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../assets/constants/themeColors";
 
 
 export const ImagePreview = styled.img`
@@ -16,14 +17,16 @@ export const ImagePreview = styled.img`
 export const DownloadFileInputContainer = styled.div`
     position: relative;
     width: 100%;
-    height: 179px;
-    border: 1px solid rgb(238,239,243);
+    height: 254px;
+    border: 1px solid ${theme.buttonBorder};
     padding: 36px 51.5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 16px;
     cursor: pointer;
+    background-color: white;
+    border-radius : 4px;
 
 `
 
@@ -32,11 +35,6 @@ export const DownloadFileInputStyles = styled.input`
 `
 
 export const DownloadIconContainer = styled.div`
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: rgba(29,98,236, 0.1);
-
     display: flex;
     justify-content: center;
     align-items: center;

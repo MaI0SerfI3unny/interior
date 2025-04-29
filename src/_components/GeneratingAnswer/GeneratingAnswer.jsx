@@ -3,14 +3,14 @@ import HeaderAnswer from './HeaderAnswer/HeaderAnswer'
 import MainAnswerWindow from "./MainAnswerWindow/MainAnswerWindow"
 import FooterAnswer from "./FooterAnswer/FooterAnswer"
 
-const GeneratingAnswer = () => {
+const GeneratingAnswer = ({result}) => {
 
 
   return (
     <GeneratingAnswerStyles>
       <HeaderAnswer />
       <MainAnswerWindow />
-      <FooterAnswer />
+      {result && <FooterAnswer />}
 
      
     </GeneratingAnswerStyles>

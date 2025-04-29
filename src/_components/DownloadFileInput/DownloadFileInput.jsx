@@ -7,7 +7,7 @@ import {
   ImagePreview,
 } from './DownloadFileInputStyles.styled'
 import DownloadText from './DownloadText/DownloadText'
-import {ReactComponent as DownloadFileIcon} from '../../svg/file-upload-line.svg'
+import {ReactComponent as DownloadFileIcon} from '../../svg/upload.svg'
 
 const DownloadFileInput = ({ value, onChange, onDeletePhoto }) => {
   const inputRef = useRef()
@@ -65,7 +65,7 @@ const DownloadFileInput = ({ value, onChange, onDeletePhoto }) => {
         {!value ? (
           <>
             <DownloadIconContainer>
-              <DownloadFileIcon width={28} height={28} />
+              <DownloadFileIcon width={48} height={48} />
             </DownloadIconContainer>
             <DownloadText />
           </>
