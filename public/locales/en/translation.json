@@ -7,6 +7,8 @@
             "login": "Sign in / Register"
           },
     "login":{
+            "haveAcc": "Alredy have an account?",
+            "haveAccLink": "Sign in",
             "dontHaveAcc": "Don’t have an account?",
             "dontHaveAccLink": "Sign up",
             "buttonBack": "Back",
@@ -20,7 +22,23 @@
             "decor": "Or",
             "google": "Sign In with Google"
           },
+    "register":{
+            "title": "Get started now",
+            "discription": "Sign up now for a seamless and rewarding experience",
+            "inputName": "Name",
+            "namePlaceholder": "Enter your name",
+            "emailPlaceholder": "Enter your email",
+            "pwd": "Password",
+            "agree":"I agree to the ",
+            "terms":"Terms",
+            "and":" and ",
+            "conditions":"Conditions",
+            "submit": "Get started"
+          },
     "validation": {
+           "nameMin": "The name must be at least 2 characters long",
+           "nameMax": "The name must be no longer than 64 characters",
+           "nameRequired": "Name is required",
            "emailInvalid": "Enter a valid email address",
            "emailRequired": "Email is required",
            "passwordMin": "The password must be at least 8 characters long",
