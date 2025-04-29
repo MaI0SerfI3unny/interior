@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const SelectRoomContainerStyles = styled.div`
+export const SelectElementContainerStyles = styled.div`
     select {
        
         appearance: none;      
@@ -33,5 +33,4 @@ export const ArrowContainer = styled.div`
 
 export const SelectWrapper = styled.div`
     position: relative;
-    width : 86%;
 `

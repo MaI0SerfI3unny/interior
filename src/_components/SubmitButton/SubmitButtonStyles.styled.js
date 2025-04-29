@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { theme } from "../../assets/constants/themeColors";
 
 export const SubmitButtonStyles = styled.button`
     width : 100%;
-    background-color : rgb(238, 239, 243);
+    background-color : ${theme.background.button};
     border : none;
     border-radius : 12px; 
     display : flex;
@@ -17,5 +18,5 @@ export const SubmitButtonStyles = styled.button`
     font-size : 16px;
     line-height : 1.33;
     letter-spacing : 0%;
-    color: rgb(97,102,122);
+    color: ${theme.typography.buttonText};
 `

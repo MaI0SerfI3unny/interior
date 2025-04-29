@@ -3,8 +3,7 @@ import * as Yup from "yup";
 
 import DownloadFileInput from "../DownloadFileInput/DownloadFileInput";
 import PromptInput from "../PromptInput/PromptInput";
-import SelectStyleInputContainer from "../SelectStyleInputContainer/SelectStyleInputContainer";
-import SelectRoomContainer from "../SelectRoom/SelectRoomContainer";
+import SelectElementContainer from "../SelectElement/SelectElementContainer";
 import { GeneratingFormStyles } from "./GeneratingFormStyles.styled";
 import SubmitButton from "../SubmitButton/SubmitButton";
 
@@ -94,11 +93,18 @@ const GeneratingForm = () => {
           />
 
           <PromptInput />
-          <SelectStyleInputContainer
+          <SelectElementContainer
             initialValues={initialStyleValues}
-            value={values.style}
+            name='style'
+            title='Обрати стиль'
           />
-          <SelectRoomContainer initialValues={initialRoomValues} />
+
+          <SelectElementContainer 
+          initialValues={initialRoomValues} 
+          name='room'
+          title='Обрати кімнату'
+
+          />
 
           <SubmitButton disabled={!values.prompt || !values.style} />
           <p className="text-count-trying">
