@@ -37,13 +37,12 @@ jobs:
 
             - name: Install rsync
               run: |
-                  apt-get update
-                  apt-get install -y rsync
+                  sudo apt-get update
+                  sudo apt-get install -y rsync
 
             - name: Upload files via SFTP
               run: |
                   echo "Uploading files via rsync..."
-                  # Используем rsync для синхронизации файлов
                   rsync -avz -e "ssh -o StrictHostKeyChecking=no" build/ "${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}:public_html"
               env:
                   SFTP_USER: ${{ secrets.SFTP_USER }}
