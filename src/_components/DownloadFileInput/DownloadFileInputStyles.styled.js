@@ -24,6 +24,7 @@ export const DownloadFileInputContainer = styled.div`
     align-items: center;
     row-gap: 16px;
     cursor: pointer;
+    background-color: white;
 
 `
 
@@ -32,11 +33,6 @@ export const DownloadFileInputStyles = styled.input`
 `
 
 export const DownloadIconContainer = styled.div`
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: rgba(29,98,236, 0.1);
-
     display: flex;
     justify-content: center;
     align-items: center;

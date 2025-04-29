@@ -4,7 +4,8 @@ export const theme = {
       primary: 'rgba(43, 42, 41, 1)',
       secondary: 'rgba(73, 70, 67, 1)',
       error: 'rgba(231, 51, 27, 1)',
-      buttonText : 'rgba(254, 253, 252, 1)'
+      buttonText : 'rgba(254, 253, 252, 1)',
+      titleFormContainer : 'rgb(43,42,41)'
     },
     defaultWhite: 'rgba(244, 241, 236, 1)',
     background: {

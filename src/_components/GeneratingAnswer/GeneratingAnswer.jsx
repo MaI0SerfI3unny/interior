@@ -1,7 +1,7 @@
 import { GeneratingAnswerStyles } from "./GeneratingAnswerStyles.styled"
 import HeaderAnswer from './HeaderAnswer/HeaderAnswer'
 import MainAnswerWindow from "./MainAnswerWindow/MainAnswerWindow"
-import FooterAnswer from "./FooterAnswer/FooterAnswer"
+// import FooterAnswer from "./FooterAnswer/FooterAnswer"
 
 const GeneratingAnswer = () => {
 
@@ -10,7 +10,7 @@ const GeneratingAnswer = () => {
     <GeneratingAnswerStyles>
       <HeaderAnswer />
       <MainAnswerWindow />
-      <FooterAnswer />
+      {/* <FooterAnswer /> */}
 
      
     </GeneratingAnswerStyles>

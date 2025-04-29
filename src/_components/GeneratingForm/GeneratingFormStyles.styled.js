@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Form } from "formik";
+import {theme} from '../../assets/constants/themeColors'
 
 
 export const GeneratingFormStyles = styled(Form)`
@@ -10,8 +11,11 @@ export const GeneratingFormStyles = styled(Form)`
     row-gap: 24px;
 
     h2 {
-        font-size: 16px; 
+        font-size: 14px; 
+        line-height : 1.33;
         margin-bottom : 8px;
+        font-weight: 400;
+        color : ${theme.typography.titleFormContainer}
     }
 
     .text-count-trying{

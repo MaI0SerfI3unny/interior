@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const InstructionTextStyles = styled.div`
-background-color: rgb(238,239,243);
+background-color: white;
 padding : 100px 104px 234px 104px;
 
 .title {
@@ -21,8 +21,32 @@ padding : 100px 104px 234px 104px;
 }
 
 .instruction-list {
-    line-height : 1.33;
-    color : rgb(87,87,87);
+    font-size: 18px;
+    line-height : 1.2;
+    color : rgb(43,42,41);
+
+    list-style: none;      
+    counter-reset: item;    
+    padding-left: 0;
+}
+
+li {
+    counter-increment: item;  
+    position: relative;
+    padding-left : 40px;
+}
+
+li::before {
+  content: counter(item, decimal-leading-zero) "/";  
+  position: absolute;
+  left: 0;
+  color: rgb(73,70,67);
+  font-size: 20px;
+  line-height : 1.33;
+}
+
+li:not(:last-child) {
+    margin-bottom: 24px;
 }
 
 `

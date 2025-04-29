@@ -8,6 +8,10 @@ export const DownloadTextContainer = styled.div`
     align-items: center;
     flex-wrap : wrap;
 
+    svg {
+        margin-right : 8px;
+    }
+
     div:first-child {
         display: flex;
         justify-content: center;

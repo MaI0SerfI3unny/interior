@@ -12,7 +12,7 @@ const DownloadText = () => {
         <span className="drag-text">or drag and drop </span>
         </p>
     </div>
-    <span className="format">JPG, GIF, PNG, PDF or ZIP (max. 150kb)</span> 
+    <span className="format">JPG, PNG</span> 
             
                </DownloadTextContainer>
   )

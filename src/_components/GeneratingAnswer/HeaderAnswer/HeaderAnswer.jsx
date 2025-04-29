@@ -1,11 +1,10 @@
 import { HeaderAnswerStyles } from "./HeaderAnswerStyles.styled"
 import UpgradeButton from "./UpgradeButton/UpgradeButton"
-import {ReactComponent as GenerateIcon} from '../../../svg/sparkles.svg'
+import {ReactComponent as GenerateIcon} from '../../../svg/sparkles-dark.svg'
 
 const HeaderAnswer = () => {
   return (
     <HeaderAnswerStyles>
-      <p className="text-count">Залишилось безкоштовних генерацій</p>
       <div className="right-side-container">
         <div className="count-container">
         <p className='count' >10</p>
