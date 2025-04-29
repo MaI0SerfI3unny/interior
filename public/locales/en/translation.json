@@ -1,0 +1,30 @@
+{
+    "nav": {
+            "home": "Home",
+            "generate": "Generation",
+            "subscribe": "Subscribe",
+            "faq": "FAQ",
+            "login": "Sign in / Register"
+          },
+    "login":{
+            "dontHaveAcc": "Don’t have an account?",
+            "dontHaveAccLink": "Sign up",
+            "buttonBack": "Back",
+            "title": "Welcome back!",
+            "discription": "Please enter your details to get started",
+            "emailPlaceholder":"Enter your email",
+            "pwd": "Password",
+            "remember": "Remember me",
+            "forgot": "Forgot password?",
+            "login": "Sign in",
+            "decor": "Or",
+            "google": "Sign In with Google"
+          },
+    "validation": {
+           "emailInvalid": "Enter a valid email address",
+           "emailRequired": "Email is required",
+           "passwordMin": "The password must be at least 8 characters long",
+           "passwordMax": "The password must be no longer than 64 characters",
+           "passwordRequired": "Password is required"
+  }
+}

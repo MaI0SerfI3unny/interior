@@ -9,7 +9,6 @@
   font-size: 14px;
   line-height: 20px;
   color: $typography-action;
-  border-bottom: 1px solid transparent;
 
   @include media(tablet) {
     position: absolute;
@@ -23,6 +22,10 @@
     left: 0;
     top: 0;
   }
+}
+
+.arrowBack span {
+  border-bottom: 1px solid transparent;
 }
 
 .arrowBack:hover span,
