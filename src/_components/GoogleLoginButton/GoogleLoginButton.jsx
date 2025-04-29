@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
-
 import css from "./GoogleLoginButton.module.scss";
-
 import { ReactComponent as FcGoogle } from "@/assets/icons/google.svg";
+import { useTranslation } from "react-i18next";
 
 export const GoogleLoginButton = ({ children }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleGoogleLogin = async () => {
     try {
@@ -22,7 +22,7 @@ export const GoogleLoginButton = ({ children }) => {
     <>
       <button onClick={handleGoogleLogin} className={css.button}>
         <FcGoogle className={css.google} />
-        Sign In with Google
+        {t("login.google")}
       </button>
     </>
   );

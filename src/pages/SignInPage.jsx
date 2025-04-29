@@ -4,8 +4,11 @@ import { FormContainer } from "../_components/FormContainer/FormContainer.jsx";
 import { GoogleLoginButton } from "../_components/GoogleLoginButton/GoogleLoginButton.jsx";
 import { HaveAccaunt } from "../_components/HaveAccaunt/HaveAccaunt.jsx";
 import SignInForm from "../_components/SignInForm/SignInForm.jsx";
+import { useTranslation } from "react-i18next";
 
 export const SignInPage = () => {
+  const { t } = useTranslation();
+
   return (
     <FormContainer>
       <ButtonBack path="/" />
@@ -13,9 +16,9 @@ export const SignInPage = () => {
       <DecorOr />
       <GoogleLoginButton />
       <HaveAccaunt
-        text="Don’t have an account?"
+        text={t("login.dontHaveAcc")}
         path="/signup"
-        link="Sign up"
+        link={t("login.dontHaveAccLink")}
       />
     </FormContainer>
   );

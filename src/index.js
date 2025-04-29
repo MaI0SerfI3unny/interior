@@ -6,9 +6,8 @@ import { store } from "./redux/store";
 // import { PersistGate } from "redux-persist/integration/react";
 import { App } from "./_components/App/App.jsx";
 import "./global.scss";
-// import { LandingPage } from "./landing/LandingPage";
 import reportWebVitals from "./reportWebVitals";
-import './i18n';
+import "./i18n";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -18,7 +17,6 @@ root.render(
       {/* <PersistGate loading={null} persistor={persistor}> */}
       <BrowserRouter>
         <App />
-        {/* <LandingPage /> */}
       </BrowserRouter>
       {/* </PersistGate> */}
     </Provider>
