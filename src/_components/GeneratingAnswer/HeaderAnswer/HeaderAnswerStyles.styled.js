@@ -14,7 +14,7 @@ export const HeaderAnswerStyles = styled.div`
 
    .right-side-container {
         padding-left: 20px;
-        border : 1px solid rgb(238,239,243);
+        border : 1px solid ${theme.buttonBorder};
         border-radius : 12px;
         
         background-color: white;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../assets/constants/themeColors";
 
 
 export const ImagePreview = styled.img`
@@ -17,7 +18,7 @@ export const DownloadFileInputContainer = styled.div`
     position: relative;
     width: 100%;
     height: 179px;
-    border: 1px solid rgb(238,239,243);
+    border: 1px solid ${theme.buttonBorder};
     padding: 36px 51.5px;
     display: flex;
     flex-direction: column;
