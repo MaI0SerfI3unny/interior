@@ -1,5 +1,6 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { initialValues } from "../../assets/constants/formInitialValues";
 
 import DownloadFileInput from "../DownloadFileInput/DownloadFileInput";
 import PromptInput from "../PromptInput/PromptInput";
@@ -7,38 +8,20 @@ import SelectElementContainer from "../SelectElement/SelectElementContainer";
 import { GeneratingFormStyles } from "./GeneratingFormStyles.styled";
 import SubmitButton from "../SubmitButton/SubmitButton";
 
-const FILE_SIZE = 150 * 1024;
-const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png"];
 
-const initialStyleValues = [
-  { text: "Класичний", initialValue: "classic" },
-  { text: "Мінімалізм", initialValue: "minimal" },
-  { text: "Сучасний", initialValue: "suchasniy" },
-  { text: "Вінтажний", initialValue: "vintage" },
-  { text: "Модерн", initialValue: "modern" },
-  { text: "Індустріальний", initialValue: "industrial" },
-];
-
-const initialRoomValues = [
-  { text: "Кухня", value: "kitchen" },
-  { text: "Студія", value: "studio" },
-  { text: "Вітальня", value: "hello" },
-  { text: "Ванна кімната", value: "bathroom" },
-  { text: "Спальня", value: "sleep" },
-];
 
 const validationSchema = Yup.object({
   photo: Yup.mixed()
     .test("fileSize", "Файл занадто великий (максимум 150KB)", (value) => {
       if (!value) return true;
-      return value.size <= FILE_SIZE;
+      return value.size <= initialValues.FILE_SIZE;
     })
     .test(
       "fileFormat",
       "Непідтримуваний формат (тільки JPG, JPEG, PNG)",
       (value) => {
         if (!value) return true;
-        return SUPPORTED_FORMATS.includes(value.type);
+        return initialValues.SUPPORTED_FORMATS.includes(value.type);
       }
     )
     .nullable()
@@ -48,25 +31,20 @@ const validationSchema = Yup.object({
 
   style: Yup.string()
     .oneOf(
-      initialStyleValues.map((style) => style.initialValue),
-      "Выберите один из вариантов"
+      initialValues.initialStyleValues.map((style) => style.value),
+      "Оберіть один із вареантів"
     )
     .required("Оберіть стиль"),
 
   room: Yup.string()
     .oneOf(
-      initialRoomValues.map((room) => room.value),
-      "Выберите страну из списка"
+      initialValues.initialRoomValues.map((room) => room.value),
+      "Оберіть один із вареантів"
     )
-    .required("Поле обязательно"),
+    .required("Оберіть кімнату"),
 });
 
-const initialValues = {
-  photo: null,
-  prompt: "",
-  style: "",
-  room: "kitchen",
-};
+
 
 const GeneratingForm = () => {
   const handleSubmit = (values) => {
@@ -75,7 +53,7 @@ const GeneratingForm = () => {
 
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={initialValues.initialFormValues}
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
@@ -94,13 +72,13 @@ const GeneratingForm = () => {
 
           <PromptInput />
           <SelectElementContainer
-            initialValues={initialStyleValues}
+            initialValues={initialValues.initialStyleValues}
             name='style'
             title='Обрати стиль'
           />
 
           <SelectElementContainer 
-          initialValues={initialRoomValues} 
+          initialValues={initialValues.initialRoomValues} 
           name='room'
           title='Обрати кімнату'
 
