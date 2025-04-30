@@ -28,8 +28,7 @@ export const Header = () => {
             <NavLink 
               key={key}
               to={path}
-              className={({ isActive }) => isActive ? style.activeLink : undefined}
-            >
+              className={({ isActive }) => isActive ? style.activeLink : undefined}>
               {t(key)}
             </NavLink>
           ))}
@@ -59,8 +58,7 @@ export const Header = () => {
                     key={key}
                     to={path}
                     className={style.menuItem}
-                    onClick={() => setIsOpen(false)}
-                  >
+                    onClick={() => setIsOpen(false)}>
                     {t(key)}
                   </NavLink>
                 ))}
