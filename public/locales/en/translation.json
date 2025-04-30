@@ -4,7 +4,14 @@
             "generate": "Generation",
             "subscribe": "Subscribe",
             "faq": "FAQ",
-            "login": "Sign in / Register"
+            "login": "Sign in / Register",
+            "comment": "Feedback",
+            "gallery": "Gallery",
+            "howGenerate": "How to generate",
+            "whyWe": "Why us",
+            "footDesc": "Your personal future interior in seconds",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Use"
           },
     "login":{
             "haveAcc": "Alredy have an account?",
@@ -44,5 +51,113 @@
            "passwordMin": "The password must be at least 8 characters long",
            "passwordMax": "The password must be no longer than 64 characters",
            "passwordRequired": "Password is required"
-  }
+          },
+    "cta": {
+          "btnName" : "Generate Interior"
+    },
+    "banner": {
+          "name": "INTERIOR — YOUR INTERIOR IN ONE CLICK",
+          "desc": "Turn dreams of the perfect interior into reality in seconds. Get a personalized visualization of an inspiring space!"
+          },
+    "whyWe": {
+          "name": "WHY CHOOSE US?",
+          "title_item_0": "Instant generation",
+          "desc_item_0": "Get your interior design in seconds after your request - fast, without waiting",
+          "title_item_1": "Individual style",
+          "desc_item_1": "AI adapts the design to your space, style and wishes - without banal templates",
+          "title_item_2": "Personal design",
+          "desc_item_2": "Upload a photo of your room and get an update option just for it",
+          "title_item_3": "Simple prompt",
+          "desc_item_3": "You don't need to invent complicated prompts, just describe what you want",
+          "title_item_4": "Save to folders",
+          "desc_item_4": "Save the generated results in folders and quickly find what you need",
+          "title_item_5": "Universal access",
+          "desc_item_5": "Use your computer, phone or tablet, the interface is adapted to all devices"
+          },
+    "design_panel": {
+          "title": "STYLE GUIDE",
+          "desc": "Get to know popular design styles and choose the one that suits you!",
+          "classic": "Classic",
+          "classic_desc": "Exquisite shapes, symmetry, expensive materials, a restrained color palette. An atmosphere of elegance and eternal harmony.",
+          "loft": "Loft",
+          "loft_desc": "A style with character: open spaces, high ceilings, brick walls and metal accents. A feeling of freedom and urban spirit.",
+          "provence": "Provence",
+          "provence_desc": "Delicate pastel tones, light fabrics, floral motifs, wooden furniture. An atmosphere of comfort, romance and rustic charm.",
+          "minimalism": "Minimalism",
+          "minimalism_desc": "Space without excess, laconic forms, neutral colors, functionality. An atmosphere of peace, purity and harmony.",
+          "contemporary": "Contemporary",
+          "contemporary_desc": "Modern forms, simple lines, comfortable solutions, neutral palette. An atmosphere of lightness, style and functional aesthetics.",
+          "modern": "Modern",
+          "modern_desc": "Smooth lines, natural forms, glass, metal and wood. An atmosphere of elegance, style and sophisticated comfort.",
+          "japanese": "Japanese",
+          "japanese_desc": "Natural materials, clean lines, space and light. An atmosphere of calm, simplicity and harmony of nature.",
+          "art_deco": "Art Deco",
+          "art_deco_desc": "Geometric patterns, glossy surfaces, luxurious materials and shine. An atmosphere of glamour, elegance and confident style.",
+          "mediterranean": "Mediterranean",
+          "mediterranean_desc": "Warm colors, natural materials, open spaces and greenery. An atmosphere of freshness, sunlight and sea breeze.",
+          "eco_style": "Eco-style",
+          "eco_style_desc": "Natural materials, greenery, minimalism. Simplicity, environmental friendliness and harmony with nature. An atmosphere of purity and renewal.",
+          "high_tech": "High-tech",
+          "high_tech_desc": "Innovative materials, technological solutions, minimalism and clear lines. An atmosphere of the future, functionality and modern comfort.",
+          "scandinavian": "Scandinavian",
+          "scandinavian_desc": "Natural materials, light colors, simplicity and functionality. An atmosphere of warmth, comfort and harmony with nature."
+          },
+    "roadMap": {
+          "title": "HOW TO GENERATE A DESIGN?",
+          "title_item_0": "Upload a photo",
+          "desc_item_0": "Add a photo of the room to create a personal design.",
+          "title_item_1": "Configure parameters",
+          "desc_item_1": "Select the type of room from the list, style, write a simple prompt and click the “Generate” button.",
+          "title_item_2": "Interior generation",
+          "desc_item_2": "Wait a few seconds and get a picture of the generated space according to your request.",
+          "title_item_3": "Saving the picture",
+          "desc_item_3": "Download to your phone or computer or save the finished interior on the site in separate folders. Feel free to share with your friends."
+          },
+    "gallery": {
+          "title": "INSPIRATION GALLERY",
+          "desc": "Get inspired by ideas from those who have already created their own design",
+          "more": "Show more"
+          },
+    "comment": {
+          "title": "Comments",
+          "title_item_comment_0": "Andriy Melnyk",
+          "desc_item_comment_0": "I am not a design professional, but thanks to this platform I was able to create an interior for my apartment that truly reflects my preferences. It is incredibly simple - I just indicated my wishes, and the result was exactly as I imagined. Many thanks for such a convenient and intuitive tool!",
+          "title_item_comment_1": "Olena Kovalchuk",
+          "desc_item_comment_1": "This platform has greatly simplified the process of creating a design. Thanks to a variety of templates and the ability to customize each element, I was able to easily visualize my ideal interior. A truly convenient tool for anyone who wants to get results quickly!",
+          "title_item_comment_2": "Sofia Lytvyn",
+          "desc_item_comment_2": "I was amazed at how easy it is to work with the platform! It allows you to experiment with different styles and colors without spending a lot of time. This is a real helper for creating a unique interior without professional skills."
+          },
+    "generate": {
+          "yourPhoto": "Your photo",
+          "yourPrompt": "Enter a prompt",
+          "placeholderPrompt": "Type what you wanna generate...",
+          "chooseRoom": "Choose a room",
+          "chooseStyle": "Choose a style",
+          "btnGenerate": "Generate",
+          "attentionText": "*You have 10 free generations",
+          "mainWindowDesc": "Display or change your exterior design for a limited time. Just upload a photo or sketch and watch the magic in action.",
+          "mainWindowAdvance_0": "Upload an image of your design",
+          "mainWindowAdvance_1": "Write a prompt, describe what you want to achieve. Describe colors or other details",          
+          "btnUpgrade": "Upgrade",
+          "fileClick": "Click to upload",
+          "fileDrag": "or drag and drop"
+          },
+    "faq": {
+          "title": "FAQ",
+          "desc": "Your questions - our answers",
+          "q1": "How does the interior design generator work?",
+          "a1": "Our generator uses powerful artificial intelligence algorithms to create unique interior designs based on your wishes. Choose a style, room type, upload a photo of your room and the system will automatically generate a visualization of your space.",
+          "q2": "What is a prompt and how to write one?",
+          "a2": "A prompt is your task or request to the design generator (for example, to create an image, text, or explain something). To get a good result, you should clearly and clearly describe what you want. Here are some tips on how to write a successful prompt: <ol class='list'><li key='1'>Write simply and specifically. Instead of “draw something beautiful,” it is better to: “create an image of a cozy room with a wooden floor, light walls, and a large window.”</li><li key='2'>Add details. The more details (colors, style, emotions, time of day, etc.) — the more accurate the result.</li><li key='3'>Don't be afraid to try! If the result doesn't suit you the first time — change or clarify your request. That's okay.</li></ol>",
+          "q3": "Can I use the platform without registering?",
+          "a3": "No, to access all the platform's features, you need to register. Registration allows you to save your designs, access personalized settings. You can register via email or social networks.",
+          "q4": "Where are my generated images stored?",
+          "a4": "All generated designs are stored on our platform in your personal profile. You can access your images at any time and download them to your device.",
+          "q5": "Is there a limit on the number of designs created?",
+          "a5": "The number of designs created depends on the selected tariff plan. For the free plan, there is a limit on the number of generated images, while for paid plans more options are available. You can check the pricing details on our pricing page.",
+          "q6": "How can I change my pricing plan?",
+          "a6": "You can change your pricing plan at any time by going to the 'My Account' section and selecting the appropriate option. The change in pricing will be applied instantly without any interruption in the platform's use.",
+          "q7": "Can I change the design after it has been created?",
+          "a7": "Yes, you can edit the created design at any time, changing the style or other parameters to achieve the desired result."
+          }
 }

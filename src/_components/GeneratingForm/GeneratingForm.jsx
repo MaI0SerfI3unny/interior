@@ -1,6 +1,7 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { initialValues } from "../../assets/constants/formInitialValues";
+import { useTranslation } from "react-i18next";
 
 import DownloadFileInput from "../DownloadFileInput/DownloadFileInput";
 import PromptInput from "../PromptInput/PromptInput";
@@ -47,6 +48,8 @@ const validationSchema = Yup.object({
 
 
 const GeneratingForm = ({setResult}) => {
+  const { t } = useTranslation();
+
   const handleSubmit = (values) => {
     console.log(values);
     setResult(values)
@@ -75,19 +78,18 @@ const GeneratingForm = ({setResult}) => {
           <SelectElementContainer
             initialValues={initialValues.initialStyleValues}
             name='style'
-            title='Обрати стиль'
+            title={t('generate.chooseStyle')}
           />
 
           <SelectElementContainer 
           initialValues={initialValues.initialRoomValues} 
           name='room'
-          title='Обрати кімнату'
-
+          title={t('generate.chooseRoom')}
           />
 
           <SubmitButton disabled={!values.prompt || !values.style} />
           <p className="text-count-trying">
-            *у вас є 10 безкоштовних генерацій
+            {t('generate.attentionText')}
           </p>
         </GeneratingFormStyles>
       )}

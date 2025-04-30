@@ -1,9 +1,11 @@
 import { SaveResultButtonStyles } from "./SaveResultButtonStyles.styled"
+import { useTranslation } from "react-i18next";
 
 const SaveResultButton = ({pdS}) => {
+  const { t } = useTranslation();
   return (
     <SaveResultButtonStyles $pdS={pdS}>
-      Зберегти
+      {t('generate.save')}
     </SaveResultButtonStyles>
   )
 }

@@ -1,19 +1,24 @@
 
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Typewriter } from 'react-simple-typewriter';
 import before from "@/assets/before.webp"
+import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll"
 import now from "@/assets/now.webp"
 import style from "./style.module.scss"
 
 export const Banner = () => {
+    const { t } = useTranslation();
     return(
         <div className={style.banner}>
-            <div className={style.bannerContainer}>
+            <SlideOnScroll 
+                direction="bottom" 
+                className={style.bannerContainer}>
                 <div className={style.bannerContainerLayout}>
                     <h1>
                         <Typewriter
-                            words={["Interior — Твій інтер'єр в одному кліку"]}
+                            words={[ t("banner.name") ]}
                             loop={1}
                             cursor
                             cursorStyle="|"
@@ -23,18 +28,17 @@ export const Banner = () => {
                     </h1>
                 </div>
                 <div className={style.bannerContainerLayout}>
-                    <p>Перетвори мрії про ідеальний інтер'єр у реальність за лічені секунди. 
-                        Отримай персоналізовану візуалізацію простору, що надихає!</p>
+                    <p>{t("banner.desc")}</p>
                 </div>
                 <div className={style.button}>
-                    <Link to="/signin">Згенерувати інтер’єр</Link>
+                    <Link to="/signin">{t('cta.btnName')}</Link>
                 </div>
                 <div className={style.bannerContainerSlider}>
                     <ReactCompareSlider
                         itemOne={<ReactCompareSliderImage src={before} alt="before" />}
                         itemTwo={<ReactCompareSliderImage src={now} alt="now" />}/>
                 </div>
-            </div>
+            </SlideOnScroll>
         </div>
     )
 }

@@ -1,10 +1,12 @@
 import { SubmitButtonStyles } from "./SubmitButtonStyles.styled";
+import { useTranslation } from "react-i18next";
 import { ReactComponent as GenerateIcon } from "../../svg/sparkles.svg";
 
 const SubmitButton = ({ disabled }) => {
+  const { t } = useTranslation();
   return (
     <SubmitButtonStyles type="submit" disabled={disabled}>
-      Згенерувати
+      {t('generate.btnGenerate')}
       <GenerateIcon width={24} height={24} />
     </SubmitButtonStyles>
   );

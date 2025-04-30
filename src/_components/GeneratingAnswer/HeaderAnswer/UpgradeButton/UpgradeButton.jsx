@@ -1,9 +1,11 @@
 import { UpgradeButtonStyles } from "./UpgradeButtonStyles.styled"
+import { useTranslation } from "react-i18next";
 
 const UpgradeButton = () => {
+  const { t } = useTranslation();
   return (
     <UpgradeButtonStyles>
-      Upgrade
+      {t('generate.btnUpgrade')}
     </UpgradeButtonStyles>
   )
 }
