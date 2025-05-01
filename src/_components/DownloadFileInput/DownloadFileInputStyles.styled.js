@@ -11,15 +11,16 @@ export const ImagePreview = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+
+
 
 `
 
 export const DownloadFileInputContainer = styled.div`
     position: relative;
     width: 100%;
-    height: 254px;
     border: 1px solid ${theme.buttonBorder};
-    padding: 36px 51.5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,6 +28,21 @@ export const DownloadFileInputContainer = styled.div`
     cursor: pointer;
     background-color: white;
     border-radius : 4px;
+    text-align: center;
+
+    @media screen and (max-width : 360px) {
+        padding : 32.5px 42px;
+        height : 153px;
+    }
+    @media screen and (min-width : 361px) and  (max-width : 760px) {
+        padding : 119px 219.5px;
+        height : 370px;
+    }
+    @media screen and (min-width : 761px) {
+        padding : 75px 59.5px;
+        height: 254px;
+
+    }
 
 `
 
@@ -38,5 +54,10 @@ export const DownloadIconContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width : 360px) {
+        width : 32px;
+        height : 32px;
+    }
 `
 

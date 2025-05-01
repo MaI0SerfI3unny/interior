@@ -3,38 +3,33 @@ import { theme } from "../../../assets/constants/themeColors"
 
 export const DownloadTextContainer = styled.div`
     display : flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    flex-wrap : wrap;
+    column-gap: 4px;
 
-    svg {
-        margin-right : 8px;
-    }
 
-    div:first-child {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .text-container {
+        display : flex;
+        flex-direction : column;
     }
     .download-text {
         color: ${theme.typography.secondaryAction};
         line-height : 1.33;
-        letter-spacing: 0%;
-        margin-left: 0.5px;
+        font-size : 14px;
+
     }
 
     .drag-text {
-        font-weight: 600;
+        color : ${theme.typography.primary};
         line-height : 1.33;
-        letter-spacing: 0%;
+        font-size : 14px;
+
 
     }
 
     .format {
         font-size: 12px;
+        line-height : 1.25;
         color: ${theme.typography.smallText};
-        line-height : 1.33;
-        letter-spacing: 0%;
-    }
-`
+    }   
+
+`   

@@ -7,7 +7,7 @@ const DeleteImageButton = ({deleteImage}) => {
 
   return (
     <DeleteImageButtonStyles onClick={deleteImage}>
-        <DeleteIcon width={18} height={18} />
+        <DeleteIcon width={24} height={24} />
     </DeleteImageButtonStyles>
   )
 }
