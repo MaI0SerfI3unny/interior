@@ -11,18 +11,12 @@ margin-right : auto;
     padding : 0px 20px;
 }
 
-@media screen and (max-width : 768px) {
-
-}
 
 @media screen and (min-width : 361px) and (max-width: 768px) {
     width : 768px;
     padding : 0px 32px;
 }
 
-@media screen and (min-width : 369px) {
-    
-}
 
 @media screen and (min-width : 769px) {
     width : 1440px;

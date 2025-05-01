@@ -69,9 +69,6 @@ li:not(:last-child) {
 
 }
 
-@media screen and (min-width : 369px) {
-    
-}
 
 @media screen and (min-width : 769px) {
     padding : 92px 104px 214px 104px;

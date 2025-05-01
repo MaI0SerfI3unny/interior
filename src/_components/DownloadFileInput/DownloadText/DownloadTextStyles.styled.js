@@ -14,11 +14,15 @@ export const DownloadTextContainer = styled.div`
     .download-text {
         color: ${theme.typography.secondaryAction};
         line-height : 1.33;
+        font-size : 14px;
+
     }
 
     .drag-text {
         color : ${theme.typography.primary};
         line-height : 1.33;
+        font-size : 14px;
+
 
     }
 
@@ -28,16 +32,4 @@ export const DownloadTextContainer = styled.div`
         color: ${theme.typography.smallText};
     }   
 
-
-    @media screen and (max-width : 360px) {
-        .drag-text,
-        .download-text {
-            font-size : 14px;
-}
-
- 
-}
-
-
-
-`
+`   
