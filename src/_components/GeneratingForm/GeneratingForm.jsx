@@ -49,7 +49,7 @@ const validationSchema = Yup.object({
 
 const GeneratingForm = ({setResult}) => {
   const { t } = useTranslation();
-
+  
   const handleSubmit = (values) => {
     console.log(values);
     setResult(values)

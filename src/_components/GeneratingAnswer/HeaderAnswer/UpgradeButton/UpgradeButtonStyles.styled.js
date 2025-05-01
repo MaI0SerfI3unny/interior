@@ -3,15 +3,31 @@ import {theme} from '../../../../assets/constants/themeColors'
 
 export const UpgradeButtonStyles = styled.button`
     font-weight : 600;
-    font-size : 16px;
-    line-height : 1.33;
-    letter-spacing: 0;
 
-    padding : 12px 24px;
     background-color : ${theme.background.button};
     border : none;
     border-radius : 4px;
-    cursor: pointer;
 
-    color : ${theme.typography.buttonText}
+    color : ${theme.typography.buttonText};
+
+
+    @media screen and (max-width : 360px) {
+        font-size : 14px;
+        padding : 14px 25px;
+    }
+
+    @media screen and (min-width : 361px) {
+        font-size : 16px;
+        padding : 12px 41px;
+    }
+
+    @media screen and (min-width : 761px) {
+        transition : 250ms linear;
+
+        &:hover,
+        &:focus {
+            background-color : ${theme.background.buttonHover}
+        }
+    }
+
 `

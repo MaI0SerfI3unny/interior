@@ -4,13 +4,11 @@ import { theme } from "../../../../assets/constants/themeColors";
 
 export const InstructionTextStyles = styled.div`
 background-color: white;
-padding : 100px 104px 234px 104px;
+
 
 .title {
     font-weight : 600;
-    font-size : 28px;
     line-height : 1.25;
-
     text-align: center;
     margin-bottom: 24px;
 }
@@ -48,6 +46,35 @@ li::before {
 
 li:not(:last-child) {
     margin-bottom: 24px;
+}
+
+
+
+@media screen and (max-width : 360px) {
+    padding : 32px 16px;
+
+    .title {
+        font-size : 24px;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .title {
+        font-size : 28px;
+    }
+}
+
+@media screen and (min-width : 361px) and (max-width: 768px) {
+    padding : 102px 56px 149px 56px;
+
+}
+
+@media screen and (min-width : 369px) {
+    
+}
+
+@media screen and (min-width : 769px) {
+    padding : 92px 104px 214px 104px;
 }
 
 `

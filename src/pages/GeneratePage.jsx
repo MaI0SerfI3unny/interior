@@ -2,6 +2,7 @@ import { useState } from 'react'
 import GeneratingForm from '../_components/GeneratingForm/GeneratingForm';
 import GeneratingAnswer from '../_components/GeneratingAnswer/GeneratingAnswer'
 import { GeneratingPageStyles } from './styles/GeneratingPage.styled'
+import MainContainer from '../_components/MainContainer/MainContainer';
 // import ModalExit from '../components/GeneratingAnswer/ModalExit/ModalExit'
 // import { useBlocker } from '../hooks/useBlocker'
 
@@ -27,6 +28,7 @@ const GeneratePage = () => {
   return (
     <>
       <GeneratingPageStyles>
+        <MainContainer>
         <section>
           <GeneratingForm 
           setResult={setResult}
@@ -44,6 +46,7 @@ const GeneratePage = () => {
             result={result}
           />
         )} */}
+        </MainContainer>
       </GeneratingPageStyles>
     </>
   );
