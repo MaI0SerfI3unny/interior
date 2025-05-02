@@ -11,8 +11,8 @@ const InstructionText = () => {
 
       <ol className="instruction-list">
         <li>{t('generate.mainWindowAdvance_0')}</li>
-        <li>{t('generate.mainWindowAdvance_1')}</li>
-        <li>{t('generate.mainWindowAdvance_1')}</li>
+        <li> {t('generate.mainWindowAdvance_1')}</li>
+        <li>{t('generate.mainWindowAdvance_2')}</li>
       </ol>
     </InstructionTextStyles>
   )

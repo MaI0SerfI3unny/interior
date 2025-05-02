@@ -12,11 +12,23 @@ export const SubmitButtonStyles = styled.button`
     align-items: center;
     padding-top: 12px;
     padding-bottom : 12px;
-    cursor : pointer;
 
     font-weight : 700;
     font-size : 16px;
     line-height : 1.33;
-    letter-spacing : 0%;
     color: ${theme.typography.buttonText};
+
+    &:disabled {
+        background-color: ${theme.background.disabletButton};
+    }
+
+    @media screen and (min-width : 761px) {
+        transition : 250ms linear;
+
+        &:not(:disabled)&:hover,
+        &:not(:disabled)&:focus {
+            background-color: ${theme.background.buttonHover}
+        }
+
+    }
 `

@@ -12,11 +12,14 @@ export const theme = {
     },
     defaultWhite: 'rgba(244, 241, 236, 1)',
     buttonBorder : 'rgb(238,239,243)',
+    inputBorderFocus : 'rgb(43,42,41)',
+
     background: {
       inputs: 'rgba(254, 253, 252, 1)',
       button: 'rgba(43, 42, 41, 1)',
       secondaryButton: 'rgb(254,253,252) ',
       buttonHover: 'rgba(5, 0, 41, 1)',
+      disabletButton : 'rgb(160,156,153)',
       
     },
     stroke: {

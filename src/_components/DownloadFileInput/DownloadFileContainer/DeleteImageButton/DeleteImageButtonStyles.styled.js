@@ -9,5 +9,4 @@ justify-content : center;
 align-items : center;
 background-color : transparent;
 border: none;
-cursor: pointer;
 `

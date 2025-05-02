@@ -21,4 +21,8 @@ color: ${theme.typography.placeholders};
     letter-spacing: 1.33;
     color: ${theme.typography.placeholders};
 }
+
+&:focus {
+    border-color : ${theme.inputBorderFocus};
+}
 `

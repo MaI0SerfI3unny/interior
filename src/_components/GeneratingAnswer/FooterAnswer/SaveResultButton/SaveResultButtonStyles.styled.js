@@ -9,5 +9,15 @@ export const SaveResultButtonStyles = styled.button`
     line-height : 1.33;
     border : none;
     border-radius : 4px;
-    cursor : pointer;
+
+
+    @media screen and (min-width : 761px) {
+        transition : 250ms linear;
+
+        &:hover,
+        &:focus {
+            background-color: ${theme.background.buttonHover}
+        }
+    }
+    
 `

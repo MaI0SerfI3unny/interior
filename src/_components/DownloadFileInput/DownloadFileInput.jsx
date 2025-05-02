@@ -38,6 +38,13 @@ const DownloadFileInput = ({ value, onChange, onDeletePhoto }) => {
     handleFile(file)
   }
 
+  const handleDeletePhoto = () => {
+    onDeletePhoto();
+    if (inputRef.current) {
+      inputRef.current.value = null 
+    }
+  }
+
   const handleInputChange = (e) => {
     const file = e.target.files[0]
     if (file) handleFile(file)
@@ -51,7 +58,7 @@ const DownloadFileInput = ({ value, onChange, onDeletePhoto }) => {
 
   return (
     <div>
-      <DownloadFileContainer deleteImage={onDeletePhoto} photo={value} />
+      <DownloadFileContainer deleteImage={handleDeletePhoto} photo={value} />
 
       <DownloadFileInputContainer onClick={handleClick} onDrop={handleDrop} onDragOver={handleDragOver}>
         <DownloadFileInputStyles
