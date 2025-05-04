@@ -8,6 +8,8 @@ import { RoadMap } from "./_components/RoadMap/RoadMap";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
+import { CookiesBanner } from "../_components/CookiesBanner/CookiesBanner.jsx";
+
 export const LandingPage = () => {
   const location = useLocation();
 
@@ -29,6 +31,7 @@ export const LandingPage = () => {
       <RoadMap id="roadmap" />
       <Gallery id="gallery" />
       <Comment id="reviews" />
+      <CookiesBanner />
     </div>
   );
 };
