@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll"
+import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll";
 import { Pagination, Navigation } from "swiper/modules";
 import { useTranslation } from "react-i18next";
 import { comment } from "@/mock/landing";
@@ -16,10 +16,8 @@ export const Comment = ({ id }) => {
   const { t } = useTranslation();
   return (
     <section id={id} className={style.comment}>
-      <SlideOnScroll 
-        direction="bottom" 
-        className={style.commentContainer}>
-        <h2>{t('comment.title')}</h2>
+      <SlideOnScroll direction="bottom" className={style.commentContainer}>
+        <h2>{t("comment.title")}</h2>
         <Swiper
           slidesPerView={3}
           spaceBetween={24}
@@ -49,7 +47,9 @@ export const Comment = ({ id }) => {
                   src={comma}
                   alt="comma"
                 />
-                <h4 className={style.sliderItemTitle}>{t(`comment.${name}`)}</h4>
+                <h4 className={style.sliderItemTitle}>
+                  {t(`comment.${name}`)}
+                </h4>
                 <p className={style.sliderItemJob}>{date}</p>
                 <div className={style.sliderItemRating}>
                   <ReactStars

@@ -1,9 +1,7 @@
-import { OptionElementStyles } from "./OptionElementStyles.styled"
+import { OptionElementStyles } from "./OptionElementStyles.styled";
 
-const OptionElement = ({value, text}) => {
-  return (
-    <OptionElementStyles value={value}>{text}</OptionElementStyles>
-  )
-}
+const OptionElement = ({ value, text }) => {
+  return <OptionElementStyles value={value}>{text}</OptionElementStyles>;
+};
 
-export default OptionElement
+export default OptionElement;

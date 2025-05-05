@@ -19,18 +19,16 @@ const initialRoomValues = [
 ];
 
 const initialFormValues = {
-    photo: null,
-    prompt: "",
-    style: "",
-    room: "kitchen",
-  };
+  photo: null,
+  prompt: "",
+  style: "",
+  room: "kitchen",
+};
 
-
-export const initialValues =  {
-    FILE_SIZE,
-    SUPPORTED_FORMATS,
-    initialStyleValues,
-    initialRoomValues,
-    initialFormValues
-
-}
+export const initialValues = {
+  FILE_SIZE,
+  SUPPORTED_FORMATS,
+  initialStyleValues,
+  initialRoomValues,
+  initialFormValues,
+};

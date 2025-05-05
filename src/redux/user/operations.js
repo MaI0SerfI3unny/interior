@@ -4,7 +4,7 @@ import axios from "axios";
 axios.defaults.baseURL = "https://";
 
 // Utility to add JWT
-const setAuthHeader = (token) => {
+const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 

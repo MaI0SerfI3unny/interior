@@ -17,10 +17,10 @@ const initialState = {
 const userSlice = createSlice({
   name: "user",
   initialState,
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
       .addCase(login.fulfilled, handleLogin)
-      .addCase(register.fulfilled, (state) => {
+      .addCase(register.fulfilled, state => {
         state.isLoading = false;
       })
       .addCase(logout.fulfilled, () => {

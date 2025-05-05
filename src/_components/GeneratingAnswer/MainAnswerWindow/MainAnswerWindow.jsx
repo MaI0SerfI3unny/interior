@@ -1,12 +1,12 @@
-import { MainAnswerWindowStyles } from "./MainAnswerWindowStyles.styled"
-import InstructionText from "./InstructionText/InstructionText"
+import { MainAnswerWindowStyles } from "./MainAnswerWindowStyles.styled";
+import InstructionText from "./InstructionText/InstructionText";
 
 const MainAnswerWindow = () => {
   return (
     <MainAnswerWindowStyles>
-        <InstructionText />
+      <InstructionText />
     </MainAnswerWindowStyles>
-  )
-}
+  );
+};
 
-export default MainAnswerWindow
+export default MainAnswerWindow;

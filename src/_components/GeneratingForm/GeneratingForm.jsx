@@ -9,18 +9,16 @@ import SelectElementContainer from "../SelectElement/SelectElementContainer";
 import { GeneratingFormStyles } from "./GeneratingFormStyles.styled";
 import SubmitButton from "../SubmitButton/SubmitButton";
 
-
-
 const validationSchema = Yup.object({
   photo: Yup.mixed()
-    .test("fileSize", "Файл занадто великий (максимум 150KB)", (value) => {
+    .test("fileSize", "Файл занадто великий (максимум 150KB)", value => {
       if (!value) return true;
       return value.size <= initialValues.FILE_SIZE;
     })
     .test(
       "fileFormat",
       "Непідтримуваний формат (тільки JPG, JPEG, PNG)",
-      (value) => {
+      value => {
         if (!value) return true;
         return initialValues.SUPPORTED_FORMATS.includes(value.type);
       }
@@ -32,27 +30,25 @@ const validationSchema = Yup.object({
 
   style: Yup.string()
     .oneOf(
-      initialValues.initialStyleValues.map((style) => style.value),
+      initialValues.initialStyleValues.map(style => style.value),
       "Оберіть один із вареантів"
     )
     .required("Оберіть стиль"),
 
   room: Yup.string()
     .oneOf(
-      initialValues.initialRoomValues.map((room) => room.value),
+      initialValues.initialRoomValues.map(room => room.value),
       "Оберіть один із вареантів"
     )
     .required("Оберіть кімнату"),
 });
 
-
-
-const GeneratingForm = ({setResult}) => {
+const GeneratingForm = ({ setResult }) => {
   const { t } = useTranslation();
-  
-  const handleSubmit = (values) => {
+
+  const handleSubmit = values => {
     console.log(values);
-    setResult(values)
+    setResult(values);
   };
 
   return (
@@ -65,7 +61,7 @@ const GeneratingForm = ({setResult}) => {
         <GeneratingFormStyles>
           <DownloadFileInput
             value={values.photo}
-            onChange={(e) => {
+            onChange={e => {
               const file = e.target?.files?.[0] || e;
               if (file) {
                 setFieldValue("photo", file);
@@ -77,20 +73,18 @@ const GeneratingForm = ({setResult}) => {
           <PromptInput />
           <SelectElementContainer
             initialValues={initialValues.initialStyleValues}
-            name='style'
-            title={t('generate.chooseStyle')}
+            name="style"
+            title={t("generate.chooseStyle")}
           />
 
-          <SelectElementContainer 
-          initialValues={initialValues.initialRoomValues} 
-          name='room'
-          title={t('generate.chooseRoom')}
+          <SelectElementContainer
+            initialValues={initialValues.initialRoomValues}
+            name="room"
+            title={t("generate.chooseRoom")}
           />
 
           <SubmitButton disabled={!values.prompt || !values.style} />
-          <p className="text-count-trying">
-            {t('generate.attentionText')}
-          </p>
+          <p className="text-count-trying">{t("generate.attentionText")}</p>
         </GeneratingFormStyles>
       )}
     </Formik>

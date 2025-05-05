@@ -13,41 +13,41 @@ export const Footer = () => {
         <div className={style.footerMainContainer}>
           <div className={style.footerMainContainerInfo}>
             <img src={logo} alt="logo" />
-            <p>{t('nav.footDesc')}</p>
+            <p>{t("nav.footDesc")}</p>
           </div>
           <div className={style.footerMainContainerLink}>
             <div>
-              <Link to="/">{t('nav.home')}</Link>
-              <FooterLink id="whyWe">{t('nav.whyWe')}</FooterLink>
-              <FooterLink id="roadmap">{t('nav.howGenerate')}</FooterLink>
+              <Link to="/">{t("nav.home")}</Link>
+              <FooterLink id="whyWe">{t("nav.whyWe")}</FooterLink>
+              <FooterLink id="roadmap">{t("nav.howGenerate")}</FooterLink>
             </div>
             <div>
-              <Link to="/generating">{t('nav.generate')}</Link>
-              <FooterLink id="gallery">{t('nav.gallery')}</FooterLink>
-              <FooterLink id="reviews">{t('nav.comment')}</FooterLink>
+              <Link to="/generating">{t("nav.generate")}</Link>
+              <FooterLink id="gallery">{t("nav.gallery")}</FooterLink>
+              <FooterLink id="reviews">{t("nav.comment")}</FooterLink>
             </div>
             <div>
-              <Link to="/subscribes">{t('nav.subscribe')}</Link>
-              <Link to="/faq">{t('nav.faq')}</Link>
+              <Link to="/subscribes">{t("nav.subscribe")}</Link>
+              <Link to="/faq">{t("nav.faq")}</Link>
             </div>
           </div>
 
           <div className={style.footerMainContainerLinkTablet}>
             <div>
-              <Link to="/">{t('nav.home')}</Link>
-              <FooterLink id="whyWe">{t('nav.whyWe')}</FooterLink>
+              <Link to="/">{t("nav.home")}</Link>
+              <FooterLink id="whyWe">{t("nav.whyWe")}</FooterLink>
             </div>
             <div>
-              <FooterLink id="roadmap">{t('nav.howGenerate')}</FooterLink>
-              <Link to="/generating">{t('nav.generate')}</Link>
+              <FooterLink id="roadmap">{t("nav.howGenerate")}</FooterLink>
+              <Link to="/generating">{t("nav.generate")}</Link>
             </div>
             <div>
-              <FooterLink id="gallery">{t('nav.gallery')}</FooterLink>
-              <FooterLink id="reviews">{t('nav.comment')}</FooterLink>
+              <FooterLink id="gallery">{t("nav.gallery")}</FooterLink>
+              <FooterLink id="reviews">{t("nav.comment")}</FooterLink>
             </div>
             <div>
-              <Link to="/faq">{t('nav.faq')}</Link>
-              <Link to="/subscribes">{t('nav.subscribe')}</Link>
+              <Link to="/faq">{t("nav.faq")}</Link>
+              <Link to="/subscribes">{t("nav.subscribe")}</Link>
             </div>
           </div>
         </div>
@@ -58,8 +58,8 @@ export const Footer = () => {
             © North Heat & Air {new Date().getFullYear()}. All rights reserved
           </p>
           <div>
-            <a href="">{t('nav.privacy')}</a>
-            <a href="">{t('nav.terms')}</a>
+            <a href="">{t("nav.privacy")}</a>
+            <a href="">{t("nav.terms")}</a>
           </div>
         </div>
       </div>

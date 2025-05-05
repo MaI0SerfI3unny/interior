@@ -6,7 +6,7 @@ const SubmitButton = ({ disabled }) => {
   const { t } = useTranslation();
   return (
     <SubmitButtonStyles type="submit" disabled={disabled}>
-      {t('generate.btnGenerate')}
+      {t("generate.btnGenerate")}
       <GenerateIcon width={24} height={24} />
     </SubmitButtonStyles>
   );

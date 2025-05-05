@@ -6,7 +6,7 @@ import arrow from "@/assets/icons/arrows_down.svg";
 import { NavLink } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll"
+import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -40,47 +40,45 @@ export const Gallery = ({ id }) => {
 
   return (
     <section id={id} className={style.gallery}>
-      <SlideOnScroll 
-        direction="right" 
-        className={style.galleryContainer}>
-          <div className={style.galleryContainerHead}>
-            <h2>{t('gallery.title')}</h2>
-            <p>{t('gallery.desc')}</p>
-          </div>
+      <SlideOnScroll direction="right" className={style.galleryContainer}>
+        <div className={style.galleryContainerHead}>
+          <h2>{t("gallery.title")}</h2>
+          <p>{t("gallery.desc")}</p>
+        </div>
 
-          <div className={style.galleryContainerGrid}>
-            {heights.slice(0, visibleCount).map((h, i) => (
-              <div
-                key={i}
-                className={`${style.galleryContainerGridItem} ${style[`h${h}`]}`}
-              >
-                <img src={gallery[i]} alt={`img-${i}`} />
-              </div>
-            ))}
-          </div>
-
-          <div className={style.galleryContainerMobile}>
-            <Swiper
-              slidesPerView={1}
-              spaceBetween={24}
-              pagination={{ clickable: true }}
-              modules={[Pagination]}
+        <div className={style.galleryContainerGrid}>
+          {heights.slice(0, visibleCount).map((h, i) => (
+            <div
+              key={i}
+              className={`${style.galleryContainerGridItem} ${style[`h${h}`]}`}
             >
-              {heights.slice(0, 12).map((_, i) => (
-                <SwiperSlide key={i}>
-                  <div key={i} className={style.galleryContainerGridItem}>
-                    <img src={gallery[i]} alt={`img-${i}`} />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+              <img src={gallery[i]} alt={`img-${i}`} />
+            </div>
+          ))}
+        </div>
 
-          <div className={style.more}>
-            <NavLink to="/">{t('gallery.more')}</NavLink>
-            <img src={arrow} alt="down" />
-          </div>
-        </SlideOnScroll>
+        <div className={style.galleryContainerMobile}>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={24}
+            pagination={{ clickable: true }}
+            modules={[Pagination]}
+          >
+            {heights.slice(0, 12).map((_, i) => (
+              <SwiperSlide key={i}>
+                <div key={i} className={style.galleryContainerGridItem}>
+                  <img src={gallery[i]} alt={`img-${i}`} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        <div className={style.more}>
+          <NavLink to="/">{t("gallery.more")}</NavLink>
+          <img src={arrow} alt="down" />
+        </div>
+      </SlideOnScroll>
     </section>
   );
 };

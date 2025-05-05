@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Accordion } from "radix-ui";
 import classNames from "classnames";
-import { faq } from "@/mock/faq"
+import { faq } from "@/mock/faq";
 import { PlusIcon } from "@radix-ui/react-icons";
 import { MinusIcon } from "@radix-ui/react-icons";
 import styles from "./Accordion.module.scss";

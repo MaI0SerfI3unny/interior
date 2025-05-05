@@ -3,7 +3,7 @@ import { useRef } from "react";
 
 export const SlideOnScroll = ({ children, direction = "left", className }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const getInitialPosition = () => {
     switch (direction) {
@@ -23,7 +23,8 @@ export const SlideOnScroll = ({ children, direction = "left", className }) => {
       className={className}
       initial={getInitialPosition()}
       animate={isInView ? { x: 0, y: 0, opacity: 1 } : getInitialPosition()}
-      transition={{ duration: 0.6, ease: "easeOut" }}>
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       {children}
     </motion.div>
   );
