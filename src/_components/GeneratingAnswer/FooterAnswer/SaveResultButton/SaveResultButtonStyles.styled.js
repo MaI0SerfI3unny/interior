@@ -10,7 +10,11 @@ export const SaveResultButtonStyles = styled.button`
   border: none;
   border-radius: 4px;
 
-  @media screen and (min-width: 761px) {
+  @media screen and (max-width: 768px) {
+    padding: 14px 60px;
+  }
+
+  @media screen and (min-width: 1441px) {
     transition: 250ms linear;
 
     &:hover,

@@ -18,13 +18,16 @@ export const InstructionTextStyles = styled.div`
   }
 
   .instruction-list {
-    font-size: 18px;
     line-height: 1.2;
     color: ${theme.typography.primary};
 
     list-style: none;
     counter-reset: item;
     padding-left: 0;
+
+    @media screen and (min-width: 761px) {
+      font-size: 18px;
+    }
   }
 
   li {

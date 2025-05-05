@@ -30,7 +30,7 @@ export const DownloadFileInputContainer = styled.div`
     padding: 32.5px 42px;
     height: 153px;
   }
-  @media screen and (max-width: 1440px) {
+  @media screen and (min-width: 769px) and (max-width: 1440px) {
     padding: 119px 219.5px;
     height: 370px;
   }

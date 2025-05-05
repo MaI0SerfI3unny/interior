@@ -5,7 +5,7 @@ export const MainContainerStyles = styled.div`
   margin-right: auto;
 
   @media screen and (max-width: 768px) {
-    width: 100%;
+    width: 360px;
     padding: 0px 20px;
   }
 
