@@ -4,9 +4,9 @@ import {
 } from "react-compare-slider";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Typewriter } from "react-simple-typewriter";
 import before from "@/assets/before.webp";
 import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll";
+import { BannerHeading } from "./BannerHeading/BannerHeading"
 import now from "@/assets/now.webp";
 import style from "./style.module.scss";
 
@@ -16,17 +16,7 @@ export const Banner = () => {
     <div className={style.banner}>
       <SlideOnScroll direction="bottom" className={style.bannerContainer}>
         <div className={style.bannerContainerLayout}>
-          <h1>
-            <Typewriter
-              words={[t("banner.name")]}
-              loop={1}
-              cursor
-              cursorStyle="|"
-              typeSpeed={50}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
-          </h1>
+          <BannerHeading text={t("banner.name")}/>
         </div>
         <div className={style.bannerContainerLayout}>
           <p>{t("banner.desc")}</p>

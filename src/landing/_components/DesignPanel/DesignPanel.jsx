@@ -2,7 +2,6 @@ import { design_list } from "../../../mock/landing";
 import { useTranslation } from "react-i18next";
 import style from "./style.module.scss";
 import { useState } from "react";
-import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll";
 import { Link } from "react-router-dom";
 
 export const DesignPanel = () => {
@@ -12,7 +11,7 @@ export const DesignPanel = () => {
 
   return (
     <div className={style.designPanel}>
-      <SlideOnScroll direction="right" className={style.designPanelContainer}>
+      <div className={style.designPanelContainer}>
         <div className={style.designPanelContainerHead}>
           <h2>{t("design_panel.title")}</h2>
           <p>{t("design_panel.desc")}</p>
@@ -37,22 +36,20 @@ export const DesignPanel = () => {
                   <div
                     key={key}
                     onClick={() => setCurrentDesign(key)}
-                    className={`${style.designPanelContainerListControlListItem} ${currentDesign === key && style.active}`}
-                  >
+                    className={`${style.designPanelContainerListControlListItem} ${currentDesign === key && style.active}`}>
                     {t(`design_panel.${name}`)}
                   </div>
                 ))}
               </div>
               <Link
                 to="/signin"
-                className={style.designPanelContainerListControlButton}
-              >
+                className={style.designPanelContainerListControlButton}>
                 {t("cta.btnName")}
               </Link>
             </div>
           </div>
         </div>
-      </SlideOnScroll>
+      </div>
     </div>
   );
 };
