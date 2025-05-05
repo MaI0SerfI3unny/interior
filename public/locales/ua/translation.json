@@ -142,7 +142,22 @@
     "btnUpgrade": "Оновити",
     "fileClick": "Натисніть",
     "fileDrag": "або перенесіть файл",
-    "save": "Зберегти"
+    "save": "Зберегти",
+    "stylesList": {
+      "classic": "Класичний",
+      "minimal": "Мінімалізм",
+      "contemporary": "Сучасний",
+      "vintage": "Вінтажний",
+      "modern": "Модерн",
+      "industrial": "Індустріальний"
+    },
+    "roomsList": {
+      "kitchen": "Кухня",
+      "studio": "Студія",
+      "livingRoom": "Вітальня",
+      "bathRoom": "Ванна кімната",
+      "bedRoom": "Спальня"
+    }
   },
   "faq": {
     "title": "ПОШИРЕНІ ЗАПИТАННЯ",

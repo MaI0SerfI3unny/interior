@@ -2,6 +2,8 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { initialValues } from "../../assets/constants/formInitialValues";
 import { useTranslation } from "react-i18next";
+import { useStyleOptions } from "../../assets/hooks/useStyleOptions";
+import { useRoomOptions } from "../../assets/hooks/useRoomOptions";
 
 import DownloadFileInput from "../DownloadFileInput/DownloadFileInput";
 import PromptInput from "../PromptInput/PromptInput";
@@ -45,6 +47,8 @@ const validationSchema = Yup.object({
 
 const GeneratingForm = ({ setResult }) => {
   const { t } = useTranslation();
+  const initialStylesValues = useStyleOptions();
+  const initialRoomValues = useRoomOptions();
 
   const handleSubmit = values => {
     console.log(values);
@@ -72,14 +76,14 @@ const GeneratingForm = ({ setResult }) => {
 
           <PromptInput />
           <SelectElementContainer
-            initialValues={initialValues.initialStyleValues}
+            initialValues={initialStylesValues}
             name="style"
             title={t("generate.chooseStyle")}
             currentValue={values.style}
           />
 
           <SelectElementContainer
-            initialValues={initialValues.initialRoomValues}
+            initialValues={initialRoomValues}
             name="room"
             title={t("generate.chooseRoom")}
             currentValue={values.room}
