@@ -2,26 +2,26 @@ const FILE_SIZE = 150 * 1024;
 const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png"];
 
 const initialStyleValues = [
-  { text: "Класичний", value: "classic" },
-  { text: "Мінімалізм", value: "minimal" },
-  { text: "Сучасний", value: "suchasniy" },
-  { text: "Вінтажний", value: "vintage" },
-  { text: "Модерн", value: "modern" },
-  { text: "Індустріальний", value: "industrial" },
+  { label: "Класичний", value: "classic" },
+  { label: "Мінімалізм", value: "minimal" },
+  { label: "Сучасний", value: "suchasniy" },
+  { label: "Вінтажний", value: "vintage" },
+  { label: "Модерн", value: "modern" },
+  { label: "Індустріальний", value: "industrial" },
 ];
 
 const initialRoomValues = [
-  { text: "Кухня", value: "kitchen" },
-  { text: "Студія", value: "studio" },
-  { text: "Вітальня", value: "hello" },
-  { text: "Ванна кімната", value: "bathroom" },
-  { text: "Спальня", value: "sleep" },
+  { label: "Кухня", value: "kitchen" },
+  { label: "Студія", value: "studio" },
+  { label: "Вітальня", value: "hello" },
+  { label: "Ванна кімната", value: "bathroom" },
+  { label: "Спальня", value: "sleep" },
 ];
 
 const initialFormValues = {
   photo: null,
   prompt: "",
-  style: "",
+  style: "classic",
   room: "kitchen",
 };
 

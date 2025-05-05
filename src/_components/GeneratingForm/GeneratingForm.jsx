@@ -75,12 +75,14 @@ const GeneratingForm = ({ setResult }) => {
             initialValues={initialValues.initialStyleValues}
             name="style"
             title={t("generate.chooseStyle")}
+            currentValue={values.style}
           />
 
           <SelectElementContainer
             initialValues={initialValues.initialRoomValues}
             name="room"
             title={t("generate.chooseRoom")}
+            currentValue={values.room}
           />
 
           <SubmitButton disabled={!values.prompt || !values.style} />
