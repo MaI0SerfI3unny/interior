@@ -1,66 +1,70 @@
-import { useEffect, useRef, useState } from 'react'
-import DownloadFileContainer from './DownloadFileContainer/DownloadFileContainer'
+import { useEffect, useRef, useState } from "react";
+import DownloadFileContainer from "./DownloadFileContainer/DownloadFileContainer";
 import {
   DownloadFileInputContainer,
   DownloadFileInputStyles,
   DownloadIconContainer,
   ImagePreview,
-} from './DownloadFileInputStyles.styled'
-import DownloadText from './DownloadText/DownloadText'
-import {ReactComponent as DownloadFileIcon} from '../../svg/upload.svg'
+} from "./DownloadFileInputStyles.styled";
+import DownloadText from "./DownloadText/DownloadText";
+import { ReactComponent as DownloadFileIcon } from "../../svg/upload.svg";
 
 const DownloadFileInput = ({ value, onChange, onDeletePhoto }) => {
-  const inputRef = useRef()
-  const [imagePreview, setImagePreview] = useState(null)
+  const inputRef = useRef();
+  const [imagePreview, setImagePreview] = useState(null);
 
   useEffect(() => {
     if (value) {
-      const previewUrl = URL.createObjectURL(value)
-      setImagePreview(previewUrl)
+      const previewUrl = URL.createObjectURL(value);
+      setImagePreview(previewUrl);
 
-      return () => URL.revokeObjectURL(previewUrl)
+      return () => URL.revokeObjectURL(previewUrl);
     } else {
-      setImagePreview(null)
+      setImagePreview(null);
     }
-  }, [value])
+  }, [value]);
 
-  const handleFile = (file) => {
+  const handleFile = file => {
     if (file.size > 150 * 1024) {
-      alert('Файл слишком большой. Максимум 150kb.')
-      return
+      alert("Файл слишком большой. Максимум 150kb.");
+      return;
     }
-    onChange(file)
-  }
+    onChange(file);
+  };
 
-  const handleDrop = (e) => {
-    e.preventDefault()
-    const file = e.dataTransfer.files[0]
-    handleFile(file)
-  }
+  const handleDrop = e => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    handleFile(file);
+  };
 
   const handleDeletePhoto = () => {
     onDeletePhoto();
     if (inputRef.current) {
-      inputRef.current.value = null 
+      inputRef.current.value = null;
     }
-  }
+  };
 
-  const handleInputChange = (e) => {
-    const file = e.target.files[0]
-    if (file) handleFile(file)
-  }
+  const handleInputChange = e => {
+    const file = e.target.files[0];
+    if (file) handleFile(file);
+  };
 
   const handleClick = () => {
-    inputRef.current.click()
-  }
+    inputRef.current.click();
+  };
 
-  const handleDragOver = (e) => e.preventDefault()
+  const handleDragOver = e => e.preventDefault();
 
   return (
     <div>
       <DownloadFileContainer deleteImage={handleDeletePhoto} photo={value} />
 
-      <DownloadFileInputContainer onClick={handleClick} onDrop={handleDrop} onDragOver={handleDragOver}>
+      <DownloadFileInputContainer
+        onClick={handleClick}
+        onDrop={handleDrop}
+        onDragOver={handleDragOver}
+      >
         <DownloadFileInputStyles
           type="file"
           ref={inputRef}
@@ -81,7 +85,7 @@ const DownloadFileInput = ({ value, onChange, onDeletePhoto }) => {
         )}
       </DownloadFileInputContainer>
     </div>
-  )
-}
+  );
+};
 
-export default DownloadFileInput
+export default DownloadFileInput;

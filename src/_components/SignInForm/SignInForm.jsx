@@ -18,7 +18,7 @@ import { useTranslation } from "react-i18next";
 
 const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-const getSigninSchema = (t) =>
+const getSigninSchema = t =>
   Yup.object().shape({
     email: Yup.string()
       .matches(emailRegEx, t("validation.emailInvalid"))
@@ -94,7 +94,7 @@ const SignInForm = () => {
               className={css.icon}
               width={20}
               height={20}
-              onClick={(e) => {
+              onClick={e => {
                 e.preventDefault();
                 togglePasswordVisibility();
               }}

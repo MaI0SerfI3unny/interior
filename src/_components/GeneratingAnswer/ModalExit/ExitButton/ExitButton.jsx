@@ -1,14 +1,7 @@
-import { ExitButtonStyles } from "./ExitButtonStyles.styled"
+import { ExitButtonStyles } from "./ExitButtonStyles.styled";
 
+const ExitButton = ({ dontSave }) => {
+  return <ExitButtonStyles onClick={dontSave}>Відмінити</ExitButtonStyles>;
+};
 
-const ExitButton = ({dontSave}) => {
-
-
-  return (
-    <ExitButtonStyles onClick={dontSave}>
-      Відмінити
-    </ExitButtonStyles>
-  )
-}
-
-export default ExitButton
+export default ExitButton;

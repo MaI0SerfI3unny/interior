@@ -7,8 +7,6 @@ import { ReactComponent as ArrowIcon } from "../../svg/vector.svg";
 import OptionElement from "./OptionElement/OptionElement";
 import { Field } from "formik";
 
-
-
 const SelectElementContainer = ({ initialValues, name, title }) => {
   return (
     <SelectElementContainerStyles>

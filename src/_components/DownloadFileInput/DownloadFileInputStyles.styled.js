@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { theme } from "../../assets/constants/themeColors";
 
-
 export const ImagePreview = styled.img`
-    position: absolute; 
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -12,52 +11,46 @@ export const ImagePreview = styled.img`
   height: 100%;
   object-fit: cover;
   display: block;
-
-
-
-`
+`;
 
 export const DownloadFileInputContainer = styled.div`
-    position: relative;
-    width: 100%;
-    border: 1px solid ${theme.buttonBorder};
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 16px;
-    cursor: pointer;
-    background-color: white;
-    border-radius : 4px;
-    text-align: center;
+  position: relative;
+  width: 100%;
+  border: 1px solid ${theme.buttonBorder};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 4px;
+  text-align: center;
 
-    @media screen and (max-width : 360px) {
-        padding : 32.5px 42px;
-        height : 153px;
-    }
-    @media screen and (min-width : 361px) and  (max-width : 760px) {
-        padding : 119px 219.5px;
-        height : 370px;
-    }
-    @media screen and (min-width : 761px) {
-        padding : 75px 59.5px;
-        height: 254px;
-
-    }
-
-`
+  @media screen and (max-width: 360px) {
+    padding: 32.5px 42px;
+    height: 153px;
+  }
+  @media screen and (min-width: 361px) and (max-width: 760px) {
+    padding: 119px 219.5px;
+    height: 370px;
+  }
+  @media screen and (min-width: 761px) {
+    padding: 75px 59.5px;
+    height: 254px;
+  }
+`;
 
 export const DownloadFileInputStyles = styled.input`
-    display : none;
-`
+  display: none;
+`;
 
 export const DownloadIconContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    @media screen and (max-width : 360px) {
-        width : 32px;
-        height : 32px;
-    }
-`
-
+  @media screen and (max-width: 360px) {
+    width: 32px;
+    height: 32px;
+  }
+`;

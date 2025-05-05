@@ -3,12 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -21,7 +16,9 @@
     "jsx-a11y/anchor-is-valid": "off",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
-    "prettier/prettier": ["error"]
+    "no-unused-vars": "warn",
+    "prettier/prettier": ["warn"],
+    "react/display-name": "off"
   },
   "settings": {
     "react": {

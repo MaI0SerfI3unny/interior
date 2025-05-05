@@ -3,16 +3,14 @@ import { useTranslation } from "react-i18next";
 import { steps } from "@/mock/landing";
 import { Link } from "react-router-dom";
 import photo from "@/assets/roadmap.png";
-import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll"
+import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll";
 
 export const RoadMap = ({ id }) => {
   const { t } = useTranslation();
   return (
     <section id={id} className={style.roadMap}>
-      <SlideOnScroll 
-        direction="left" 
-        className={style.roadMapContainer}>
-        <h2>{t('roadMap.title')}</h2>
+      <SlideOnScroll direction="left" className={style.roadMapContainer}>
+        <h2>{t("roadMap.title")}</h2>
 
         <div className={style.wrap}>
           <div>
@@ -34,7 +32,7 @@ export const RoadMap = ({ id }) => {
         </div>
 
         <div className={style.roadMapContainerButton}>
-          <Link to="/signin">{t('cta.btnName')}</Link>
+          <Link to="/signin">{t("cta.btnName")}</Link>
         </div>
       </SlideOnScroll>
     </section>

@@ -46,7 +46,7 @@ export const RecoveryPwdForm = () => {
       onSubmit={handleSubmit}
       validationSchema={RecoveryPwdSchema}
     >
-      {({ touched, errors, values }) => (
+      {({ touched, errors }) => (
         <Form className={css.form}>
           {" "}
           <h2 className={css.title}>Recovery Password</h2>
@@ -69,7 +69,7 @@ export const RecoveryPwdForm = () => {
               className={css.icon}
               width={20}
               height={20}
-              onClick={(e) => {
+              onClick={e => {
                 e.preventDefault();
                 togglePasswordVisibility();
               }}
@@ -98,7 +98,7 @@ export const RecoveryPwdForm = () => {
               className={css.icon}
               width={20}
               height={20}
-              onClick={(e) => {
+              onClick={e => {
                 e.preventDefault();
                 toggleConfirmPwdVisibility();
               }}

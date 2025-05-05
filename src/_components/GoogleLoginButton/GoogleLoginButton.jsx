@@ -3,7 +3,7 @@ import css from "./GoogleLoginButton.module.scss";
 import { ReactComponent as FcGoogle } from "@/assets/icons/google.svg";
 import { useTranslation } from "react-i18next";
 
-export const GoogleLoginButton = ({ children }) => {
+export const GoogleLoginButton = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
