@@ -57,7 +57,7 @@ export const InstructionTextStyles = styled.div`
     }
   }
 
-  @media screen and (max-width: 1440px) {
+  @media screen and (min-width: 769px) {
     .title {
       font-size: 28px;
     }
