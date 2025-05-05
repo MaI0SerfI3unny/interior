@@ -7,7 +7,7 @@ export const GeneratingPageStyles = styled.main`
     display: flex;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 768px) {
     padding-top: 144px;
     padding-bottom: 40px;
 
@@ -15,13 +15,13 @@ export const GeneratingPageStyles = styled.main`
       gap: 24px 0px;
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1440px) {
     .container {
       flex-direction: column-reverse;
     }
   }
 
-  @media screen and (min-width: 361px) and (max-width: 768px) {
+  @media screen and (min-width: 769px) and (max-width: 1440px) {
     padding-top: 156px;
     padding-bottom: 60px;
 
@@ -30,7 +30,7 @@ export const GeneratingPageStyles = styled.main`
     }
   }
 
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1441px) {
     padding-top: 176px;
     padding-bottom: 80px;
 

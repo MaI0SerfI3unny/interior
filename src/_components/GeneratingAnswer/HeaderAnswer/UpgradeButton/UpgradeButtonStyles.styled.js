@@ -10,17 +10,17 @@ export const UpgradeButtonStyles = styled.button`
 
   color: ${theme.typography.buttonText};
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     padding: 14px 25px;
   }
 
-  @media screen and (min-width: 361px) {
+  @media screen and (min-width: 769px) {
     font-size: 16px;
     padding: 12px 41px;
   }
 
-  @media screen and (min-width: 761px) {
+  @media screen and (min-width: 1441px) {
     transition: 250ms linear;
 
     &:hover,

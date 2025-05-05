@@ -26,15 +26,15 @@ export const DownloadFileInputContainer = styled.div`
   border-radius: 4px;
   text-align: center;
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 768px) {
     padding: 32.5px 42px;
     height: 153px;
   }
-  @media screen and (min-width: 361px) and (max-width: 760px) {
+  @media screen and (max-width: 1440px) {
     padding: 119px 219.5px;
     height: 370px;
   }
-  @media screen and (min-width: 761px) {
+  @media screen and (min-width: 1441px) {
     padding: 75px 59.5px;
     height: 254px;
   }
@@ -49,7 +49,7 @@ export const DownloadIconContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 768px) {
     width: 32px;
     height: 32px;
   }
