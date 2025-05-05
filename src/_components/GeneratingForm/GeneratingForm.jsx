@@ -31,17 +31,11 @@ const validationSchema = Yup.object({
   prompt: Yup.string().required("Обовʼязково"),
 
   style: Yup.string()
-    .oneOf(
-      initialValues.initialStyleValues.map(style => style.value),
-      "Оберіть один із вареантів"
-    )
+    .oneOf(initialValues.initialStyleValues, "Оберіть один із вареантів")
     .required("Оберіть стиль"),
 
   room: Yup.string()
-    .oneOf(
-      initialValues.initialRoomValues.map(room => room.value),
-      "Оберіть один із вареантів"
-    )
+    .oneOf(initialValues.initialRoomValues, "Оберіть один із вареантів")
     .required("Оберіть кімнату"),
 });
 
