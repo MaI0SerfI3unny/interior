@@ -36,14 +36,16 @@ export const DesignPanel = () => {
                   <div
                     key={key}
                     onClick={() => setCurrentDesign(key)}
-                    className={`${style.designPanelContainerListControlListItem} ${currentDesign === key && style.active}`}>
+                    className={`${style.designPanelContainerListControlListItem} ${currentDesign === key && style.active}`}
+                  >
                     {t(`design_panel.${name}`)}
                   </div>
                 ))}
               </div>
               <Link
                 to="/signin"
-                className={style.designPanelContainerListControlButton}>
+                className={style.designPanelContainerListControlButton}
+              >
                 {t("cta.btnName")}
               </Link>
             </div>
