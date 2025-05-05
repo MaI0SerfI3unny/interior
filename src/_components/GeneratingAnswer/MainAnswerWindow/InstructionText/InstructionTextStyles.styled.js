@@ -18,13 +18,16 @@ export const InstructionTextStyles = styled.div`
   }
 
   .instruction-list {
-    font-size: 18px;
     line-height: 1.2;
     color: ${theme.typography.primary};
 
     list-style: none;
     counter-reset: item;
     padding-left: 0;
+
+    @media screen and (min-width: 761px) {
+      font-size: 18px;
+    }
   }
 
   li {
@@ -46,7 +49,7 @@ export const InstructionTextStyles = styled.div`
     margin-bottom: 24px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 768px) {
     padding: 32px 16px;
 
     .title {
@@ -54,17 +57,17 @@ export const InstructionTextStyles = styled.div`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 769px) {
     .title {
       font-size: 28px;
     }
   }
 
-  @media screen and (min-width: 361px) and (max-width: 768px) {
+  @media screen and (min-width: 769px) and (max-width: 1440px) {
     padding: 102px 56px 149px 56px;
   }
 
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1441px) {
     padding: 92px 104px 214px 104px;
   }
 `;

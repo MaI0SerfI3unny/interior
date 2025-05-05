@@ -141,7 +141,22 @@
     "mainWindowAdvance_2": "Write a prompt, describe what you want to achieve. Describe colors or other details",
     "btnUpgrade": "Upgrade",
     "fileClick": "Click to upload",
-    "fileDrag": "or drag and drop"
+    "fileDrag": "or drag and drop",
+    "stylesList": {
+      "classic": "Classic",
+      "minimal": "Minimalism",
+      "contemporary": "Contemporary",
+      "vintage": "Vintage",
+      "modern": "Modern",
+      "industrial": "Industrial"
+    },
+    "roomsList": {
+      "kitchen": "Kitchen",
+      "studio": "Studio",
+      "livingRoom": "Living room",
+      "bathRoom": "Bathroom",
+      "bedRoom": "Bedroom"
+    }
   },
   "faq": {
     "title": "FAQ",
