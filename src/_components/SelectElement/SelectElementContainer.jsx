@@ -18,7 +18,7 @@ const SelectElementContainer = ({ initialValues, name, title }) => {
         value={selectedOption}
         onChange={option => setFieldValue(name, option.value)}
         styles={selectStyles}
-        components={{ Option: OptionElement }}
+        components={{ Option: OptionElement, IndicatorSeparator: () => null }}
       />
     </SelectElementContainerStyles>
   );
