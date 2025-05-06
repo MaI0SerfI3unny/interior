@@ -160,5 +160,28 @@
     "a6": "You can change your pricing plan at any time by going to the 'My Account' section and selecting the appropriate option. The change in pricing will be applied instantly without any interruption in the platform's use.",
     "q7": "Can I change the design after it has been created?",
     "a7": "Yes, you can edit the created design at any time, changing the style or other parameters to achieve the desired result."
+  },
+  "terms": {
+    "pageTitle": "Terms of Use",
+    "title1": "Effective Date: April 29, 2025",
+    "text1": "By using our service, you agree to the terms outlined below. Thank you for choosing INTERIOR — a platform that provides image creation services powered by artificial intelligence. We use AI models to generate interior photos and grant access to these resources to registered users.",
+    "title2": "Registration and Account",
+    "text2": "<ul><li>To use the Platform, you must create an account by providing your name and a valid email address.</li><li>We care about the security of your personal data and do not share it with third parties without your consent.</li><li>You are also responsible for maintaining the security of your account access (e.g., not sharing your password with others). All activity on your account will be considered as performed by you. If you notice anything unusual, we recommend changing your password for safety.</li></ul>",
+    "title3": "Use of the Platform",
+    "text3": "You may upload photos of your rooms only if you have the rights to do so.</br>It is prohibited to upload images that contain:<ul><li>personal data of third parties</li><li>copyrighted content without permission</li><li>violence, pornography, discrimination, or other inappropriate material.</li></ul>We reserve the right to remove such content and/or suspend the account.",
+    "title4": "Interior Generation",
+    "text4": "Generations are created automatically using AI and may be inaccurate or imperfect. You agree not to use the generated materials for commercial purposes without permission, unless otherwise specified in your subscription plan.",
+    "title5": "User Content",
+    "text5": "Users of INTERIOR can upload and store photos created using our services. Images created by users may temporarily appear on the community page, where we showcase the latest interior examples. Some of these may also be used on other INTERIOR pages to showcase interesting and successful examples of using our service.",
+    "title6": "Intellectual Property",
+    "text6": "All functionality, design, and technology of the Platform are the property of INTERIOR.<ul><li>You retain the rights to the images you upload.</li><li>We may use your generated images for internal service improvement or in the examples gallery.</li></ul>If you violate any of our Terms of Service, your right to use our Service may be immediately terminated.",
+    "title7": "Refund Policy",
+    "text7": "At INTERIOR, we strive to ensure our users feel confident in their purchasing decisions. To help you explore our services, we offer free credits for preview before purchase. Therefore, all purchases are final, and we do not offer refunds after the transaction is completed.",
+    "title8": "Disclaimer of Warranties",
+    "text8": "The platform is provided 'as is.'<ul><li>We do not guarantee uninterrupted operation or perfect results from the generations.</li><li>We do not guarantee that any resources created by our AI service will be suitable for any particular purpose.</li></ul>",
+    "title9": "Limitation of Liability",
+    "text9": "We strive to make the service as reliable as possible, but INTERIOR is not liable for any losses or inconveniences that may arise during the use of the platform or due to technical failures.<ul><li>You agree to use the platform at your own risk.</li><li>In the event of a breach of these terms on your part, you agree not to file any claims against INTERIOR and to compensate for any potential damages, if any arise.</li></ul>",
+    "title10": "Changes to the Terms",
+    "text10": "INTERIOR reserves the right to modify these Terms of Service at any time.<ul><li>Users will be notified of any significant changes to these terms via email or on the website.</li><li>Continued use of INTERIOR after such changes are made constitutes acceptance of the modified terms. All changes take effect from the moment they are published on the website.</li></ul>"
   }
 }

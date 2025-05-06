@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 const AccordionDemo = () => {
   const { t } = useTranslation();
-  // const [openItem, setOpenItem] = React.useState(null);
+
   return (
     <Accordion.Root className={styles.Root} type="multiple" collapsible>
       {faq.map(({ id, number, question, answer, isHtml }) => (

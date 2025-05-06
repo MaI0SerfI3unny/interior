@@ -59,7 +59,7 @@ export const Footer = () => {
           </p>
           <div>
             <a href="">{t("nav.privacy")}</a>
-            <a href="">{t("nav.terms")}</a>
+            <Link to="/terms">{t("nav.terms")}</Link>
           </div>
         </div>
       </div>

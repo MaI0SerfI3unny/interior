@@ -8,6 +8,7 @@ import Layout from "../Layout/Layout.jsx";
 import { SendRecoveryEmail } from "../../pages/SendRecoveryEmail.jsx";
 import { RecoveryPwd } from "../../pages/RecoveryPwd.jsx";
 import { ScrollToTop } from "../ScrollToTop/ScrollToTop.jsx";
+import { TermsOfUsePage } from "../../pages/TermsOfUsePage.jsx";
 
 export const App = () => {
   return (
@@ -22,6 +23,7 @@ export const App = () => {
           <Route index element={<LandingPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/generating" element={<GeneratePage />} />
+          <Route path="/terms" element={<TermsOfUsePage />} />
         </Route>
       </Routes>
     </>
