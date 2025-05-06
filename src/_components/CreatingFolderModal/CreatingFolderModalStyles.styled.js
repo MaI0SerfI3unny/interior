@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { theme } from "../../assets/constants/themeColors";
 
 export const CreatingFolderModalStyles = styled.div`
-  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;

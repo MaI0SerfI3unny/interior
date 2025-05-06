@@ -53,7 +53,7 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer }) => {
       setResult(values);
 
       setIsLoadingAnswer(false);
-    }, 500);
+    }, 3000);
   };
 
   return (

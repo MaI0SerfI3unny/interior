@@ -7,8 +7,10 @@ const CreatingFolderModal = ({
   setNewFolderName,
   errorMessage,
   toggleModal,
-  handleCreateFolder,
+  creatingFolder,
   checkFolderNames,
+  setIsShowCreating,
+  setIsCreating,
 }) => {
   const { t } = useTranslation();
 
@@ -19,8 +21,16 @@ const CreatingFolderModal = ({
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleCreateFolder();
-    setNewFolderName("");
+    creatingFolder();
+
+    setIsShowCreating(false);
+    setIsCreating(true);
+
+    setTimeout(() => {
+      toggleModal(false);
+      // Перенаправляемпользователя в личный кабинет
+      // ........
+    }, 3000);
   }
 
   const placeholderValue = t("modal.folderInputPlaceholder");

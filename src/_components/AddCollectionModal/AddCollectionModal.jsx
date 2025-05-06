@@ -32,26 +32,15 @@ const AddCollectionModal = ({ toggleModal }) => {
   const [isShowCreating, setIsShowCreating] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
 
-  function handleCreateFolder() {
+  function creatingFolder() {
     setCollections([
       ...collections,
       {
         title: newFolderName,
-        count: 0,
+        count: 1,
         image: catBedroom,
       },
     ]);
-
-    setIsShowCreating(false);
-    setIsCreating(true);
-
-    setTimeout(() => {
-      setIsCreating(false);
-    }, 1000);
-  }
-
-  function backToList() {
-    setIsShowCreating(false);
   }
 
   function checkFolderNames(value) {
@@ -79,7 +68,7 @@ const AddCollectionModal = ({ toggleModal }) => {
 
     setTimeout(() => {
       toggleModal(false);
-    }, 500);
+    }, 3000);
   }
 
   function handleSelectedFolder(value) {
@@ -126,10 +115,12 @@ const AddCollectionModal = ({ toggleModal }) => {
         <CreatingFolderModal
           newFolderName={newFolderName}
           setNewFolderName={setNewFolderName}
-          handleCreateFolder={handleCreateFolder}
+          creatingFolder={creatingFolder}
           checkFolderNames={checkFolderNames}
-          toggleModal={backToList}
+          toggleModal={() => toggleModal(false)}
           errorMessage={errorMessage}
+          setIsShowCreating={setIsShowCreating}
+          setIsCreating={setIsCreating}
         />
       )}
       {isCreating && !isShowCreating && !isSaving && (
