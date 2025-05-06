@@ -22,7 +22,7 @@ export const SubmitButtonStyles = styled.button`
     background-color: ${theme.background.disabletButton};
   }
 
-  @media screen and (min-width: 761px) {
+  @media screen and (min-width: 1441px) {
     transition: 250ms linear;
 
     &:not(:disabled)&:hover,

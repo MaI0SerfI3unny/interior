@@ -15,11 +15,14 @@ export const theme = {
   inputBorderFocus: "rgb(43,42,41)",
 
   background: {
+    modal: "rgb(244,241,236)",
     inputs: "rgba(254, 253, 252, 1)",
     button: "rgba(43, 42, 41, 1)",
     secondaryButton: "rgb(254,253,252) ",
     buttonHover: "rgba(5, 0, 41, 1)",
     disabletButton: "rgb(160,156,153)",
+    selectedOption: "rgb(223,218,214)",
+    hoverOption: "rgb(243,242,241)",
   },
   stroke: {
     secondary: "rgba(223, 218, 214, 1)",

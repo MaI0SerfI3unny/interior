@@ -20,7 +20,7 @@ export const GeneratingFormStyles = styled(Form)`
     color: rgb(97, 97, 97);
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 768px) {
     row-gap: 16px;
 
     h2 {
@@ -29,23 +29,20 @@ export const GeneratingFormStyles = styled(Form)`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1440px) {
     width: 100%;
   }
 
-  @media screen and (min-width: 361px) and (max-width: 768px) {
+  @media screen and (min-width: 769px) and (max-width: 1440px) {
     row-gap: 20px;
   }
 
-  @media screen and (min-width: 369px) {
+  @media screen and (min-width: 1441px) {
+    width: 384px;
+    row-gap: 28px;
     h2 {
       font-size: 14px;
       line-height: 1.33;
     }
-  }
-
-  @media screen and (min-width: 769px) {
-    width: 384px;
-    row-gap: 28px;
   }
 `;

@@ -1,26 +1,25 @@
-import {
-  SelectElementContainerStyles,
-  SelectWrapper,
-  ArrowContainer,
-} from "./SelectElementContainerStyles.styled";
-import { ReactComponent as ArrowIcon } from "../../svg/vector.svg";
+import { SelectElementContainerStyles } from "./SelectElementContainerStyles.styled";
+import { useField, useFormikContext } from "formik";
 import OptionElement from "./OptionElement/OptionElement";
-import { Field } from "formik";
+import Select from "react-select";
+import { selectStyles } from "./selectStyles";
 
 const SelectElementContainer = ({ initialValues, name, title }) => {
+  const { setFieldValue } = useFormikContext();
+  const [field] = useField(name);
+
+  const selectedOption = initialValues.find(opt => opt.value === field.value);
+
   return (
     <SelectElementContainerStyles>
       <h2>{title}</h2>
-      <SelectWrapper>
-        <Field as="select" name={name}>
-          {initialValues.map(({ text, value }) => (
-            <OptionElement key={value} value={value} text={text} />
-          ))}
-        </Field>
-        <ArrowContainer>
-          <ArrowIcon />
-        </ArrowContainer>
-      </SelectWrapper>
+      <Select
+        options={initialValues}
+        value={selectedOption}
+        onChange={option => setFieldValue(name, option.value)}
+        styles={selectStyles}
+        components={{ Option: OptionElement, IndicatorSeparator: () => null }}
+      />
     </SelectElementContainerStyles>
   );
 };

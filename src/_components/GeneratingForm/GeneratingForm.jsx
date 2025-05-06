@@ -2,6 +2,8 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { initialValues } from "../../assets/constants/formInitialValues";
 import { useTranslation } from "react-i18next";
+import { useStyleOptions } from "../../assets/hooks/useStyleOptions";
+import { useRoomOptions } from "../../assets/hooks/useRoomOptions";
 
 import DownloadFileInput from "../DownloadFileInput/DownloadFileInput";
 import PromptInput from "../PromptInput/PromptInput";
@@ -29,26 +31,29 @@ const validationSchema = Yup.object({
   prompt: Yup.string().required("Обовʼязково"),
 
   style: Yup.string()
-    .oneOf(
-      initialValues.initialStyleValues.map(style => style.value),
-      "Оберіть один із вареантів"
-    )
+    .oneOf(initialValues.initialStyleValues, "Оберіть один із вареантів")
     .required("Оберіть стиль"),
 
   room: Yup.string()
-    .oneOf(
-      initialValues.initialRoomValues.map(room => room.value),
-      "Оберіть один із вареантів"
-    )
+    .oneOf(initialValues.initialRoomValues, "Оберіть один із вареантів")
     .required("Оберіть кімнату"),
 });
 
-const GeneratingForm = ({ setResult }) => {
+const GeneratingForm = ({ setResult, setIsLoadingAnswer }) => {
   const { t } = useTranslation();
+  const initialStylesValues = useStyleOptions();
+  const initialRoomValues = useRoomOptions();
 
   const handleSubmit = values => {
-    console.log(values);
-    setResult(values);
+    setIsLoadingAnswer(true);
+
+    setTimeout(() => {
+      console.log(values);
+
+      setResult(values);
+
+      setIsLoadingAnswer(false);
+    }, 3000);
   };
 
   return (
@@ -72,15 +77,17 @@ const GeneratingForm = ({ setResult }) => {
 
           <PromptInput />
           <SelectElementContainer
-            initialValues={initialValues.initialStyleValues}
+            initialValues={initialStylesValues}
             name="style"
             title={t("generate.chooseStyle")}
+            currentValue={values.style}
           />
 
           <SelectElementContainer
-            initialValues={initialValues.initialRoomValues}
+            initialValues={initialRoomValues}
             name="room"
             title={t("generate.chooseRoom")}
+            currentValue={values.room}
           />
 
           <SubmitButton disabled={!values.prompt || !values.style} />

@@ -1,0 +1,17 @@
+.dash {
+  font-weight: 300;
+  font-family: Manrope, sans-serif;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: 300;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
