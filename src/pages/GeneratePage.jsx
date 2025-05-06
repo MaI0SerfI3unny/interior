@@ -3,24 +3,17 @@ import GeneratingForm from "../_components/GeneratingForm/GeneratingForm";
 import GeneratingAnswer from "../_components/GeneratingAnswer/GeneratingAnswer";
 import { GeneratingPageStyles } from "./styles/GeneratingPage.styled";
 import MainContainer from "../_components/MainContainer/MainContainer";
-// import ModalExit from '../components/GeneratingAnswer/ModalExit/ModalExit'
-// import { useBlocker } from '../hooks/useBlocker'
+import GeneralModal from "../_components/GeneralModal/GeneralModal";
+import AddCollectionModal from "../_components/AddCollectionModal/AddCollectionModal";
+import { addCollectionStyles } from "../_components/AddCollectionModal/addCollectionStylesProps";
 
 const GeneratePage = () => {
   const [result, setResult] = useState(null);
-  // const [isShowModal, setIsShowModal] = useState(false);
-  // const retryRef = useRef(null);
+  const [isShowModal, setIsShowModal] = useState(false);
 
-  // function toggleModal(value) {
-  //   setIsShowModal(value)
-  //     retryRef.current();
-
-  // }
-
-  // useBlocker((tx) => {
-  //   retryRef.current = tx.retry;
-  //   setIsShowModal(true);
-  // }, !!result)
+  function toggleModal(value) {
+    setIsShowModal(value);
+  }
 
   return (
     <>
@@ -30,18 +23,19 @@ const GeneratePage = () => {
             <GeneratingForm setResult={setResult} />
           </section>
           <section>
-            <GeneratingAnswer result={result} />
+            <GeneratingAnswer result={result} toggleModal={toggleModal} />
           </section>
-          {/* {isShowModal && (
-          <ModalExit
-            toggleModal={toggleModal}
-            setResult={setResult}
-            retryRef={retryRef} 
-            result={result}
-          />
-        )} */}
         </MainContainer>
       </GeneratingPageStyles>
+
+      {isShowModal && (
+        <GeneralModal
+          styleSizes={addCollectionStyles}
+          toggleModal={toggleModal}
+        >
+          <AddCollectionModal />
+        </GeneralModal>
+      )}
     </>
   );
 };

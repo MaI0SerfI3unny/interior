@@ -15,6 +15,7 @@ export const theme = {
   inputBorderFocus: "rgb(43,42,41)",
 
   background: {
+    modal: "rgb(244,241,236)",
     inputs: "rgba(254, 253, 252, 1)",
     button: "rgba(43, 42, 41, 1)",
     secondaryButton: "rgb(254,253,252) ",
