@@ -39,14 +39,21 @@ const validationSchema = Yup.object({
     .required("Оберіть кімнату"),
 });
 
-const GeneratingForm = ({ setResult }) => {
+const GeneratingForm = ({ setResult, setIsLoadingAnswer }) => {
   const { t } = useTranslation();
   const initialStylesValues = useStyleOptions();
   const initialRoomValues = useRoomOptions();
 
   const handleSubmit = values => {
-    console.log(values);
-    setResult(values);
+    setIsLoadingAnswer(true);
+
+    setTimeout(() => {
+      console.log(values);
+
+      setResult(values);
+
+      setIsLoadingAnswer(false);
+    }, 3000);
   };
 
   return (

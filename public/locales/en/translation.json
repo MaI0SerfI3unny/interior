@@ -142,6 +142,7 @@
     "btnUpgrade": "Upgrade",
     "fileClick": "Click to upload",
     "fileDrag": "or drag and drop",
+    "generatingTitle": "Generating your interior",
     "stylesList": {
       "classic": "Classic",
       "minimal": "Minimalism",

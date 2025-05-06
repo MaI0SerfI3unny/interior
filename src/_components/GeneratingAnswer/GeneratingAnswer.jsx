@@ -3,12 +3,12 @@ import HeaderAnswer from "./HeaderAnswer/HeaderAnswer";
 import MainAnswerWindow from "./MainAnswerWindow/MainAnswerWindow";
 import FooterAnswer from "./FooterAnswer/FooterAnswer";
 
-const GeneratingAnswer = ({ result, toggleModal }) => {
+const GeneratingAnswer = ({ result, toggleModal, isLoadingAnswer }) => {
   return (
     <GeneratingAnswerStyles>
       <HeaderAnswer />
-      <MainAnswerWindow />
-      {result && <FooterAnswer toggleModal={toggleModal} />}
+      <MainAnswerWindow isLoadingAnswer={isLoadingAnswer} result={result} />
+      {result && !isLoadingAnswer && <FooterAnswer toggleModal={toggleModal} />}
     </GeneratingAnswerStyles>
   );
 };

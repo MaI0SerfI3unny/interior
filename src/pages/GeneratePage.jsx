@@ -10,6 +10,7 @@ import { addCollectionStyles } from "../_components/AddCollectionModal/addCollec
 const GeneratePage = () => {
   const [result, setResult] = useState(null);
   const [isShowModal, setIsShowModal] = useState(false);
+  const [isLoadingAnswer, setIsLoadingAnswer] = useState(false);
 
   function toggleModal(value) {
     setIsShowModal(value);
@@ -20,10 +21,17 @@ const GeneratePage = () => {
       <GeneratingPageStyles>
         <MainContainer>
           <section>
-            <GeneratingForm setResult={setResult} />
+            <GeneratingForm
+              setResult={setResult}
+              setIsLoadingAnswer={setIsLoadingAnswer}
+            />
           </section>
           <section>
-            <GeneratingAnswer result={result} toggleModal={toggleModal} />
+            <GeneratingAnswer
+              result={result}
+              toggleModal={toggleModal}
+              isLoadingAnswer={isLoadingAnswer}
+            />
           </section>
         </MainContainer>
       </GeneratingPageStyles>
