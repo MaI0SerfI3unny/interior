@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { theme } from "../../assets/constants/themeColors";
 
 const rotation = keyframes`
      to {
