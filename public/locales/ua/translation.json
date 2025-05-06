@@ -185,6 +185,10 @@
     "secondGeneration": "генерації",
     "thirdGeneration": "генерацій",
     "savingPhoto": "Фото успішно додано",
-    "createdFolder": "Папку успішно створено"
+    "createdFolder": "Папку успішно створено",
+    "creatingFolder": "Створення папки",
+    "folderName": "Назва папки",
+    "folderInputPlaceholder": "Наприклад \"Кухня\"",
+    "folderExist": "Папка з такою назвою вже існує"
   }
 }

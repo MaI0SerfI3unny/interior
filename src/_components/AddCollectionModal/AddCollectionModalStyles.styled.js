@@ -10,12 +10,6 @@ export const AddCollectionModalStyles = styled.div`
     margin-bottom: 40px;
     font-size: 20px;
   }
-  .close-btn {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    border: none;
-  }
 
   ul {
     display: flex;

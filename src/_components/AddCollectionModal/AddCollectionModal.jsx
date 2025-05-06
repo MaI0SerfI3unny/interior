@@ -1,6 +1,5 @@
-import { ReactComponent as CloseIcon } from "../../svg/cross.svg";
 import SaveResultButton from "../GeneratingAnswer/FooterAnswer/SaveResultButton/SaveResultButton";
-import AddRoomContainer from "../AddRoomButton/AddRoomContainer";
+import AddRoomButtonContainer from "../AddRoomButton/AddRoomButtonContainer";
 import AddRoomCard from "../AddRoomCard/AddRoomCard";
 import { AddCollectionModalStyles } from "./AddCollectionModalStyles.styled";
 import catKitchen from "../../pictures/cat.jpeg";
@@ -10,6 +9,8 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import SavingPhoto from "../SavingPhoto/SavingPhoto";
 import { addCollectionStyles } from "./addCollectionStylesProps";
+import CreatingFolderModal from "../CreatingFolderModal/CreatingFolderModal";
+import CloseModalButton from "../CloseModalButton/CloseModalButton";
 
 const collection = [
   {
@@ -25,7 +26,41 @@ const AddCollectionModal = ({ toggleModal }) => {
   const { t } = useTranslation();
   const [selectedFolder, setSelectedFolder] = useState(null);
   const [collections, setCollections] = useState(collection);
+  const [newFolderName, setNewFolderName] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [isSaving, setIsSaving] = useState(false);
+  const [isShowCreating, setIsShowCreating] = useState(false);
+  const [isCreating, setIsCreating] = useState(false);
+
+  function handleCreateFolder() {
+    setCollections([
+      ...collections,
+      {
+        title: newFolderName,
+        count: 0,
+        image: catBedroom,
+      },
+    ]);
+
+    setIsShowCreating(false);
+    setIsCreating(true);
+
+    setTimeout(() => {
+      setIsCreating(false);
+    }, 1000);
+  }
+
+  function backToList() {
+    setIsShowCreating(false);
+  }
+
+  function checkFolderNames(value) {
+    if (collections.some(col => col.title === value)) {
+      setErrorMessage(t("modal.folderExist"));
+    } else {
+      setErrorMessage("");
+    }
+  }
 
   function saveImageToFolder() {
     const updatedCollections = collections.map(collection => {
@@ -34,8 +69,6 @@ const AddCollectionModal = ({ toggleModal }) => {
       }
       return collection;
     });
-
-    console.log(updatedCollections);
 
     setCollections(updatedCollections);
   }
@@ -46,26 +79,26 @@ const AddCollectionModal = ({ toggleModal }) => {
 
     setTimeout(() => {
       toggleModal(false);
-    }, 3000);
+    }, 500);
   }
 
   function handleSelectedFolder(value) {
     setSelectedFolder(value);
   }
 
-  const text = t("modal.savingPhoto");
+  const savingPhotoText = t("modal.savingPhoto");
+  const creatingFolderText = t("modal.createdFolder");
+
   return (
     <AddCollectionModalStyles
       $isSaving={isSaving}
       $styleSizes={addCollectionStyles}
     >
-      {!isSaving && (
+      {!isSaving && !isShowCreating && !isCreating && (
         <>
-          <button className="close-btn" onClick={() => toggleModal(false)}>
-            <CloseIcon width={24} height={24} />
-          </button>
+          <CloseModalButton toggleModal={() => toggleModal(false)} />
           <h1>{t("modal.title")}</h1>
-          <AddRoomContainer />
+          <AddRoomButtonContainer handleCreateFolder={setIsShowCreating} />
 
           <ul className="rooms-list">
             {collections.map(item => (
@@ -86,7 +119,22 @@ const AddCollectionModal = ({ toggleModal }) => {
         </>
       )}
 
-      {isSaving && <SavingPhoto text={text} />}
+      {isSaving && !isCreating && !isShowCreating && (
+        <SavingPhoto text={savingPhotoText} />
+      )}
+      {isShowCreating && !isSaving && !isCreating && (
+        <CreatingFolderModal
+          newFolderName={newFolderName}
+          setNewFolderName={setNewFolderName}
+          handleCreateFolder={handleCreateFolder}
+          checkFolderNames={checkFolderNames}
+          toggleModal={backToList}
+          errorMessage={errorMessage}
+        />
+      )}
+      {isCreating && !isShowCreating && !isSaving && (
+        <SavingPhoto text={creatingFolderText} />
+      )}
     </AddCollectionModalStyles>
   );
 };

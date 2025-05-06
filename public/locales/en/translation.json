@@ -184,6 +184,10 @@
     "secondGeneration": "generations",
     "thirdGeneration": "generations",
     "savingPhoto": "Photo added successfully",
-    "createdFolder": "Folder created successfully"
+    "createdFolder": "Folder created successfully",
+    "creatingFolder": "Creating a folder",
+    "folderName": "Folder name",
+    "folderInputPlaceholder": "For example \"Kitchen\"",
+    "folderExist": "A folder with this name is already in existence"
   }
 }
