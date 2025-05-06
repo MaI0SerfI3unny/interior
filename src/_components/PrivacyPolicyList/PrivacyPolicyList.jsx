@@ -1,16 +1,15 @@
-import { mock } from "../../mock/terms.js";
-import css from "./TermsList.module.scss";
 import { useTranslation } from "react-i18next";
+import { mock } from "../../mock/terms.js";
+import css from "./PrivacyPolicyList.module.scss";
 import clsx from "clsx";
 
-export const TermsList = () => {
+export const PrivacyPolicyList = () => {
   const { t } = useTranslation();
-
-  const data = mock(10, "terms");
+  const data = mock(9, "policy");
 
   return (
     <div className={css.termsList}>
-      <h1 className={css.pageTitle}>{t("terms.pageTitle")}</h1>
+      <h1 className={css.pageTitle}>{t("policy.pageTitle")}</h1>
       {data.map((item, idx) => {
         const translatedText = t(item.text);
         const isHtml = /<\/?[a-z][\s\S]*>/i.test(translatedText);

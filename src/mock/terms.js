@@ -1,12 +1,12 @@
-export const mock = qnt => {
+export const mock = (qnt, text) => {
   const data = Array(qnt)
     .fill(0)
     .map((_, idx) => {
       const number = (idx + 1).toString();
 
       return {
-        title: `terms.title${number}`,
-        text: `terms.text${number}`,
+        title: `${text}.title${number}`,
+        text: `${text}.text${number}`,
       };
     });
 

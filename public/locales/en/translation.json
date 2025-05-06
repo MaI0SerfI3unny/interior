@@ -183,5 +183,26 @@
     "text9": "We strive to make the service as reliable as possible, but INTERIOR is not liable for any losses or inconveniences that may arise during the use of the platform or due to technical failures.<ul><li>You agree to use the platform at your own risk.</li><li>In the event of a breach of these terms on your part, you agree not to file any claims against INTERIOR and to compensate for any potential damages, if any arise.</li></ul>",
     "title10": "Changes to the Terms",
     "text10": "INTERIOR reserves the right to modify these Terms of Service at any time.<ul><li>Users will be notified of any significant changes to these terms via email or on the website.</li><li>Continued use of INTERIOR after such changes are made constitutes acceptance of the modified terms. All changes take effect from the moment they are published on the website.</li></ul>"
-  }
+  },
+  "policy":{
+    "pageTitle":"Privacy Policy",
+    "title1":"Effective Date: April 29, 2025",
+    "text1": "At INTERIOR, we understand the importance of protecting your privacy and personal information. This Privacy Policy outlines how we collect, use, and store your information when you use our services.",
+    "title2":"What Data We Collect",
+    "text2": "<ul><li>Name and email during registration</li><li>Room photos that you upload</li><li>Selected styles, prompts, and other data related to generation</li><li>IP address, browser, language — for analytics and security purposes.</li></ul>",
+    "title3":"How We Use Your Data",
+    "text3": "<ul><li>To provide interior generation services</li><li>To personalize the user experience</li><li>To improve the performance of the Platform</li><li>To send technical or informational notifications</li><li>We do not sell or share your personal data with third parties.</li></ul>",
+    "title4":"Who Has Access",
+    "text4": "Only the INTERIOR team has access to your data for the purpose of system maintenance.</br>In case we use third-party services (e.g., hosting, analytics), your data may be shared with them, ensuring security measures are in place.",
+    "title5":"Data Security",
+    "text5": "We take the security of your personal information seriously and use industry-standard measures to protect your data.</br> We regularly review and update our security practices as needed to ensure the best possible protection of your data.",
+    "title6":"Your Rights",
+    "text6": "You can request full access to your data. You can withdraw your consent for data processing at any time.",
+    "title7":"Data Retention",
+    "text7": "We retain your data only as long as necessary to provide the services.</br>You can submit a request for the complete deletion of your data.",
+    "title8":"Changes to the Privacy Policy",
+    "text8": "We may update this Privacy Policy from time to time to reflect changes in our business practices or to comply with legal requirements. We will notify you of any significant changes to our Privacy Policy via email or through our website.",
+    "title9":"Cookies",
+    "text9": "We use cookies to enhance your experience with our website and services. Cookies are small text files that are stored on your device when you visit our website. We use cookies to remember your settings, improve website performance, and provide personalized content. You can disable cookies in your browser settings, but this may affect your experience on our website."
+   }
 }
