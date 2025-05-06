@@ -9,6 +9,11 @@ export const SaveResultButtonStyles = styled.button`
   line-height: 1.33;
   border: none;
   border-radius: 4px;
+  width: ${({ $wD }) => ($wD ? $wD : "auto")};
+
+  &:disabled {
+    background-color: ${theme.background.disabletButton};
+  }
 
   @media screen and (max-width: 768px) {
     padding: 14px 60px;
@@ -17,8 +22,8 @@ export const SaveResultButtonStyles = styled.button`
   @media screen and (min-width: 1441px) {
     transition: 250ms linear;
 
-    &:hover,
-    &:focus {
+    &:not(:disabled)&:hover,
+    &:not(:disabled)&:focus {
       background-color: ${theme.background.buttonHover};
     }
   }

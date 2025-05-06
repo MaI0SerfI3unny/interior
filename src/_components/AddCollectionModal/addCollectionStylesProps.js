@@ -4,10 +4,10 @@ export const addCollectionStyles = {
   bgC: theme.background.modal,
   brdRad: "4px",
   border: "1px solid rgba(244,241,236,0.16)",
-  mobileWidth: "calc(100% - 40px)",
+  mobileWidth: "340px",
   mobileHeight: "70%",
-  tabletWidth: "calc(100% - 318px)",
+  tabletWidth: "400px",
   tabletHeight: "80%",
-  desktopWidth: "628px",
+  desktopWidth: "400px",
   desktopHeight: "70%",
 };

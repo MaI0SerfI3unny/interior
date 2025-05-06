@@ -7,6 +7,9 @@ import catKitchen from "../../pictures/cat.jpeg";
 import catBedroom from "../../pictures/cat3.jpg";
 import catBathroom from "../../pictures/cat10.jpeg";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import SavingPhoto from "../SavingPhoto/SavingPhoto";
+import { addCollectionStyles } from "./addCollectionStylesProps";
 
 const collection = [
   {
@@ -20,20 +23,70 @@ const collection = [
 
 const AddCollectionModal = ({ toggleModal }) => {
   const { t } = useTranslation();
-  return (
-    <AddCollectionModalStyles>
-      <button className="close-btn" onClick={() => toggleModal(false)}>
-        <CloseIcon width={24} height={24} />
-      </button>
-      <h1>{t("modal.title")}</h1>
-      <AddRoomContainer />
+  const [selectedFolder, setSelectedFolder] = useState(null);
+  const [collections, setCollections] = useState(collection);
+  const [isSaving, setIsSaving] = useState(false);
 
-      <ul className="rooms-list">
-        {collection.map(item => (
-          <AddRoomCard key={item.title} roomInfo={item} />
-        ))}
-      </ul>
-      <SaveResultButton pdS={148} />
+  function saveImageToFolder() {
+    const updatedCollections = collections.map(collection => {
+      if (collection.title === selectedFolder) {
+        return { ...collection, count: collection.count + 1 };
+      }
+      return collection;
+    });
+
+    console.log(updatedCollections);
+
+    setCollections(updatedCollections);
+  }
+
+  function savingSuccessful() {
+    saveImageToFolder();
+    setIsSaving(true);
+
+    setTimeout(() => {
+      toggleModal(false);
+    }, 3000);
+  }
+
+  function handleSelectedFolder(value) {
+    setSelectedFolder(value);
+  }
+
+  const text = t("modal.savingPhoto");
+  return (
+    <AddCollectionModalStyles
+      $isSaving={isSaving}
+      $styleSizes={addCollectionStyles}
+    >
+      {!isSaving && (
+        <>
+          <button className="close-btn" onClick={() => toggleModal(false)}>
+            <CloseIcon width={24} height={24} />
+          </button>
+          <h1>{t("modal.title")}</h1>
+          <AddRoomContainer />
+
+          <ul className="rooms-list">
+            {collections.map(item => (
+              <AddRoomCard
+                key={item.title}
+                roomInfo={item}
+                handleSelectedFolder={handleSelectedFolder}
+                selectedFolder={selectedFolder}
+              />
+            ))}
+          </ul>
+          <SaveResultButton
+            pdS={148}
+            wD={"100%"}
+            isDisabled={!selectedFolder}
+            toggleModal={savingSuccessful}
+          />
+        </>
+      )}
+
+      {isSaving && <SavingPhoto text={text} />}
     </AddCollectionModalStyles>
   );
 };

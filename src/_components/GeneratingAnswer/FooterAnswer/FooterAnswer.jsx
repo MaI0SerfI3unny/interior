@@ -6,7 +6,7 @@ import ShareResultButton from "./ShareResultButton/ShareResultButton";
 const FooterAnswer = ({ toggleModal }) => {
   return (
     <FooterAnswerStyles>
-      <SaveResultButton pdS={21} toggleModal={toggleModal} />
+      <SaveResultButton pdS={21} toggleModal={() => toggleModal(true)} />
       <DownloadResultButton />
       <ShareResultButton />
     </FooterAnswerStyles>
