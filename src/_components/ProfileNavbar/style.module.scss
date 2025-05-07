@@ -1,0 +1,36 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  .navbarLink {
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 424px;
+    gap: 40px;
+    justify-content: space-between;
+    a {
+      color: #706d6a;
+      font-size: 16px;
+      font-weight: 400;
+      font-family: Manrope, sans-serif;
+      &:hover {
+        color: #2b2a29;
+        transition: 0.5s;
+      }
+    }
+    .active {
+      color: #2b2a29;
+      font-weight: 600;
+      text-underline-offset: 10px;
+      text-decoration: underline;
+    }
+  }
+  hr {
+    width: 100%;
+    background: #bfb9b4;
+    height: 1px;
+    border: none;
+  }
+}

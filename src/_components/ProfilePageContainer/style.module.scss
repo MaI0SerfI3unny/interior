@@ -1,0 +1,11 @@
+.pageContainer {
+  padding-top: 144px;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  .main {
+    width: 100%;
+    max-width: 1216px;
+    padding-bottom: 80px;
+  }
+}
