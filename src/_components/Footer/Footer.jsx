@@ -58,8 +58,8 @@ export const Footer = () => {
             © North Heat & Air {new Date().getFullYear()}. All rights reserved
           </p>
           <div>
-            <a href="">{t("nav.privacy")}</a>
-            <a href="">{t("nav.terms")}</a>
+            <Link to="/policy">{t("nav.privacy")}</Link>
+            <Link to="/terms">{t("nav.terms")}</Link>
           </div>
         </div>
       </div>
