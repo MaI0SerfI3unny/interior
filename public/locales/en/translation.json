@@ -178,11 +178,17 @@
     "a7": "Yes, you can edit the created design at any time, changing the style or other parameters to achieve the desired result."
   },
   "modal": {
-    "title": "Save up to your catalogue?",
+   "title": "Save up to your catalogue?",
     "createFolder": "Create a folder",
     "firstGeneration": "generation",
     "secondGeneration": "generations",
-    "thirdGeneration": "generations"
+    "thirdGeneration": "generations",
+    "savingPhoto": "Photo added successfully",
+    "createdFolder": "Folder created successfully",
+    "creatingFolder": "Creating a folder",
+    "folderName": "Folder name",
+    "folderInputPlaceholder": "For example \"Kitchen\"",
+    "folderExist": "A folder with this name is already in existence"
   },
   "terms": {
     "pageTitle": "Terms of Use",

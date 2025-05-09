@@ -183,7 +183,13 @@
     "createFolder": "Створити папку",
     "firstGeneration": "генерація",
     "secondGeneration": "генерації",
-    "thirdGeneration": "генерацій"
+    "thirdGeneration": "генерацій",
+    "savingPhoto": "Фото успішно додано",
+    "createdFolder": "Папку успішно створено",
+    "creatingFolder": "Створення папки",
+    "folderName": "Назва папки",
+    "folderInputPlaceholder": "Наприклад \"Кухня\"",
+    "folderExist": "Папка з такою назвою вже існує"
   },
   "terms": {
     "pageTitle": "Умови Користування",
