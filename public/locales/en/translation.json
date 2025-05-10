@@ -183,5 +183,10 @@
     "firstGeneration": "generation",
     "secondGeneration": "generations",
     "thirdGeneration": "generations"
+  },
+
+  "profile": {
+    "yourFolders": "Your folders",
+    "allGenerations": "All generations"
   }
 }

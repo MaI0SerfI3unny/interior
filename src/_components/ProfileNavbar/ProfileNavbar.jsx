@@ -1,30 +1,36 @@
 import { NavLink } from "react-router-dom";
-import style from "./style.module.scss";
+import { ProfileNavbarStyles } from "./ProfileNavbarStyles.styled";
 
 export const ProfileNavbar = () => {
   return (
-    <div className={style.navbar}>
-      <div className={style.navbarLink}>
-        <NavLink
-          to="/profile/main"
-          className={({ isActive }) => (isActive ? style.active : "")}
-        >
-          Генерації
-        </NavLink>
-        <NavLink
-          to="/profile/plan"
-          className={({ isActive }) => (isActive ? style.active : "")}
-        >
-          Мій тарифний план
-        </NavLink>
-        <NavLink
-          to="/profile/settings"
-          className={({ isActive }) => (isActive ? style.active : "")}
-        >
-          Особисті дані
-        </NavLink>
-      </div>
+    <ProfileNavbarStyles>
+      <ul>
+        <li>
+          <NavLink
+            to="/profile/main"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Генерації
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/profile/plan"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Мій тарифний план
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/profile/settings"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Особисті дані
+          </NavLink>
+        </li>
+      </ul>
       <hr />
-    </div>
+    </ProfileNavbarStyles>
   );
 };

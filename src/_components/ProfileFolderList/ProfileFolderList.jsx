@@ -1,31 +1,14 @@
-import photo from "@/assets/profile/photo_folder.png";
-import style from "./style.module.scss";
+import { ProfileFolderListStyles } from "./ProfileFolderListStyles.styled";
+import ProfileFolderWrapper from "../ProfileFolderWrapper/ProfileFolderWrapper";
 
-const list_folder = ["", "", "", ""];
-
-export const ProfileFolderList = () => {
-  const isHavePhoto = false;
+const ProfileFolderList = ({ folders }) => {
   return (
-    <div className={style.foldersList}>
-      {list_folder.map((_, key) => (
-        <div key={key} className={style.foldersListItem}>
-          <div className={style.foldersListItemPreview}>
-            <div className={style.foldersListItemLeft}>
-              <img src={photo} alt="main_photo" />
-            </div>
-            <div className={style.foldersListItemRight}>
-              <img src={photo} alt="main_photo" />
-              {isHavePhoto ? (
-                <img src={photo} alt="main_photo" />
-              ) : (
-                <div className={style.noPhoto}></div>
-              )}
-            </div>
-          </div>
-          <h6 className={style.foldersListItemTitle}>Кухня</h6>
-          <p className={style.foldersListItemDesc}>18 генерацій</p>
-        </div>
+    <ProfileFolderListStyles>
+      {folders.map((folder, index) => (
+        <ProfileFolderWrapper key={index} folder={folder} />
       ))}
-    </div>
+    </ProfileFolderListStyles>
   );
 };
+
+export default ProfileFolderList;

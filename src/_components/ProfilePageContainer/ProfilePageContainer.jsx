@@ -1,9 +1,9 @@
-import style from "./style.module.scss";
+import { ProfilePageContainerStyles } from "./ProfilePageContainerStyles.styled";
 
 export const ProfilePageContainer = ({ children }) => {
   return (
-    <div className={style.pageContainer}>
-      <div className={style.main}>{children}</div>
-    </div>
+    <ProfilePageContainerStyles>
+      <div>{children}</div>
+    </ProfilePageContainerStyles>
   );
 };

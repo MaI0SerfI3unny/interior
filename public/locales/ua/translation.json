@@ -184,5 +184,9 @@
     "firstGeneration": "генерація",
     "secondGeneration": "генерації",
     "thirdGeneration": "генерацій"
+  },
+  "profile": {
+    "yourFolders": "Ваші папки",
+    "allGenerations": "Усі генерації"
   }
 }
