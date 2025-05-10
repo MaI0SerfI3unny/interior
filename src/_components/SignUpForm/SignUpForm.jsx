@@ -132,9 +132,13 @@ const SignUpForm = () => {
               <span className={css.checkmark}></span>
               <span className={css.agreement}>
                 {t("register.agree")}
-                <Link className={css.link}>{t("register.terms")}</Link>
+                <Link to="/terms" className={css.link}>
+                  {t("register.terms")}
+                </Link>
                 {t("register.and")}
-                <Link className={css.link}>{t("register.conditions")}</Link>.
+                <Link to="/policy" className={css.link}>
+                  {t("register.conditions")}
+                </Link>
               </span>
             </label>
           </div>

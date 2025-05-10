@@ -8,9 +8,13 @@ import Layout from "../Layout/Layout.jsx";
 import { SendRecoveryEmail } from "../../pages/SendRecoveryEmail.jsx";
 import { RecoveryPwd } from "../../pages/RecoveryPwd.jsx";
 import { ScrollToTop } from "../ScrollToTop/ScrollToTop.jsx";
+
 import { ProfilePageFolders } from "../../pages/ProfilePageFolders.jsx";
 import { ProfilePagePlan } from "../../pages/ProfilePagePlan.jsx";
 import { ProfilePageSettings } from "../../pages/ProfilePageSettings.jsx";
+
+import { TermsOfUsePage } from "../../pages/TermsOfUsePage.jsx";
+import { PrivacyPolicyPage } from "../../pages/PrivacyPolicyPage.jsx";
 
 export const App = () => {
   return (
@@ -28,6 +32,8 @@ export const App = () => {
           <Route path="/profile/main" element={<ProfilePageFolders />} />
           <Route path="/profile/plan" element={<ProfilePagePlan />} />
           <Route path="/profile/settings" element={<ProfilePageSettings />} />
+          <Route path="/terms" element={<TermsOfUsePage />} />
+          <Route path="/policy" element={<PrivacyPolicyPage />} />
         </Route>
       </Routes>
     </>
