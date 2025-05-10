@@ -4,7 +4,6 @@ import clsx from "clsx";
 
 export const PromoSwitch = ({ promo, onClick }) => {
   const { t } = useTranslation();
-  console.log(promo, "promo");
 
   return (
     <div className={css.btnContainer}>

@@ -2,7 +2,12 @@ import { subscribes } from "../../mock/subscribes.js";
 import { SubsribesCard } from "../SubsribesCard/SubsribesCard.jsx";
 import css from "./SubscribesList.module.scss";
 
-export const SubscribesList = ({ selectedPlanId, handleSelect }) => {
+export const SubscribesList = ({
+  selectedPlanId,
+  handleSelect,
+  onSubmit,
+  promo,
+}) => {
   return (
     <div className={css.cardBox}>
       {subscribes.map(item => (
@@ -11,6 +16,8 @@ export const SubscribesList = ({ selectedPlanId, handleSelect }) => {
           plan={item}
           isSelect={selectedPlanId === item.id}
           handleSelect={handleSelect}
+          onSubmit={onSubmit}
+          promo={promo}
         />
       ))}
     </div>
