@@ -191,6 +191,35 @@
     "allGenerations": "Усі генерації"
   },
 
+  "settings": {
+    "changeAvatar": "Змінити фото",
+    "personalData": "Особісті дані",
+    "nameInput": "Ім’я",
+    "nameDescription": "Це ім’я буде видно тільки у вашому профілі",
+    "changeName": "Змінити імʼя",
+    "emailDescription": "Цей  E-mail буде видно тільки у вашому профілі",
+    "changeEmail": "Змінити E-mail",
+    "emailInput": "E-mail",
+    "confirmEmailButton": "Ми надіслали вам листа для підтвердження зміни електронної пошти",
+    "goToEmailButton": "Перейти на пошту",
+    "changeButton": "Змінити",
+    "passwordTitle": "Пароль",
+    "cancelButton": "Відхилити",
+    "saveBtn": "Зберегти",
+    "changePassword": "Змінити пароль",
+    "changePasswordRules": "Пароль має містити щонайменше 8 символів, включаючи принаймні одну літеру та одну цифру",
+    "enterOldPassword": "Введіть старий пароль",
+    "enterNewPassword": "Введіть новий пароль",
+    "repeatNewPassword": "Повторіть новий пароль",
+    "accountTitle": "Аккаунт",
+    "deleteAccount": "Видалити аккаунт",
+    "deleteAccountDescription": "Повністю видалити ваш акаунт на сайті Interior AI",
+    "deleteAccountButton": "Видалити",
+    "dontDeleteAccountButton": "Не видаляти",
+    "deleteModalTitle": "Ви дійсно хочете видалити акаунт?",
+    "deleteAccountAttention": "Пам'ятайте, що цей процес є незворотнім. Після видалення вашого акаунта всі дані будуть втрачено"
+  },
+
   "terms": {
     "pageTitle": "Умови Користування",
     "title1": "Дата набрання чинності: 29.04.2025",
