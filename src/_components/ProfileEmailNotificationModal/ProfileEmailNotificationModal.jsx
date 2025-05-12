@@ -6,7 +6,7 @@ const ProfileEmailNotificationModal = ({ toggleModal, newEmail }) => {
   const { t } = useTranslation();
 
   function goToEmail() {
-    const [_, email] = newEmail.split("@");
+    const [, email] = newEmail.split("@");
     window.open(`https://${email}`, "_blank", "noopener,noreferrer");
 
     toggleModal();
