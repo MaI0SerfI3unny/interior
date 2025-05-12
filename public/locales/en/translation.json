@@ -233,5 +233,29 @@
     "text8": "We may update this Privacy Policy from time to time to reflect changes in our business practices or to comply with legal requirements. We will notify you of any significant changes to our Privacy Policy via email or through our website.",
     "title9":"Cookies",
     "text9": "We use cookies to enhance your experience with our website and services. Cookies are small text files that are stored on your device when you visit our website. We use cookies to remember your settings, improve website performance, and provide personalized content. You can disable cookies in your browser settings, but this may affect your experience on our website."
-   }
+   },
+   "subscribe": {
+    "pageTitle": "Subscription Information",
+    "info": "Get unlimited access to all features with a subscription",
+    "btnMonth": "Monthly Subscription",
+    "btnYear": "Yearly Subscription",
+    "title1": "free",
+    "freefeauters1": "10 interior generations total",
+    "freefeauters2": "Generation queue",
+    "freefeauters3": "Limited access to resources",
+    "freefeauters4": "For non-commercial use",
+    "title2": "premium",
+    "premiumfeauters1": "50 interior generations total",
+    "premiumfeauters2": "No generation queue",
+    "premiumfeauters3": "Limited access to resources",
+    "premiumfeauters4": "For non-commercial use",
+    "title3": "pro",
+    "profeauters1": "Unlimited generations",
+    "profeauters2": "No generation queue",
+    "profeauters3": "Limited access to resources",
+    "profeauters4": "For non-commercial use",
+    "month": "month",
+    "submit": "Try Now",
+    "value": "Included in the plan:"
+}
 }
