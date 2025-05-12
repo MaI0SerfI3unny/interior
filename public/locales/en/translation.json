@@ -221,7 +221,14 @@
     "deleteAccountButton": "Delete",
     "dontDeleteAccountButton": "Do not delete",
     "deleteModalTitle": "Do you really want to delete your account?",
-    "deleteAccountgAttention": "Please note that this process is irreversible. Once your account is deleted, all data will be lost"
+    "deleteAccountgAttention": "Please note that this process is irreversible. Once your account is deleted, all data will be lost",
+    "photoModalTitle": "Detailed generation information",
+    "roomStyle": "Room style",
+    "roomType": "Room type",
+    "loadMore": "Show more",
+    "hideMore": "Collapse",
+    "copied": "Copied",
+    "photoDeleted": "Your picture has been deleted"
   },
   "terms": {
     "pageTitle": "Terms of Use",
@@ -266,8 +273,8 @@
     "text8": "We may update this Privacy Policy from time to time to reflect changes in our business practices or to comply with legal requirements. We will notify you of any significant changes to our Privacy Policy via email or through our website.",
     "title9": "Cookies",
     "text9": "We use cookies to enhance your experience with our website and services. Cookies are small text files that are stored on your device when you visit our website. We use cookies to remember your settings, improve website performance, and provide personalized content. You can disable cookies in your browser settings, but this may affect your experience on our website."
-   },
-   "subscribe": {
+  },
+  "subscribe": {
     "pageTitle": "Subscription Information",
     "info": "Get unlimited access to all features with a subscription",
     "btnMonth": "Monthly Subscription",
@@ -290,5 +297,5 @@
     "month": "month",
     "submit": "Try Now",
     "value": "Included in the plan:"
-   }
+  }
 }

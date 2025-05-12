@@ -5,7 +5,9 @@ export const SavingPhotoStyles = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
+  padding: 40px 20px;
+  background-color: rgb(244, 241, 236);
+  border-radius: 4px;
   .icon-container {
     display: flex;
     justify-content: center;

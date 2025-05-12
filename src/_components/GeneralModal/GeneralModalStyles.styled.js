@@ -12,6 +12,8 @@ export const GeneralModalStyles = styled.div`
 
   .modal {
     position: absolute;
+    max-height: 90%;
+    overflow: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
