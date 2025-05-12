@@ -5,4 +5,5 @@ export const CloseModalButtonStyles = styled.button`
   top: 16px;
   right: 16px;
   border: none;
+  background-color: transparent;
 `;

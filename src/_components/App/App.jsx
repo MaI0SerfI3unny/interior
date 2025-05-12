@@ -8,6 +8,11 @@ import Layout from "../Layout/Layout.jsx";
 import { SendRecoveryEmail } from "../../pages/SendRecoveryEmail.jsx";
 import { RecoveryPwd } from "../../pages/RecoveryPwd.jsx";
 import { ScrollToTop } from "../ScrollToTop/ScrollToTop.jsx";
+
+import { ProfilePageFolders } from "../../pages/ProfilePageFolders.jsx";
+import { ProfilePagePlan } from "../../pages/ProfilePagePlan.jsx";
+import { ProfilePageSettings } from "../../pages/ProfilePageSettings.jsx";
+
 import { TermsOfUsePage } from "../../pages/TermsOfUsePage.jsx";
 import { PrivacyPolicyPage } from "../../pages/PrivacyPolicyPage.jsx";
 import { SubscribePage } from "../../pages/SubscribePage.jsx";
@@ -25,6 +30,9 @@ export const App = () => {
           <Route index element={<LandingPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/generating" element={<GeneratePage />} />
+          <Route path="/profile/main" element={<ProfilePageFolders />} />
+          <Route path="/profile/plan" element={<ProfilePagePlan />} />
+          <Route path="/profile/settings" element={<ProfilePageSettings />} />
           <Route path="/terms" element={<TermsOfUsePage />} />
           <Route path="/policy" element={<PrivacyPolicyPage />} />
           <Route path="/subscribes" element={<SubscribePage />} />
