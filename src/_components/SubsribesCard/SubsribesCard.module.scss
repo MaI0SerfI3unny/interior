@@ -1,0 +1,64 @@
+@use "../../scss/common/vars" as *;
+
+.card {
+  background-color: $backgraund-inputs;
+  border-radius: 4px;
+  padding: 24px;
+  border: 1px solid transparent;
+}
+
+.title {
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.priceBox {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+
+.price {
+  font-family: "Cormorant";
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.priceText {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.btn {
+  border: none;
+  border-radius: 4px;
+  background-color: $backgraund-button;
+  color: $backgraund-inputs;
+  padding: 16px 0 16px 0;
+  display: flex;
+  justify-content: center;
+  width: 336px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.feautersBox {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid $stroke-secondary;
+}
+
+.feauter {
+  display: flex;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.active {
+  border: 1px solid $stroke-dark;
+}

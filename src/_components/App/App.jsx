@@ -15,6 +15,7 @@ import { ProfilePageSettings } from "../../pages/ProfilePageSettings.jsx";
 
 import { TermsOfUsePage } from "../../pages/TermsOfUsePage.jsx";
 import { PrivacyPolicyPage } from "../../pages/PrivacyPolicyPage.jsx";
+import { SubscribePage } from "../../pages/SubscribePage.jsx";
 
 export const App = () => {
   return (
@@ -34,6 +35,7 @@ export const App = () => {
           <Route path="/profile/settings" element={<ProfilePageSettings />} />
           <Route path="/terms" element={<TermsOfUsePage />} />
           <Route path="/policy" element={<PrivacyPolicyPage />} />
+          <Route path="/subscribes" element={<SubscribePage />} />
         </Route>
       </Routes>
     </>
