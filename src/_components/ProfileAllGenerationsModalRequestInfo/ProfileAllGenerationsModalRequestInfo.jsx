@@ -20,17 +20,19 @@ const ProfileAllGenerationsModalRequestInfo = ({ photo }) => {
   const showMoreKey = isShowMoreInfo
     ? "settings.hideMore"
     : "settings.loadMore";
-  const isLongPrompt = photo.prompt.length >= 300;
+  const isLongPrompt = photo.prompt.length >= 150;
 
   return (
     <>
       <ProfileAllGenerationsModalRequestInfoStyles
         $isShowMoreInfo={isShowMoreInfo}
       >
-        <div className="photo-container">
-          <h3>{t("generate.yourPhoto")}</h3>
-          <img src={photo.original} alt="original" />
-        </div>
+        {photo.original && (
+          <div className="photo-container">
+            <h3>{t("generate.yourPhoto")}</h3>
+            <img src={photo.original} alt="original" />
+          </div>
+        )}
         <div className="text-container">
           <div className="small-container">
             <h4>{t("settings.roomStyle")}</h4>
