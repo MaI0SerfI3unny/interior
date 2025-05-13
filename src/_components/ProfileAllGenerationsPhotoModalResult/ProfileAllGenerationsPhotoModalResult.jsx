@@ -4,20 +4,16 @@ import { ReactComponent as ShareIcon } from "../../svg/share.svg";
 import { ReactComponent as DeleteIcon } from "../../svg/cart.svg";
 import { useDispatch } from "react-redux";
 import { deletePhoto } from "../../redux/generationFolders/generationFoldersSlice";
-
-const ProfileAllGenerationsPhotoModalResult = ({
-  photo,
-  setIsDeleting,
-  toggleModal,
-}) => {
+import { toastSuccess } from "../../assets/functions/toastNotification";
+import { useTranslation } from "react-i18next";
+const ProfileAllGenerationsPhotoModalResult = ({ photo, toggleModal }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   function handleDelete() {
-    setIsDeleting(true);
-    setTimeout(() => {
-      dispatch(deletePhoto({ photoId: photo.id }));
-      toggleModal();
-    }, 3000);
+    dispatch(deletePhoto({ photoId: photo.id }));
+    toggleModal();
+    toastSuccess(t("settings.photoDeleted"));
   }
 
   return (

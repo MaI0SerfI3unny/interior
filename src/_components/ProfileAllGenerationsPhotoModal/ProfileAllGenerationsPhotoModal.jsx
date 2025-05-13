@@ -3,15 +3,9 @@ import { useTranslation } from "react-i18next";
 import CloseModalButton from "../CloseModalButton/CloseModalButton";
 import ProfileAllGenerationsModalRequestInfo from "../ProfileAllGenerationsModalRequestInfo/ProfileAllGenerationsModalRequestInfo";
 import ProfileAllGenerationsPhotoModalResult from "../ProfileAllGenerationsPhotoModalResult/ProfileAllGenerationsPhotoModalResult";
-import { useState } from "react";
-import GeneralModal from "../GeneralModal/GeneralModal";
-import SavingPhoto from "../SavingPhoto/SavingPhoto";
 
 const ProfileAllGenerationsPhotoModal = ({ toggleModal, photo }) => {
   const { t } = useTranslation();
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  const deletingText = t("settings.photoDeleted");
 
   return (
     <>
@@ -24,15 +18,9 @@ const ProfileAllGenerationsPhotoModal = ({ toggleModal, photo }) => {
           <ProfileAllGenerationsPhotoModalResult
             photo={photo}
             toggleModal={toggleModal}
-            setIsDeleting={setIsDeleting}
           />
         </div>
       </ProfileAllGenerationsPhotoModalStyles>
-      {isDeleting && (
-        <GeneralModal toggleModal={toggleModal}>
-          <SavingPhoto text={deletingText} />
-        </GeneralModal>
-      )}
     </>
   );
 };

@@ -1,22 +1,10 @@
 import styled from "styled-components";
 
-export const AddCollectionModalStyles = styled.div`
+export const AddCollectionModalContainerStyles = styled.div`
   padding-top: 48px;
   padding-bottom: 40px;
   position: relative;
   text-align: center;
-
-  h1 {
-    margin-bottom: 40px;
-    font-size: 20px;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    row-gap: 8px;
-    margin-bottom: 32px;
-  }
 
   @media screen and (max-width: 768px) {
     padding-right: 20px;

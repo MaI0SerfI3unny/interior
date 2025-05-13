@@ -8,6 +8,7 @@ import { App } from "./_components/App/App.jsx";
 import "./global.scss";
 import reportWebVitals from "./reportWebVitals";
 import "./i18n";
+import { ToastContainer } from "react-toastify";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -17,6 +18,7 @@ root.render(
       {/* <PersistGate loading={null} persistor={persistor}> */}
       <BrowserRouter>
         <App />
+        <ToastContainer />
       </BrowserRouter>
       {/* </PersistGate> */}
     </Provider>
