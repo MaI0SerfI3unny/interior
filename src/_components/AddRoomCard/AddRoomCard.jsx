@@ -2,16 +2,21 @@ import { AddRoomCardStyles } from "./AddRoomCardStyles.styled";
 import { getEndOfWord } from "../../assets/functions/getEndOfWord";
 import { useTranslation } from "react-i18next";
 
-const AddRoomCard = ({ roomInfo, handleSelectedFolder, selectedFolder }) => {
+const AddRoomCard = ({
+  folder,
+  handleSelectedFolder,
+  selectedFolder,
+  timePhoto,
+}) => {
   const { t } = useTranslation();
-  const { title, image, count } = roomInfo;
-  const generationKey = `modal.${getEndOfWord(count)}`;
+  const { title, photos } = folder;
+  const generationKey = `modal.${getEndOfWord(photos.length)}`;
 
   function handleCheckFolder() {
-    if (selectedFolder === roomInfo.title) {
+    if (selectedFolder === folder.id) {
       handleSelectedFolder(null);
     } else {
-      handleSelectedFolder(roomInfo.title);
+      handleSelectedFolder(folder.id);
     }
   }
 
@@ -19,13 +24,13 @@ const AddRoomCard = ({ roomInfo, handleSelectedFolder, selectedFolder }) => {
     <AddRoomCardStyles
       onClick={handleCheckFolder}
       $selectedFolder={selectedFolder}
-      $value={roomInfo.title}
+      $value={folder.id}
     >
-      <img src={image} alt="cat" />
+      <img src={timePhoto} alt="room" />
       <div className="text-container">
         <h2>{title}</h2>
         <p>
-          {count} {t(generationKey)}
+          {photos.length} {t(generationKey)}
         </p>
       </div>
     </AddRoomCardStyles>

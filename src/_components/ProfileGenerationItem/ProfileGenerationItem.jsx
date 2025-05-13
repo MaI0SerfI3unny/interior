@@ -5,7 +5,7 @@ import GeneralModal from "../GeneralModal/GeneralModal";
 import { useState } from "react";
 import ProfileAllGenerationsPhotoModal from "../ProfileAllGenerationsPhotoModal/ProfileAllGenerationsPhotoModal";
 
-const ProfileGenerationItem = ({ photo, handleDeletePhoto }) => {
+const ProfileGenerationItem = ({ photo }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   function handleDownload(e) {
@@ -33,7 +33,6 @@ const ProfileGenerationItem = ({ photo, handleDeletePhoto }) => {
           <ProfileAllGenerationsPhotoModal
             toggleModal={() => setIsOpenModal(false)}
             photo={photo}
-            handleDeletePhoto={handleDeletePhoto}
           />
         </GeneralModal>
       )}

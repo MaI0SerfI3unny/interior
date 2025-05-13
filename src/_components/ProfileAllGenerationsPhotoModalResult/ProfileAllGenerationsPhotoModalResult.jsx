@@ -2,18 +2,20 @@ import { ProfileAllGenerationsPhotoModalResultStyles } from "./ProfileAllGenerat
 import { ReactComponent as CloudIcon } from "../../svg/cloud.svg";
 import { ReactComponent as ShareIcon } from "../../svg/share.svg";
 import { ReactComponent as DeleteIcon } from "../../svg/cart.svg";
+import { useDispatch } from "react-redux";
+import { deletePhoto } from "../../redux/generationFolders/generationFoldersSlice";
 
 const ProfileAllGenerationsPhotoModalResult = ({
   photo,
-  handleDeletePhoto,
   setIsDeleting,
   toggleModal,
 }) => {
+  const dispatch = useDispatch();
+
   function handleDelete() {
     setIsDeleting(true);
     setTimeout(() => {
-      handleDeletePhoto(photo.id);
-
+      dispatch(deletePhoto({ photoId: photo.id }));
       toggleModal();
     }, 3000);
   }

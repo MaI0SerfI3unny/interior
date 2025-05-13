@@ -16,6 +16,8 @@ const GeneratePage = () => {
     setIsShowModal(value);
   }
 
+  console.log(result);
+
   return (
     <>
       <GeneratingPageStyles>
@@ -41,7 +43,7 @@ const GeneratePage = () => {
           styleSizes={addCollectionStyles}
           toggleModal={toggleModal}
         >
-          <AddCollectionModal />
+          <AddCollectionModal result={result} />
         </GeneralModal>
       )}
     </>

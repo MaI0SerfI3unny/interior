@@ -184,7 +184,12 @@
     "firstGeneration": "генерація",
     "secondGeneration": "генерації",
     "thirdGeneration": "генерацій",
-    "savingPhoto": "Фото успішно додано"
+    "savingPhoto": "Фото успішно додано",
+    "creatingFolder": "Створення папки",
+    "folderName": "Назва папки",
+    "folderInputPlaceholder": "Наприклад \"Кухня\"",
+    "folderExist": "Папка з такою назвою вже існує",
+    "createdFolder": "Папку успішно створена"
   },
   "profile": {
     "yourFolders": "Ваші папки",

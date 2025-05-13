@@ -8,7 +8,7 @@ const MainAnswerWindow = ({ isLoadingAnswer, result }) => {
     <MainAnswerWindowStyles>
       {!isLoadingAnswer && !result && <InstructionText />}
       {isLoadingAnswer && <LoadingComponent />}
-      {result && !isLoadingAnswer && <ResultImage />}
+      {result && !isLoadingAnswer && <ResultImage result={result} />}
     </MainAnswerWindowStyles>
   );
 };

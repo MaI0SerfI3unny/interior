@@ -7,11 +7,7 @@ import { useState } from "react";
 import GeneralModal from "../GeneralModal/GeneralModal";
 import SavingPhoto from "../SavingPhoto/SavingPhoto";
 
-const ProfileAllGenerationsPhotoModal = ({
-  toggleModal,
-  photo,
-  handleDeletePhoto,
-}) => {
+const ProfileAllGenerationsPhotoModal = ({ toggleModal, photo }) => {
   const { t } = useTranslation();
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -27,7 +23,6 @@ const ProfileAllGenerationsPhotoModal = ({
           <ProfileAllGenerationsModalRequestInfo photo={photo} />
           <ProfileAllGenerationsPhotoModalResult
             photo={photo}
-            handleDeletePhoto={handleDeletePhoto}
             toggleModal={toggleModal}
             setIsDeleting={setIsDeleting}
           />
