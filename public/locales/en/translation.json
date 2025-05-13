@@ -231,8 +231,8 @@
    "subscribe": {
     "pageTitle": "Subscription Information",
     "info": "Get unlimited access to all features with a subscription",
-    "btnMonth": "Monthly Subscription",
-    "btnYear": "Yearly Subscription",
+    "btnMonth": "Monthly",
+    "btnYear": "Yearly",
     "title1": "free",
     "freefeauters1": "10 interior generations total",
     "freefeauters2": "Generation queue",

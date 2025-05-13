@@ -1,7 +1,17 @@
+@use "../../scss/common/mixins" as *;
+
 .pageContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 144px;
-  padding-bottom: 80px;
+  padding: 116px 20px 60px 20px;
+
+  @include media(tablet) {
+    padding: 128px 32px 60px 32px;
+  }
+
+  @include media(desktop) {
+    padding-top: 144px;
+    padding-bottom: 80px;
+  }
 }

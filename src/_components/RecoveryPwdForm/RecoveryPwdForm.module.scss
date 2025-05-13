@@ -106,8 +106,8 @@
 
 .input:active,
 .input:focus {
-  color: $stroke-dark;
-  border-color: $stroke-dark;
+  color: $typography-primary;
+  border-color: $typography-primary;
   background-color: $backgraund-inputs !important;
   outline: none;
 }
@@ -216,7 +216,7 @@
 
   border-radius: 4px;
   border: none;
-  background-color: $backgraund-button;
+  background-color: $typography-primary;
   color: $backgraund-inputs;
 
   font-size: 16px;
