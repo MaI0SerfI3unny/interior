@@ -70,7 +70,7 @@ const DownloadFileInput = ({ value, onChange, onDeletePhoto }) => {
           ref={inputRef}
           accept=".jpg,.jpeg,.png"
           onChange={handleInputChange}
-          name="photo"
+          name="original"
         />
 
         {!value ? (

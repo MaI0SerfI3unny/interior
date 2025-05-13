@@ -4,8 +4,8 @@ import GeneratingAnswer from "../_components/GeneratingAnswer/GeneratingAnswer";
 import { GeneratingPageStyles } from "./styles/GeneratingPage.styled";
 import MainContainer from "../_components/MainContainer/MainContainer";
 import GeneralModal from "../_components/GeneralModal/GeneralModal";
-import AddCollectionModal from "../_components/AddCollectionModal/AddCollectionModal";
-import { addCollectionStyles } from "../_components/AddCollectionModal/addCollectionStylesProps";
+import AddCollectionModalContainer from "../_components/AddCollectionModalContainer/AddCollectionModalContainer";
+import { addCollectionStyles } from "../_components/AddCollectionModalContainer/addCollectionStylesProps";
 
 const GeneratePage = () => {
   const [result, setResult] = useState(null);
@@ -15,6 +15,8 @@ const GeneratePage = () => {
   function toggleModal(value) {
     setIsShowModal(value);
   }
+
+  console.log(result);
 
   return (
     <>
@@ -41,7 +43,7 @@ const GeneratePage = () => {
           styleSizes={addCollectionStyles}
           toggleModal={toggleModal}
         >
-          <AddCollectionModal />
+          <AddCollectionModalContainer result={result} />
         </GeneralModal>
       )}
     </>

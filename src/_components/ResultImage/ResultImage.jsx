@@ -1,8 +1,7 @@
 import { ResultImageStyles } from "./ResultImageStyles.styled";
-import resultImage from "../../pictures/result-image.jpg";
 
-const ResultImage = () => {
-  return <ResultImageStyles $resultImage={resultImage} />;
+const ResultImage = ({ result }) => {
+  return <ResultImageStyles src={result.result} />;
 };
 
 export default ResultImage;

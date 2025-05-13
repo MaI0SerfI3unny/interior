@@ -2,11 +2,11 @@ import { ReactComponent as PlusIcon } from "../../svg/plus.svg";
 import { useTranslation } from "react-i18next";
 import { AddRoomContanerStyles } from "./AddRoomContainerStyles.styled";
 
-const AddRoomContainer = () => {
+const AddRoomButtonContainer = ({ handleCreateFolder }) => {
   const { t } = useTranslation();
   return (
     <AddRoomContanerStyles>
-      <button>
+      <button onClick={() => handleCreateFolder(true)}>
         <PlusIcon width={16} height={16} />
       </button>
 
@@ -15,4 +15,4 @@ const AddRoomContainer = () => {
   );
 };
 
-export default AddRoomContainer;
+export default AddRoomButtonContainer;

@@ -19,7 +19,7 @@ const initialRoomValues = [
 ];
 
 const initialFormValues = {
-  photo: null,
+  original: null,
   prompt: "",
   style: "classic",
   room: "kitchen",

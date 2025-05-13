@@ -4,6 +4,7 @@ import { initialValues } from "../../assets/constants/formInitialValues";
 import { useTranslation } from "react-i18next";
 import { useStyleOptions } from "../../assets/hooks/useStyleOptions";
 import { useRoomOptions } from "../../assets/hooks/useRoomOptions";
+import { imitationGeneration } from "../../assets/functions/imitationGeneration";
 
 import DownloadFileInput from "../DownloadFileInput/DownloadFileInput";
 import PromptInput from "../PromptInput/PromptInput";
@@ -12,7 +13,7 @@ import { GeneratingFormStyles } from "./GeneratingFormStyles.styled";
 import SubmitButton from "../SubmitButton/SubmitButton";
 
 const validationSchema = Yup.object({
-  photo: Yup.mixed()
+  original: Yup.mixed()
     .test("fileSize", "Файл занадто великий (максимум 150KB)", value => {
       if (!value) return true;
       return value.size <= initialValues.FILE_SIZE;
@@ -50,7 +51,9 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer }) => {
     setTimeout(() => {
       console.log(values);
 
-      setResult(values);
+      const result = imitationGeneration(values);
+
+      setResult(result);
 
       setIsLoadingAnswer(false);
     }, 3000);
@@ -65,14 +68,14 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer }) => {
       {({ values, setFieldValue }) => (
         <GeneratingFormStyles>
           <DownloadFileInput
-            value={values.photo}
+            value={values.original}
             onChange={e => {
               const file = e.target?.files?.[0] || e;
               if (file) {
-                setFieldValue("photo", file);
+                setFieldValue("original", file);
               }
             }}
-            onDeletePhoto={() => setFieldValue("photo", null)}
+            onDeletePhoto={() => setFieldValue("original", null)}
           />
 
           <PromptInput />
