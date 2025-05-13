@@ -1,18 +1,27 @@
 import { CreatingFolderModalStyles } from "./CreatingFolderModalStyles.styled";
 import { useTranslation } from "react-i18next";
 import CloseModalButton from "../CloseModalButton/CloseModalButton";
+import { useSelector } from "react-redux";
+import { getGenerationFolders } from "../../redux/generationFolders/generationFoldersSelectors";
+import { useState } from "react";
 
 const CreatingFolderModal = ({
   newFolderName,
   setNewFolderName,
-  errorMessage,
   toggleModal,
   creatingFolder,
-  checkFolderNames,
-  setIsShowCreating,
-  setIsCreating,
 }) => {
   const { t } = useTranslation();
+  const folders = useSelector(getGenerationFolders);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  function checkFolderNames(value) {
+    if (folders.some(folder => folder.title === value)) {
+      setErrorMessage(t("modal.folderExist"));
+    } else {
+      setErrorMessage("");
+    }
+  }
 
   function handleChangeName(e) {
     setNewFolderName(e.target.value);
@@ -23,12 +32,9 @@ const CreatingFolderModal = ({
     e.preventDefault();
     creatingFolder();
 
-    setIsShowCreating(false);
-    setIsCreating(true);
-
     setTimeout(() => {
-      toggleModal(false);
-      // Перенаправляемпользователя в личный кабинет
+      toggleModal();
+      // Перенаправляем пользователя в личный кабинет
       // ........
     }, 3000);
   }
@@ -37,9 +43,9 @@ const CreatingFolderModal = ({
   return (
     <CreatingFolderModalStyles>
       <CloseModalButton toggleModal={toggleModal} />
-      <h2>{t(`modal.creatingFolder`)}</h2>
+      <h2>{t("modal.creatingFolder")}</h2>
       <form onSubmit={handleSubmit}>
-        <h3>{t(`modal.folderName`)}</h3>
+        <h3>{t("modal.folderName")}</h3>
         <input
           placeholder={placeholderValue}
           onChange={handleChangeName}
@@ -47,7 +53,7 @@ const CreatingFolderModal = ({
         />
         {errorMessage && <p className="error">{errorMessage}</p>}
         <button disabled={!newFolderName || errorMessage}>
-          {t(`modal.createFolder`)}
+          {t("modal.createFolder")}
         </button>
       </form>
     </CreatingFolderModalStyles>

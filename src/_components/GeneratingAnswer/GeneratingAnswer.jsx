@@ -8,7 +8,9 @@ const GeneratingAnswer = ({ result, toggleModal, isLoadingAnswer }) => {
     <GeneratingAnswerStyles>
       <HeaderAnswer />
       <MainAnswerWindow isLoadingAnswer={isLoadingAnswer} result={result} />
-      {result && !isLoadingAnswer && <FooterAnswer toggleModal={toggleModal} />}
+      {result && !isLoadingAnswer && (
+        <FooterAnswer toggleModal={toggleModal} result={result} />
+      )}
     </GeneratingAnswerStyles>
   );
 };

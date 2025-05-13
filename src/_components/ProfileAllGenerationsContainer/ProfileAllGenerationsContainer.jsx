@@ -2,7 +2,7 @@ import { ProfileAllGenerationsContainerStyles } from "./ProfileAllGenerationsCon
 import ProfileAllGenerationsHeader from "../ProfileAllGenerationsHeader/ProfileAllGenerationsHeader";
 import { ProfileAllGenerationList } from "../ProfileAllGenerationList/ProfileAllGenerationList";
 
-const ProfileAllGenerationsContainer = ({ folders, handleDeletePhoto }) => {
+const ProfileAllGenerationsContainer = ({ folders }) => {
   const photos = folders.reduce((acc, folder) => {
     return [...acc, ...folder.photos];
   }, []);
@@ -10,10 +10,7 @@ const ProfileAllGenerationsContainer = ({ folders, handleDeletePhoto }) => {
   return (
     <ProfileAllGenerationsContainerStyles>
       <ProfileAllGenerationsHeader generationsCount={photos.length} />
-      <ProfileAllGenerationList
-        photos={photos}
-        handleDeletePhoto={handleDeletePhoto}
-      />
+      <ProfileAllGenerationList photos={photos} />
     </ProfileAllGenerationsContainerStyles>
   );
 };

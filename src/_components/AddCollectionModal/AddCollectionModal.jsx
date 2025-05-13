@@ -2,77 +2,44 @@ import SaveResultButton from "../GeneratingAnswer/FooterAnswer/SaveResultButton/
 import AddRoomButtonContainer from "../AddRoomButton/AddRoomButtonContainer";
 import AddRoomCard from "../AddRoomCard/AddRoomCard";
 import { AddCollectionModalStyles } from "./AddCollectionModalStyles.styled";
-import catKitchen from "../../pictures/cat.jpeg";
 import catBedroom from "../../pictures/cat3.jpg";
-import catBathroom from "../../pictures/cat10.jpeg";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import SavingPhoto from "../SavingPhoto/SavingPhoto";
 import { addCollectionStyles } from "./addCollectionStylesProps";
 import CreatingFolderModal from "../CreatingFolderModal/CreatingFolderModal";
 import CloseModalButton from "../CloseModalButton/CloseModalButton";
+import { useSelector, useDispatch } from "react-redux";
+import { getGenerationFolders } from "../../redux/generationFolders/generationFoldersSelectors";
+import {
+  savePhoto,
+  createFolder,
+} from "../../redux/generationFolders/generationFoldersSlice";
 
-const collection = [
-  {
-    title: "Кухня",
-    count: 1,
-    image: catKitchen,
-  },
-  { title: "Спальня", count: 2, image: catBedroom },
-  { title: "Ванна", count: 5, image: catBathroom },
-];
-
-const AddCollectionModal = ({ toggleModal }) => {
+const AddCollectionModal = ({ toggleModal, result }) => {
   const { t } = useTranslation();
   const [selectedFolder, setSelectedFolder] = useState(null);
-  const [collections, setCollections] = useState(collection);
   const [newFolderName, setNewFolderName] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
   const [isSaving, setIsSaving] = useState(false);
   const [isShowCreating, setIsShowCreating] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
+  const folders = useSelector(getGenerationFolders);
+  const dispatch = useDispatch();
 
   function creatingFolder() {
-    setCollections([
-      ...collections,
-      {
-        title: newFolderName,
-        count: 1,
-        image: catBedroom,
-      },
-    ]);
-  }
+    dispatch(createFolder({ folderTitle: newFolderName, photo: result }));
 
-  function checkFolderNames(value) {
-    if (collections.some(col => col.title === value)) {
-      setErrorMessage(t("modal.folderExist"));
-    } else {
-      setErrorMessage("");
-    }
-  }
-
-  function saveImageToFolder() {
-    const updatedCollections = collections.map(collection => {
-      if (collection.title === selectedFolder) {
-        return { ...collection, count: collection.count + 1 };
-      }
-      return collection;
-    });
-
-    setCollections(updatedCollections);
+    setIsShowCreating(false);
+    setIsCreating(true);
   }
 
   function savingSuccessful() {
-    saveImageToFolder();
+    dispatch(savePhoto({ folderId: selectedFolder, photo: result }));
     setIsSaving(true);
 
     setTimeout(() => {
       toggleModal(false);
     }, 3000);
-  }
-
-  function handleSelectedFolder(value) {
-    setSelectedFolder(value);
   }
 
   const savingPhotoText = t("modal.savingPhoto");
@@ -90,12 +57,13 @@ const AddCollectionModal = ({ toggleModal }) => {
           <AddRoomButtonContainer handleCreateFolder={setIsShowCreating} />
 
           <ul className="rooms-list">
-            {collections.map(item => (
+            {folders.map(folder => (
               <AddRoomCard
-                key={item.title}
-                roomInfo={item}
-                handleSelectedFolder={handleSelectedFolder}
+                key={folder.title}
+                folder={folder}
+                handleSelectedFolder={setSelectedFolder}
                 selectedFolder={selectedFolder}
+                timePhoto={catBedroom}
               />
             ))}
           </ul>
@@ -116,11 +84,7 @@ const AddCollectionModal = ({ toggleModal }) => {
           newFolderName={newFolderName}
           setNewFolderName={setNewFolderName}
           creatingFolder={creatingFolder}
-          checkFolderNames={checkFolderNames}
           toggleModal={() => toggleModal(false)}
-          errorMessage={errorMessage}
-          setIsShowCreating={setIsShowCreating}
-          setIsCreating={setIsCreating}
         />
       )}
       {isCreating && !isShowCreating && !isSaving && (
