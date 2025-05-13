@@ -5,7 +5,7 @@ import { GeneratingPageStyles } from "./styles/GeneratingPage.styled";
 import MainContainer from "../_components/MainContainer/MainContainer";
 import GeneralModal from "../_components/GeneralModal/GeneralModal";
 import AddCollectionModalContainer from "../_components/AddCollectionModalContainer/AddCollectionModalContainer";
-import { addCollectionStyles } from "../_components/AddCollectionModal/addCollectionStylesProps";
+import { addCollectionStyles } from "../_components/AddCollectionModalContainer/addCollectionStylesProps";
 
 const GeneratePage = () => {
   const [result, setResult] = useState(null);
