@@ -20,8 +20,7 @@ export const PromoSwitch = ({ promo, onClick }) => {
         className={clsx(css.btn, promo && css.btnActave)}
       >
         {t("subscribe.btnYear")}
-        {" ( "}
-        <p className={css.accent}> -20%</p>
+        {" ( "} <p className={css.accent}> -20%</p>
         {")"}
       </button>
     </div>

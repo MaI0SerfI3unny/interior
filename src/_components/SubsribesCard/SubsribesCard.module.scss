@@ -1,4 +1,5 @@
 @use "../../scss/common/vars" as *;
+@use "../../scss/common/mixins" as *;
 
 .card {
   background-color: $backgraund-inputs;
@@ -11,8 +12,18 @@
   text-transform: uppercase;
   margin-bottom: 32px;
   font-weight: 600;
-  font-size: 40px;
-  line-height: 48px;
+  font-size: 28px;
+  line-height: 36px;
+
+  @include media(tablet) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  @include media(desktop) {
+    font-size: 40px;
+    line-height: 48px;
+  }
 }
 
 .priceBox {
@@ -36,21 +47,37 @@
 .btn {
   border: none;
   border-radius: 4px;
-  background-color: $backgraund-button;
+  background-color: $typography-primary;
   color: $backgraund-inputs;
   padding: 16px 0 16px 0;
   display: flex;
   justify-content: center;
-  width: 336px;
+  width: 272px;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
+
+  @include media(tablet) {
+    width: 294px;
+  }
+
+  @include media(desktop) {
+    width: 336px;
+  }
 }
 
 .feautersBox {
   margin-top: 24px;
   padding-top: 24px;
   border-top: 1px solid $stroke-secondary;
+
+  font-size: 14px;
+  line-height: 20px;
+
+  @include media(tablet) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .feauter {
@@ -59,6 +86,26 @@
   padding-top: 16px;
 }
 
+.feauterItem {
+  @include media(tablet) {
+    max-width: 262px;
+  }
+
+  @include media(desktop) {
+    max-width: 304px;
+  }
+}
+
 .active {
-  border: 1px solid $stroke-dark;
+  border: 1px solid $typography-primary;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+
+  @include media(desktop) {
+    width: 24px;
+    height: 24px;
+  }
 }

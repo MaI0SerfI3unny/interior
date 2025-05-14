@@ -33,8 +33,8 @@ export const SubsribesCard = ({
         {feauters.map((item, idx) => {
           return (
             <div key={idx} className={css.feauter}>
-              <Check />
-              <p>{t(item)}</p>
+              <Check className={css.icon} />
+              <p className={css.feauterItem}>{t(item)}</p>
             </div>
           );
         })}
