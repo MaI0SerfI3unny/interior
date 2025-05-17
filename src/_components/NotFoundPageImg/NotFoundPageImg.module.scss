@@ -1,0 +1,50 @@
+@use "../../scss/common/mixins" as *;
+
+.imgContainer {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  margin-top: 40px;
+
+  @include media(tablet) {
+    margin-top: 24px;
+  }
+
+  @include media(desktop) {
+    margin-top: 0;
+    gap: 32px;
+  }
+}
+
+.bigImg {
+  border-radius: 4px;
+  width: 150px;
+  height: 192px;
+
+  @include media(tablet) {
+    width: 161px;
+    height: 206px;
+  }
+
+  @include media(desktop) {
+    width: 280px;
+    height: 360px;
+  }
+}
+
+.smallImg {
+  border-radius: 4px;
+  display: none;
+
+  @include media(tablet) {
+    display: block;
+
+    width: 161px;
+    height: 161px;
+  }
+
+  @include media(desktop) {
+    width: 280px;
+    height: 280px;
+  }
+}

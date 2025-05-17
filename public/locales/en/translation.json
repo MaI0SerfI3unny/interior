@@ -297,5 +297,9 @@
     "month": "month",
     "submit": "Try Now",
     "value": "Included in the plan:"
-  }
+  },
+  "notFound": {
+    "text": "Page not found",
+    "btnBack": "Go to homepage"
+}
 }
