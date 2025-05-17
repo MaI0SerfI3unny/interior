@@ -1,0 +1,43 @@
+@use "../../scss/common/mixins" as *;
+@use "../../scss/common/vars" as *;
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: "Cormorant";
+  font-weight: 600;
+  font-size: 144px;
+  line-height: 160px;
+
+  @include media(tablet) {
+    font-size: 192px;
+    line-height: 200px;
+  }
+}
+
+.text {
+  margin: 8px 0 24px 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+
+  @include media(tablet) {
+    margin-bottom: 32px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.btnToHome {
+  display: flex;
+  justify-content: center;
+  width: 318px;
+  padding: 12px 0 12px 0;
+  background-color: $typography-primary;
+  color: $backgraund-inputs;
+
+  font-weight: 600;
+}
