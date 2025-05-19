@@ -193,7 +193,9 @@
 
   "profile": {
     "yourFolders": "Your folders",
-    "allGenerations": "All generations"
+    "allGenerations": "All generations",
+    "emptyMessage": "You don't have any generated photos yet, go to the generation page to create one",
+    "goToGenerations": "Go to generation"
   },
   "settings": {
     "generationsNavBar": "Generations",

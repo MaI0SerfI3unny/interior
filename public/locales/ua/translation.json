@@ -193,13 +193,15 @@
   },
   "profile": {
     "yourFolders": "Ваші папки",
-    "allGenerations": "Усі генерації"
+    "allGenerations": "Усі генерації",
+    "emptyMessage": "У вас ще немає згенерованих фото, перейдіть на сторінку генерації, щоб створити",
+    "goToGenerations": "Перейти до генерації"
   },
 
   "settings": {
-    "generationsNavBar" : "Генерації",
-    "planNavBar" : "Мій тарифний план",
-    "profileNavBar" : "Профіль",
+    "generationsNavBar": "Генерації",
+    "planNavBar": "Мій тарифний план",
+    "profileNavBar": "Профіль",
     "changeAvatar": "Змінити фото",
     "personalData": "Особісті дані",
     "nameInput": "Ім’я",
