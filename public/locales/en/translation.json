@@ -203,6 +203,8 @@
     "profileNavBar": "Profile",
     "changeAvatar": "Change photo",
     "personalData": "Personal data",
+    "downloadNewPhoto": "Upload a new photo",
+
     "nameInput": "Name",
     "nameDescription": "This name will only be visible on your profile",
     "changeName": "Change name",
