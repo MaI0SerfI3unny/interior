@@ -1,32 +1,22 @@
-const subcriptions = [
-  {
-    plan: "free",
-    price: "0",
-    privilegies: [
-      "5 генерацій інтер’єрів загалом",
-      "Чергування на генерацію",
-      "Обмежений доступ до ресурсів",
-      "Для некомерційного використання",
-    ],
-  },
+export const subscriptions = [
   {
     plan: "premium",
     price: "5.99",
     privilegies: [
-      "50 генерацій інтер’єрів загалом",
-      "Не має ергування на генерацію",
-      "Обмежений доступ до ресурсів",
-      "Для некомерційного використання",
+      "settings.subs.premium.gen_limit",
+      "settings.subs.shared.queue",
+      "settings.subs.shared.limited_access",
+      "settings.subs.shared.non_commercial",
     ],
   },
   {
     plan: "pro",
     price: "9.99",
     privilegies: [
-      "безлімітна кількість генерацій",
-      "Не має ергування на генерацію",
-      "Обмежений доступ до ресурсів",
-      "Для некомерційного використання",
+      "settings.subs.pro.unlimited_gen",
+      "settings.subs.shared.queue",
+      "settings.subs.shared.limited_access",
+      "settings.subs.shared.non_commercial",
     ],
   },
 ];

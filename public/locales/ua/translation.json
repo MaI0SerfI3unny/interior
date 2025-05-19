@@ -229,7 +229,44 @@
     "loadMore": "Показати більше",
     "hideMore": "Згорнути",
     "copied": "Скопійовано",
-    "photoDeleted": "Вашу картинку видалено"
+    "photoDeleted": "Вашу картинку видалено",
+    "subscribeCurrentTitle": "Поточна підписка",
+    "status": "Статус",
+    "statusActive": "Активна",
+    "price": "Вартість",
+    "endSubscribe": "Кінець підписки",
+    "changePlan": "Змінити план",
+    "cancelSubscribe": "Відмінити підписку",
+    "month": "місяць",
+    "paymentDetailsTitle": "Деталі оплати",
+    "cardNumber": "Номер картки",
+    "subscribeExpires": "Закінчується",
+    "changeCard": "Змінити",
+    "paymentHistoryTitle": "Історія оплат",
+    "paymentDate": "Дата",
+    "subscribeType": "Підписка",
+    "invoice": "Інвойс",
+    "downloadInvoice": "Загрузити",
+    "acceptPayment": "Оплачено",
+    "errorPayment": "Помилка",
+    "changeSubscribeTitle": "Змінити підписку",
+    "changeSubscribeDescription": "Ви можете змінити підписку в будь-який момент — оберіть той план, що вам підходить.",
+    "currentPlan": "Поточний тариф",
+    "getSubscribe": "Оформити підписку",
+    "privelegiesTitle": "До пакету входить",
+    "subs": {
+      "premium": {
+        "gen_limit": "50 генерацій інтер’єрів загалом"
+      },
+      "pro": {
+        "unlimited_gen": "Безлімітна кількість генерацій"
+      },
+      "shared": {
+        "queue": "Не має чергування на генерацію",
+        "limited_access": "Обмежений доступ до ресурсів",
+        "non_commercial": "Для некомерційного використання"
+      }
+    }
   },
   "terms": {
     "pageTitle": "Умови Користування",
@@ -299,7 +336,7 @@
     "submit": "Спробувати",
     "value": "До пакету входить:"
   },
-  "notFound":{
+  "notFound": {
     "text": "Сторінка не знайдена",
     "btnBack": "Перейти на головну"
   }
