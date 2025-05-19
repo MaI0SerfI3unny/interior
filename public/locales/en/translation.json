@@ -196,6 +196,9 @@
     "allGenerations": "All generations"
   },
   "settings": {
+    "generationsNavBar": "Generations",
+    "planNavBar": "My tariff plan",
+    "profileNavBar": "Profile",
     "changeAvatar": "Change photo",
     "personalData": "Personal data",
     "nameInput": "Name",

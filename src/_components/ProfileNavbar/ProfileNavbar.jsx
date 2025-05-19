@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { ProfileNavbarStyles } from "./ProfileNavbarStyles.styled";
+import { useTranslation } from "react-i18next";
 
 export const ProfileNavbar = () => {
+  const { t } = useTranslation();
   return (
     <ProfileNavbarStyles>
       <ul>
@@ -10,7 +12,7 @@ export const ProfileNavbar = () => {
             to="/profile/main"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            Генерації
+            {t("settings.generationsNavBar")}
           </NavLink>
         </li>
         <li>
@@ -18,7 +20,7 @@ export const ProfileNavbar = () => {
             to="/profile/plan"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            Мій тарифний план
+            {t("settings.planNavBar")}
           </NavLink>
         </li>
         <li>
@@ -26,7 +28,7 @@ export const ProfileNavbar = () => {
             to="/profile/settings"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            Особисті дані
+            {t("settings.profileNavBar")}
           </NavLink>
         </li>
       </ul>

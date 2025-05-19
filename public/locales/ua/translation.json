@@ -197,6 +197,9 @@
   },
 
   "settings": {
+    "generationsNavBar" : "Генерації",
+    "planNavBar" : "Мій тарифний план",
+    "profileNavBar" : "Профіль",
     "changeAvatar": "Змінити фото",
     "personalData": "Особісті дані",
     "nameInput": "Ім’я",
