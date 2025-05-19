@@ -9,7 +9,7 @@ const ProfileSubscribeChangePlanModal = ({ toggleModal }) => {
 
   return (
     <ProfileSubscribeChangePlanModalStyles>
-      <CloseModalButton toggleModal={toggleModal} />
+      <CloseModalButton toggleModal={() => toggleModal(false)} />
       <h2>{t("settings.changeSubscribeTitle")}</h2>
       <p className="description">{t("settings.changeSubscribeDescription")}</p>
       <div className="cards-container">
