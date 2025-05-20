@@ -119,7 +119,8 @@ const initialState = {
           result,
           original,
           style: "Classic",
-          prompt: "Very long text",
+          prompt:
+            "Very long text dsf sdf sdfef sdf srg rg fsg rg dfg dfdsf sdf sdf sdfsdfsd df sdf sdf sdf sdf sdf sdfsdf sdf dsf sdf sdf sdf sdf sdf sdf dsf dsf sdf sdf sdkjf dskj skf lsdhf sdhf ksdhfk hsdkfhsdfh kjsdfggfdfg dfg dfgf ga fg dfg dfg fdg dfg dfgrg dfg dfg dtrg dfg dfg tg dfg dfg dfg rdg bdfg dfg dfd",
           room: "Kitchen",
         },
         {
