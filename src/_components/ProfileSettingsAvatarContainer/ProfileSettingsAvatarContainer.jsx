@@ -1,10 +1,13 @@
 import { ProfileSettingsAvatarContainerStyles } from "./ProfileSettingsAvatarContainerStyles.styled";
-import userAvatar from "../../pictures/user.jpg";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
+import ProfileSettingsEmptyAvatar from "../ProfileSettingsEmptyAvatar/ProfileSettingsEmptyAvatar";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../redux/user/selectors";
 
 const ProfileSettingsAvatarContainer = () => {
   const { t } = useTranslation();
+  const { photo } = useSelector(selectUser);
 
   const fileInputRef = useRef(null);
 
@@ -21,7 +24,7 @@ const ProfileSettingsAvatarContainer = () => {
 
   return (
     <ProfileSettingsAvatarContainerStyles>
-      <img src={userAvatar} />
+      {photo ? <img src="photo" /> : <ProfileSettingsEmptyAvatar />}
       <form>
         <input
           type="file"

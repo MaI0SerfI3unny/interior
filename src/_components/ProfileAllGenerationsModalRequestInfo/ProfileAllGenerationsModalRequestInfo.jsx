@@ -53,7 +53,7 @@ const ProfileAllGenerationsModalRequestInfo = ({ photo }) => {
               {isShowMoreInfo
                 ? photo.prompt
                 : isLongPrompt
-                  ? `${photo.prompt.slice(0, 300)}...`
+                  ? `${photo.prompt.slice(0, 150)}...`
                   : photo.prompt}
             </p>
 

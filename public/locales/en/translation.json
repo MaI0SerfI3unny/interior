@@ -193,11 +193,18 @@
 
   "profile": {
     "yourFolders": "Your folders",
-    "allGenerations": "All generations"
+    "allGenerations": "All generations",
+    "emptyMessage": "You don't have any generated photos yet, go to the generation page to create one",
+    "goToGenerations": "Go to generation"
   },
   "settings": {
+    "generationsNavBar": "Generations",
+    "planNavBar": "My tariff plan",
+    "profileNavBar": "Profile",
     "changeAvatar": "Change photo",
     "personalData": "Personal data",
+    "downloadNewPhoto": "Upload a new photo",
+
     "nameInput": "Name",
     "nameDescription": "This name will only be visible on your profile",
     "changeName": "Change name",
@@ -228,7 +235,44 @@
     "loadMore": "Show more",
     "hideMore": "Collapse",
     "copied": "Copied",
-    "photoDeleted": "Your picture has been deleted"
+    "photoDeleted": "Your picture has been deleted",
+    "subscribeCurrentTitle": "Current subscription",
+    "status": "Status",
+    "statusActive": "Active",
+    "price": "Cost",
+    "endSubscribe": "End of subscription",
+    "changePlan": "Change plan",
+    "cancelSubscribe": "Cancel subscription",
+    "month": "month",
+    "paymentDetailsTitle": "Payment details",
+    "cardNumber": "Card number",
+    "subscribeExpires": "Expires",
+    "changeCard": "Change",
+    "paymentHistoryTitle": "Payment history",
+    "paymentDate": "Date",
+    "subscribeType": "Subscription",
+    "invoice": "Invoive",
+    "downloadInvoice": "Download",
+    "acceptPayment": "Paid",
+    "errorPayment": "Error",
+    "changeSubscribeTitle": "Change subscription",
+    "changeSubscribeDescription": "You can change your subscription at any time — choose the plan that suits you.",
+    "currentPlan": "Current tariff",
+    "getSubscribe": "Subscribe",
+    "privelegiesTitle": "Package includes",
+    "subs": {
+      "premium": {
+        "gen_limit": "50 interior generations total"
+      },
+      "pro": {
+        "unlimited_gen": "Unlimited generations"
+      },
+      "shared": {
+        "queue": "No queue for generation",
+        "limited_access": "Limited access to resources",
+        "non_commercial": "For non-commercial use"
+      }
+    }
   },
   "terms": {
     "pageTitle": "Terms of Use",
@@ -301,5 +345,5 @@
   "notFound": {
     "text": "Page not found",
     "btnBack": "Go to homepage"
-}
+  }
 }
