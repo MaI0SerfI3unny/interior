@@ -5,6 +5,7 @@ import { ProfileFolderListContainer } from "../_components/ProfileFolderListCont
 import ProfileAllGenerationsContainer from "../_components/ProfileAllGenerationsContainer/ProfileAllGenerationsContainer";
 import { useSelector } from "react-redux";
 import { getGenerationFolders } from "../redux/generationFolders/generationFoldersSelectors";
+import ProfileGenerationsEmptyGenerations from "../_components/ProfileGenerationsEmptyGenerations/ProfileGenerationsEmptyGenerations";
 
 export const ProfilePageFolders = () => {
   const folders = useSelector(getGenerationFolders);
@@ -20,9 +21,7 @@ export const ProfilePageFolders = () => {
           </>
         )}
 
-        {!folders.length && (
-          <p>Ви ще не зберігли жодного результату до каталогу</p>
-        )}
+        {!folders.length && <ProfileGenerationsEmptyGenerations />}
       </MainContainer>
     </ProfilePageContainer>
   );

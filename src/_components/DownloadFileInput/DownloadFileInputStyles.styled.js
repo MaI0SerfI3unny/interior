@@ -13,6 +13,35 @@ export const ImagePreview = styled.img`
   display: block;
 `;
 
+export const UploadPhoto = styled.div`
+  @media screen and (max-width: 1440px) {
+    display: none;
+  }
+
+  @media screen and (min-width: 1441px) {
+    background-color: rgba(249, 250, 250, 0.8);
+    display: flex;
+    padding: 8px 24px;
+    align-items: center;
+    column-gap: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 261px;
+    border-radius: 4px;
+    transition: 250ms linear;
+
+    opacity: ${({ $isHovered }) => ($isHovered ? "1" : "0")};
+
+    p {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.33;
+      color: rgb(29, 98, 236);
+    }
+  }
+`;
+
 export const DownloadFileInputContainer = styled.div`
   position: relative;
   width: 100%;

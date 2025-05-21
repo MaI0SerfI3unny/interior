@@ -5,13 +5,18 @@ import {
   DownloadFileInputStyles,
   DownloadIconContainer,
   ImagePreview,
+  UploadPhoto,
 } from "./DownloadFileInputStyles.styled";
 import DownloadText from "./DownloadText/DownloadText";
 import { ReactComponent as DownloadFileIcon } from "../../svg/upload.svg";
+import { ReactComponent as ClipIcon } from "../../svg/attachment.svg";
+import { useTranslation } from "react-i18next";
 
 const DownloadFileInput = ({ value, onChange, onDeletePhoto }) => {
   const inputRef = useRef();
   const [imagePreview, setImagePreview] = useState(null);
+  const { t } = useTranslation();
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     if (value) {
@@ -81,7 +86,18 @@ const DownloadFileInput = ({ value, onChange, onDeletePhoto }) => {
             <DownloadText />
           </>
         ) : (
-          <ImagePreview src={imagePreview} />
+          <div
+            className="img-container"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <ImagePreview src={imagePreview} />
+
+            <UploadPhoto $isHovered={isHovered}>
+              <ClipIcon width={24} height={24} />
+              <p>{t("generate.downloadNewPhoto")}</p>
+            </UploadPhoto>
+          </div>
         )}
       </DownloadFileInputContainer>
     </div>
