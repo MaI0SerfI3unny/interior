@@ -301,5 +301,10 @@
   "notFound": {
     "text": "Page not found",
     "btnBack": "Go to homepage"
-}
+},
+  "userMenu":{
+    "greeting": "Hi, ",
+    "profile": "My profile",
+    "logout": "Log out"
+  }
 }

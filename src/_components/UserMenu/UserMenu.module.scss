@@ -1,0 +1,45 @@
+@use "../../scss/common/vars" as *;
+@use "../../scss/common/mixins" as *;
+
+.userMenuBox {
+  position: relative;
+  max-width: 213px;
+}
+
+.userBtn {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background-color: inherit;
+  border: none;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.userImage {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: $stroke-secondary;
+  margin-right: 20px;
+}
+
+.userImageName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: $typography-primary;
+}
+
+.nameBox {
+  display: none;
+
+  @include media(tablet) {
+    display: flex;
+    align-items: center;
+  }
+}

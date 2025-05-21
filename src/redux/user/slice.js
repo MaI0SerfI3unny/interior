@@ -1,12 +1,15 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { handleLogin } from "./handlers.js";
-import { login, logout, register } from "./operations.js";
+import { handleLogin, handleRegister, handleUserInfo } from "./handlers.js";
+import { getUser, login, logout, register } from "./operations.js";
+import { clearAuthHeader } from "../../api/axios.config.js";
 
 const initialState = {
   user: {
-    name: "Andrea",
+    name: "",
     email: "",
-    photo: "",
+    image: null,
+    freeCount: null,
+    active_plan: null,
   },
   accessToken: null,
   isLoggedIn: false,
@@ -17,18 +20,23 @@ const initialState = {
 const userSlice = createSlice({
   name: "user",
   initialState,
+  reducers: {
+    forceLogout() {
+      clearAuthHeader();
+      return initialState;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(login.fulfilled, handleLogin)
-      .addCase(register.fulfilled, state => {
-        state.isLoading = false;
-      })
+      .addCase(register.fulfilled, handleRegister)
       .addCase(logout.fulfilled, () => {
         return initialState;
       })
+      .addCase(getUser.fulfilled, handleUserInfo)
 
       .addMatcher(
-        isAnyOf(register.rejected, login.rejected),
+        isAnyOf(register.rejected, login.rejected, getUser.rejected),
         (state, action) => {
           state.isLoading = false;
           state.isError = action.payload;
@@ -37,4 +45,9 @@ const userSlice = createSlice({
   },
 });
 
+export const { forceLogout } = userSlice.actions;
 export default userSlice.reducer;
+
+// email: "htos@ukr.net";
+// name: "Хтось";
+// password: "11111111";
