@@ -22,7 +22,6 @@
   height: 48px;
   border-radius: 50%;
   background-color: $stroke-secondary;
-  margin-right: 20px;
 }
 
 .userImageName {
@@ -42,4 +41,23 @@
     display: flex;
     align-items: center;
   }
+}
+
+.imageBox {
+  position: relative;
+  margin-right: 20px;
+  min-width: 48px;
+  height: 48px;
+
+  @include media(tablet) {
+    margin-right: 0;
+  }
+}
+
+.planIcon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: -2px;
+  right: 0;
 }

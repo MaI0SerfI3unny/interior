@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { logout } from "../../redux/user/operations.js";
 import css from "./UserProfileModal.module.scss";
 
-export const UserProfileModal = ({ showModal, toggleModal }) => {
+export const UserProfileModal = ({ toggleModal }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const handleLogout = () => {
