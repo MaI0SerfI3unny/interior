@@ -6,7 +6,7 @@ import {
   toastSuccess,
   toastError,
 } from "../../assets/functions/toastNotification";
-import api from "../../api/axios.config";
+import { safeApi } from "../../api/safeApi";
 import SmallSpinner from "../../SmallSpinner/SmallSpinner";
 
 const initialValues = {
@@ -48,7 +48,7 @@ const ProfileChangePasswordForm = ({ toggleModal }) => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await api.patch("/user/password", {
+      await safeApi.patch("/user/password", {
         old_password: oldPassword,
         new_password: newPassword,
         confirm_new_password: repeatingPassword,

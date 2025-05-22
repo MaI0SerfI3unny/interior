@@ -9,6 +9,7 @@ import {
   toastSuccess,
   toastError,
 } from "../../assets/functions/toastNotification.js";
+import { safeApi, clearAuthHeaderSafeApi } from "../../api/safeApi.js";
 
 /**
  * Registration
@@ -55,6 +56,7 @@ export const login = createAsyncThunk(
 export const logout = createAsyncThunk("user/logout", async (_, thunkAPI) => {
   try {
     clearAuthHeader();
+    clearAuthHeaderSafeApi();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
@@ -83,13 +85,32 @@ export const getUser = createAsyncThunk("user/getUser", async (_, thunkAPI) => {
 
 export const changeUserEmail = createAsyncThunk(
   "user/changeEmail",
-  async data => {
+  async (data, thunkAPI) => {
     try {
-      await authAPI.patch("/user/email", { new_email: data.value });
+      await safeApi.patch("/user/email", { new_email: data.value });
       toastSuccess(data.successMsg);
       return data.value;
     } catch (error) {
       toastError(data.errorMsg);
+      return thunkAPI(error.message);
+    }
+  }
+);
+
+/**
+ * Delete user
+ */
+
+export const deleteUser = createAsyncThunk(
+  "user/deleteUser",
+  async (data, thunkAPI) => {
+    try {
+      await safeApi.delete("/user/delete");
+      clearAuthHeader();
+      clearAuthHeaderSafeApi();
+    } catch (error) {
+      toastError(data.errorMsg);
+      return thunkAPI(error.message);
     }
   }
 );

@@ -11,8 +11,10 @@ import {
   logout,
   register,
   changeUserEmail,
+  deleteUser,
 } from "./operations.js";
 import { clearAuthHeader } from "../../api/axios.config.js";
+import { clearAuthHeaderSafeApi } from "../../api/safeApi.js";
 
 const initialState = {
   user: {
@@ -34,6 +36,7 @@ const userSlice = createSlice({
   reducers: {
     forceLogout() {
       clearAuthHeader();
+      clearAuthHeaderSafeApi();
       return initialState;
     },
   },
@@ -46,6 +49,9 @@ const userSlice = createSlice({
       })
       .addCase(getUser.fulfilled, handleUserInfo)
       .addCase(changeUserEmail.fulfilled, handlerChangeEmail)
+      .addCase(deleteUser.fulfilled, () => {
+        return initialState;
+      })
 
       .addMatcher(
         isAnyOf(register.rejected, login.rejected, getUser.rejected),
