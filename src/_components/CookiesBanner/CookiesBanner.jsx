@@ -9,7 +9,6 @@ export const CookiesBanner = () => {
   useEffect(() => {
     const cookie = document.cookie;
     const getConsest = cookie.includes("cookieConsent=accepted");
-    console.log(getConsest, "cookie");
 
     if (!getConsest) {
       setShowBanner(true);

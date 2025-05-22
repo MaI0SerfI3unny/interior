@@ -42,7 +42,7 @@ const SignInForm = () => {
   const handleSubmit = (values, actions) => {
     if (values.email === "" || values.password === "") return;
     delete values.rememberMe;
-    console.log(values, "values signin form");
+
     dispatch(login(values));
     actions.resetForm();
   };
