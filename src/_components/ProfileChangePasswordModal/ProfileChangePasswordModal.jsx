@@ -11,7 +11,7 @@ const ProfileChangePasswordModal = ({ toggleModal }) => {
 
       <h2>{t("settings.changePassword")}</h2>
       <p className="rules">{t("settings.changePasswordRules")}</p>
-      <ProfileChangePasswordForm />
+      <ProfileChangePasswordForm toggleModal={toggleModal} />
     </ProfileChangePasswordModalStyles>
   );
 };

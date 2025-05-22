@@ -262,6 +262,7 @@
     "privelegiesTitle": "До пакету входить",
     "changedEmailSuccess": "Пошту успішно змінено",
     "error": "Упс... Щось пішло не так. Спробуйте, будь ласка, ще раз",
+    "passwordChangedSuccess": "Пароль успішно було змінено",
     "subs": {
       "premium": {
         "gen_limit": "50 генерацій інтер’єрів загалом"

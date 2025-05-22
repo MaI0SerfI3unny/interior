@@ -262,6 +262,8 @@
     "privelegiesTitle": "Package includes",
     "changedEmailSuccess": "Email changed successfully",
     "error": "Oops... Something went wrong. Please try again",
+    "passwordChangedSuccess": "Password has been changed successful",
+
     "subs": {
       "premium": {
         "gen_limit": "50 interior generations total"
