@@ -24,7 +24,6 @@ import { getUser } from "../../redux/user/operations.js";
 
 import { PrivateRoute } from "../PrivateRoute/PrivateRoute.jsx";
 import { setAuthHeader } from "../../api/axios.config.js";
-import safeApi from "../../api/safeApi.js";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -32,9 +31,6 @@ export const App = () => {
 
   useEffect(() => {
     if (accessToken) setAuthHeader(accessToken);
-    if (accessToken) {
-      safeApi.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
-    }
 
     const firstLogIn = () => {
       if (accessToken) dispatch(getUser());

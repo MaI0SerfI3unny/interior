@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useStyleOptions } from "../../assets/hooks/useStyleOptions";
 import { useRoomOptions } from "../../assets/hooks/useRoomOptions";
 import { toastError } from "../../assets/functions/toastNotification";
-import { safeApi } from "../../api/safeApi";
+import api from "../../api/axios.config";
 import { convertToBase64 } from "../../assets/functions/convertToBase64";
 import { waitForPhoto } from "../../assets/functions/waitForPhoto";
 
@@ -56,7 +56,7 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer, isLoadingAnswer }) => {
 
       const imageBase = await convertToBase64(values.original);
 
-      const result = await safeApi.post("/ai-interior-gen/generate/", {
+      const result = await api.post("/ai-interior-gen/generate/", {
         prompt: fullPrompt,
         image: imageBase,
       });

@@ -14,7 +14,6 @@ import {
   deleteUser,
 } from "./operations.js";
 import { clearAuthHeader } from "../../api/axios.config.js";
-import { clearAuthHeaderSafeApi } from "../../api/safeApi.js";
 
 const initialState = {
   user: {
@@ -36,7 +35,6 @@ const userSlice = createSlice({
   reducers: {
     forceLogout() {
       clearAuthHeader();
-      clearAuthHeaderSafeApi();
       return initialState;
     },
   },
