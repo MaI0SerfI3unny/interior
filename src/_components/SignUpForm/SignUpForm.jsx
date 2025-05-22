@@ -1,5 +1,5 @@
 import { Form, Field, Formik, ErrorMessage } from "formik";
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { useId } from "react";
 import clsx from "clsx";
@@ -10,6 +10,7 @@ import { ReactComponent as Eye } from "../../assets/icons/eye24.svg";
 import { ReactComponent as Hide } from "../../assets/icons/hide24.svg";
 import { useTranslation } from "react-i18next";
 // import { selectIsLoading } from "@/redux/user/selectors.js";
+import { register } from "../../redux/user/operations.js";
 
 const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -30,8 +31,8 @@ const getSignupSchema = t =>
 
 const SignUpForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-  //   const isLoading = useSelector(selectIsLoading);
-  //   const dispatch = useDispatch();
+  // const isLoading = useSelector(selectIsLoading);
+  const dispatch = useDispatch();
   const emailFieldId = useId();
   const pwdFieldId = useId();
   const { t } = useTranslation();
@@ -42,8 +43,9 @@ const SignUpForm = () => {
     if (values.email === "" || values.password === "" || values.name === "")
       return;
 
+    delete values.conditions;
     console.log(values, "values signup form");
-    // dispatch(login(values));
+    dispatch(register(values));
     actions.resetForm();
   };
 

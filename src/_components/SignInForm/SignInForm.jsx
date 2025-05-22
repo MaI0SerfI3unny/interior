@@ -1,5 +1,5 @@
 import { Form, Field, Formik, ErrorMessage } from "formik";
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import * as Yup from "yup";
 import { useId } from "react";
@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { useState } from "react";
 import css from "./SignInForm.module.scss";
 
-// import { login } from "@/redux/user/operations";
+import { login } from "@/redux/user/operations";
 
 import { ReactComponent as Eye } from "../../assets/icons/eye24.svg";
 import { ReactComponent as Hide } from "../../assets/icons/hide24.svg";
@@ -31,8 +31,8 @@ const getSigninSchema = t =>
 
 const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-  //   const isLoading = useSelector(selectIsLoading);
-  //   const dispatch = useDispatch();
+  // const isLoading = useSelector(selectIsLoading);
+  const dispatch = useDispatch();
   const emailFieldId = useId();
   const pwdFieldId = useId();
   const { t } = useTranslation();
@@ -41,9 +41,9 @@ const SignInForm = () => {
 
   const handleSubmit = (values, actions) => {
     if (values.email === "" || values.password === "") return;
-
+    delete values.rememberMe;
     console.log(values, "values signin form");
-    // dispatch(login(values));
+    dispatch(login(values));
     actions.resetForm();
   };
 
