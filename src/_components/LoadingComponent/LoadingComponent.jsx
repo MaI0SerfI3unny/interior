@@ -8,7 +8,7 @@ const LoadingComponent = () => {
   return (
     <LoadingComponentStyles $picture={loadingPicture}>
       <h2>{t("generate.generatingTitle")}</h2>
-      <LoadingSpinner />
+      <LoadingSpinner width={48} />
     </LoadingComponentStyles>
   );
 };

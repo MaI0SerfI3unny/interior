@@ -143,7 +143,7 @@
     "fileClick": "Натисніть",
     "fileDrag": "або перенесіть файл",
     "save": "Зберегти",
-    "downloadNewPhoto" : "Завантажити нове фото",
+    "downloadNewPhoto": "Завантажити нове фото",
     "generatingTitle": "Генерація вашого інтерʼєру",
     "stylesList": {
       "classic": "Класичний",
@@ -260,6 +260,8 @@
     "currentPlan": "Поточний тариф",
     "getSubscribe": "Оформити підписку",
     "privelegiesTitle": "До пакету входить",
+    "changedEmailSuccess": "Пошту успішно змінено",
+    "error": "Упс... Щось пішло не так. Спробуйте, будь ласка, ще раз",
     "subs": {
       "premium": {
         "gen_limit": "50 генерацій інтер’єрів загалом"
@@ -346,9 +348,9 @@
     "text": "Сторінка не знайдена",
     "btnBack": "Перейти на головну"
   },
-   "userMenu":{
+  "userMenu": {
     "greeting": "Привіт, ",
-        "profile": "Мій профіль",
+    "profile": "Мій профіль",
     "logout": "Вийти"
   }
 }

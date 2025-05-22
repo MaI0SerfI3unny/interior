@@ -17,5 +17,6 @@ export const ProfileSettingsEmptyAvatarStyles = styled.div`
     font-weight: 600;
     line-height: 1.2;
     color: ${theme.typography.primary};
+    text-transform: capitalize;
   }
 `;

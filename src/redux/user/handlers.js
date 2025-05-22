@@ -14,3 +14,7 @@ export const handleUserInfo = (state, { payload }) => {
   state.user = payload;
   state.isLoading = false;
 };
+
+export const handlerChangeEmail = (state, { payload }) => {
+  state.user.email = payload;
+};

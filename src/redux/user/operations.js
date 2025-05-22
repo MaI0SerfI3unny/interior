@@ -5,6 +5,10 @@ import authAPI, {
   clearAuthHeader,
   setAuthHeader,
 } from "../../api/axios.config.js";
+import {
+  toastSuccess,
+  toastError,
+} from "../../assets/functions/toastNotification.js";
 
 /**
  * Registration
@@ -72,3 +76,20 @@ export const getUser = createAsyncThunk("user/getUser", async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue(error.message);
   }
 });
+
+/**
+ * Change email
+ */
+
+export const changeUserEmail = createAsyncThunk(
+  "user/changeEmail",
+  async data => {
+    try {
+      await authAPI.patch("/user/email", { new_email: data.value });
+      toastSuccess(data.successMsg);
+      return data.value;
+    } catch (error) {
+      toastError(data.errorMsg);
+    }
+  }
+);

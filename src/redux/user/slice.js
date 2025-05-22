@@ -1,6 +1,17 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { handleLogin, handleRegister, handleUserInfo } from "./handlers.js";
-import { getUser, login, logout, register } from "./operations.js";
+import {
+  handleLogin,
+  handleRegister,
+  handleUserInfo,
+  handlerChangeEmail,
+} from "./handlers.js";
+import {
+  getUser,
+  login,
+  logout,
+  register,
+  changeUserEmail,
+} from "./operations.js";
 import { clearAuthHeader } from "../../api/axios.config.js";
 
 const initialState = {
@@ -34,6 +45,7 @@ const userSlice = createSlice({
         return initialState;
       })
       .addCase(getUser.fulfilled, handleUserInfo)
+      .addCase(changeUserEmail.fulfilled, handlerChangeEmail)
 
       .addMatcher(
         isAnyOf(register.rejected, login.rejected, getUser.rejected),

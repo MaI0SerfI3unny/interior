@@ -260,6 +260,8 @@
     "currentPlan": "Current tariff",
     "getSubscribe": "Subscribe",
     "privelegiesTitle": "Package includes",
+    "changedEmailSuccess": "Email changed successfully",
+    "error": "Oops... Something went wrong. Please try again",
     "subs": {
       "premium": {
         "gen_limit": "50 interior generations total"
@@ -345,10 +347,10 @@
   "notFound": {
     "text": "Page not found",
     "btnBack": "Go to homepage"
-},
-  "userMenu":{
+  },
+  "userMenu": {
     "greeting": "Hi, ",
     "profile": "My profile",
     "logout": "Log out"
-    }
+  }
 }
