@@ -4,7 +4,10 @@ import { initialValues } from "../../assets/constants/formInitialValues";
 import { useTranslation } from "react-i18next";
 import { useStyleOptions } from "../../assets/hooks/useStyleOptions";
 import { useRoomOptions } from "../../assets/hooks/useRoomOptions";
-import { imitationGeneration } from "../../assets/functions/imitationGeneration";
+import { toastError } from "../../assets/functions/toastNotification";
+import { safeApi } from "../../api/safeApi";
+import { convertToBase64 } from "../../assets/functions/convertToBase64";
+import { waitForPhoto } from "../../assets/functions/waitForPhoto";
 
 import DownloadFileInput from "../DownloadFileInput/DownloadFileInput";
 import PromptInput from "../PromptInput/PromptInput";
@@ -40,23 +43,38 @@ const validationSchema = Yup.object({
     .required("Оберіть кімнату"),
 });
 
-const GeneratingForm = ({ setResult, setIsLoadingAnswer }) => {
+const GeneratingForm = ({ setResult, setIsLoadingAnswer, isLoadingAnswer }) => {
   const { t } = useTranslation();
   const initialStylesValues = useStyleOptions();
   const initialRoomValues = useRoomOptions();
 
-  const handleSubmit = values => {
+  const handleSubmit = async values => {
     setIsLoadingAnswer(true);
 
-    setTimeout(() => {
-      console.log(values);
+    try {
+      const fullPrompt = `${values.prompt}. Create a style for the ${values.room} in style ${values.style}`;
 
-      const result = imitationGeneration(values);
+      const imageBase = await convertToBase64(values.original);
 
-      setResult(result);
+      const result = await safeApi.post("/ai-interior-gen/generate/", {
+        prompt: fullPrompt,
+        image: imageBase,
+      });
 
+      console.log(result.data.task_id);
+      const photoData = await waitForPhoto(result.data.task_id);
+
+      setResult({
+        original: imageBase,
+        style: values.style,
+        room: values.room,
+        result: photoData.url,
+      });
+    } catch (error) {
+      toastError(t("settings.error"));
+    } finally {
       setIsLoadingAnswer(false);
-    }, 3000);
+    }
   };
 
   return (
@@ -93,7 +111,9 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer }) => {
             currentValue={values.room}
           />
 
-          <SubmitButton disabled={!values.prompt || !values.style} />
+          <SubmitButton
+            disabled={!values.prompt || !values.style || isLoadingAnswer}
+          />
           <p className="text-count-trying">{t("generate.attentionText")}</p>
         </GeneratingFormStyles>
       )}

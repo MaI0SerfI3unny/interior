@@ -26,6 +26,7 @@ const GeneratePage = () => {
             <GeneratingForm
               setResult={setResult}
               setIsLoadingAnswer={setIsLoadingAnswer}
+              isLoadingAnswer={isLoadingAnswer}
             />
           </section>
           <section>
