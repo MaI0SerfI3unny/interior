@@ -8,6 +8,11 @@ const initialStyleValues = [
   "vintage",
   "modern",
   "industrial",
+  "scandinavian",
+  "contemporary",
+  "loft",
+  "provence",
+  "hi-tech",
 ];
 
 const initialRoomValues = [

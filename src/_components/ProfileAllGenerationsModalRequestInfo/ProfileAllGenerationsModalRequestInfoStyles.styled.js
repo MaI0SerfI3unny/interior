@@ -90,11 +90,12 @@ export const ProfileAllGenerationsModalRequestInfoStyles = styled.div`
     }
 
     .photo-container {
-      width: 50%;
+      display: ${$isEmptyOriginal => ($isEmptyOriginal ? "none" : "")};
+      width: ${$isEmptyOriginal => ($isEmptyOriginal ? "auto" : "50%")};
     }
 
     .text-container {
-      width: 50%;
+      width: ${$isEmptyOriginal => ($isEmptyOriginal ? "100%" : "50%")};
     }
     .small-container {
       margin-bottom: 12px;
