@@ -67,7 +67,7 @@ export const logout = createAsyncThunk("user/logout", async (_, thunkAPI) => {
  */
 export const getUser = createAsyncThunk("user/getUser", async (_, thunkAPI) => {
   try {
-    const response = await authAPI.get("/user");
+    const response = await authAPI.get(`/user?cache_not_friend=${Date.now()}`);
     return response.data;
   } catch (error) {
     if (error.response?.data?.data?.message)
