@@ -2,14 +2,15 @@ import { useTranslation } from "react-i18next";
 import { ProfileSubscribeCardStyles } from "./ProfileSubscribeCardStyles.styled";
 import { ReactComponent as AcceptIcon } from "../../svg/check-accept.svg";
 import { nanoid } from "nanoid";
-
-const activePlan = "premium";
+import { selectUser } from "../../redux/user/selectors";
+import { useSelector } from "react-redux";
 
 const ProfileSubscribeCard = ({ cardInfo }) => {
   const { t } = useTranslation();
+  const { active_plan } = useSelector(selectUser);
 
   const { plan, price, privilegies } = cardInfo;
-  const isCurrentPlan = activePlan === plan;
+  const isCurrentPlan = active_plan === plan;
   return (
     <ProfileSubscribeCardStyles $isCurrentPlan={isCurrentPlan}>
       <h3>{plan}</h3>
