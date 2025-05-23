@@ -22,8 +22,11 @@ const ProfileAllGenerationsPhotoModalResult = ({ photo, toggleModal }) => {
   return (
     <ProfileAllGenerationsPhotoModalResultStyles>
       <img src={photo.result} alt="result" />
-      {location.pathname === "/profile/main" && (
+      {location.path === "/profile/main" && (
         <div className="btns-container">
+          <a href={photo.result} download="photo.jpg">
+            <CloudIcon width={24} height={24} />
+          </a>
           <button type="button">
             <ShareIcon width={24} height={24} />
           </button>

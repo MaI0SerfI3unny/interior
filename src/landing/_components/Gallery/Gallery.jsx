@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import GeneralModal from "../../../_components/GeneralModal/GeneralModal";
 import ProfileAllGenerationsPhotoModal from "../../../_components/ProfileAllGenerationsPhotoModal/ProfileAllGenerationsPhotoModal";
+import { ReactComponent as MoreInfoIcon } from "../../../svg/more-info-photo.svg";
 
 const defaultHeights = [3, 2, 2, 3, 3, 2, 3, 3, 4, 3, 2, 2];
 
@@ -75,6 +76,17 @@ export const Gallery = ({ id }) => {
               className={`${style.galleryContainerGridItem} ${style[`h${h}`]}`}
             >
               <img src={gallery[i].image} alt={`img-${i}`} />
+              <button type="button" className={`${style.moreInfoBtn} }`}>
+                <MoreInfoIcon width={40} height={40} />
+              </button>
+              <div className={`${style.overflow} }`}>
+                <div>
+                  <p className={`${style.overflowTitle} }`}>Prompt</p>
+                  <p className={`${style.overflowPrompt} }`}>
+                    {t(`${gallery[i].prompt}`)}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
