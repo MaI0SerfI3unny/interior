@@ -1,10 +1,10 @@
 import React from "react";
 import { LoadingSpinnerStyles } from "./LoadingSpinnerStyles.styled";
 
-const LoadingSpinner = () => {
+const LoadingSpinner = ({ width }) => {
   return (
     <div style={{ display: "flex", justifyContent: "center", padding: "40px" }}>
-      <LoadingSpinnerStyles />
+      <LoadingSpinnerStyles $width={width} />
     </div>
   );
 };

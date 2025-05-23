@@ -1,12 +1,20 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { handleLogin, handleRegister, handleUserInfo } from "./handlers.js";
+import {
+  handleLogin,
+  handleRegister,
+  handleUserInfo,
+  handlerChangeEmail,
+} from "./handlers.js";
 import {
   getUser,
   login,
   logout,
   register,
-  sendRecoveryPwdEmail,
+  changeUserEmail,
+  deleteUser,
 } from "./operations.js";
+
+import { sendRecoveryPwdEmail } from "./operations.js";
 import { clearAuthHeader } from "../../api/axios.config.js";
 
 const initialState = {
@@ -44,6 +52,10 @@ const userSlice = createSlice({
         return initialState;
       })
       .addCase(getUser.fulfilled, handleUserInfo)
+      .addCase(changeUserEmail.fulfilled, handlerChangeEmail)
+      .addCase(deleteUser.fulfilled, () => {
+        return initialState;
+      })
       .addCase(sendRecoveryPwdEmail.fulfilled, state => {
         state.isLoading = false;
       })

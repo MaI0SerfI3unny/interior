@@ -6,8 +6,8 @@ import authAPI, {
   setAuthHeader,
 } from "../../api/axios.config.js";
 import {
-  toastError,
   toastSuccess,
+  toastError,
 } from "../../assets/functions/toastNotification.js";
 
 /**
@@ -80,6 +80,41 @@ export const getUser = createAsyncThunk("user/getUser", async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue(error.message);
   }
 });
+
+/**
+ * Change email
+ */
+
+export const changeUserEmail = createAsyncThunk(
+  "user/changeEmail",
+  async (data, thunkAPI) => {
+    try {
+      await authAPI.patch("/user/email", { new_email: data.value });
+      toastSuccess(data.successMsg);
+      return data.value;
+    } catch (error) {
+      toastError(data.errorMsg);
+      return thunkAPI(error.message);
+    }
+  }
+);
+
+/**
+ * Delete user
+ */
+
+export const deleteUser = createAsyncThunk(
+  "user/deleteUser",
+  async (data, thunkAPI) => {
+    try {
+      await authAPI.delete("/user/delete");
+      clearAuthHeader();
+    } catch (error) {
+      toastError(data.errorMsg);
+      return thunkAPI(error.message);
+    }
+  }
+);
 
 /**
  * Send recovery password email

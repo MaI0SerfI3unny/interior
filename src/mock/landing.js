@@ -11,6 +11,19 @@ import photo10 from "@/assets/gallery/9.png";
 import photo11 from "@/assets/gallery/10.png";
 import photo12 from "@/assets/gallery/11.png";
 
+import modalPhoto1 from "@/assets/gallery/modalGallery/modalImage0.jpg";
+import modalPhoto2 from "@/assets/gallery/modalGallery/modalImage1.jpg";
+import modalPhoto3 from "@/assets/gallery/modalGallery/modalImage2.jpg";
+import modalPhoto4 from "@/assets/gallery/modalGallery/modalImage3.jpg";
+import modalPhoto5 from "@/assets/gallery/modalGallery/modalImage4.jpg";
+import modalPhoto6 from "@/assets/gallery/modalGallery/modalImage5.jpg";
+import modalPhoto7 from "@/assets/gallery/modalGallery/modalImage6.jpg";
+import modalPhoto8 from "@/assets/gallery/modalGallery/modalImage7.jpg";
+import modalPhoto9 from "@/assets/gallery/modalGallery/modalImage8.jpg";
+import modalPhoto10 from "@/assets/gallery/modalGallery/modalImage9.jpg";
+import modalPhoto11 from "@/assets/gallery/modalGallery/modalImage10.jpg";
+import modalPhoto12 from "@/assets/gallery/modalGallery/modalImage11.jpg";
+
 import classic from "@/assets/design_panel/classic.png";
 import provans from "@/assets/design_panel/provans.png";
 import minimalism from "@/assets/design_panel/minimalism.png";
@@ -140,18 +153,102 @@ export const steps = [
 ];
 
 export const gallery = [
-  photo1,
-  photo2,
-  photo3,
-  photo4,
-  photo5,
-  photo6,
-  photo7,
-  photo8,
-  photo9,
-  photo10,
-  photo11,
-  photo12,
+  {
+    id: 0,
+    image: photo1,
+    prompt: "gallery.first",
+    style: "gallery.style.first",
+    room: "gallery.room.first",
+    modalImage: modalPhoto1,
+  },
+  {
+    id: 1,
+    image: photo2,
+    prompt: "gallery.second",
+    style: "gallery.style.second",
+    room: "gallery.room.second",
+    modalImage: modalPhoto2,
+  },
+  {
+    id: 2,
+    image: photo3,
+    prompt: "gallery.third",
+    style: "gallery.style.third",
+    room: "gallery.room.third",
+    modalImage: modalPhoto3,
+  },
+  {
+    id: 3,
+    image: photo4,
+    prompt: "gallery.fourth",
+    style: "gallery.style.fourth",
+    room: "gallery.room.fourth",
+    modalImage: modalPhoto4,
+  },
+  {
+    id: 4,
+    image: photo5,
+    prompt: "gallery.fifth",
+    style: "gallery.style.fifth",
+    room: "gallery.room.fifth",
+    modalImage: modalPhoto5,
+  },
+  {
+    id: 5,
+    image: photo6,
+    prompt: "gallery.sixth",
+    style: "gallery.style.sixth",
+    room: "gallery.room.sixth",
+    modalImage: modalPhoto6,
+  },
+  {
+    id: 6,
+    image: photo7,
+    prompt: "gallery.seventh",
+    style: "gallery.style.seventh",
+    room: "gallery.room.seventh",
+    modalImage: modalPhoto7,
+  },
+  {
+    id: 7,
+    image: photo8,
+    prompt: "gallery.eighth",
+    style: "gallery.style.eighth",
+    room: "gallery.room.eighth",
+    modalImage: modalPhoto8,
+  },
+  {
+    id: 8,
+    image: photo9,
+    prompt: "gallery.ninth",
+    style: "gallery.style.ninth",
+    room: "gallery.room.ninth",
+    modalImage: modalPhoto9,
+  },
+  {
+    id: 9,
+    image: photo10,
+    prompt: "gallery.tenth",
+    style: "gallery.style.tenth",
+    room: "gallery.room.tenth",
+    modalImage: modalPhoto10,
+  },
+  {
+    id: 10,
+    image: photo11,
+    prompt: "gallery.eleventh",
+    style: "gallery.style.eleventh",
+    room: "gallery.room.eleventh",
+    modalImage: modalPhoto11,
+  },
+  {
+    id: 11,
+    image: photo12,
+    prompt: "gallery.twelfth",
+    style: "gallery.style.twelfth",
+    room: "gallery.room.twelfth",
+    modalImage: modalPhoto12,
+  },
 ];
 
 export const comment = [
