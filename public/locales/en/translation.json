@@ -116,7 +116,47 @@
   "gallery": {
     "title": "INSPIRATION GALLERY",
     "desc": "Get inspired by ideas from those who have already created their own design",
-    "more": "Show more"
+    "more": "Show more",
+    "first": "A modern living room with large panoramic windows, a wooden ceiling, and warm lighting. The room should feature a large gray sofa with soft cushions in warm tones (yellow, beige, brown), a cozy rug, and a low coffee table. In the background, there is a modern kitchen with dark cabinetry and stylish lighting.",
+    "second": "A modern Scandinavian-style kitchen with eco-design elements. The spacious room features high ceilings, light wooden floors, and panoramic windows. The kitchen cabinets are white, and the island has a stone countertop with a wooden base, complemented by woven bar stools. A copper pendant lamp, a vase with a green branch, minimalist accessories, and a cozy atmosphere complete the look.",
+    "third": "A modern bedroom in contemporary style with minimalist elements. The design features calm, neutral tones—grey, white, and beige. The wall behind the headboard is adorned with a large monochrome forest landscape panel. Clean lines, sleek furniture shapes, built-in lighting, and the symmetrical placement of light fixtures create an atmosphere of tranquility, harmony, and modern comfort.",
+    "fourth": "A modern, cozy minimalist-style bedroom. The room features a low, soft bed with beige bedding and numerous pillows, a wooden wall panel with backlighting, bedside tables, a chair by the window, and light curtains. The atmosphere is calm, warm, and relaxing. The lighting is soft and warm, with spotlights and wall lamps.",
+    "fifth": "A modern loft-style living room with a minimalist approach. A textured grey concrete wall, a large low sofa with warm-toned cushions, soft neon lighting, two round metal coffee tables, and a large potted indoor plant. Panoramic windows with blinds, light curtains, and a cozy atmosphere in an urban apartment.",
+    "sixth": "A modern kitchen in a contemporary style with neoclassical elements. The kitchen features light paneled cabinet fronts, a marble backsplash and countertop, and symmetrically placed pendant globe lamps. The room is decorated in a warm beige and cream color palette with wooden accents on the floor and furniture. A central kitchen island is complemented by tall bar stools. The interior is enhanced with elegant décor and live plants.",
+    "seventh": "A modern-style kitchen with a large island. The kitchen features sleek grey cabinetry, a light stone countertop, and a marble backsplash. Lighting is provided by stylish black pendant lamps, and the interior is designed in a calm color palette. Elegant chairs with soft seats are placed around the island. The atmosphere is understated, modern, and functional.",
+    "eighth": "A romantic and bright Provence-style living room with natural lighting, white walls with classic moldings, a soft white sofa with pastel cushions, a large floral painting, blooming potted trees, gold wall sconces, a round wooden table with peonies, a neutral rug, and herringbone parquet flooring.",
+    "ninth": "A bathroom in a modern style with minimalist elements. The interior is based on natural beige tones and warm wood. One wall is decorated with marble cladding, and above the sink hangs a large round backlit mirror. The sanitary fixtures feature a contemporary design with matte black faucets, while the decorative elements include dried flowers and scented candles.",
+    "tenth": "A modern loft-style bathroom with luxury elements. The walls and floor are clad in marble tiles in grey and brown tones. It features a wall-mounted toilet, a shower with a clear glass partition, and gold fixtures. Wooden cabinets with open shelving, soft ambient lighting, and a stylish rectangular sink complete the look. The atmosphere is modern, elegant, and refined.",
+    "eleventh": "A modern living room combined with a home office, designed in a high-tech style with minimalist elements. The room features a muted color palette of grey and dark blue tones. The space is divided by transparent glass partitions, adding a sense of lightness. In the foreground, there is a soft modular sofa, a white coffee table with fruit, and green live plants in the corners of the room. A concrete wall and large windows with long curtains add to the design. Lighting is provided by modern recessed and track fixtures. In the background, a workspace with a computer is seamlessly integrated into the overall interior. The atmosphere is restrained, modern, and functional.",
+    "twelfth": "A modern minimalist kitchen featuring a concrete kitchen island with built-in LED lighting, tall bar stools with slim black legs and wooden seats. The space includes white glossy handleless cabinets, a black accent wall, a minimalist faucet and sink, and a small green plant in a glass vase. The lighting is dimmed, creating a stylish and understated atmosphere. The color scheme consists of dark grey, black, and white tones, evoking a nighttime interior.",
+    "style": {
+      "first": "Scandinavian",
+      "second": "Scandinavian",
+      "third": "Contemporary",
+      "fourth": "Minimalism",
+      "fifth": "Loft",
+      "sixth": "Modern",
+      "seventh": "Modern",
+      "eighth": "Provance",
+      "ninth": "Modern",
+      "tenth": "Loft",
+      "eleventh": "Hi-tech",
+      "twelfth": "Monimalism"
+    },
+    "room": {
+      "first": "Living room",
+      "second": "Kitchen",
+      "third": "Bedroom",
+      "fourth": "Bedroom",
+      "fifth": "Living room",
+      "sixth": "Kitchen",
+      "seventh": "Kitchen",
+      "eighth": "Living room",
+      "ninth": "Bathroom",
+      "tenth": "Bathroom",
+      "eleventh": "Living room",
+      "twelfth": "Kitchen"
+    }
   },
   "comment": {
     "title": "Comments",
@@ -149,7 +189,11 @@
       "contemporary": "Contemporary",
       "vintage": "Vintage",
       "modern": "Modern",
-      "industrial": "Industrial"
+      "industrial": "Industrial",
+      "scandinavian": "Scandinavian",
+      "loft": "Loft",
+      "provence": "Provence",
+      "hi-tech": "Hi-tech"
     },
     "roomsList": {
       "kitchen": "Kitchen",
@@ -345,10 +389,10 @@
   "notFound": {
     "text": "Page not found",
     "btnBack": "Go to homepage"
-},
-  "userMenu":{
+  },
+  "userMenu": {
     "greeting": "Hi, ",
     "profile": "My profile",
     "logout": "Log out"
-    }
+  }
 }

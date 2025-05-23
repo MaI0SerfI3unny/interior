@@ -30,7 +30,7 @@ const ProfileGenerationItem = ({ photo }) => {
         </a> */}
         <div className="overflow">
           <div>
-            <p className="overflo-title">Prompt</p>
+            <p className="overflow-title">Prompt</p>
             <p className="prompt">{photo.prompt}</p>
           </div>
         </div>

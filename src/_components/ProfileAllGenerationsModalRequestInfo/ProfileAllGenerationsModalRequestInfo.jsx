@@ -26,6 +26,7 @@ const ProfileAllGenerationsModalRequestInfo = ({ photo }) => {
     <>
       <ProfileAllGenerationsModalRequestInfoStyles
         $isShowMoreInfo={isShowMoreInfo}
+        $isEmptyOriginal={!photo.original}
       >
         {photo.original && (
           <div className="photo-container">
