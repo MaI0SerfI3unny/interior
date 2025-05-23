@@ -5,6 +5,10 @@ import authAPI, {
   clearAuthHeader,
   setAuthHeader,
 } from "../../api/axios.config.js";
+import {
+  toastError,
+  toastSuccess,
+} from "../../assets/functions/toastNotification.js";
 
 /**
  * Registration
@@ -39,6 +43,8 @@ export const login = createAsyncThunk(
 
       return data;
     } catch (error) {
+      if (error.response?.data?.detail === "INVALID_CREDENTIALS")
+        toastError("Login or password is incorrect");
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -66,9 +72,81 @@ export const getUser = createAsyncThunk("user/getUser", async (_, thunkAPI) => {
     const response = await authAPI.get("/user");
     return response.data;
   } catch (error) {
-    if (error.response?.data?.data?.message)
-      return thunkAPI.rejectWithValue(error.response.data.data.message);
+    if (error.response?.data?.detail === "UNAUTHORIZED") {
+      toastError("Token not valid, try again");
+      return thunkAPI.rejectWithValue(error.response.data.detail);
+    }
 
     return thunkAPI.rejectWithValue(error.message);
   }
 });
+
+/**
+ * Send recovery password email
+ * Send email to user for given opportunity to change password
+ *
+ */
+
+export const sendRecoveryPwdEmail = createAsyncThunk(
+  "user/sendRecoveryPwdEmail",
+  async (payload, thunkAPI) => {
+    const { successMessage, notFoundMessage, errorMessage, ...requestData } =
+      payload;
+    try {
+      const { data } = await authAPI.post("/recovery", requestData);
+
+      toastSuccess(successMessage);
+      return data;
+    } catch (error) {
+      console.log(error);
+      if (error.response?.data?.detail === "NOT_FOUND_USER") {
+        toastError(notFoundMessage);
+      } else {
+        toastError(errorMessage);
+      }
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+/**
+ * Save new password
+ * Save new user's password in database
+ *
+ */
+
+export const saveNewPwd = createAsyncThunk(
+  "user/saveNewPwd",
+  async (payload, thunkAPI) => {
+    const { successMessage, errorMessage, ...requestData } = payload;
+    try {
+      const { data } = await authAPI.post("/recovery/complete", requestData);
+      toastSuccess(successMessage);
+      return data;
+    } catch (error) {
+      if (error.response?.data?.detail === "TOKEN_EXPIRED")
+        toastError(errorMessage);
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+/**
+ * Google auth: get OAuth URL
+ *
+ */
+
+export const getOauthUrl = createAsyncThunk(
+  "user/getOauthUrl",
+  async (_, thunkAPI) => {
+    try {
+      const { data } = await authAPI.get("/google");
+
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+// http://127.0.0.1:8000/api/google/callback/?code=4%2F0AUJR-x6y0rCvi7A3zbVGnUdIsl4QHQ4Uwl1Vkt5ZMyXnslG6MhynVW7Q2iCBG4hii1VhIA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent

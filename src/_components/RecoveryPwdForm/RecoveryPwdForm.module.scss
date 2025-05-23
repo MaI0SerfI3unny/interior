@@ -247,3 +247,13 @@
   fill: none;
   cursor: pointer;
 }
+
+.login {
+  margin-top: 20px;
+  background-color: $backgraund-inputs;
+  color: $typography-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

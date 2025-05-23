@@ -1,6 +1,12 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { handleLogin, handleRegister, handleUserInfo } from "./handlers.js";
-import { getUser, login, logout, register } from "./operations.js";
+import {
+  getUser,
+  login,
+  logout,
+  register,
+  sendRecoveryPwdEmail,
+} from "./operations.js";
 import { clearAuthHeader } from "../../api/axios.config.js";
 
 const initialState = {
@@ -25,6 +31,10 @@ const userSlice = createSlice({
       clearAuthHeader();
       return initialState;
     },
+    setToken: (state, action) => {
+      state.accessToken = action.payload;
+      state.isLoggedIn = true;
+    },
   },
   extraReducers: builder => {
     builder
@@ -34,6 +44,9 @@ const userSlice = createSlice({
         return initialState;
       })
       .addCase(getUser.fulfilled, handleUserInfo)
+      .addCase(sendRecoveryPwdEmail.fulfilled, state => {
+        state.isLoading = false;
+      })
 
       .addMatcher(
         isAnyOf(register.rejected, login.rejected, getUser.rejected),
@@ -45,7 +58,7 @@ const userSlice = createSlice({
   },
 });
 
-export const { forceLogout } = userSlice.actions;
+export const { forceLogout, setToken } = userSlice.actions;
 export default userSlice.reducer;
 
 // email: "htos@ukr.net";

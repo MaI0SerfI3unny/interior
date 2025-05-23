@@ -18,22 +18,38 @@ import { PrivacyPolicyPage } from "../../pages/PrivacyPolicyPage.jsx";
 import { SubscribePage } from "../../pages/SubscribePage.jsx";
 import { NotFoundPage } from "../../pages/NotFoundPage.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { selectAccessToken } from "../../redux/user/selectors.js";
+import {
+  selectAccessToken,
+  selectError,
+  selectUser,
+} from "../../redux/user/selectors.js";
 import { useEffect } from "react";
 import { getUser } from "../../redux/user/operations.js";
 
 import { PrivateRoute } from "../PrivateRoute/PrivateRoute.jsx";
 import { setAuthHeader } from "../../api/axios.config.js";
+import { toastError } from "../../assets/functions/toastNotification.js";
+import { useTranslation } from "react-i18next";
 
 export const App = () => {
   const dispatch = useDispatch();
   const accessToken = useSelector(selectAccessToken);
+  const user = useSelector(selectUser);
+  const error = useSelector(selectError);
+  const { t } = useTranslation();
 
   useEffect(() => {
+    if (error === "UNAUTHORIZED") {
+      toastError(t("auth.somethingWentWrong"));
+      return;
+    }
     if (accessToken) setAuthHeader(accessToken);
 
     const firstLogIn = () => {
-      if (accessToken) dispatch(getUser());
+      if (accessToken && !user) {
+        dispatch(getUser());
+        console.log("get user in app");
+      }
     };
     firstLogIn();
   }, [accessToken]);

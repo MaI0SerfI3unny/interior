@@ -2,6 +2,9 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import css from "./SendRecoveryEmailForm.module.scss";
 import clsx from "clsx";
+import { useDispatch } from "react-redux";
+import { sendRecoveryPwdEmail } from "../../redux/user/operations.js";
+import { useTranslation } from "react-i18next";
 
 const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -12,13 +15,27 @@ const RecoverySchema = Yup.object().shape({
 });
 
 export const SendRecoveryEmailForm = () => {
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
+
   const handleSubmit = (values, actions) => {
     if (values.email === "") return;
 
+    // eslint-disable-next-line no-undef
+    values.link_to_redirect = process.env.REACT_APP_RECOVERY_URL;
     console.log(values, "values form");
-    // dispatch(login(values)); send recovery email
+
+    dispatch(
+      sendRecoveryPwdEmail({
+        ...values,
+        successMessage: t("auth.emailSentSuccess"),
+        notFoundMessage: t("auth.emailNotFound"),
+        errorMessage: t("auth.somethingWentWrong"),
+      })
+    );
     actions.resetForm();
   };
+
   return (
     <Formik
       initialValues={{

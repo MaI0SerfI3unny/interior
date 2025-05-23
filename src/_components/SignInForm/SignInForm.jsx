@@ -1,5 +1,5 @@
 import { Form, Field, Formik, ErrorMessage } from "formik";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import * as Yup from "yup";
 import { useId } from "react";
@@ -24,7 +24,7 @@ const getSigninSchema = t =>
       .matches(emailRegEx, t("validation.emailInvalid"))
       .required(t("validation.emailRequired")),
     password: Yup.string()
-      .min(8, t("validation.passwordMin"))
+      .min(1, t("validation.passwordMin"))
       .max(64, t("validation.passwordMax"))
       .required(t("validation.passwordRequired")),
   });
