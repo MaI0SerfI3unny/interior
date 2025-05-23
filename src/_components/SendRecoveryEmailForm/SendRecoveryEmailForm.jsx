@@ -23,7 +23,6 @@ export const SendRecoveryEmailForm = () => {
 
     // eslint-disable-next-line no-undef
     values.link_to_redirect = process.env.REACT_APP_RECOVERY_URL;
-    console.log(values, "values form");
 
     dispatch(
       sendRecoveryPwdEmail({

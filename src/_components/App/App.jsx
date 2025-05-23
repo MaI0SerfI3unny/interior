@@ -48,7 +48,6 @@ export const App = () => {
     const firstLogIn = () => {
       if (accessToken && !user) {
         dispatch(getUser());
-        console.log("get user in app");
       }
     };
     firstLogIn();

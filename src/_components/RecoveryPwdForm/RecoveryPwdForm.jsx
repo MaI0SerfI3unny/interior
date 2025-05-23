@@ -29,12 +29,11 @@ export const RecoveryPwdForm = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
-  // if (!token) {
-  //   return <p className={css.tokenError}>Invalid or missing token</p>;
-  // }
+  if (!token) {
+    return <p className={css.tokenError}>Invalid or missing token</p>;
+  }
 
   const handleSubmit = (values, actions) => {
-    console.log({ ...values, token: token }, "values recovery email form");
     dispatch(
       saveNewPwd({
         ...values,

@@ -98,7 +98,6 @@ export const sendRecoveryPwdEmail = createAsyncThunk(
       toastSuccess(successMessage);
       return data;
     } catch (error) {
-      console.log(error);
       if (error.response?.data?.detail === "NOT_FOUND_USER") {
         toastError(notFoundMessage);
       } else {
@@ -148,5 +147,3 @@ export const getOauthUrl = createAsyncThunk(
     }
   }
 );
-
-// http://127.0.0.1:8000/api/google/callback/?code=4%2F0AUJR-x6y0rCvi7A3zbVGnUdIsl4QHQ4Uwl1Vkt5ZMyXnslG6MhynVW7Q2iCBG4hii1VhIA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent

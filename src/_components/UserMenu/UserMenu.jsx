@@ -11,12 +11,12 @@ import { UserProfileModal } from "../UserProfileModal/UserProfileModal.jsx";
 export const UserMenu = () => {
   const [showModal, setShowModal] = useState(false);
   const userImage = useSelector(selectUserImage);
-  // const { active_plan: plan } = useSelector(selectUser);
+  const { active_plan: plan } = useSelector(selectUser);
   const { name } = useSelector(selectUser);
   const { t } = useTranslation();
   // eslint-disable-next-line no-undef
   const url = process.env.REACT_APP_IMG_URL;
-  const plan = "Pro";
+  // const plan = "Pro";
 
   const buttonRef = useRef(null);
 

@@ -32,7 +32,6 @@ export const SignInPage = () => {
 
     dispatch(setToken(token));
     dispatch(getUser());
-    console.log("get user in login page");
 
     navigate("/generating", { replace: true });
 
@@ -57,5 +56,3 @@ export const SignInPage = () => {
     </FormContainer>
   );
 };
-
-// http://localhost:3000/signin?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4MDExNzcyLCJpYXQiOjE3NDgwMTE1OTIsImp0aSI6ImJjZDdiNDZiNmFiNjQxY2RiN2Q1NmUyYTQwZWIxMGY5IiwidXNlcl9pZCI6MTl9.YY9Ra8VhHgnbgFvtWoYpIWOBGEuyUkagkY1pTWggtwg
