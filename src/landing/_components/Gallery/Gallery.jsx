@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import GeneralModal from "../../../_components/GeneralModal/GeneralModal";
 import ProfileAllGenerationsPhotoModal from "../../../_components/ProfileAllGenerationsPhotoModal/ProfileAllGenerationsPhotoModal";
 import { ReactComponent as MoreInfoIcon } from "../../../svg/more-info-photo.svg";
+import { ReactComponent as SearchSmallIcon } from "../../../svg/search-small.svg";
 
 const defaultHeights = [3, 2, 2, 3, 3, 2, 3, 3, 4, 3, 2, 2];
 
@@ -79,6 +80,9 @@ export const Gallery = ({ id }) => {
               <button type="button" className={`${style.moreInfoBtn} }`}>
                 <MoreInfoIcon width={40} height={40} />
               </button>
+              <div className={`${style.searchTablet} }`}>
+                <SearchSmallIcon width={40} height={40} />
+              </div>
               <div className={`${style.overflow} }`}>
                 <div>
                   <p className={`${style.overflowTitle} }`}>Prompt</p>
