@@ -69,7 +69,7 @@ export const logout = createAsyncThunk("user/logout", async (_, thunkAPI) => {
  */
 export const getUser = createAsyncThunk("user/getUser", async (_, thunkAPI) => {
   try {
-    const response = await authAPI.get("/user");
+    const response = await authAPI.get(`/user?cache_not_friend=${Date.now()}`);
     return response.data;
   } catch (error) {
     if (error.response?.data?.detail === "UNAUTHORIZED") {
@@ -109,6 +109,27 @@ export const deleteUser = createAsyncThunk(
     try {
       await authAPI.delete("/user/delete");
       clearAuthHeader();
+    } catch (error) {
+      toastError(data.errorMsg);
+      return thunkAPI(error.message);
+    }
+  }
+);
+
+/**
+ * Change avatar
+ */
+
+export const changeAvatar = createAsyncThunk(
+  "user/changeAvatar",
+  async (data, thunkAPI) => {
+    try {
+      await authAPI.patch("/user/photo", { photo: data.image });
+      const updatedUser = await authAPI.get(
+        `/user?cache_not_friend=${Date.now()}`
+      );
+      toastSuccess(data.successMsg);
+      return updatedUser.data.image;
     } catch (error) {
       toastError(data.errorMsg);
       return thunkAPI(error.message);

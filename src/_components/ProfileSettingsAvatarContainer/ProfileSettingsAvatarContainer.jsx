@@ -3,11 +3,16 @@ import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import ProfileSettingsEmptyAvatar from "../ProfileSettingsEmptyAvatar/ProfileSettingsEmptyAvatar";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../redux/user/selectors";
+import { selectUserImage } from "../../redux/user/selectors";
+import { useDispatch } from "react-redux";
+import { changeAvatar } from "../../redux/user/operations";
+import { convertToBase64 } from "../../assets/functions/convertToBase64";
+import { toastError } from "../../assets/functions/toastNotification";
 
 const ProfileSettingsAvatarContainer = () => {
   const { t } = useTranslation();
-  const { photo } = useSelector(selectUser);
+  const image = useSelector(selectUserImage);
+  const dispatch = useDispatch();
 
   const fileInputRef = useRef(null);
 
@@ -15,16 +20,32 @@ const ProfileSettingsAvatarContainer = () => {
     fileInputRef.current.click();
   };
 
-  const handleFileChange = e => {
+  const handleFileChange = async e => {
     const file = e.target.files[0];
     if (file) {
-      console.log("Файл выбран:", file.name);
+      try {
+        const baseImg = await convertToBase64(file);
+        dispatch(
+          changeAvatar({
+            image: baseImg,
+            successMsg: t("settings.avatarChangedSuccessful"),
+            errorMsg: t("settings.error"),
+          })
+        );
+      } catch (error) {
+        toastError(t("settings.error"));
+      }
     }
   };
 
   return (
     <ProfileSettingsAvatarContainerStyles>
-      {photo ? <img src="photo" /> : <ProfileSettingsEmptyAvatar />}
+      {image ? (
+        // eslint-disable-next-line no-undef
+        <img src={`${process.env.REACT_APP_IMG_URL}${image}`} />
+      ) : (
+        <ProfileSettingsEmptyAvatar />
+      )}
       <form>
         <input
           type="file"

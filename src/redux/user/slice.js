@@ -12,6 +12,7 @@ import {
   register,
   changeUserEmail,
   deleteUser,
+  changeAvatar,
 } from "./operations.js";
 
 import { sendRecoveryPwdEmail } from "./operations.js";
@@ -55,6 +56,9 @@ const userSlice = createSlice({
       .addCase(changeUserEmail.fulfilled, handlerChangeEmail)
       .addCase(deleteUser.fulfilled, () => {
         return initialState;
+      })
+      .addCase(changeAvatar.fulfilled, (state, { payload }) => {
+        state.user.image = payload;
       })
       .addCase(sendRecoveryPwdEmail.fulfilled, state => {
         state.isLoading = false;
