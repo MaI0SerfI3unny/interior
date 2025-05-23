@@ -2,6 +2,12 @@ import { ProfileChangePasswordFormStyles } from "./ProfileChangePasswordFormStyl
 import ProfileChangePasswordInput from "../ProfileChangePasswordInput/ProfileChangePasswordInput";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import {
+  toastSuccess,
+  toastError,
+} from "../../assets/functions/toastNotification";
+import api from "../../api/axios.config";
+import SmallSpinner from "../../SmallSpinner/SmallSpinner";
 
 const initialValues = {
   oldPassword: "",
@@ -17,14 +23,10 @@ function isValidPassword(password) {
   return hasMinLength && hasLetter && hasNumber;
 }
 
-const ProfileChangePasswordForm = () => {
+const ProfileChangePasswordForm = ({ toggleModal }) => {
   const [values, setValues] = useState(initialValues);
   const { t } = useTranslation();
-
-  function onSubmitPress(e) {
-    e.preventDefault();
-    console.log(values);
-  }
+  const [isLoading, setIsLoading] = useState(false);
 
   function onInputChange({ target: { name, value } }) {
     setValues({ ...values, [name]: value });
@@ -39,10 +41,30 @@ const ProfileChangePasswordForm = () => {
     newPassword !== repeatingPassword ||
     !isValidPassword(newPassword) ||
     !isValidPassword(oldPassword) ||
-    oldPassword === newPassword;
+    oldPassword === newPassword ||
+    isLoading;
+
+  async function handleChangePassword(e) {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      await api.patch("/user/password", {
+        old_password: oldPassword,
+        new_password: newPassword,
+        confirm_new_password: repeatingPassword,
+      });
+
+      toastSuccess(t("settings.passwordChangedSuccess"));
+      toggleModal();
+    } catch (error) {
+      toastError(t("settings.error"));
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   return (
-    <ProfileChangePasswordFormStyles onSubmit={onSubmitPress}>
+    <ProfileChangePasswordFormStyles onSubmit={handleChangePassword}>
       <ProfileChangePasswordInput
         value={oldPassword}
         titleKey={oldPasswordKey}
@@ -63,7 +85,7 @@ const ProfileChangePasswordForm = () => {
       />
 
       <button className="save-btn" type="submit" disabled={isDisabled}>
-        {t("settings.saveBtn")}
+        {isLoading ? <SmallSpinner /> : t("settings.saveBtn")}
       </button>
     </ProfileChangePasswordFormStyles>
   );

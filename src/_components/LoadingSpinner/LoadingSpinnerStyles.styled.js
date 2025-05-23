@@ -19,14 +19,14 @@ export const LoadingSpinnerStyles = styled.div`
   animation: ${rotation} 1s infinite linear;
 
   @media screen and (max-width: 768px) {
-    width: 48px;
+    width: ${({ $width }) => `${$width}px`};
   }
 
   @media screen and (min-width: 769px) and (max-width: 1440px) {
-    width: 56px;
+    width: ${({ $width }) => `${$width + 8}px`};
   }
 
   @media screen and (min-width: 1441px) {
-    width: 72px;
+    width: ${({ $width }) => `${$width + 24}px`};
   }
 `;
