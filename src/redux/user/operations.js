@@ -111,3 +111,24 @@ export const deleteUser = createAsyncThunk(
     }
   }
 );
+
+/**
+ * Change avatar
+ */
+
+export const changeAvatar = createAsyncThunk(
+  "user/changeAvatar",
+  async (data, thunkAPI) => {
+    try {
+      await authAPI.patch("/user/photo", { photo: data.image });
+      const updatedUser = await authAPI.get(
+        `/user?cache_not_friend=${Date.now()}`
+      );
+      toastSuccess(data.successMsg);
+      return updatedUser.data.image;
+    } catch (error) {
+      toastError(data.errorMsg);
+      return thunkAPI(error.message);
+    }
+  }
+);
