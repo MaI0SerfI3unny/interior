@@ -7,3 +7,5 @@ export const selectisLoggedIn = state => state.user.isLoggedIn;
 export const selectAccessToken = state => state.user.accessToken;
 
 export const selectUserImage = state => state.user.user.image;
+
+export const selectError = state => state.user.isError;

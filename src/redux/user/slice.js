@@ -14,6 +14,8 @@ import {
   deleteUser,
   changeAvatar,
 } from "./operations.js";
+
+import { sendRecoveryPwdEmail } from "./operations.js";
 import { clearAuthHeader } from "../../api/axios.config.js";
 
 const initialState = {
@@ -38,6 +40,10 @@ const userSlice = createSlice({
       clearAuthHeader();
       return initialState;
     },
+    setToken: (state, action) => {
+      state.accessToken = action.payload;
+      state.isLoggedIn = true;
+    },
   },
   extraReducers: builder => {
     builder
@@ -54,6 +60,9 @@ const userSlice = createSlice({
       .addCase(changeAvatar.fulfilled, (state, { payload }) => {
         state.user.image = payload;
       })
+      .addCase(sendRecoveryPwdEmail.fulfilled, state => {
+        state.isLoading = false;
+      })
 
       .addMatcher(
         isAnyOf(register.rejected, login.rejected, getUser.rejected),
@@ -65,7 +74,7 @@ const userSlice = createSlice({
   },
 });
 
-export const { forceLogout } = userSlice.actions;
+export const { forceLogout, setToken } = userSlice.actions;
 export default userSlice.reducer;
 
 // email: "htos@ukr.net";

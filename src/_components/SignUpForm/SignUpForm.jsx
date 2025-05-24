@@ -44,7 +44,7 @@ const SignUpForm = () => {
       return;
 
     delete values.conditions;
-    console.log(values, "values signup form");
+
     dispatch(register(values));
     actions.resetForm();
   };

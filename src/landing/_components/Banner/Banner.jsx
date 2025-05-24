@@ -9,9 +9,12 @@ import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll";
 import { BannerHeading } from "./BannerHeading/BannerHeading";
 import now from "@/assets/now.webp";
 import style from "./style.module.scss";
+import { useSelector } from "react-redux";
+import { selectisLoggedIn } from "../../../redux/user/selectors.js";
 
 export const Banner = () => {
   const { t } = useTranslation();
+  const isLoggedIn = useSelector(selectisLoggedIn);
   return (
     <div className={style.banner}>
       <SlideOnScroll direction="bottom" className={style.bannerContainer}>
@@ -22,7 +25,9 @@ export const Banner = () => {
           <p>{t("banner.desc")}</p>
         </div>
         <div className={style.button}>
-          <Link to="/signin">{t("cta.btnName")}</Link>
+          <Link to={isLoggedIn ? "/generating" : "/signin"}>
+            {t("cta.btnName")}
+          </Link>
         </div>
         <div className={style.bannerContainerSlider}>
           <ReactCompareSlider
