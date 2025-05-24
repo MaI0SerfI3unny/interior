@@ -4,10 +4,26 @@ import { ReactComponent as AcceptIcon } from "../../svg/check-accept.svg";
 import { nanoid } from "nanoid";
 import { selectUser } from "../../redux/user/selectors";
 import { useSelector } from "react-redux";
+import { toastError } from "../../assets/functions/toastNotification";
+import api from "../../api/axios.config";
 
 const ProfileSubscribeCard = ({ cardInfo }) => {
   const { t } = useTranslation();
   const { active_plan } = useSelector(selectUser);
+
+  const handleSubscribeClick = async () => {
+    try {
+      const { data } = await api.post("tariffs/create", {
+        tariff_id: cardInfo.id,
+        subscription_type: "month",
+      });
+
+      console.log(data.checkout_url);
+      window.open(data.checkout_url, "_blank", "noopener,noreferrer");
+    } catch (error) {
+      toastError(t("settings.error"));
+    }
+  };
 
   const { name, price_monthly, privilegies } = cardInfo;
   const isCurrentPlan = active_plan === name;
@@ -17,7 +33,12 @@ const ProfileSubscribeCard = ({ cardInfo }) => {
       <p className="price">
         $ {price_monthly} <span>/ {t("settings.month")}</span>
       </p>
-      <button type="button" disabled={isCurrentPlan} className="plan-btn">
+      <button
+        type="button"
+        disabled={isCurrentPlan}
+        className="plan-btn"
+        onClick={handleSubscribeClick}
+      >
         {isCurrentPlan ? t("settings.currentPlan") : t("settings.getSubscribe")}
       </button>
 
