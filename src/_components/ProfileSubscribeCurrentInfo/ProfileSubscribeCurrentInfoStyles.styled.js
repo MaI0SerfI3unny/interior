@@ -2,8 +2,6 @@ import styled from "styled-components";
 import { theme } from "../../assets/constants/themeColors";
 
 export const ProfileSubscribeCurrentInfoStyles = styled.div`
-  margin-bottom: 72px;
-
   .title-container {
     display: flex;
     justify-content: space-between;
@@ -13,20 +11,17 @@ export const ProfileSubscribeCurrentInfoStyles = styled.div`
   h3 {
     font-weight: 600;
     color: ${theme.typography.primary};
-    font-size: 40px;
     line-height: 1.2;
   }
 
   .change-btn {
     border: none;
     color: ${theme.typography.secondaryAction};
-    font-size: 16px;
     line-height: 1.2;
   }
 
   .info-container {
     display: flex;
-    column-gap: 316px;
   }
 
   .status,
@@ -54,7 +49,56 @@ export const ProfileSubscribeCurrentInfoStyles = styled.div`
     border-radius: 50%;
   }
 
+  @media screen and (max-width: 768px) {
+    margin-bottom: 24px;
+
+    h3 {
+      font-size: 28px;
+    }
+
+    .change-btn {
+      font-size: 14px;
+    }
+
+    .status,
+    .generation-count {
+      font-size: 14px;
+    }
+    .generation-count {
+      text-align: end;
+      max-width: 115px;
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    .info-container {
+      justify-content: space-between;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .change-btn {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1440px) {
+    margin-bottom: 32px;
+
+    h3 {
+      font-size: 32px;
+    }
+  }
+
   @media screen and (min-width: 1441px) {
+    margin-bottom: 72px;
+
+    .info-container {
+      column-gap: 316px;
+    }
+    h3 {
+      font-size: 40px;
+    }
     .change-btn:hover::after,
     .change-btn:focus::after {
       opacity: 1;

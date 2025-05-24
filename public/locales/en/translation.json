@@ -288,6 +288,7 @@
     "changePlan": "Change plan",
     "cancelSubscribe": "Cancel subscription",
     "month": "month",
+    "shortMonth": "mo",
     "paymentDetailsTitle": "Payment details",
     "cardNumber": "Card number",
     "subscribeExpires": "Expires",

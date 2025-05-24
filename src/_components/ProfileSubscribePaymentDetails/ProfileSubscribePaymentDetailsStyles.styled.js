@@ -13,7 +13,6 @@ export const ProfileSubscribePaymentDetailsStyles = styled.div`
   h3,
   p {
     font-weight: 400;
-    font-size: 16px;
     line-height: 1.33;
   }
 
@@ -35,8 +34,22 @@ export const ProfileSubscribePaymentDetailsStyles = styled.div`
   button {
     border: none;
     color: ${theme.typography.secondaryAction};
-    font-size: 16px;
     line-height: 1.2;
+  }
+
+  @media screen and (max-width: 768px) {
+    p,
+    h3,
+    button {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    h3,
+    button {
+      font-size: 16px;
+    }
   }
 
   @media screen and (min-width: 1441px) {
