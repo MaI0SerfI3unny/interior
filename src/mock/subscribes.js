@@ -1,7 +1,7 @@
 export const subscribes = [
   {
     title: "subscribe.title1",
-    id: "free",
+    id: 1,
     price: 0,
     feauters: [
       "subscribe.freefeauters1",
@@ -12,7 +12,7 @@ export const subscribes = [
   },
   {
     title: "subscribe.title2",
-    id: "premium",
+    id: 2,
     price: 5.99,
     feauters: [
       "subscribe.premiumfeauters1",
@@ -23,7 +23,7 @@ export const subscribes = [
   },
   {
     title: "subscribe.title3",
-    id: "pro",
+    id: 3,
     price: 9.99,
     feauters: [
       "subscribe.profeauters1",

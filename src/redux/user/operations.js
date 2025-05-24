@@ -203,3 +203,21 @@ export const getOauthUrl = createAsyncThunk(
     }
   }
 );
+
+/**
+ * get url for LiqPay
+ *
+ */
+
+export const getLiqPayUrl = createAsyncThunk(
+  "user/getLiqPayUrl",
+  async (payload, thunkAPI) => {
+    try {
+      const { data } = await authAPI.post("/tariffs/create", payload);
+
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

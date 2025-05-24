@@ -46,7 +46,7 @@ export const App = () => {
     if (accessToken) setAuthHeader(accessToken);
 
     const firstLogIn = () => {
-      if (accessToken && !user) {
+      if (accessToken && user.email === "") {
         dispatch(getUser());
       }
     };

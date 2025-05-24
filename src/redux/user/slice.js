@@ -13,6 +13,9 @@ import {
   changeUserEmail,
   deleteUser,
   changeAvatar,
+  getLiqPayUrl,
+  getOauthUrl,
+  saveNewPwd,
 } from "./operations.js";
 
 import { sendRecoveryPwdEmail } from "./operations.js";
@@ -65,7 +68,14 @@ const userSlice = createSlice({
       })
 
       .addMatcher(
-        isAnyOf(register.rejected, login.rejected, getUser.rejected),
+        isAnyOf(
+          register.rejected,
+          login.rejected,
+          getUser.rejected,
+          getLiqPayUrl.rejected,
+          getOauthUrl.rejected,
+          saveNewPwd.rejected
+        ),
         (state, action) => {
           state.isLoading = false;
           state.isError = action.payload;
