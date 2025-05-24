@@ -70,6 +70,7 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer, isLoadingAnswer }) => {
         style: values.style,
         room: values.room,
         result: photoData.url,
+        prompt: values.prompt,
       });
     } catch (error) {
       toastError(t("settings.error"));
