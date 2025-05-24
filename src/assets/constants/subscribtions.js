@@ -1,7 +1,7 @@
 export const subscriptions = [
   {
     plan: "premium",
-    price: "5.99",
+    price: "7.99",
     privilegies: [
       "settings.subs.premium.gen_limit",
       "settings.subs.shared.queue",
@@ -11,7 +11,7 @@ export const subscriptions = [
   },
   {
     plan: "pro",
-    price: "9.99",
+    price: "12.99",
     privilegies: [
       "settings.subs.pro.unlimited_gen",
       "settings.subs.shared.queue",

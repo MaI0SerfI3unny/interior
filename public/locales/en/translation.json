@@ -311,7 +311,7 @@
 
     "subs": {
       "premium": {
-        "gen_limit": "50 interior generations total"
+        "gen_limit": "100 interior generations total"
       },
       "pro": {
         "unlimited_gen": "Unlimited generations"
