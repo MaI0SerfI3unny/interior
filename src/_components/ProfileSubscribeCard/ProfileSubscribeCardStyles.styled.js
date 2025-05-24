@@ -14,7 +14,6 @@ export const ProfileSubscribeCardStyles = styled.div`
 
   h3 {
     text-transform: uppercase;
-    font-size: 40px;
     line-height: 1.2;
     color: ${theme.typography.primary};
     margin-bottom: 32px;
@@ -23,7 +22,7 @@ export const ProfileSubscribeCardStyles = styled.div`
 
   .price {
     font-weight: 700;
-    font-size: 48px;
+
     line-height: 1.2;
     color: ${theme.typography.primary};
     font-family: "Cormorant", sans-serif;
@@ -86,7 +85,36 @@ export const ProfileSubscribeCardStyles = styled.div`
     margin-bottom: 16px;
   }
 
+  @media screen and (max-width: 769px) {
+    h3 {
+      font-size: 28px;
+    }
+    li {
+      font-size: 14px;
+    }
+
+    .price {
+      font-size: 28px;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1440px) {
+    h3 {
+      font-size: 32px;
+    }
+    .price {
+      font-size: 40px;
+    }
+  }
+
   @media screen and (min-width: 1441px) {
+    h3 {
+      font-size: 40px;
+    }
+
+    .price {
+      font-size: 48px;
+    }
     .plan-btn {
       transition: 250ms linear;
     }

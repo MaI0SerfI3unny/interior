@@ -54,6 +54,11 @@ export const DownloadFileInputContainer = styled.div`
   background-color: white;
   border-radius: 4px;
   text-align: center;
+  overflow: hidden;
+  transition: 250ms linear;
+  &:hover {
+    border: 1px solid ${theme.typography.primary};
+  }
 
   @media screen and (max-width: 768px) {
     padding: 32.5px 42px;

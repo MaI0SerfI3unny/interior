@@ -17,7 +17,6 @@ export const ProfileSubscribePaymentHistoryStyles = styled.div`
   th {
     font-weight: 400;
     font-family: "Manrope", sans-serif;
-    font-size: 16px;
     line-height: 1.33;
     color: ${theme.typography.placeholders};
   }
@@ -44,8 +43,27 @@ export const ProfileSubscribePaymentHistoryStyles = styled.div`
   button {
     border: none;
     color: ${theme.typography.secondaryAction};
-    font-size: 16px;
     line-height: 1.2;
+  }
+
+  @media screen and (max-width: 768px) {
+    table,
+    button {
+      font-size: 12px;
+    }
+
+    button > span {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 769px) {
+    table {
+      font-size: 16px;
+    }
+
+    button > svg {
+      display: none;
+    }
   }
 
   @media screen and (min-width: 1441px) {
