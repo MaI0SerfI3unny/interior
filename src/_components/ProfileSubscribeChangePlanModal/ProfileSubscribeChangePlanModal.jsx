@@ -47,8 +47,6 @@ const ProfileSubscribeChangePlanModal = ({ toggleModal }) => {
     getTariffs();
   }, []);
 
-  console.log(tariffs);
-
   return (
     <ProfileSubscribeChangePlanModalStyles>
       <CloseModalButton toggleModal={() => toggleModal(false)} />

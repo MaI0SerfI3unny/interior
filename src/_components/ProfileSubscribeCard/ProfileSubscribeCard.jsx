@@ -18,7 +18,6 @@ const ProfileSubscribeCard = ({ cardInfo }) => {
         subscription_type: "month",
       });
 
-      console.log(data.checkout_url);
       window.open(data.checkout_url, "_blank", "noopener,noreferrer");
     } catch (error) {
       toastError(t("settings.error"));
@@ -26,7 +25,8 @@ const ProfileSubscribeCard = ({ cardInfo }) => {
   };
 
   const { name, price_monthly, privilegies } = cardInfo;
-  const isCurrentPlan = active_plan === name;
+  const isCurrentPlan = active_plan.tariff_name === name;
+
   return (
     <ProfileSubscribeCardStyles $isCurrentPlan={isCurrentPlan}>
       <h3>{name}</h3>
