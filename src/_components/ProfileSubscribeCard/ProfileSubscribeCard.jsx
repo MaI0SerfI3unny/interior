@@ -9,13 +9,13 @@ const ProfileSubscribeCard = ({ cardInfo }) => {
   const { t } = useTranslation();
   const { active_plan } = useSelector(selectUser);
 
-  const { plan, price, privilegies } = cardInfo;
-  const isCurrentPlan = active_plan === plan;
+  const { name, price_monthly, privilegies } = cardInfo;
+  const isCurrentPlan = active_plan === name;
   return (
     <ProfileSubscribeCardStyles $isCurrentPlan={isCurrentPlan}>
-      <h3>{plan}</h3>
+      <h3>{name}</h3>
       <p className="price">
-        $ {price} <span>/ {t("settings.month")}</span>
+        $ {price_monthly} <span>/ {t("settings.month")}</span>
       </p>
       <button type="button" disabled={isCurrentPlan} className="plan-btn">
         {isCurrentPlan ? t("settings.currentPlan") : t("settings.getSubscribe")}
