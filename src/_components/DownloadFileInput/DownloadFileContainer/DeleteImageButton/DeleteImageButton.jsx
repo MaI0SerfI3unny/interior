@@ -1,15 +1,12 @@
-import { DeleteImageButtonStyles } from "./DeleteImageButtonStyles.styled"
-import {ReactComponent as DeleteIcon} from '../../../../svg/cart.svg'
+import { DeleteImageButtonStyles } from "./DeleteImageButtonStyles.styled";
+import { ReactComponent as DeleteIcon } from "../../../../svg/cart.svg";
 
-const DeleteImageButton = ({deleteImage}) => {
-
-
-
+const DeleteImageButton = ({ deleteImage }) => {
   return (
     <DeleteImageButtonStyles onClick={deleteImage}>
-        <DeleteIcon width={18} height={18} />
+      <DeleteIcon width={24} height={24} />
     </DeleteImageButtonStyles>
-  )
-}
+  );
+};
 
-export default DeleteImageButton
+export default DeleteImageButton;

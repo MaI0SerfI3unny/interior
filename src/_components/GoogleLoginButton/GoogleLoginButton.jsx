@@ -1,20 +1,21 @@
 import { useDispatch } from "react-redux";
-
 import css from "./GoogleLoginButton.module.scss";
-
 import { ReactComponent as FcGoogle } from "@/assets/icons/google.svg";
+import { useTranslation } from "react-i18next";
+import { getOauthUrl } from "../../redux/user/operations.js";
+import { toastError } from "../../assets/functions/toastNotification.js";
 
-export const GoogleLoginButton = ({ children }) => {
+export const GoogleLoginButton = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleGoogleLogin = async () => {
     try {
-      const {
-        data: { url },
-      } = await dispatch().unwrap();
-      window.location.href = url;
+      const { auth_url } = await dispatch(getOauthUrl()).unwrap();
+
+      window.location.href = auth_url;
     } catch (error) {
-      console.log(error.message);
+      toastError(t("auth.somethingWentWrong"));
     }
   };
 
@@ -22,7 +23,7 @@ export const GoogleLoginButton = ({ children }) => {
     <>
       <button onClick={handleGoogleLogin} className={css.button}>
         <FcGoogle className={css.google} />
-        Sign In with Google
+        {t("login.google")}
       </button>
     </>
   );

@@ -1,220 +1,223 @@
 /* style.module.scss */
 
 .header {
-    position: fixed;
+  position: fixed;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  z-index: 2;
+  margin-top: 20px;
+
+  .headerContainer {
+    position: relative;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    max-width: 1216px;
+    background: rgba(254, 253, 252, 1);
+    box-shadow: 6px 6px 32px 0px rgba(43, 42, 41, 0.06);
+    height: 76px;
     display: flex;
-    z-index: 2;
-    margin-top: 20px;
-  
-    .headerContainer {
-      position: relative;
-      width: 100%;
-      max-width: 1216px;
-      background: #F4F1EC;
-      box-shadow: 6px 6px 32px 0px rgba(43, 42, 41, 0.06);
-      height: 76px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px;
+    padding: 0 16px;
+    border-radius: 16px;
+
+    .headerContainerLinkContainer {
       display: flex;
-      align-items: center;
+      width: 100%;
+      max-width: 359px;
       justify-content: space-between;
-      margin: 0 20px;
-      padding: 0 16px;
-      border-radius: 16px;
-  
-      .headerContainerLinkContainer {
-        display: flex;
-        width: 100%;
-        max-width: 359px;
-        justify-content: space-between;
-  
-        a {
-          text-transform: uppercase;
-          color: #2B2A29;
-          font-size: 16px;
-          text-decoration: none;
-  
-          &:hover {
-            transition: 0.5s;
-            color: #848484;
-          }
-        }
-      }
-  
-      .signBtn {
-        width: 148px;
-        height: 48px;
-        background: transparent;
-        color: #2B2A29;
-        border: 1px solid #2B2A29;
-        border-radius: 4px;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-  
+
+      a {
+        text-transform: uppercase;
+        color: #2b2a29;
+        font-size: 16px;
+        text-decoration: none;
+
         &:hover {
           transition: 0.5s;
-          background: #1D1C20;
-          color: #F4F1EC;
+          color: #848484;
         }
-  
-        @media (max-width: 1255px) {
-          margin-right: 16px;
-        }
-      }
-  
-      @media (max-width: 1255px) {
-        margin: 0 30px;
-      }
-  
-      @media (max-width: 1100px) {
-        .headerContainerLinkContainer {
-          display: none;
-        }
-      }
-
-        @media (max-width: 550px) {
-            margin: 0 20px;
-        }
-    }
-    
-  }
-  
-  .activeLink {
-    text-decoration: underline !important;
-    text-underline-offset: 26px;
-  }
-  
-  .hamburgerMenu {
-    position: relative;
-    z-index: 3;
-  
-    .menuBtn,
-    .menuBtnChecked{
-      display: none;
-      align-items: center;
-      position: relative;
-      width: 12px;
-      height: 10px;
-      cursor: pointer;
-  
-      span,
-      span::before,
-      span::after {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        background-color: #2B2A29;
-        transition-duration: 0.25s;
-      }
-  
-      span::before {
-        content: '';
-        top: -5px;
-      }
-  
-      span::after {
-        content: '';
-        top: 5px;
-      }
-      @media (max-width: 1255px) {
-        display: flex;
       }
     }
 
-    .menuBtnChecked{
-        width: 16px;
-        height: 16px;
-        span { transform: rotate(45deg); }
-        span::before {
-            top: 0;
-            transform: rotate(0);
-        }
-        span::after {
-            top: 0;
-            transform: rotate(90deg);
-        }
-    }
-  
-    .menuBox {
-      display: block;
-      position: fixed;
-      visibility: hidden;
-      top: 0;
-      right: -100%;
-      width: 384px;
-      height: 100%;
-      margin: 0;
-      padding: 32px;
-      list-style: none;
-      text-align: center;
-      background-color: #F4F1EC;
-      box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
-      transition: right 0.3s ease, visibility 0.3s ease;
-      z-index: 4;
-        @media (max-width: 550px) {
-            width: 320px;
-        }
-    }
-  
-    .menuBoxActive {
-      visibility: visible;
-      right: 0;
-    }
-  
-    .menuBoxHead{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .menuBoxLink {
-      margin-top: 40px;
-    }
-  
-    .menuItem {
-      margin-bottom: 16px;
-      color: #2B2A29;
-      font-size: 16px;
+    .signBtn {
+      width: 148px;
       height: 48px;
+      background: transparent;
+      color: #2b2a29;
+      border: 1px solid #2b2a29;
+      border-radius: 4px;
+      font-size: 14px;
       display: flex;
       align-items: center;
-      font-weight: 400;
-      text-decoration: none;
-      transition-duration: 0.25s;
-      text-align: left;
-  
+      justify-content: center;
+      cursor: pointer;
+
       &:hover {
-        background-color: #706D6A;
+        transition: 0.5s;
+        background: #1d1c20;
+        color: #f4f1ec;
+      }
+
+      @media (max-width: 1255px) {
+        margin-right: 16px;
       }
     }
-  
-    .menuOverlay {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(5, 0, 41, 0.2);
-      transition: opacity 0.3s ease;
+
+    @media (max-width: 1255px) {
+      margin: 0 30px;
     }
+
+    @media (max-width: 1100px) {
+      .headerContainerLinkContainer {
+        display: none;
+      }
+    }
+
+    @media (max-width: 550px) {
+      margin: 0 20px;
+    }
+  }
 }
 
-.headerContainerLinkAdditional{
+.activeLink {
+  text-decoration: underline !important;
+  text-underline-offset: 26px;
+}
+
+.hamburgerMenu {
+  position: relative;
+  z-index: 3;
+
+  .menuBtn,
+  .menuBtnChecked {
+    display: none;
+    align-items: center;
+    position: relative;
+    width: 12px;
+    height: 10px;
+    cursor: pointer;
+
+    span,
+    span::before,
+    span::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: #2b2a29;
+      transition-duration: 0.25s;
+    }
+
+    span::before {
+      content: "";
+      top: -5px;
+    }
+
+    span::after {
+      content: "";
+      top: 5px;
+    }
+    @media (max-width: 1255px) {
+      display: flex;
+    }
+  }
+
+  .menuBtnChecked {
+    width: 16px;
+    height: 16px;
+    span {
+      transform: rotate(45deg);
+    }
+    span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+    span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+  }
+
+  .menuBox {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 384px;
+    height: 100%;
+    margin: 0;
+    padding: 32px;
+    list-style: none;
+    text-align: center;
+    background-color: #f4f1ec;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+    transition:
+      right 0.3s ease,
+      visibility 0.3s ease;
+    z-index: 4;
+    @media (max-width: 550px) {
+      width: 320px;
+    }
+  }
+
+  .menuBoxActive {
+    visibility: visible;
+    right: 0;
+  }
+
+  .menuBoxHead {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menuBoxLink {
+    margin-top: 40px;
+  }
+
+  .menuItem {
+    margin-bottom: 16px;
+    color: #2b2a29;
+    font-size: 16px;
+    height: 48px;
     display: flex;
     align-items: center;
-    .headerContainerLinkAdditionalLang{
-        margin-right: 32px;
-        @media (max-width: 1255px) {
-            margin-right: 16px;
-        }
-        @media (max-width: 550px) {
-            display: none;
-        }
+    font-weight: 400;
+    text-decoration: none;
+    transition-duration: 0.25s;
+    text-align: left;
+
+    &:hover {
+      background-color: #706d6a;
     }
+  }
+
+  .menuOverlay {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(5, 0, 41, 0.2);
+    transition: opacity 0.3s ease;
+  }
+}
+
+.headerContainerLinkAdditional {
+  display: flex;
+  align-items: center;
+  .headerContainerLinkAdditionalLang {
+    margin-right: 32px;
+    @media (max-width: 1255px) {
+      margin-right: 16px;
+    }
+    @media (max-width: 550px) {
+      display: none;
+    }
+  }
 }

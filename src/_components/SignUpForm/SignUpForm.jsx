@@ -1,5 +1,5 @@
 import { Form, Field, Formik, ErrorMessage } from "formik";
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { useId } from "react";
 import clsx from "clsx";
@@ -8,38 +8,44 @@ import css from "./SignUpForm.module.scss";
 import { Link } from "react-router-dom";
 import { ReactComponent as Eye } from "../../assets/icons/eye24.svg";
 import { ReactComponent as Hide } from "../../assets/icons/hide24.svg";
-
+import { useTranslation } from "react-i18next";
 // import { selectIsLoading } from "@/redux/user/selectors.js";
+import { register } from "../../redux/user/operations.js";
 
 const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-const SignupSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, "The name must be at least 2 characters long")
-    .max(64, "The name must be no longer than 64 characters")
-    .required("Name required"),
-  email: Yup.string()
-    .matches(emailRegEx, "Enter a valid email address")
-    .required("Email required"),
-  password: Yup.string()
-    .min(8, "The password must be at least 8 characters long")
-    .max(64, "The password must be no longer than 64 characters")
-    .required("Password required"),
-});
+const getSignupSchema = t =>
+  Yup.object().shape({
+    name: Yup.string()
+      .min(2, t("validation.nameMin"))
+      .max(64, t("validation.nameMax"))
+      .required(t("validation.nameRequired")),
+    email: Yup.string()
+      .matches(emailRegEx, t("validation.emailInvalid"))
+      .required(t("validation.emailRequired")),
+    password: Yup.string()
+      .min(8, t("validation.passwordMin"))
+      .max(64, t("validation.passwordMax"))
+      .required(t("validation.passwordRequired")),
+  });
 
 const SignUpForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-  //   const isLoading = useSelector(selectIsLoading);
-  //   const dispatch = useDispatch();
+  // const isLoading = useSelector(selectIsLoading);
+  const dispatch = useDispatch();
   const emailFieldId = useId();
   const pwdFieldId = useId();
+  const { t } = useTranslation();
+
+  const SignupSchema = getSignupSchema(t);
 
   const handleSubmit = (values, actions) => {
     if (values.email === "" || values.password === "" || values.name === "")
       return;
 
-    console.log(values, "values signup form");
-    // dispatch(login(values));
+    delete values.conditions;
+
+    dispatch(register(values));
     actions.resetForm();
   };
 
@@ -60,12 +66,10 @@ const SignUpForm = () => {
     >
       {({ touched, errors, values }) => (
         <Form className={css.form}>
-          <h2 className={css.title}>Get started now</h2>
-          <p className={css.discription}>
-            Sign up now for a seamless and rewarding experience
-          </p>
+          <h2 className={css.title}>{t("register.title")}</h2>
+          <p className={css.discription}>{t("register.discription")}</p>
           <label className={css.label}>
-            Name
+            {t("register.inputName")}
             <Field
               className={
                 touched.name && errors.name
@@ -74,7 +78,7 @@ const SignUpForm = () => {
               }
               name="name"
               type="text"
-              placeholder="Enter your name"
+              placeholder={t("register.namePlaceholder")}
               id={emailFieldId}
             />
             <ErrorMessage className={css.error} name="name" component="span" />
@@ -89,13 +93,13 @@ const SignUpForm = () => {
               }
               name="email"
               type="email"
-              placeholder="Enter your email"
+              placeholder={t("register.emailPlaceholder")}
               id={emailFieldId}
             />
             <ErrorMessage className={css.error} name="email" component="span" />
           </label>
           <label className={css.label}>
-            Password
+            {t("register.pwd")}
             <Field
               className={
                 touched.password && errors.password
@@ -111,7 +115,7 @@ const SignUpForm = () => {
               className={css.icon}
               width={20}
               height={20}
-              onClick={(e) => {
+              onClick={e => {
                 e.preventDefault();
                 togglePasswordVisibility();
               }}
@@ -129,8 +133,14 @@ const SignUpForm = () => {
               <Field type="checkbox" name="conditions" />
               <span className={css.checkmark}></span>
               <span className={css.agreement}>
-                I agree to the<Link className={css.link}>Terms</Link>and
-                <Link className={css.link}>Conditions</Link>.
+                {t("register.agree")}
+                <Link to="/terms" className={css.link}>
+                  {t("register.terms")}
+                </Link>
+                {t("register.and")}
+                <Link to="/policy" className={css.link}>
+                  {t("register.conditions")}
+                </Link>
               </span>
             </label>
           </div>
@@ -139,7 +149,7 @@ const SignUpForm = () => {
             type="submit"
             disabled={!values.conditions}
           >
-            Get started
+            {t("register.submit")}
             {/* {isLoading ? <Loader /> : "Sign in"} */}
           </button>
         </Form>

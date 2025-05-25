@@ -8,7 +8,8 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("./assets/fonts/Satoshi/Satoshi-BlackItalic.woff2") format("woff2"),
+  src:
+    url("./assets/fonts/Satoshi/Satoshi-BlackItalic.woff2") format("woff2"),
     url("./assets/fonts/Satoshi/Satoshi-BlackItalic.woff") format("woff");
   font-weight: 900;
   font-style: normal;
@@ -33,6 +34,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $default-white;
+  min-height: 100vh;
 }
 
 .swiper-pagination-bullet-active {
@@ -127,4 +129,8 @@ body {
 }
 .menu__item {
   transition-duration: 0.25s;
+}
+
+.list {
+  padding-left: 12px;
 }

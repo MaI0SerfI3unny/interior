@@ -1,19 +1,20 @@
-import { InstructionTextStyles } from "./InstructionTextStyles.styled"
+import { InstructionTextStyles } from "./InstructionTextStyles.styled";
+import { useTranslation } from "react-i18next";
 
 const InstructionText = () => {
+  const { t } = useTranslation();
   return (
     <InstructionTextStyles>
-    
-          <h2 className="title">INTERIOR AI</h2>
-      <p className="instruction-title">Рендеріть або змінюйте свій дизайн екстер’єру за лічені секунди. Просто завантажте фотографію чи ескіз і подивіться на магію в дії.</p>
+      <h2 className="title">INTERIOR AI</h2>
+      <p className="instruction-title">{t("generate.mainWindowDesc")}</p>
 
       <ol className="instruction-list">
-        <li>Напишіть prompt, опишіть який результат хочете отримати. Опишіть кольори чи інші деталі.</li>
-        <li> Напишіть prompt, опишіть який результат хочете отримати. Опишіть кольори чи інші деталі.</li>
-        <li>ННапишіть prompt, опишіть який результат хочете отримати. Опишіть кольори чи інші деталі.</li>
+        <li>{t("generate.mainWindowAdvance_0")}</li>
+        <li> {t("generate.mainWindowAdvance_1")}</li>
+        <li>{t("generate.mainWindowAdvance_2")}</li>
       </ol>
     </InstructionTextStyles>
-  )
-}
+  );
+};
 
-export default InstructionText
+export default InstructionText;

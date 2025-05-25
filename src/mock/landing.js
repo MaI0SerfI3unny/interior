@@ -1,173 +1,270 @@
-import photo1 from "@/assets/gallery/0.png"
-import photo2 from "@/assets/gallery/1.png"
-import photo3 from "@/assets/gallery/2.png"
-import photo4 from "@/assets/gallery/3.png"
-import photo5 from "@/assets/gallery/4.png"
-import photo6 from "@/assets/gallery/5.png"
-import photo7 from "@/assets/gallery/6.png"
-import photo8 from "@/assets/gallery/7.png"
-import photo9 from "@/assets/gallery/8.png"
-import photo10 from "@/assets/gallery/9.png"
-import photo11 from "@/assets/gallery/10.png"
-import photo12 from "@/assets/gallery/11.png"
+import photo1 from "@/assets/gallery/0.png";
+import photo2 from "@/assets/gallery/1.png";
+import photo3 from "@/assets/gallery/2.png";
+import photo4 from "@/assets/gallery/3.png";
+import photo5 from "@/assets/gallery/4.png";
+import photo6 from "@/assets/gallery/5.png";
+import photo7 from "@/assets/gallery/6.png";
+import photo8 from "@/assets/gallery/7.png";
+import photo9 from "@/assets/gallery/8.png";
+import photo10 from "@/assets/gallery/9.png";
+import photo11 from "@/assets/gallery/10.png";
+import photo12 from "@/assets/gallery/11.png";
 
-import classic from "@/assets/design_panel/classic.png"
-import provans from "@/assets/design_panel/provans.png"
-import minimalism from "@/assets/design_panel/minimalism.png"
-import contemporary from "@/assets/design_panel/contemporary.png"
-import modern from "@/assets/design_panel/modern.png"
-import japan from "@/assets/design_panel/japan.png"
-import ar_deko from "@/assets/design_panel/ar_deko.png"
-import mediterranean from "@/assets/design_panel/mediterranean.png"
-import eco_style from "@/assets/design_panel/eco_style.png"
-import hay_tek from "@/assets/design_panel/hay_tek.png"
-import scandinavian from "@/assets/design_panel/scandinavian.png"
-import loft from "@/assets/design_panel/loft.png"
+import modalPhoto1 from "@/assets/gallery/modalGallery/modalImage0.jpg";
+import modalPhoto2 from "@/assets/gallery/modalGallery/modalImage1.jpg";
+import modalPhoto3 from "@/assets/gallery/modalGallery/modalImage2.jpg";
+import modalPhoto4 from "@/assets/gallery/modalGallery/modalImage3.jpg";
+import modalPhoto5 from "@/assets/gallery/modalGallery/modalImage4.jpg";
+import modalPhoto6 from "@/assets/gallery/modalGallery/modalImage5.jpg";
+import modalPhoto7 from "@/assets/gallery/modalGallery/modalImage6.jpg";
+import modalPhoto8 from "@/assets/gallery/modalGallery/modalImage7.jpg";
+import modalPhoto9 from "@/assets/gallery/modalGallery/modalImage8.jpg";
+import modalPhoto10 from "@/assets/gallery/modalGallery/modalImage9.jpg";
+import modalPhoto11 from "@/assets/gallery/modalGallery/modalImage10.jpg";
+import modalPhoto12 from "@/assets/gallery/modalGallery/modalImage11.jpg";
+
+import classic from "@/assets/design_panel/classic.png";
+import provans from "@/assets/design_panel/provans.png";
+import minimalism from "@/assets/design_panel/minimalism.png";
+import contemporary from "@/assets/design_panel/contemporary.png";
+import modern from "@/assets/design_panel/modern.png";
+import japan from "@/assets/design_panel/japan.png";
+import ar_deko from "@/assets/design_panel/ar_deko.png";
+import mediterranean from "@/assets/design_panel/mediterranean.png";
+import eco_style from "@/assets/design_panel/eco_style.png";
+import hay_tek from "@/assets/design_panel/hay_tek.png";
+import scandinavian from "@/assets/design_panel/scandinavian.png";
+import loft from "@/assets/design_panel/loft.png";
 
 export const why_me = [
-    {
-        name: "Миттєва генерація",
-        desc: "Отримай інтер’єр вже за кілька секунд після запиту — швидко, без очікувань",
-        img: "https://cdn.lordicon.com/warimioc.json",
-    },
-    {
-        name: "Індивіальний стиль",
-        desc: "ШІ адаптує дизайн під твій простір, стиль і побажання — без банальних шаблонів",
-        img: "https://cdn.lordicon.com/skpqewwt.json",
-    },
-    {
-        name: "Персональний дизайн",
-        desc: "Завантаж фото своєї кімнати і отримай варіант оновлення саме для неї",
-        img: "https://cdn.lordicon.com/rszslpey.json"
-    },
-    {
-        name: "Простий prompt",
-        desc: "Тобі не потрібно вигадувати складні промпти, просто опиши, що ти хочеш",
-        img: "https://cdn.lordicon.com/fjvfsqea.json"
-    },
-    {
-        name: "Збереження в папки",
-        desc: "Зберігай згенеровані результати в папках і швидко знаходь потрібне",
-        img: "https://cdn.lordicon.com/tsrgicte.json"
-    },
-    {
-        name: "Універсальний доступ",
-        desc: "Користуйся з комп’ютера, телефону або планшета, інтерфейс адаптований під усі пристрої",
-        img: "https://cdn.lordicon.com/ogjpwrxe.json"
-    },
-]
+  {
+    name: "Миттєва генерація",
+    desc: "Отримай інтер’єр вже за кілька секунд після запиту — швидко, без очікувань",
+    img: "https://cdn.lordicon.com/warimioc.json",
+  },
+  {
+    name: "Індивіальний стиль",
+    desc: "ШІ адаптує дизайн під твій простір, стиль і побажання — без банальних шаблонів",
+    img: "https://cdn.lordicon.com/skpqewwt.json",
+  },
+  {
+    name: "Персональний дизайн",
+    desc: "Завантаж фото своєї кімнати і отримай варіант оновлення саме для неї",
+    img: "https://cdn.lordicon.com/rszslpey.json",
+  },
+  {
+    name: "Простий prompt",
+    desc: "Тобі не потрібно вигадувати складні промпти, просто опиши, що ти хочеш",
+    img: "https://cdn.lordicon.com/fjvfsqea.json",
+  },
+  {
+    name: "Збереження в папки",
+    desc: "Зберігай згенеровані результати в папках і швидко знаходь потрібне",
+    img: "https://cdn.lordicon.com/tsrgicte.json",
+  },
+  {
+    name: "Універсальний доступ",
+    desc: "Користуйся з комп’ютера, телефону або планшета, інтерфейс адаптований під усі пристрої",
+    img: "https://cdn.lordicon.com/ogjpwrxe.json",
+  },
+];
 
 export const design_list = [
-    {
-        name: "Класичний",
-        desc: "Вишукані форми, симетрія, дорогі матеріали, стримана палітра кольорів. Атмосфера елегантності та вічної гармонії.",
-        img: classic
-    },
-    {
-        name: "Лофт",
-        desc: "Cтиль з характером: відкриті простори, високі стелі, цегляні стіни та металеві акценти. Відчуття свободи і міського духу.",
-        img: loft
-    },
-    {
-        name: "Прованс",
-        desc: "Ніжні пастельні тони, легкі тканини, квіткові мотиви, дерев’яні меблі. Атмосфера затишку, романтики та сільського шарму.",
-        img: provans
-    },
-    {
-        name: "Мінімалізм ",
-        desc: "Простір без зайвого, лаконічні форми, нейтральні кольори, функціональність. Атмосфера спокою, чистоти та гармонії.",
-        img: minimalism
-    },
-    {
-        name: "Контемпорарі",
-        desc: "Сучасні форми, прості лінії, комфортні рішення, нейтральна палітра. Атмосфера легкості, стилю та функціональної естетики.",
-        img: contemporary
-    },
-    {
-        name: "Модерн",
-        desc: "Плавні лінії, природні форми, скло, метал і дерево. Атмосфера елегантності, стилю та витонченого затишку.",
-        img: modern
-    },
-    {
-        name: "Японський",
-        desc: "Природні матеріали, чисті лінії, простір і світло. Атмосфера спокою, простоти та гармонії природи.",
-        img: japan
-    },
-    {
-        name: "Ар-деко",
-        desc: "Геометричні візерунки, глянцеві поверхні, розкішні матеріали та блиск. Атмосфера гламуру, елегантності та впевненого стилю.",
-        img: ar_deko
-    },
-    {
-        name: "Середземноморський",
-        desc: "Теплі кольори, натуральні матеріали, відкриті простори та зелень. Атмосфера свіжості, сонячного світла та морського вітру.",
-        img: mediterranean
-    },
-    {
-        name: "Еко-стиль",
-        desc: "Натуральні матеріали, зелень, мінімалізм. Простота, екологічність і гармонія з природою. Атмосфера чистоти та відновлення.",
-        img: eco_style
-    },
-    {
-        name: "Хай-тек",
-        desc: "Інноваційні матеріали, технологічні рішення, мінімалізм та чіткі лінії. Атмосфера майбутнього, функціональності та сучасного комфорту.",
-        img: hay_tek
-    },
-    {
-        name: "Скандинавський",
-        desc: "Природні матеріали, світлі кольори, простота та функціональність. Атмосфера тепла, затишку та гармонії з природою.",
-        img: scandinavian
-    },
-]
+  {
+    name: "classic",
+    desc: "classic_desc",
+    img: classic,
+  },
+  {
+    name: "loft",
+    desc: "loft_desc",
+    img: loft,
+  },
+  {
+    name: "provence",
+    desc: "provence_desc",
+    img: provans,
+  },
+  {
+    name: "minimalism",
+    desc: "minimalism_desc",
+    img: minimalism,
+  },
+  {
+    name: "contemporary",
+    desc: "contemporary_desc",
+    img: contemporary,
+  },
+  {
+    name: "modern",
+    desc: "modern_desc",
+    img: modern,
+  },
+  {
+    name: "japanese",
+    desc: "japanese_desc",
+    img: japan,
+  },
+  {
+    name: "art_deco",
+    desc: "art_deco_desc",
+    img: ar_deko,
+  },
+  {
+    name: "mediterranean",
+    desc: "mediterranean_desc",
+    img: mediterranean,
+  },
+  {
+    name: "eco_style",
+    desc: "eco_style_desc",
+    img: eco_style,
+  },
+  {
+    name: "high_tech",
+    desc: "high_tech_desc",
+    img: hay_tek,
+  },
+  {
+    name: "scandinavian",
+    desc: "scandinavian_desc",
+    img: scandinavian,
+  },
+];
 
 export const steps = [
-    {
-      title: "Завантаж фото",
-      desc: "Додай фото кімнати для створення персонального дизайну."
-    },
-    {
-      title: "Налаштуй параметри",
-      desc: "Обери з переліку тип кімнати, стиль, напиши простий промпт та натисни кнопку “Згенерувати”."
-    },
-    {
-      title: "Генерація інтер’єру",
-      desc: "Зачекай декілька секунд та отримай картинку згенерованого простору відповідно до твого запиту."
-    },
-    {
-      title: "Збереження картинки",
-      desc: "Завантажуй собі на телефон чи комп’ютер або зберігай готовий інтер’єр на сайті в окремі папки. За бажанням ділись з друзями."
-    }
+  {
+    title: "Завантаж фото",
+    desc: "Додай фото кімнати для створення персонального дизайну.",
+  },
+  {
+    title: "Налаштуй параметри",
+    desc: "Обери з переліку тип кімнати, стиль, напиши простий промпт та натисни кнопку “Згенерувати”.",
+  },
+  {
+    title: "Генерація інтер’єру",
+    desc: "Зачекай декілька секунд та отримай картинку згенерованого простору відповідно до твого запиту.",
+  },
+  {
+    title: "Збереження картинки",
+    desc: "Завантажуй собі на телефон чи комп’ютер або зберігай готовий інтер’єр на сайті в окремі папки. За бажанням ділись з друзями.",
+  },
 ];
 
 export const gallery = [
-    photo1,
-    photo2,
-    photo3,
-    photo4,
-    photo5,
-    photo6,
-    photo7,
-    photo8,
-    photo9,
-    photo10,
-    photo11,
-    photo12,
-]
+  {
+    id: 0,
+    image: photo1,
+    prompt: "gallery.first",
+    style: "gallery.style.first",
+    room: "gallery.room.first",
+    modalImage: modalPhoto1,
+  },
+  {
+    id: 1,
+    image: photo2,
+    prompt: "gallery.second",
+    style: "gallery.style.second",
+    room: "gallery.room.second",
+    modalImage: modalPhoto2,
+  },
+  {
+    id: 2,
+    image: photo3,
+    prompt: "gallery.third",
+    style: "gallery.style.third",
+    room: "gallery.room.third",
+    modalImage: modalPhoto3,
+  },
+  {
+    id: 3,
+    image: photo4,
+    prompt: "gallery.fourth",
+    style: "gallery.style.fourth",
+    room: "gallery.room.fourth",
+    modalImage: modalPhoto4,
+  },
+  {
+    id: 4,
+    image: photo5,
+    prompt: "gallery.fifth",
+    style: "gallery.style.fifth",
+    room: "gallery.room.fifth",
+    modalImage: modalPhoto5,
+  },
+  {
+    id: 5,
+    image: photo6,
+    prompt: "gallery.sixth",
+    style: "gallery.style.sixth",
+    room: "gallery.room.sixth",
+    modalImage: modalPhoto6,
+  },
+  {
+    id: 6,
+    image: photo7,
+    prompt: "gallery.seventh",
+    style: "gallery.style.seventh",
+    room: "gallery.room.seventh",
+    modalImage: modalPhoto7,
+  },
+  {
+    id: 7,
+    image: photo8,
+    prompt: "gallery.eighth",
+    style: "gallery.style.eighth",
+    room: "gallery.room.eighth",
+    modalImage: modalPhoto8,
+  },
+  {
+    id: 8,
+    image: photo9,
+    prompt: "gallery.ninth",
+    style: "gallery.style.ninth",
+    room: "gallery.room.ninth",
+    modalImage: modalPhoto9,
+  },
+  {
+    id: 9,
+    image: photo10,
+    prompt: "gallery.tenth",
+    style: "gallery.style.tenth",
+    room: "gallery.room.tenth",
+    modalImage: modalPhoto10,
+  },
+  {
+    id: 10,
+    image: photo11,
+    prompt: "gallery.eleventh",
+    style: "gallery.style.eleventh",
+    room: "gallery.room.eleventh",
+    modalImage: modalPhoto11,
+  },
+  {
+    id: 11,
+    image: photo12,
+    prompt: "gallery.twelfth",
+    style: "gallery.style.twelfth",
+    room: "gallery.room.twelfth",
+    modalImage: modalPhoto12,
+  },
+];
 
 export const comment = [
-    {
-        name: "Андрій Мельник",
-        date: "24.05.2025",
-        desc: "Я не є професіоналом у дизайні, але завдяки цій платформі я зміг створити інтер'єр для своєї квартири, який справді відображає мої вподобання. Це неймовірно просто — я просто вказав свої побажання, а результат був точно таким, як я уявляв. Велика подяка за такий зручний і інтуїтивно зрозумілий інструмент!",
-    },
-    {
-        name: "Олена Ковальчук",
-        date: "20.05.2025",
-        desc: "Ця платформа значно спростила процес створення дизайну. Завдяки різноманітним шаблонам і можливості налаштувати кожен елемент, я змогла легко візуалізувати свій ідеальний інтер’єр. Дійсно зручний інструмент для всіх, хто хоче швидко отримати результат!",
-    },
-    {
-        name: "Софія Литвин",
-        date: "19.05.2025",
-        desc: "Я була вражена тим, наскільки просто працювати з платформою! Вона дозволяє експериментувати з різними стилями і кольорами, не витрачаючи багато часу. Це справжній помічник для створення неповторного інтер'єру без професійних навичок",
-    },
-]
+  {
+    name: "title_item_comment_0",
+    date: "24.05.2025",
+    desc: "desc_item_comment_0",
+  },
+  {
+    name: "title_item_comment_1",
+    date: "20.05.2025",
+    desc: "desc_item_comment_1",
+  },
+  {
+    name: "title_item_comment_2",
+    date: "19.05.2025",
+    desc: "desc_item_comment_2",
+  },
+];

@@ -1,5 +1,8 @@
 import css from "./DecorOr.module.scss";
+import { useTranslation } from "react-i18next";
 
 export const DecorOr = () => {
-  return <span className={css.or}>Or</span>;
+  const { t } = useTranslation();
+
+  return <span className={css.or}>{t("login.decor")}</span>;
 };

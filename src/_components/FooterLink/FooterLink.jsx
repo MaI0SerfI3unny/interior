@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 export const FooterLink = ({ id, children }) => {
   const location = useLocation();
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     if (location.pathname === "/") {
       e.preventDefault();
       const element = document.getElementById(id);

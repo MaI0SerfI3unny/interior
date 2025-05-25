@@ -1,17 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 
-axios.defaults.baseURL = "https://";
-
-// Utility to add JWT
-const setAuthHeader = (token) => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
-
-// Utility to remove JWT
-const clearAuthHeader = () => {
-  axios.defaults.headers.common.Authorization = "";
-};
+import { persistor } from "../store.js";
+import authAPI, {
+  clearAuthHeader,
+  setAuthHeader,
+} from "../../api/axios.config.js";
+import {
+  toastSuccess,
+  toastError,
+} from "../../assets/functions/toastNotification.js";
 
 /**
  * Registration
@@ -21,7 +18,7 @@ export const register = createAsyncThunk(
   "user/register",
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post("/register", credentials);
+      const { data } = await authAPI.post("/register", credentials);
 
       return data;
     } catch (error) {
@@ -36,13 +33,18 @@ export const register = createAsyncThunk(
  */
 export const login = createAsyncThunk(
   "user/login",
-  async (userInfo, thunkAPI) => {
+  async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post("/login", userInfo);
-      setAuthHeader(data.accessToken);
+      await persistor.purge();
+
+      const { data } = await authAPI.post("/login", credentials);
+
+      setAuthHeader(data.data);
 
       return data;
     } catch (error) {
+      if (error.response?.data?.detail === "INVALID_CREDENTIALS")
+        toastError("Login or password is incorrect");
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -54,9 +56,150 @@ export const login = createAsyncThunk(
  */
 export const logout = createAsyncThunk("user/logout", async (_, thunkAPI) => {
   try {
-    await axios.post("/logout");
     clearAuthHeader();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
 });
+
+/**
+ * Get User Info
+ * Just update local info about user
+ * Not sure if it is needed at all
+ */
+export const getUser = createAsyncThunk("user/getUser", async (_, thunkAPI) => {
+  try {
+    const response = await authAPI.get(`/user?cache_not_friend=${Date.now()}`);
+    return response.data;
+  } catch (error) {
+    if (error.response?.data?.detail === "UNAUTHORIZED") {
+      toastError("Token not valid, try again");
+      return thunkAPI.rejectWithValue(error.response.data.detail);
+    }
+
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});
+
+/**
+ * Change email
+ */
+
+export const changeUserEmail = createAsyncThunk(
+  "user/changeEmail",
+  async (data, thunkAPI) => {
+    try {
+      await authAPI.patch("/user/email", { new_email: data.value });
+      toastSuccess(data.successMsg);
+      return data.value;
+    } catch (error) {
+      toastError(data.errorMsg);
+      return thunkAPI(error.message);
+    }
+  }
+);
+
+/**
+ * Delete user
+ */
+
+export const deleteUser = createAsyncThunk(
+  "user/deleteUser",
+  async (data, thunkAPI) => {
+    try {
+      await authAPI.delete("/user/delete");
+      clearAuthHeader();
+    } catch (error) {
+      toastError(data.errorMsg);
+      return thunkAPI(error.message);
+    }
+  }
+);
+
+/**
+ * Change avatar
+ */
+
+export const changeAvatar = createAsyncThunk(
+  "user/changeAvatar",
+  async (data, thunkAPI) => {
+    try {
+      await authAPI.patch("/user/photo", { photo: data.image });
+      const updatedUser = await authAPI.get(
+        `/user?cache_not_friend=${Date.now()}`
+      );
+      toastSuccess(data.successMsg);
+      return updatedUser.data.image;
+    } catch (error) {
+      toastError(data.errorMsg);
+      return thunkAPI(error.message);
+    }
+  }
+);
+
+/**
+ * Send recovery password email
+ * Send email to user for given opportunity to change password
+ *
+ */
+
+export const sendRecoveryPwdEmail = createAsyncThunk(
+  "user/sendRecoveryPwdEmail",
+  async (payload, thunkAPI) => {
+    const { successMessage, notFoundMessage, errorMessage, ...requestData } =
+      payload;
+    try {
+      const { data } = await authAPI.post("/recovery", requestData);
+
+      toastSuccess(successMessage);
+      return data;
+    } catch (error) {
+      if (error.response?.data?.detail === "NOT_FOUND_USER") {
+        toastError(notFoundMessage);
+      } else {
+        toastError(errorMessage);
+      }
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+/**
+ * Save new password
+ * Save new user's password in database
+ *
+ */
+
+export const saveNewPwd = createAsyncThunk(
+  "user/saveNewPwd",
+  async (payload, thunkAPI) => {
+    const { successMessage, errorMessage, ...requestData } = payload;
+    try {
+      const { data } = await authAPI.post("/recovery/complete", requestData);
+      toastSuccess(successMessage);
+      return data;
+    } catch (error) {
+      if (error.response?.data?.detail === "TOKEN_EXPIRED")
+        toastError(errorMessage);
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+/**
+ * Google auth: get OAuth URL
+ *
+ */
+
+export const getOauthUrl = createAsyncThunk(
+  "user/getOauthUrl",
+  async (_, thunkAPI) => {
+    try {
+      const { data } = await authAPI.get("/google");
+
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

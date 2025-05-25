@@ -1,13 +1,16 @@
 import style from "./style.module.scss";
+import { useTranslation } from "react-i18next";
 import { why_me } from "@/mock/landing.js";
+import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll";
 
 export const WhyWe = ({ id }) => {
+  const { t } = useTranslation();
   return (
     <section id={id} className={style.whyWe}>
-      <div className={style.whyWeContainer}>
-        <h2>чому варто обрати нас?</h2>
+      <SlideOnScroll className={style.whyWeContainer} direction="left">
+        <h2>{t("whyWe.name")}</h2>
         <div className={style.whyWeContainerList}>
-          {why_me.map(({ name, desc, img }, key) => (
+          {why_me.map(({ img }, key) => (
             <div key={key}>
               <lord-icon
                 src={img}
@@ -16,12 +19,16 @@ export const WhyWe = ({ id }) => {
                 colors="primary:#2b2a29,secondary:#2b2a29"
                 className={style.whyWeIcon}
               ></lord-icon>
-              <p className={style.whyWeContainerListTitle}>{name}</p>
-              <p className={style.whyWeContainerListDesc}>{desc}</p>
+              <p className={style.whyWeContainerListTitle}>
+                {t(`whyWe.title_item_${key}`)}
+              </p>
+              <p className={style.whyWeContainerListDesc}>
+                {t(`whyWe.desc_item_${key}`)}
+              </p>
             </div>
           ))}
         </div>
-      </div>
+      </SlideOnScroll>
     </section>
   );
 };

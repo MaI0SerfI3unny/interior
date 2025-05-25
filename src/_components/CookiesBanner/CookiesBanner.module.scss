@@ -1,0 +1,106 @@
+@use "../../scss/common/vars" as *;
+@use "../../scss/common/mixins" as *;
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(5, 0, 41, 0.2);
+  z-index: 999;
+}
+
+.cookiesBanner {
+  position: fixed;
+  bottom: 110px;
+  width: 328px;
+  height: 320px;
+  padding: 60px 20px 20px 20px;
+  background-color: $backgraund-cookies;
+  border: 1px solid rgba(225, 225, 225, 1);
+  border-radius: 4px;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  left: 50%;
+  transform: translateX(-50%);
+  animation: slideUpFade 0.6s ease-out;
+
+  @include media(tablet) {
+    bottom: 48px;
+    width: 704px;
+    height: 180px;
+    padding: 56px 32px 32px 32px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include media(desktop) {
+    bottom: 80px;
+    width: 800px;
+    height: 180px;
+    padding: 50px 32px 32px 32px;
+  }
+}
+
+.btnClose {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: #2b2a29;
+
+  @include media(tablet) {
+    top: 16px;
+    right: 32px;
+  }
+}
+
+.btnClose:hover {
+  stroke: $typography-error;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.btnCookie {
+  height: 56px;
+  padding: 16px 24px;
+  border-radius: 4px;
+  background-color: $typography-primary;
+  color: $backgraund-inputs;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.btnCookie:hover {
+  background: $backgraund-button-hover;
+}
+
+.link {
+  color: $typography-action;
+}
+
+.link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@keyframes slideUpFade {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}

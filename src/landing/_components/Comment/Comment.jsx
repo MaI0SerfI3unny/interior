@@ -1,5 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll";
 import { Pagination, Navigation } from "swiper/modules";
+import { useTranslation } from "react-i18next";
 import { comment } from "@/mock/landing";
 import left from "@/assets/icons/left.svg";
 import right from "@/assets/icons/right.svg";
@@ -11,10 +13,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 export const Comment = ({ id }) => {
+  const { t } = useTranslation();
   return (
     <section id={id} className={style.comment}>
-      <div className={style.commentContainer}>
-        <h2>Відгуки користувачів</h2>
+      <SlideOnScroll direction="bottom" className={style.commentContainer}>
+        <h2>{t("comment.title")}</h2>
         <Swiper
           slidesPerView={3}
           spaceBetween={24}
@@ -44,7 +47,9 @@ export const Comment = ({ id }) => {
                   src={comma}
                   alt="comma"
                 />
-                <h4 className={style.sliderItemTitle}>{name}</h4>
+                <h4 className={style.sliderItemTitle}>
+                  {t(`comment.${name}`)}
+                </h4>
                 <p className={style.sliderItemJob}>{date}</p>
                 <div className={style.sliderItemRating}>
                   <ReactStars
@@ -58,7 +63,7 @@ export const Comment = ({ id }) => {
                     halfIcon={<i className="fas fa-star-half-alt"></i>}
                   />
                 </div>
-                <p>{desc}</p>
+                <p>{t(`comment.${desc}`)}</p>
               </div>
             </SwiperSlide>
           ))}
@@ -71,7 +76,7 @@ export const Comment = ({ id }) => {
             </div>
           </div>
         </Swiper>
-      </div>
+      </SlideOnScroll>
     </section>
   );
 };

@@ -1,11 +1,19 @@
-import { SaveResultButtonStyles } from "./SaveResultButtonStyles.styled"
+import { SaveResultButtonStyles } from "./SaveResultButtonStyles.styled";
+import { useTranslation } from "react-i18next";
 
-const SaveResultButton = ({pdS}) => {
+const SaveResultButton = ({ pdS, toggleModal, isDisabled, wD }) => {
+  const { t } = useTranslation();
+
   return (
-    <SaveResultButtonStyles $pdS={pdS}>
-      Зберегти
+    <SaveResultButtonStyles
+      disabled={isDisabled}
+      $pdS={pdS}
+      onClick={toggleModal}
+      $wD={wD}
+    >
+      {t("generate.save")}
     </SaveResultButtonStyles>
-  )
-}
+  );
+};
 
-export default SaveResultButton
+export default SaveResultButton;

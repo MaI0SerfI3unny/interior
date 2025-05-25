@@ -1,0 +1,74 @@
+@use "../../scss/common/mixins" as *;
+@use "../../scss/common/vars" as *;
+
+.termsList {
+  width: 320px;
+
+  @include media(tablet) {
+    width: 704px;
+  }
+
+  @include media(desktop) {
+    width: 1216px;
+  }
+}
+
+.pageTitle {
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-family: "Cormorant";
+
+  @include media(tablet) {
+    margin-top: 32px;
+  }
+
+  @include media(desktop) {
+    margin-top: 48px;
+    margin-bottom: 8px;
+  }
+}
+
+.itemTitle {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 24px;
+
+  @include media(tablet) {
+    margin-top: 32px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.termsItem {
+  p {
+    color: $typography-secondary;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include media(tablet) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 20px;
+
+    li::marker {
+      font-size: 0.7em;
+    }
+  }
+}
+
+.firstItem p {
+  font-size: 16px;
+  line-height: 24px;
+
+  @include media(tablet) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}

@@ -1,40 +1,30 @@
-import styled from "styled-components"
-import { theme } from "../../../assets/constants/themeColors"
+import styled from "styled-components";
+import { theme } from "../../../assets/constants/themeColors";
 
 export const DownloadTextContainer = styled.div`
-    display : flex;
+  display: flex;
+  justify-content: center;
+  column-gap: 4px;
+
+  .text-container {
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap : wrap;
+  }
+  .download-text {
+    color: ${theme.typography.secondaryAction};
+    line-height: 1.33;
+    font-size: 14px;
+  }
 
-    svg {
-        margin-right : 8px;
-    }
+  .drag-text {
+    color: ${theme.typography.primary};
+    line-height: 1.33;
+    font-size: 14px;
+  }
 
-    div:first-child {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .download-text {
-        color: ${theme.typography.secondaryAction};
-        line-height : 1.33;
-        letter-spacing: 0%;
-        margin-left: 0.5px;
-    }
-
-    .drag-text {
-        font-weight: 600;
-        line-height : 1.33;
-        letter-spacing: 0%;
-
-    }
-
-    .format {
-        font-size: 12px;
-        color: ${theme.typography.smallText};
-        line-height : 1.33;
-        letter-spacing: 0%;
-    }
-`
+  .format {
+    font-size: 12px;
+    line-height: 1.25;
+    color: ${theme.typography.smallText};
+  }
+`;

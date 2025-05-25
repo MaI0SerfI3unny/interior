@@ -1,102 +1,101 @@
-.roadMap{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 160px;
-    .roadMapContainer{
-        width: 100%;
-        max-width: 1216px;
-        margin: 0 20px;
-        h2{
-            color: #2B2A29;
-            font-size: 48px;
-            font-weight: bold;
-            line-height: 56px;
-            text-transform: uppercase;
-            font-family: "Cormorant Infant", sans-serif;
-            margin: 0;
-            margin-bottom: 40px;
-        }
-        .roadMapContainerDescription{
-            color: black;
-            font-size: 18px;
-            width: 100%;
-            line-height: 28px;
-            font-weight: 400;
-            margin-bottom: 60px;
-            text-align: center;
-        }
-        .roadMapContainerButton{
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-            a{
-                height: 56px;
-                width: 216px;
-                border-radius: 4px;
-                background: #2B2A29;
-                color: white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 16px;
-                font-weight: 600;
-                text-transform: capitalize;
-                text-decoration: none;
-                cursor: pointer;
-                border: 2px solid #2B2A29;
-                &:hover{
-                    transition: 0.5s;
-                    background: transparent;
-                    color: #2B2A29;
-                }
-            }
-        }
+.roadMap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 160px;
+  .roadMapContainer {
+    width: 100%;
+    max-width: 1216px;
+    margin: 0 20px;
+    h2 {
+      color: #2b2a29;
+      font-size: 48px;
+      font-weight: bold;
+      line-height: 56px;
+      text-transform: uppercase;
+      font-family: "Cormorant Infant", sans-serif;
+      margin: 0;
+      margin-bottom: 40px;
     }
+    .roadMapContainerDescription {
+      color: black;
+      font-size: 18px;
+      width: 100%;
+      line-height: 28px;
+      font-weight: 400;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    .roadMapContainerButton {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      a {
+        height: 56px;
+        width: 216px;
+        border-radius: 4px;
+        background: #2b2a29;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: capitalize;
+        text-decoration: none;
+        cursor: pointer;
+        border: 2px solid #2b2a29;
+        &:hover {
+          transition: 0.5s;
+          background: transparent;
+          color: #2b2a29;
+        }
+      }
+    }
+  }
 }
 
-.wrap{
+.wrap {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 592px), 1fr));
   gap: 32px;
-  .wrapImg{
+  .wrapImg {
     width: 100%;
     max-height: 512px;
     aspect-ratio: 1/1;
-    img{
-      box-shadow: 6px 6px 32px 0px #0000001F;
+    img {
+      box-shadow: 6px 6px 32px 0px #0000001f;
       border-radius: 12px;
     }
   }
-  .wrapItem{
+  .wrapItem {
     margin-bottom: 8px;
     padding-top: 16px;
     padding-bottom: 24px;
     padding-left: 11px;
-    border-bottom: 1px solid #A09C99;
+    border-bottom: 1px solid #a09c99;
     display: flex;
-    &:last-child{
+    &:last-child {
       border-bottom: none;
     }
-    .wrapItemCount{
+    .wrapItemCount {
       margin-top: 7px;
       margin-right: 32px;
-      p{
-        color: #2B2A29;
+      p {
+        color: #2b2a29;
         font-size: 48px;
         line-height: 48px;
-
       }
     }
 
-    .wrapItemInfo{
-      h5{
-        color: #2B2A29;
+    .wrapItemInfo {
+      h5 {
+        color: #2b2a29;
         font-size: 24px;
         line-height: 32px;
         margin: 0;
         margin-bottom: 8px;
       }
-      p{
+      p {
         color: #494643;
         font-size: 15px;
         line-height: 24px;
@@ -105,10 +104,10 @@
     @media (max-width: 1255px) {
       padding-top: 12px;
       padding-bottom: 20px;
-      .wrapItemCount{
+      .wrapItemCount {
         margin-top: 0;
         margin-right: 20px;
-        p{
+        p {
           font-size: 32px;
           line-height: normal;
         }
@@ -117,12 +116,12 @@
     @media (max-width: 550px) {
       padding: 0;
       padding-bottom: 8px;
-      .wrapItemInfo{
-        h5{
+      .wrapItemInfo {
+        h5 {
           font-size: 20px;
           font-weight: 600;
         }
-        p{
+        p {
           font-size: 14px;
           line-height: 20px;
         }
@@ -131,13 +130,13 @@
   }
   @media (max-width: 1255px) {
     gap: 0;
-    .wrapImg img{
+    .wrapImg img {
       border-radius: 4px;
     }
   }
   @media (max-width: 550px) {
     gap: 0;
-    .wrapImg img{
+    .wrapImg img {
       margin-top: 24px;
       border-radius: 4px;
       aspect-ratio: 1/1;
@@ -146,16 +145,16 @@
 }
 
 @media (max-width: 1255px) {
-  .roadMap{
+  .roadMap {
     margin-bottom: 120px;
-    .roadMapContainer{
+    .roadMapContainer {
       max-width: 704px;
       margin: 0 30px;
-      h2{
+      h2 {
         font-size: 40px;
         margin-bottom: 32px;
       }
-      .roadMapContainerButton{
+      .roadMapContainerButton {
         margin-top: 32px;
       }
     }
@@ -163,18 +162,18 @@
 }
 
 @media (max-width: 550px) {
-  .roadMap{
+  .roadMap {
     margin-bottom: 80px;
-    .roadMapContainer{
+    .roadMapContainer {
       margin: 0 20px;
-      h2{
+      h2 {
         font-size: 32px;
         margin-bottom: 24px;
         line-height: 36px;
       }
-      .roadMapContainerButton{
+      .roadMapContainerButton {
         margin-top: 24px;
-        a{
+        a {
           width: 100%;
         }
       }
