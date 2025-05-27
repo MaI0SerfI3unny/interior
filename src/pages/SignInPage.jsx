@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import { getUser } from "../redux/user/operations.js";
 
 import { setAuthHeader } from "../api/axios.config.js";
-import { setToken } from "../redux/user/slice.js";
+import { setToken } from "../redux/auth/slice.js";
 
 export const SignInPage = () => {
   const { t } = useTranslation();

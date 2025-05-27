@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userSlice from "./user/slice.js";
+import userReducer from "./user/slice.js";
+import authReducer from "./auth/slice.js";
 import generationFoldersReducer from "./generationFolders/generationFoldersSlice.js";
 import {
   persistStore,
@@ -10,20 +11,40 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
+  createTransform,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-const userPersistConfig = {
-  key: "user",
+const authTransform = createTransform(
+  inboundState => {
+    if (inboundState?.rememberMe) {
+      return {
+        rememberMe: inboundState.rememberMe,
+        accessToken: inboundState.accessToken,
+        isLoggedIn: inboundState.isLoggedIn,
+      };
+    }
+    return null;
+  },
+  outboundState => {
+    return outboundState;
+  },
+  { whitelist: ["auth"] }
+);
+
+const authPersistConfig = {
+  key: "auth",
   storage,
-  whitelist: ["accessToken", "isLoggedIn"],
+  // whitelist: ["rememberMe", "accessToken", "isLoggedIn"],
+  transforms: [authTransform],
 };
 
-const persistedUserReducer = persistReducer(userPersistConfig, userSlice);
+const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
 
 const perStore = configureStore({
   reducer: {
-    user: persistedUserReducer,
+    user: userReducer,
+    auth: persistedAuthReducer,
     generationFolders: generationFoldersReducer,
   },
   // eslint-disable-next-line no-undef

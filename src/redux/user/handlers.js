@@ -1,20 +1,11 @@
-export const handleLogin = (state, { payload }) => {
-  state.accessToken = payload.data;
-  state.isLoading = false;
-  state.isLoggedIn = true;
-};
-
-export const handleRegister = (state, { payload }) => {
-  state.accessToken = payload.data;
-  state.isLoading = false;
-  state.isLoggedIn = true;
-};
-
 export const handleUserInfo = (state, { payload }) => {
-  state.user = payload;
-  state.isLoading = false;
+  state.name = payload.name;
+  state.email = payload.email;
+  state.image = payload.image;
+  state.freeCount = payload.freeCount;
+  state.active_plan = payload.active_plan;
 };
 
 export const handlerChangeEmail = (state, { payload }) => {
-  state.user.email = payload;
+  state.email = payload;
 };
