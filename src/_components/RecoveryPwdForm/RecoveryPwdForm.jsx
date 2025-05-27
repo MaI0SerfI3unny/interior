@@ -126,12 +126,6 @@ export const RecoveryPwdForm = () => {
               component="span"
             />
           </label>
-          <div className={css.remember}>
-            <label className={css.customCheckbox}>
-              <Field type="checkbox" name="rememberMe" />
-              <span className={css.checkmark}></span>Remember password
-            </label>
-          </div>
           <button className={css.button} type="submit">
             Save
             {/* {isLoading ? <Loader /> : "Sign in"} */}

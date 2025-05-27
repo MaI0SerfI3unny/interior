@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Profile } from "../../assets/icons/Users_circle.svg";
 import { ReactComponent as LogOut } from "../../assets/icons/login2.svg";
 import { useDispatch } from "react-redux";
-import { logout } from "../../redux/user/operations.js";
+import { logout } from "../../redux/auth/operations.js";
 import css from "./UserProfileModal.module.scss";
 import { useEffect, useRef } from "react";
 

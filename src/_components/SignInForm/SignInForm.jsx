@@ -7,12 +7,14 @@ import clsx from "clsx";
 import { useState } from "react";
 import css from "./SignInForm.module.scss";
 
-import { login } from "@/redux/user/operations";
+import { login } from "@/redux/auth/operations";
 
 import { ReactComponent as Eye } from "../../assets/icons/eye24.svg";
 import { ReactComponent as Hide } from "../../assets/icons/hide24.svg";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+
+import { setRememberMe } from "../../redux/auth/slice.js";
 
 // import { selectIsLoading } from "@/redux/user/selectors.js";
 
@@ -41,7 +43,11 @@ const SignInForm = () => {
 
   const handleSubmit = (values, actions) => {
     if (values.email === "" || values.password === "") return;
-    delete values.rememberMe;
+
+    if (values.rememberMe) {
+      console.log("remember me true");
+      dispatch(setRememberMe(true));
+    }
 
     dispatch(login(values));
     actions.resetForm();

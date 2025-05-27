@@ -2,8 +2,9 @@ import { useDispatch } from "react-redux";
 import css from "./GoogleLoginButton.module.scss";
 import { ReactComponent as FcGoogle } from "@/assets/icons/google.svg";
 import { useTranslation } from "react-i18next";
-import { getOauthUrl } from "../../redux/user/operations.js";
+
 import { toastError } from "../../assets/functions/toastNotification.js";
+import { getOauthUrl } from "../../redux/auth/operations.js";
 
 export const GoogleLoginButton = () => {
   const dispatch = useDispatch();
