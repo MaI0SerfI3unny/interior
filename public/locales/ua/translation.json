@@ -284,12 +284,13 @@
     "photoDeleted": "Вашу картинку видалено",
     "subscribeCurrentTitle": "Поточна підписка",
     "status": "Статус",
-    "statusActive": "Активна",
+    "statusActive": "Активна / до",
+    "generationCount": "Кількість генерацій",
     "price": "Вартість",
-    "endSubscribe": "Кінець підписки",
     "changePlan": "Змінити план",
     "cancelSubscribe": "Відмінити підписку",
     "month": "місяць",
+    "shortMonth": "міс",
     "paymentDetailsTitle": "Деталі оплати",
     "cardNumber": "Номер картки",
     "subscribeExpires": "Закінчується",
@@ -311,7 +312,7 @@
     "passwordChangedSuccess": "Пароль успішно було змінено",
     "subs": {
       "premium": {
-        "gen_limit": "50 генерацій інтер’єрів загалом"
+        "gen_limit": "100 генерацій інтер’єрів загалом"
       },
       "pro": {
         "unlimited_gen": "Безлімітна кількість генерацій"

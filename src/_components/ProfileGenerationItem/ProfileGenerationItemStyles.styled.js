@@ -4,49 +4,10 @@ export const ProfileGenerationItemStyles = styled.li`
   cursor: pointer;
   position: relative;
   border-radius: 4px;
-  overflow: hidden;
-
-  &:hover .overflow {
-    bottom: 0;
-  }
 
   img {
     width: 100%;
     height: 100%;
-  }
-
-  .overflow {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    bottom: -100%;
-    height: 50%;
-    padding: 8px;
-    left: 0;
-    font-family: "Manrope", sans-serif;
-    transition: 250ms linear;
-    color: rgb(244, 241, 236);
-    background: linear-gradient(
-      to bottom,
-      rgba(5, 0, 41, 0) 0%,
-      rgba(5, 0, 41, 0.9) 100%
-    );
-  }
-
-  .overflow-title {
-    margin-bottom: 4px;
-    line-height: 1.33;
-  }
-
-  .overflow .prompt {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 14px;
-    line-height: 1.3;
   }
 
   .more-info-btn {

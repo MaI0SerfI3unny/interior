@@ -1,12 +1,6 @@
 import { ProfileSubscribePaymentHistoryStyles } from "./ProfileSubscribePaymentHistoryStyles.styled";
 import { useTranslation } from "react-i18next";
-
-// "paymentHistoryTitle" : "Історія оплат",
-//     "paymentDate" : "Дата",
-//     "subscribeType" : "Підписка",
-//     "invoice" : "Інвойс"
-// status
-//price
+import { ReactComponent as DownloadIcon } from "../../svg/cloud.svg";
 
 const paymentData = [
   {
@@ -60,7 +54,7 @@ const ProfileSubscribePaymentHistory = () => {
               <td>{date}</td>
               <td>{type}</td>
               <td>
-                $ {price} / {t("settings.month")}
+                $ {price} / {t("settings.shortMonth")}
               </td>
               <td className={status ? "accepted" : "error"}>
                 {status
@@ -68,7 +62,10 @@ const ProfileSubscribePaymentHistory = () => {
                   : t("settings.errorPayment")}
               </td>
               <td>
-                <button type="button">{t("settings.downloadInvoice")}</button>
+                <button type="button">
+                  <span>{t("settings.downloadInvoice")}</span>
+                  <DownloadIcon width={24} height={24} />
+                </button>
               </td>
             </tr>
           ))}

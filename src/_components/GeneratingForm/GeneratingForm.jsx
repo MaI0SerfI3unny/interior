@@ -8,12 +8,13 @@ import { toastError } from "../../assets/functions/toastNotification";
 import api from "../../api/axios.config";
 import { convertToBase64 } from "../../assets/functions/convertToBase64";
 import { waitForPhoto } from "../../assets/functions/waitForPhoto";
-
+import { useSelector } from "react-redux";
 import DownloadFileInput from "../DownloadFileInput/DownloadFileInput";
 import PromptInput from "../PromptInput/PromptInput";
 import SelectElementContainer from "../SelectElement/SelectElementContainer";
 import { GeneratingFormStyles } from "./GeneratingFormStyles.styled";
 import SubmitButton from "../SubmitButton/SubmitButton";
+import { selectUser } from "../../redux/user/selectors";
 
 const validationSchema = Yup.object({
   original: Yup.mixed()
@@ -47,6 +48,7 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer, isLoadingAnswer }) => {
   const { t } = useTranslation();
   const initialStylesValues = useStyleOptions();
   const initialRoomValues = useRoomOptions();
+  const { freeCount } = useSelector(selectUser);
 
   const handleSubmit = async values => {
     setIsLoadingAnswer(true);
@@ -61,7 +63,6 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer, isLoadingAnswer }) => {
         image: imageBase,
       });
 
-      console.log(result.data.task_id);
       const photoData = await waitForPhoto(result.data.task_id);
 
       setResult({
@@ -69,6 +70,7 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer, isLoadingAnswer }) => {
         style: values.style,
         room: values.room,
         result: photoData.url,
+        prompt: values.prompt,
       });
     } catch (error) {
       toastError(t("settings.error"));
@@ -112,7 +114,13 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer, isLoadingAnswer }) => {
           />
 
           <SubmitButton
-            disabled={!values.prompt || !values.style || isLoadingAnswer}
+            disabled={
+              !values.prompt ||
+              !values.style ||
+              isLoadingAnswer ||
+              !values.original ||
+              !freeCount
+            }
           />
           <p className="text-count-trying">{t("generate.attentionText")}</p>
         </GeneratingFormStyles>

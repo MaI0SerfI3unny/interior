@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../assets/constants/themeColors";
 
 export const ProfileSubscribeChangePlanModalStyles = styled.div`
-  padding: 48px 40px 40px 40px;
+  padding-bottom: 40px;
   background-color: rgb(244, 241, 236);
 
   h2,
@@ -14,7 +14,6 @@ export const ProfileSubscribeChangePlanModalStyles = styled.div`
   h2,
   .description {
     text-align: center;
-    max-width: 488px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -51,7 +50,41 @@ export const ProfileSubscribeChangePlanModalStyles = styled.div`
     margin-top: 32px;
   }
 
+  @media screen and (max-width: 768px) {
+    min-width: 320px;
+
+    .description {
+      max-width: 240px;
+    }
+
+    .cards-container {
+      flex-direction: column;
+      row-gap: 32px;
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    padding-top: 56px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .description {
+      max-width: 488px;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1440px) {
+    min-width: 768px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
   @media screen and (min-width: 1441px) {
+    min-width: 872px;
+    padding-top: 48px;
+    padding-right: 40px;
+    padding-left: 40px;
+
     .cancel-btn {
       position: relative;
     }

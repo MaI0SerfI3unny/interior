@@ -11,9 +11,20 @@ export const ProfileSubscribeContainerStyles = styled.div`
 
   h2 {
     font-weight: 600;
-    font-size: 20px;
     line-height: 1.33;
     color: ${theme.typography.primary};
     margin-bottom: 24px;
+  }
+
+  @media screen and (max-width: 768px) {
+    h2 {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    h2 {
+      font-size: 20px;
+    }
   }
 `;

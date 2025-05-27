@@ -15,11 +15,11 @@ jobs:
 
       - name: Set up SSH key
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 --decode > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+            mkdir -p ~/.ssh
+            echo "${{ secrets.AZMO_SERVER_SSH_KEY }}" | base64 --decode > ~/.ssh/id_rsa
+            chmod 600 ~/.ssh/id_rsa
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            AZMO_SERVER_SSH_KEY: ${{ secrets.AZMO_SERVER_SSH_KEY }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -42,8 +42,10 @@ jobs:
 
       - name: Upload files via SFTP
         run: |
-          echo "Uploading files via rsync..."
-          rsync -avz -e "ssh -o StrictHostKeyChecking=no" build/ "${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}:public_html"
+            echo "Uploading files via rsync..."
+            rsync -avz -e "ssh -o StrictHostKeyChecking=no -p ${{ secrets.AZMO_SERVER_PORT }}" build/ "${{ secrets.AZMO_SERVER_USERNAME }}@${{ secrets.AZMO_SERVER_HOST }}:${{ secrets.AZMO_SERVER_PATH }}"
         env:
-          SFTP_USER: ${{ secrets.SFTP_USER }}
-          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+            AZMO_SERVER_USERNAME: ${{ secrets.AZMO_SERVER_USERNAME }}
+            AZMO_SERVER_HOST: ${{ secrets.AZMO_SERVER_HOST }}
+            AZMO_SERVER_PATH: ${{ secrets.AZMO_SERVER_PATH }}
+            AZMO_SERVER_PORT: ${{ secrets.AZMO_SERVER_PORT }}

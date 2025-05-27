@@ -282,12 +282,13 @@
     "photoDeleted": "Your picture has been deleted",
     "subscribeCurrentTitle": "Current subscription",
     "status": "Status",
-    "statusActive": "Active",
+    "statusActive": "Active / until",
+    "generationCount": "Number of generations",
     "price": "Cost",
-    "endSubscribe": "End of subscription",
     "changePlan": "Change plan",
     "cancelSubscribe": "Cancel subscription",
     "month": "month",
+    "shortMonth": "mo",
     "paymentDetailsTitle": "Payment details",
     "cardNumber": "Card number",
     "subscribeExpires": "Expires",
@@ -310,7 +311,7 @@
 
     "subs": {
       "premium": {
-        "gen_limit": "50 interior generations total"
+        "gen_limit": "100 interior generations total"
       },
       "pro": {
         "unlimited_gen": "Unlimited generations"

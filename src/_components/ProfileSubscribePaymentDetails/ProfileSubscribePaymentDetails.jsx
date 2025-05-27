@@ -2,11 +2,6 @@ import { useTranslation } from "react-i18next";
 import { ProfileSubscribePaymentDetailsStyles } from "./ProfileSubscribePaymentDetailsStyles.styled";
 import { ReactComponent as CardIcon } from "../../svg/mastercard.svg";
 
-// "paymentDetailsTitle": "Payment details",
-// "cardNumber": "Card number",
-// "subscribeExpires": "Expires",
-// "changeCard": "Change"
-
 const ProfileSubscribePaymentDetails = () => {
   const { t } = useTranslation();
 
