@@ -33,7 +33,9 @@ jobs:
         run: yarn install
 
       - name: Build the project
-        run: yarn build
+        run: |
+          echo ${{ secrets.ENV }} > .env
+          yarn build
 
       - name: Install rsync
         run: |
