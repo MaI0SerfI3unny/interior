@@ -12,7 +12,9 @@ export const Footer = () => {
       <div className={style.footerMain}>
         <div className={style.footerMainContainer}>
           <div className={style.footerMainContainerInfo}>
-            <img src={logo} alt="logo" />
+            <Link to="/">
+              <img src={logo} alt="logo" />
+            </Link>
             <p>{t("nav.footDesc")}</p>
           </div>
           <div className={style.footerMainContainerLink}>

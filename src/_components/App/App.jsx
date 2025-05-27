@@ -30,6 +30,7 @@ import { PrivateRoute } from "../PrivateRoute/PrivateRoute.jsx";
 import { setAuthHeader } from "../../api/axios.config.js";
 import { toastError } from "../../assets/functions/toastNotification.js";
 import { useTranslation } from "react-i18next";
+import { setToken } from "../../redux/auth/slice.js";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -43,14 +44,16 @@ export const App = () => {
       toastError(t("auth.somethingWentWrong"));
       return;
     }
-    if (accessToken) setAuthHeader(accessToken);
 
-    const firstLogIn = () => {
-      if (accessToken && user.email === "") {
-        dispatch(getUser());
-      }
-    };
-    firstLogIn();
+    const savedAccessToken = localStorage.getItem("token");
+
+    if (savedAccessToken && !accessToken) {
+      dispatch(setToken(savedAccessToken));
+    } else if (accessToken && user.email === "") {
+      setAuthHeader(accessToken);
+
+      dispatch(getUser());
+    }
   }, [accessToken]);
 
   return (

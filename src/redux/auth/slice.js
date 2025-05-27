@@ -33,6 +33,7 @@ const authSlice = createSlice({
       .addCase(login.fulfilled, handleLogin)
       .addCase(register.fulfilled, handleRegister)
       .addCase(logout.fulfilled, () => {
+        localStorage.removeItem("token");
         return initialState;
       })
       .addMatcher(

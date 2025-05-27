@@ -14,8 +14,6 @@ import { ReactComponent as Hide } from "../../assets/icons/hide24.svg";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { setRememberMe } from "../../redux/auth/slice.js";
-
 // import { selectIsLoading } from "@/redux/user/selectors.js";
 
 const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -41,15 +39,15 @@ const SignInForm = () => {
 
   const SigninSchema = getSigninSchema(t);
 
-  const handleSubmit = (values, actions) => {
+  const handleSubmit = async (values, actions) => {
     if (values.email === "" || values.password === "") return;
 
+    const { data } = await dispatch(login(values)).unwrap();
+
     if (values.rememberMe) {
-      console.log("remember me true");
-      dispatch(setRememberMe(true));
+      localStorage.setItem("token", data);
     }
 
-    dispatch(login(values));
     actions.resetForm();
   };
 

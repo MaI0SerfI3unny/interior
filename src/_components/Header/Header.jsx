@@ -23,9 +23,9 @@ export const Header = () => {
   return (
     <div className={style.header}>
       <div className={style.headerContainer}>
-        <div>
+        <Link to="/">
           <img src={logo} alt="logo" />
-        </div>
+        </Link>
 
         <div className={style.headerContainerLinkContainer}>
           {navItems.map(({ path, key }) => (
