@@ -29,9 +29,9 @@ export const RecoveryPwdForm = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  if (!token) {
-    return <p className={css.tokenError}>{t("auth.invalidOrExpiredToken")}</p>;
-  }
+  // if (!token) {
+  //   return <p className={css.tokenError}>{t("auth.invalidOrExpiredToken")}</p>;
+  // }
 
   const handleSubmit = async (values, actions) => {
     const { detail } = await dispatch(
@@ -64,12 +64,10 @@ export const RecoveryPwdForm = () => {
       {({ touched, errors }) => (
         <Form className={css.form}>
           {" "}
-          <h2 className={css.title}>Recovery Password</h2>
-          <p className={css.discription}>
-            Input the new password for your accaunt
-          </p>
+          <h2 className={css.title}>{t("recovery.title")}</h2>
+          <p className={css.discription}>{t("recovery.text")}</p>
           <label className={css.label}>
-            New password
+            {t("recovery.newPwd")}
             <Field
               className={
                 touched.new_password && errors.new_password
@@ -98,7 +96,7 @@ export const RecoveryPwdForm = () => {
             />
           </label>
           <label className={css.label}>
-            Confirm new password
+            {t("recovery.confirmPwd")}
             <Field
               className={
                 touched.confirm_password && errors.confirm_password
@@ -127,7 +125,7 @@ export const RecoveryPwdForm = () => {
             />
           </label>
           <button className={css.button} type="submit">
-            Save
+            {t("recovery.save")}
             {/* {isLoading ? <Loader /> : "Sign in"} */}
           </button>
         </Form>

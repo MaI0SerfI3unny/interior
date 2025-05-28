@@ -20,6 +20,7 @@
   font-weight: 600;
   font-size: 28px;
   line-height: 36px;
+  margin-top: 20px;
   margin-bottom: 4px;
 
   text-transform: uppercase;
@@ -29,7 +30,7 @@
   @include media(tablet) {
     font-size: 32px;
     line-height: 40px;
-    // margin-top: 52px;
+    margin-top: 0;
     margin-bottom: 8px;
   }
 
@@ -120,19 +121,16 @@
 
 .error {
   position: absolute;
-  top: 79px;
+  top: 70px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 129%;
   color: $typography-error;
-}
 
-.input:active {
-  color: var(--primary-color-black);
-}
-
-.placeholder {
-  color: var(--text-placeholder);
+  @include media(tablet) {
+    font-size: 14px;
+    top: 79px;
+  }
 }
 
 .button {
