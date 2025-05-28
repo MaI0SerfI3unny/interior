@@ -6,7 +6,6 @@ import { handleLogin, handleRegister } from "./handlers.js";
 
 const initialState = {
   accessToken: null,
-  rememberMe: false,
   isLoggedIn: false,
   isLoading: false,
   isError: false,
@@ -36,13 +35,11 @@ const authSlice = createSlice({
         localStorage.removeItem("token");
         return initialState;
       })
+      .addMatcher(isAnyOf(login.pending, register.pending), state => {
+        state.isLoading = true;
+      })
       .addMatcher(
-        isAnyOf(
-          register.rejected,
-          login.rejected,
-
-          getOauthUrl.rejected
-        ),
+        isAnyOf(register.rejected, login.rejected, getOauthUrl.rejected),
         (state, action) => {
           state.isLoading = false;
           state.isError = action.payload;

@@ -47,8 +47,6 @@ export const SubscribePage = () => {
     } catch (error) {
       toastError(t("auth.somethingWentWrong"));
     }
-
-    // логіка підписки, якщо буде реалізовано на беку
   };
 
   return (

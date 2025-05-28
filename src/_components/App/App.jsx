@@ -21,6 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectAccessToken,
   selectError,
+  selectIsLoading,
   selectUser,
 } from "../../redux/user/selectors.js";
 import { useEffect } from "react";
@@ -31,12 +32,14 @@ import { setAuthHeader } from "../../api/axios.config.js";
 import { toastError } from "../../assets/functions/toastNotification.js";
 import { useTranslation } from "react-i18next";
 import { setToken } from "../../redux/auth/slice.js";
+import { getTariffs } from "../../redux/plans/operations.js";
 
 export const App = () => {
   const dispatch = useDispatch();
   const accessToken = useSelector(selectAccessToken);
   const user = useSelector(selectUser);
   const error = useSelector(selectError);
+  const isLoading = useSelector(selectIsLoading);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -44,7 +47,6 @@ export const App = () => {
       toastError(t("auth.somethingWentWrong"));
       return;
     }
-
     const savedAccessToken = localStorage.getItem("token");
 
     if (savedAccessToken && !accessToken) {
@@ -55,6 +57,15 @@ export const App = () => {
       dispatch(getUser());
     }
   }, [accessToken]);
+
+  useEffect(() => {
+    const getTarifs = async () => {
+      await dispatch(getTariffs());
+    };
+    getTarifs();
+  }, []);
+
+  if (isLoading) return <div>Loader</div>;
 
   return (
     <>
