@@ -33,7 +33,7 @@ export const SignInPage = () => {
     dispatch(setToken(token));
     dispatch(getUser());
 
-    navigate("/generating", { replace: true });
+    navigate(from, { replace: true });
 
     window.history.replaceState({}, document.title, "/signin");
   }, [token, dispatch]);

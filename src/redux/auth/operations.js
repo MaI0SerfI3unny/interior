@@ -1,5 +1,4 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { persistor } from "../store.js";
 
 import authAPI, {
   clearAuthHeader,
@@ -33,8 +32,6 @@ export const login = createAsyncThunk(
   "auth/login",
   async (credentials, thunkAPI) => {
     try {
-      await persistor.purge();
-
       const { data } = await authAPI.post("/login", credentials);
 
       setAuthHeader(data.data);

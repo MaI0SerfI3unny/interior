@@ -21,6 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectAccessToken,
   selectError,
+  selectIsLoading,
   selectUser,
 } from "../../redux/user/selectors.js";
 import { useEffect } from "react";
@@ -30,12 +31,15 @@ import { PrivateRoute } from "../PrivateRoute/PrivateRoute.jsx";
 import { setAuthHeader } from "../../api/axios.config.js";
 import { toastError } from "../../assets/functions/toastNotification.js";
 import { useTranslation } from "react-i18next";
+import { setToken } from "../../redux/auth/slice.js";
+import { getTariffs } from "../../redux/plans/operations.js";
 
 export const App = () => {
   const dispatch = useDispatch();
   const accessToken = useSelector(selectAccessToken);
   const user = useSelector(selectUser);
   const error = useSelector(selectError);
+  const isLoading = useSelector(selectIsLoading);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -43,15 +47,25 @@ export const App = () => {
       toastError(t("auth.somethingWentWrong"));
       return;
     }
-    if (accessToken) setAuthHeader(accessToken);
+    const savedAccessToken = localStorage.getItem("token");
 
-    const firstLogIn = () => {
-      if (accessToken && user.email === "") {
-        dispatch(getUser());
-      }
-    };
-    firstLogIn();
+    if (savedAccessToken && !accessToken) {
+      dispatch(setToken(savedAccessToken));
+    } else if (accessToken && user.email === "") {
+      setAuthHeader(accessToken);
+
+      dispatch(getUser());
+    }
   }, [accessToken]);
+
+  useEffect(() => {
+    const getTarifs = async () => {
+      await dispatch(getTariffs());
+    };
+    getTarifs();
+  }, []);
+
+  if (isLoading) return <div>Loader</div>;
 
   return (
     <>

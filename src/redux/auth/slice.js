@@ -3,10 +3,10 @@ import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { clearAuthHeader } from "../../api/axios.config.js";
 import { getOauthUrl, login, logout, register } from "./operations.js";
 import { handleLogin, handleRegister } from "./handlers.js";
+import { deleteUser } from "../user/operations.js";
 
 const initialState = {
   accessToken: null,
-  rememberMe: false,
   isLoggedIn: false,
   isLoading: false,
   isError: false,
@@ -33,15 +33,17 @@ const authSlice = createSlice({
       .addCase(login.fulfilled, handleLogin)
       .addCase(register.fulfilled, handleRegister)
       .addCase(logout.fulfilled, () => {
+        localStorage.removeItem("token");
         return initialState;
       })
+      .addCase(deleteUser.fulfilled, () => {
+        return initialState;
+      })
+      .addMatcher(isAnyOf(login.pending, register.pending), state => {
+        state.isLoading = true;
+      })
       .addMatcher(
-        isAnyOf(
-          register.rejected,
-          login.rejected,
-
-          getOauthUrl.rejected
-        ),
+        isAnyOf(register.rejected, login.rejected, getOauthUrl.rejected),
         (state, action) => {
           state.isLoading = false;
           state.isError = action.payload;
