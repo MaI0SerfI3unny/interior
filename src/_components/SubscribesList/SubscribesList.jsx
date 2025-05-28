@@ -13,16 +13,12 @@ export const SubscribesList = ({
 }) => {
   const plans = useSelector(selectPlans);
 
-  console.log(plans, "plans");
-
   const user = useSelector(selectUser);
   const activePlan = user.active_plan?.tariff_name;
   const freeCount = user?.freeCount;
 
-  const usersPlan = !activePlan && freeCount >= 0 ? "Free" : activePlan;
-  console.log(usersPlan, "usersPlan");
+  const usersPlan = !activePlan && freeCount ? "Free" : activePlan;
 
-  console.log(activePlan, "act plan");
   return plans.length > 0 ? (
     <div className={css.cardBox}>
       {plans.map(item => (

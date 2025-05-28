@@ -24,7 +24,7 @@ const getSignupSchema = t =>
       .matches(emailRegEx, t("validation.emailInvalid"))
       .required(t("validation.emailRequired")),
     password: Yup.string()
-      .min(8, t("validation.passwordMin"))
+      .min(1, t("validation.passwordMin"))
       .max(64, t("validation.passwordMax"))
       .required(t("validation.passwordRequired")),
   });

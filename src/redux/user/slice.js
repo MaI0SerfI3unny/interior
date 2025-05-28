@@ -10,6 +10,7 @@ import {
 } from "./operations.js";
 
 import { sendRecoveryPwdEmail } from "./operations.js";
+import { logout } from "../auth/operations.js";
 
 const initialState = {
   name: "",
@@ -32,10 +33,13 @@ const userSlice = createSlice({
         return initialState;
       })
       .addCase(changeAvatar.fulfilled, (state, { payload }) => {
-        state.user.image = payload;
+        state.image = payload;
       })
       .addCase(sendRecoveryPwdEmail.fulfilled, state => {
         state.isLoading = false;
+      })
+      .addCase(logout.fulfilled, () => {
+        return initialState;
       })
 
       .addMatcher(

@@ -31,19 +31,16 @@ export const SubscribePage = () => {
       navigate("/signin");
       return;
     }
-    console.log({
-      tariff_id: id,
-      subscription_type: promo ? "month" : "year",
-    });
+
     try {
       const { checkout_url } = await dispatch(
         getLiqPayUrl({
           tariff_id: id,
-          subscription_type: promo ? "month" : "year",
+          subscription_type: promo ? "year" : "month",
         })
       ).unwrap();
 
-      window.location.href = checkout_url;
+      window.open(checkout_url, "_blank");
     } catch (error) {
       toastError(t("auth.somethingWentWrong"));
     }

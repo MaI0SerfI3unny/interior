@@ -381,10 +381,13 @@
     "commercial_use": "Available for commercial use",
     "unlimited_history": "Unlimited generation history",
     "unlimited_generation": "Unlimited number of generations",
+    "active": "Current plan",
 
     "month": "month",
-    "submit": "Try Now",
-    "value": "Included in the plan:"
+    "year": "year",
+    "submit": "Subscribe",
+    "value": "Included in the plan:",
+    "limit": "Limit reached"
   },
   "notFound": {
     "text": "Page not found",

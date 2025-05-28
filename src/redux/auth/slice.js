@@ -3,6 +3,7 @@ import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { clearAuthHeader } from "../../api/axios.config.js";
 import { getOauthUrl, login, logout, register } from "./operations.js";
 import { handleLogin, handleRegister } from "./handlers.js";
+import { deleteUser } from "../user/operations.js";
 
 const initialState = {
   accessToken: null,
@@ -33,6 +34,9 @@ const authSlice = createSlice({
       .addCase(register.fulfilled, handleRegister)
       .addCase(logout.fulfilled, () => {
         localStorage.removeItem("token");
+        return initialState;
+      })
+      .addCase(deleteUser.fulfilled, () => {
         return initialState;
       })
       .addMatcher(isAnyOf(login.pending, register.pending), state => {
