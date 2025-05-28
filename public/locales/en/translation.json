@@ -398,11 +398,23 @@
     "profile": "My profile",
     "logout": "Log out"
     },
+
   "auth":{
    "emailSentSuccess": "An email with password reset instructions has been sent. Please check your inbox and spam folder.",
     "emailNotFound": "No account was found with this email address.",
     "somethingWentWrong": "Something went wrong, please try again later.",
     "passwordChangedSuccess": "Password has been changed. You can now log in with your new password.",
     "invalidOrExpiredToken": "The password reset token is invalid or has expired. Please try again.",
-    "goToSignin": "Go back to sign in page"  }
+    "goToSignin": "Go back to sign in page"  },
+
+  "recovery": {
+      "title": "Recovery Password",
+      "enterEmail": "Enter your email address to recovery your password",
+      "text": "Input the new password for your accaunt",
+      "newPwd": "New password",
+      "confirmPwd": "Confirm new password",
+      "save": "Save",
+      "send": "Send"
+
+    }
 }
