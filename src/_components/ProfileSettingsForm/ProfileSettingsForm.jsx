@@ -71,6 +71,7 @@ const ProfileSettingsForm = () => {
         inputName="name"
         initialValue={user.name}
         handleSubmit={onNameSave}
+        isLoading={isLoadingChangingName}
       />
       <ProfileSettingsInput
         isChanging={isChangingEmail}
