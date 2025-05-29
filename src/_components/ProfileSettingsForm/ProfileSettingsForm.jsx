@@ -10,7 +10,7 @@ import ProfileDeleteAccountContainer from "../ProfileDeleteAccountContainer/Prof
 import ProfileDeleteAccountModal from "../ProfileDeleteAccountModal/ProfileDeleteAccountModal";
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "../../redux/user/selectors";
-import { changeUserEmail } from "../../redux/user/operations";
+import { changeUserEmail, changeUserName } from "../../redux/user/operations";
 
 const ProfileSettingsForm = () => {
   const { t } = useTranslation();
@@ -21,12 +21,21 @@ const ProfileSettingsForm = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const [isLoadingChangingEmail, setIsLoadingChangingEmail] = useState(false);
+  const [isLoadingChangingName, setIsLoadingChangingName] = useState(false);
 
   // const [isShowEmailNotification, setIsShowEmailNotification] = useState(false);
 
-  async function onNameSave() {
-    // setName(value);
-    setIsChangingName(false);
+  async function onNameSave(value) {
+    setIsLoadingChangingName(true);
+
+    try {
+      const successMsg = t("settings.changedNameSuccess");
+      const errorMsg = t("settings.error");
+      await dispatch(changeUserName({ name: value, successMsg, errorMsg }));
+    } finally {
+      setIsLoadingChangingName(false);
+      setIsChangingName(false);
+    }
   }
   async function onEmailSave(value) {
     setIsLoadingChangingEmail(true);

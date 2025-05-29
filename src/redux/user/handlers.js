@@ -9,3 +9,7 @@ export const handleUserInfo = (state, { payload }) => {
 export const handlerChangeEmail = (state, { payload }) => {
   state.email = payload;
 };
+
+export const handlerChangename = (state, { payload }) => {
+  state.name = payload;
+};
