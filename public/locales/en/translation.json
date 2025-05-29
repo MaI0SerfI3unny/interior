@@ -310,16 +310,32 @@
     "passwordChangedSuccess": "Password has been changed successful",
 
     "subs": {
-      "premium": {
-        "gen_limit": "100 interior generations total"
+      "free": {
+        "gen_limit": "10 generations of interiors"
       },
-      "pro": {
-        "unlimited_gen": "Unlimited generations"
+      "premium_month": {
+        "gen_limit": "100 generations of interiors"
       },
-      "shared": {
-        "queue": "No queue for generation",
-        "limited_access": "Limited access to resources",
+      "pro_month": {
+        "gen_limit": "Unlimited number of generations"
+      },
+
+      "premium_year": {
+        "gen_limit": "1000 generations of interiors"
+      },
+      "pro_year": {
+        "gen_limit": "Unlimited number of generations"
+      },
+      "free_shared": {
+        "queue": "Generation allocation",
+        "limited_access": "History up to 5 generations",
         "non_commercial": "For non-commercial use"
+      },
+
+      "shared": {
+        "queue": "Generation without waiting in line",
+        "limited_access": "Unlimited history of generations",
+        "commercial": "Available for commercial use"
       }
     }
   },
@@ -397,24 +413,24 @@
     "greeting": "Hi, ",
     "profile": "My profile",
     "logout": "Log out"
-    },
+  },
 
-  "auth":{
-   "emailSentSuccess": "An email with password reset instructions has been sent. Please check your inbox and spam folder.",
+  "auth": {
+    "emailSentSuccess": "An email with password reset instructions has been sent. Please check your inbox and spam folder.",
     "emailNotFound": "No account was found with this email address.",
     "somethingWentWrong": "Something went wrong, please try again later.",
     "passwordChangedSuccess": "Password has been changed. You can now log in with your new password.",
     "invalidOrExpiredToken": "The password reset token is invalid or has expired. Please try again.",
-    "goToSignin": "Go back to sign in page"  },
+    "goToSignin": "Go back to sign in page"
+  },
 
   "recovery": {
-      "title": "Recovery Password",
-      "enterEmail": "Enter your email address to recovery your password",
-      "text": "Input the new password for your accaunt",
-      "newPwd": "New password",
-      "confirmPwd": "Confirm new password",
-      "save": "Save",
-      "send": "Send"
-
-    }
+    "title": "Recovery Password",
+    "enterEmail": "Enter your email address to recovery your password",
+    "text": "Input the new password for your accaunt",
+    "newPwd": "New password",
+    "confirmPwd": "Confirm new password",
+    "save": "Save",
+    "send": "Send"
+  }
 }
