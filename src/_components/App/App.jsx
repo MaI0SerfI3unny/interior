@@ -33,6 +33,7 @@ import { toastError } from "../../assets/functions/toastNotification.js";
 import { useTranslation } from "react-i18next";
 import { setToken } from "../../redux/auth/slice.js";
 import { getTariffs } from "../../redux/plans/operations.js";
+import { getFolders } from "../../redux/generationFolders/generationFoldersOperations.js";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -62,7 +63,12 @@ export const App = () => {
     const getTarifs = async () => {
       await dispatch(getTariffs());
     };
+
+    const getNewFolders = async () => {
+      await dispatch(getFolders());
+    };
     getTarifs();
+    getNewFolders();
   }, []);
 
   if (isLoading) return <div>Loader</div>;

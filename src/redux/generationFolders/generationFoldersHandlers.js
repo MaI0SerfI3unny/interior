@@ -52,8 +52,13 @@ const deletePhoto = (state, { payload }) => {
   state.folders = [...updatedFolders];
 };
 
+const getFolders = (state, { payload }) => {
+  state.folders = payload;
+};
+
 export default {
   savePhoto,
   deletePhoto,
   createFolder,
+  getFolders,
 };
