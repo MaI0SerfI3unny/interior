@@ -308,6 +308,8 @@
     "getSubscribe": "Оформити підписку",
     "privelegiesTitle": "До пакету входить",
     "changedEmailSuccess": "Пошту успішно змінено",
+    "changedNameSuccess": "Ім'я успішно змінено",
+
     "error": "Упс... Щось пішло не так. Спробуйте, будь ласка, ще раз",
     "passwordChangedSuccess": "Пароль успішно було змінено",
     "free_generation_10": "10 генерацій інтер’єрів",

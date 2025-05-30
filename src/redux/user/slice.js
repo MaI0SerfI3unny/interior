@@ -1,5 +1,9 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { handleUserInfo, handlerChangeEmail } from "./handlers.js";
+import {
+  handleUserInfo,
+  handlerChangeEmail,
+  handlerChangename,
+} from "./handlers.js";
 import {
   getUser,
   changeUserEmail,
@@ -7,6 +11,7 @@ import {
   changeAvatar,
   getLiqPayUrl,
   saveNewPwd,
+  changeUserName,
 } from "./operations.js";
 
 import { sendRecoveryPwdEmail } from "./operations.js";
@@ -29,6 +34,7 @@ const userSlice = createSlice({
 
       .addCase(getUser.fulfilled, handleUserInfo)
       .addCase(changeUserEmail.fulfilled, handlerChangeEmail)
+      .addCase(changeUserName.fulfilled, handlerChangename)
       .addCase(deleteUser.fulfilled, () => {
         return initialState;
       })

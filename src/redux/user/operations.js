@@ -44,6 +44,24 @@ export const changeUserEmail = createAsyncThunk(
 );
 
 /**
+ * Change name
+ */
+
+export const changeUserName = createAsyncThunk(
+  "user/changeName",
+  async (data, thunkAPI) => {
+    try {
+      await authAPI.patch("/user/name", { name: data.name });
+      toastSuccess(data.successMsg);
+      return data.name;
+    } catch (error) {
+      toastError(data.errorMsg);
+      return thunkAPI(error.message);
+    }
+  }
+);
+
+/**
  * Delete user
  */
 

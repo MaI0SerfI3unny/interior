@@ -306,6 +306,7 @@
     "getSubscribe": "Subscribe",
     "privelegiesTitle": "Package includes",
     "changedEmailSuccess": "Email changed successfully",
+    "changedNameSuccess": "Name changed successfully",
     "error": "Oops... Something went wrong. Please try again",
     "passwordChangedSuccess": "Password has been changed successful",
 
