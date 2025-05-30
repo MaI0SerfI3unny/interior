@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { ProfileSubscribeCardStyles } from "./ProfileSubscribeCardStyles.styled";
 import { ReactComponent as AcceptIcon } from "../../svg/check-accept.svg";
-import { nanoid } from "nanoid";
 import { selectUser } from "../../redux/user/selectors";
 import { useSelector } from "react-redux";
 import { toastError } from "../../assets/functions/toastNotification";
@@ -24,7 +23,7 @@ const ProfileSubscribeCard = ({ cardInfo }) => {
     }
   };
 
-  const { name, price_monthly, privilegies } = cardInfo;
+  const { name, price_monthly, features_month } = cardInfo;
   const isCurrentPlan = active_plan.tariff_name === name;
 
   return (
@@ -46,9 +45,9 @@ const ProfileSubscribeCard = ({ cardInfo }) => {
 
       <p className="privelegies-title">{t("settings.privelegiesTitle")}</p>
       <ul>
-        {privilegies.map(priv => (
-          <li key={nanoid()}>
-            <AcceptIcon width={20} height={20} /> {t(priv)}
+        {features_month.map((priv, i) => (
+          <li key={i}>
+            <AcceptIcon width={20} height={20} /> {t(`subscribe.${priv}`)}
           </li>
         ))}
       </ul>

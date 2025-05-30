@@ -308,18 +308,7 @@
     "changedEmailSuccess": "Email changed successfully",
     "changedNameSuccess": "Name changed successfully",
     "error": "Oops... Something went wrong. Please try again",
-    "passwordChangedSuccess": "Password has been changed successful",
-
-    "free_generation_10": "10 generations of interiors",
-    "queue_waiting": "Queuing per generation",
-    "history_limit_5": "History up to 5 generations",
-    "free_generation_100": "100 generations of interiors",
-    "no_queue": "Generation without waiting in line",
-    "commercial_use": "Available for commercial use",
-    "unlimited_history": "Unlimited history of generations",
-    "unlimited_generation": "Unlimited number of generations",
-    "free_generation_1200": "1200 generations of interiors",
-    "uncommercial": "For non-commercial use"
+    "passwordChangedSuccess": "Password has been changed successful"
   },
   "terms": {
     "pageTitle": "Terms of Use",
@@ -371,14 +360,16 @@
     "btnMonth": "Monthly",
     "btnYear": "Yearly",
 
-    "free_generation_10": "10 interior generations",
-    "queue_waiting": "Queue waiting for generation",
+    "free_generation_10": "10 generations of interiors",
+    "queue_waiting": "Queuing per generation",
     "history_limit_5": "History up to 5 generations",
-    "free_generation_100": "100 interior generations",
-    "no_queue": "Generation without queue waiting",
+    "free_generation_100": "100 generations of interiors",
+    "no_queue": "Generation without waiting in line",
     "commercial_use": "Available for commercial use",
-    "unlimited_history": "Unlimited generation history",
+    "unlimited_history": "Unlimited history of generations",
     "unlimited_generation": "Unlimited number of generations",
+    "free_generation_1200": "1200 generations of interiors",
+    "uncommercial": "For non-commercial use",
     "active": "Current plan",
 
     "month": "month",
