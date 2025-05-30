@@ -309,35 +309,16 @@
     "error": "Oops... Something went wrong. Please try again",
     "passwordChangedSuccess": "Password has been changed successful",
 
-    "subs": {
-      "free": {
-        "gen_limit": "10 generations of interiors"
-      },
-      "premium_month": {
-        "gen_limit": "100 generations of interiors"
-      },
-      "pro_month": {
-        "gen_limit": "Unlimited number of generations"
-      },
-
-      "premium_year": {
-        "gen_limit": "1000 generations of interiors"
-      },
-      "pro_year": {
-        "gen_limit": "Unlimited number of generations"
-      },
-      "free_shared": {
-        "queue": "Generation allocation",
-        "limited_access": "History up to 5 generations",
-        "non_commercial": "For non-commercial use"
-      },
-
-      "shared": {
-        "queue": "Generation without waiting in line",
-        "limited_access": "Unlimited history of generations",
-        "commercial": "Available for commercial use"
-      }
-    }
+    "free_generation_10": "10 generations of interiors",
+    "queue_waiting": "Queuing per generation",
+    "history_limit_5": "History up to 5 generations",
+    "free_generation_100": "100 generations of interiors",
+    "no_queue": "Generation without waiting in line",
+    "commercial_use": "Available for commercial use",
+    "unlimited_history": "Unlimited history of generations",
+    "unlimited_generation": "Unlimited number of generations",
+    "free_generation_1200": "1200 generations of interiors",
+    "uncommercial": "For non-commercial use"
   },
   "terms": {
     "pageTitle": "Terms of Use",
