@@ -38,9 +38,31 @@ export const savePhotoToNewFolder = createAsyncThunk(
         photo,
       });
 
-      console.log("data :>> ", data);
       toastSuccess(successMsg);
       return data;
+    } catch (error) {
+      toastError(errorMsg);
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+/**
+ * Save photo to the new folder
+ *
+ */
+export const deletePhotoById = createAsyncThunk(
+  "folders/deletePhoto",
+  async (item, thunkAPI) => {
+    const { folderId, photoId, errorMsg, successMsg } = item;
+    console.log("item :>> ", item);
+    try {
+      await authAPI.delete(
+        `/folders/photos/?folderId=${folderId}&photoId=${photoId}`
+      );
+
+      toastSuccess(successMsg);
+      return { photoId };
     } catch (error) {
       toastError(errorMsg);
       return thunkAPI.rejectWithValue(error.message);
