@@ -55,7 +55,7 @@ export const deletePhotoById = createAsyncThunk(
   "folders/deletePhoto",
   async (item, thunkAPI) => {
     const { folderId, photoId, errorMsg, successMsg } = item;
-    console.log("item :>> ", item);
+
     try {
       await authAPI.delete(
         `/folders/photos/?folderId=${folderId}&photoId=${photoId}`
