@@ -47,8 +47,12 @@ export const ProfileSubscribeCurrentInfoStyles = styled.div`
     display: block;
     width: 12px;
     height: 12px;
-    background-color: rgb(0, 201, 54);
     border-radius: 50%;
+  }
+
+  .status::before {
+    background-color: ${({ $isActive }) =>
+      $isActive ? "rgb(0, 201, 54)" : "red"};
   }
 
   @media screen and (max-width: 768px) {

@@ -4,10 +4,12 @@ import { useTranslation } from "react-i18next";
 import ProfileSubscribeCard from "../ProfileSubscribeCard/ProfileSubscribeCard";
 import { useSelector } from "react-redux";
 import { selectPlans } from "../../redux/plans/slice";
+import { selectUser } from "../../redux/user/selectors";
 
 const ProfileSubscribeChangePlanModal = ({ toggleModal }) => {
   const { t } = useTranslation();
   const tariffs = useSelector(selectPlans);
+  const user = useSelector(selectUser);
 
   return (
     <ProfileSubscribeChangePlanModalStyles>
@@ -24,9 +26,11 @@ const ProfileSubscribeChangePlanModal = ({ toggleModal }) => {
           )}
       </div>
 
-      <button type="button" className="cancel-btn">
-        {t("settings.cancelSubscribe")}
-      </button>
+      {user?.active_plan?.tariff_name !== "Free" && (
+        <button type="button" className="cancel-btn">
+          {t("settings.cancelSubscribe")}
+        </button>
+      )}
     </ProfileSubscribeChangePlanModalStyles>
   );
 };
