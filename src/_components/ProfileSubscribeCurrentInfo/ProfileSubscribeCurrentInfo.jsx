@@ -34,7 +34,12 @@ const ProfileSubscribeCurrentInfo = () => {
             ? `${t("settings.statusActive")} ${convertIsoDate(active_plan?.end_date)}`
             : t("settings.statusFree")}
         </p>
-        <p className="generation-count">Кількість генерацій: {freeCount}</p>
+        <p className="generation-count">
+          Кількість генерацій:{" "}
+          {active_plan?.tariff_name === "Pro"
+            ? t("settings.unlimitedCount")
+            : freeCount}
+        </p>
         <div className="just-for-style"></div>
       </div>
 

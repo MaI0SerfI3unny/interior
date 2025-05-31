@@ -26,6 +26,10 @@ export const ProfileSubscribeCurrentInfoStyles = styled.div`
     justify-content: space-between;
   }
 
+  .just-for-style {
+    width: 100px;
+  }
+
   .status,
   .generation-count {
     display: flex;

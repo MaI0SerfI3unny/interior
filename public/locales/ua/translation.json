@@ -244,6 +244,8 @@
   },
 
   "settings": {
+    "unlimitedCount": "Безліміт",
+
     "generationsNavBar": "Генерації",
     "planNavBar": "Мій тарифний план",
     "profileNavBar": "Профіль",
@@ -285,7 +287,7 @@
     "subscribeCurrentTitle": "Поточна підписка",
     "status": "Статус",
     "statusActive": "Активна / до",
-    "statusFree" : "Активна",
+    "statusFree": "Активна",
     "generationCount": "Кількість генерацій",
     "price": "Вартість",
     "changePlan": "Змінити план",

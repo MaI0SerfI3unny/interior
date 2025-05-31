@@ -242,6 +242,7 @@
     "goToGenerations": "Go to generation"
   },
   "settings": {
+    "unlimitedCount": "Unlimited",
     "generationsNavBar": "Generations",
     "planNavBar": "My tariff plan",
     "profileNavBar": "Profile",
