@@ -2,9 +2,17 @@ import clsx from "clsx";
 import { ReactComponent as Check } from "../../assets/icons/check.svg";
 import css from "./SubsribesCard.module.scss";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 export const SubsribesCard = ({
-  plan: { name, price_monthly, features_month, id, price_yearly },
+  plan: {
+    name,
+    price_monthly,
+    features_month,
+    features_year,
+    id,
+    price_yearly,
+  },
   isSelect,
   handleSelect,
   onSubmit,
@@ -12,12 +20,19 @@ export const SubsribesCard = ({
   usersPlan,
 }) => {
   const { t } = useTranslation();
+  const [currentFeatures, setCurrentFeatures] = useState(features_month);
 
   const buttonText = () => {
     if (usersPlan === name) return t("subscribe.active"); // поточний тариф
     if (name === "Free" && usersPlan) return t("subscribe.limit"); // повернення на Free
     return t("subscribe.submit"); // інші випадки або неавторизований
   };
+
+  useEffect(() => {
+    promo
+      ? setCurrentFeatures(features_year)
+      : setCurrentFeatures(features_month);
+  }, [promo]);
 
   return (
     <div
@@ -53,7 +68,7 @@ export const SubsribesCard = ({
 
       <div className={css.feautersBox}>
         <p>{t("subscribe.value")}</p>
-        {features_month.map((item, idx) => {
+        {currentFeatures.map((item, idx) => {
           return (
             <div key={idx} className={css.feauter}>
               <Check className={css.icon} />
