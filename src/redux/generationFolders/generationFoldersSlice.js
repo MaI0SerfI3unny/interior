@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import foldersHandlers from "./generationFoldersHandlers";
-import { getFolders } from "./generationFoldersOperations";
+import {
+  getFolders,
+  savePhotoToNewFolder,
+} from "./generationFoldersOperations";
 
 const initialState = {
   folders: [],
@@ -12,11 +15,12 @@ const generationFoldersSlice = createSlice({
   reducers: {
     savePhoto: foldersHandlers.savePhoto,
     deletePhoto: foldersHandlers.deletePhoto,
-    createFolder: foldersHandlers.createFolder,
   },
 
   extraReducers: builder => {
-    builder.addCase(getFolders.fulfilled, foldersHandlers.getFolders);
+    builder
+      .addCase(getFolders.fulfilled, foldersHandlers.getFolders)
+      .addCase(savePhotoToNewFolder.fulfilled, foldersHandlers.createFolder);
   },
 });
 

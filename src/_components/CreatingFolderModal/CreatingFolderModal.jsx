@@ -4,9 +4,12 @@ import CloseModalButton from "../CloseModalButton/CloseModalButton";
 import { useSelector, useDispatch } from "react-redux";
 import { getGenerationFolders } from "../../redux/generationFolders/generationFoldersSelectors";
 import { useState } from "react";
-import { createFolder } from "../../redux/generationFolders/generationFoldersSlice";
-import { toastSuccess } from "../../assets/functions/toastNotification";
+import {
+  toastError,
+  toastSuccess,
+} from "../../assets/functions/toastNotification";
 import { useNavigate } from "react-router-dom";
+import { savePhotoToNewFolder } from "../../redux/generationFolders/generationFoldersOperations";
 
 const CreatingFolderModal = ({
   newFolderName,
@@ -33,11 +36,22 @@ const CreatingFolderModal = ({
     checkFolderNames(e.target.value.trim());
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    dispatch(createFolder({ folderTitle: newFolderName, photo: result }));
-    toastSuccess(t("modal.createdFolder"));
-    navigate("/profile/main");
+
+    try {
+      await dispatch(
+        savePhotoToNewFolder({
+          title: newFolderName,
+          photo: result,
+          successMsg: t("modal.createdFolder"),
+          errorMsg: t("settings.error"),
+        })
+      );
+      navigate("/profile/main");
+    } catch (error) {
+      toastError(t("settings.error"));
+    }
   }
 
   const placeholderValue = t("modal.folderInputPlaceholder");

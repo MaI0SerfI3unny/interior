@@ -55,20 +55,14 @@ export const App = () => {
     } else if (accessToken && user.email === "") {
       setAuthHeader(accessToken);
 
+      dispatch(getFolders());
+
       dispatch(getUser());
     }
   }, [accessToken]);
 
   useEffect(() => {
-    const getTarifs = async () => {
-      await dispatch(getTariffs());
-    };
-
-    const getNewFolders = async () => {
-      await dispatch(getFolders());
-    };
-    getTarifs();
-    getNewFolders();
+    dispatch(getTariffs());
   }, []);
 
   if (isLoading) return <div>Loader</div>;
