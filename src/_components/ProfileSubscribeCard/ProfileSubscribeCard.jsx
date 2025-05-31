@@ -24,7 +24,7 @@ const ProfileSubscribeCard = ({ cardInfo }) => {
     }
   };
 
-  const { name, price_monthly, privilegies } = cardInfo;
+  const { name, price_monthly, features_month } = cardInfo;
   const isCurrentPlan = active_plan.tariff_name === name;
 
   return (
@@ -46,9 +46,9 @@ const ProfileSubscribeCard = ({ cardInfo }) => {
 
       <p className="privelegies-title">{t("settings.privelegiesTitle")}</p>
       <ul>
-        {privilegies.map(priv => (
+        {features_month.map(priv => (
           <li key={nanoid()}>
-            <AcceptIcon width={20} height={20} /> {t(priv)}
+            <AcceptIcon width={20} height={20} /> {t(`subscribe.${priv}`)}
           </li>
         ))}
       </ul>

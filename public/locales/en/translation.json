@@ -283,6 +283,8 @@
     "subscribeCurrentTitle": "Current subscription",
     "status": "Status",
     "statusActive": "Active / until",
+    "statusFree": "Active",
+
     "generationCount": "Number of generations",
     "price": "Cost",
     "changePlan": "Change plan",
