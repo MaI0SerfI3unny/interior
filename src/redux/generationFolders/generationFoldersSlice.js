@@ -4,6 +4,7 @@ import {
   getFolders,
   savePhotoToNewFolder,
   deletePhotoById,
+  savePhotoToFolder,
 } from "./generationFoldersOperations";
 
 const initialState = {
@@ -13,17 +14,14 @@ const initialState = {
 const generationFoldersSlice = createSlice({
   name: "generationFolders",
   initialState,
-  reducers: {
-    savePhoto: foldersHandlers.savePhoto,
-  },
 
   extraReducers: builder => {
     builder
       .addCase(getFolders.fulfilled, foldersHandlers.getFolders)
       .addCase(savePhotoToNewFolder.fulfilled, foldersHandlers.createFolder)
+      .addCase(savePhotoToFolder.fulfilled, foldersHandlers.savePhoto)
       .addCase(deletePhotoById.fulfilled, foldersHandlers.deletePhoto);
   },
 });
 
 export default generationFoldersSlice.reducer;
-export const { savePhoto } = generationFoldersSlice.actions;

@@ -69,3 +69,23 @@ export const deletePhotoById = createAsyncThunk(
     }
   }
 );
+
+export const savePhotoToFolder = createAsyncThunk(
+  "folders/saveToFolder",
+  async (item, thunkAPI) => {
+    const { title, photo, errorMsg, successMsg, folderId } = item;
+    try {
+      const { data } = await authAPI.post("/folders/photos/", {
+        title,
+        photo,
+      });
+
+      toastSuccess(successMsg);
+      console.log(data);
+      return { data, folderId };
+    } catch (error) {
+      toastError(errorMsg);
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
