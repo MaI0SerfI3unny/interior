@@ -21,6 +21,10 @@ export const ProfileAllGenerationsModalRequestInfoStyles = styled.div`
     align-items: center;
   }
 
+  .small-container > p {
+    text-transform: capitalize;
+  }
+
   .prompt-container {
     margin-top: 32px;
   }

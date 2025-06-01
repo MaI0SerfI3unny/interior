@@ -33,6 +33,7 @@ import { toastError } from "../../assets/functions/toastNotification.js";
 import { useTranslation } from "react-i18next";
 import { setToken } from "../../redux/auth/slice.js";
 import { getTariffs } from "../../redux/plans/operations.js";
+import { getFolders } from "../../redux/generationFolders/generationFoldersOperations.js";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -54,15 +55,14 @@ export const App = () => {
     } else if (accessToken && user.email === "") {
       setAuthHeader(accessToken);
 
+      dispatch(getFolders());
+
       dispatch(getUser());
     }
   }, [accessToken]);
 
   useEffect(() => {
-    const getTarifs = async () => {
-      await dispatch(getTariffs());
-    };
-    getTarifs();
+    dispatch(getTariffs());
   }, []);
 
   if (isLoading) return <div>Loader</div>;
