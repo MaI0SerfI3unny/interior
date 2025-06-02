@@ -40,55 +40,14 @@ export const ProfileSubscribePaymentHistoryStyles = styled.div`
     color: rgb(231, 51, 27);
   }
 
-  button {
-    border: none;
-    color: ${theme.typography.secondaryAction};
-    line-height: 1.2;
-  }
-
   @media screen and (max-width: 768px) {
-    table,
-    button {
+    table {
       font-size: 12px;
-    }
-
-    button > span {
-      display: none;
     }
   }
   @media screen and (min-width: 769px) {
     table {
       font-size: 16px;
-    }
-
-    button > svg {
-      display: none;
-    }
-  }
-
-  @media screen and (min-width: 1441px) {
-    button {
-      position: relative;
-    }
-
-    button:hover::after,
-    button:focus::after {
-      opacity: 1;
-    }
-
-    button::after {
-      transition: 250ms linear;
-    }
-
-    button::after {
-      content: "";
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 1px;
-      background-color: rgb(0, 103, 201);
-      opacity: 0;
     }
   }
 `;

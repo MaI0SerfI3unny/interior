@@ -45,7 +45,6 @@ const ProfileSubscribePaymentHistory = () => {
             <th>{t("settings.subscribeType")}</th>
             <th>{t("settings.price")}</th>
             <th>{t("settings.status")}</th>
-            <th>{t("settings.invoice")}</th>
           </tr>
         </thead>
         <tbody>
@@ -60,12 +59,6 @@ const ProfileSubscribePaymentHistory = () => {
                 {status
                   ? t("settings.acceptPayment")
                   : t("settings.errorPayment")}
-              </td>
-              <td>
-                <button type="button">
-                  <span>{t("settings.downloadInvoice")}</span>
-                  <DownloadIcon width={24} height={24} />
-                </button>
               </td>
             </tr>
           ))}
