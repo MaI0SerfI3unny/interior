@@ -12,17 +12,19 @@ const createFolder = (state, { payload }) => {
 };
 
 const deletePhoto = (state, { payload }) => {
+  const { folderId, photoId } = payload;
+
   const updatedFolders = state.folders
     .map(folder => {
-      const newPhotos = folder.photos.filter(
-        photo => photo.id !== payload.photoId
-      );
+      if (folder.id !== folderId) return folder;
 
-      if (newPhotos.length === folder.photos.length) return folder;
+      const newPhotos = folder.photos.filter(photo => photo.id !== photoId);
+
+      if (newPhotos.length === 0) return null;
 
       return { ...folder, photos: newPhotos };
     })
-    .filter(folder => folder.photos.length > 0);
+    .filter(Boolean);
 
   state.folders = [...updatedFolders];
 };

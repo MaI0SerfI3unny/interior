@@ -48,7 +48,7 @@ export const savePhotoToNewFolder = createAsyncThunk(
 );
 
 /**
- * Save photo to the new folder
+ * Delete photo
  *
  */
 export const deletePhotoById = createAsyncThunk(
@@ -62,7 +62,7 @@ export const deletePhotoById = createAsyncThunk(
       );
 
       toastSuccess(successMsg);
-      return { photoId };
+      return { photoId, folderId };
     } catch (error) {
       toastError(errorMsg);
       return thunkAPI.rejectWithValue(error.message);
