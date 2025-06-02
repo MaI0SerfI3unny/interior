@@ -1,6 +1,5 @@
 import { ProfileSubscribePaymentHistoryStyles } from "./ProfileSubscribePaymentHistoryStyles.styled";
 import { useTranslation } from "react-i18next";
-import { ReactComponent as DownloadIcon } from "../../svg/cloud.svg";
 
 const paymentData = [
   {
