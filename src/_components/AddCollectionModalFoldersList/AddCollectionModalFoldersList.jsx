@@ -3,7 +3,6 @@ import CloseModalButton from "../CloseModalButton/CloseModalButton";
 import AddRoomCard from "../AddRoomCard/AddRoomCard";
 import SaveResultButton from "../GeneratingAnswer/FooterAnswer/SaveResultButton/SaveResultButton";
 import { useTranslation } from "react-i18next";
-import catBedroom from "../../pictures//cat3.jpg";
 import AddRoomButtonContainer from "../AddRoomButton/AddRoomButtonContainer";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
@@ -49,7 +48,6 @@ const AddCollectionModalFoldersList = ({
             folder={folder}
             handleSelectedFolder={setSelectedFolder}
             selectedFolder={selectedFolder}
-            timePhoto={catBedroom}
           />
         ))}
       </ul>
