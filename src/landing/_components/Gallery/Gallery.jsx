@@ -44,7 +44,6 @@ export const Gallery = ({ id }) => {
   }, []);
 
   function handleCardClick(id) {
-    console.log("hello");
     const currentPhoto = gallery.find(photo => id === photo.id);
     setSelectedPhoto({
       result: currentPhoto.modalImage,

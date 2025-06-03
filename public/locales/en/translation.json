@@ -242,6 +242,7 @@
     "goToGenerations": "Go to generation"
   },
   "settings": {
+    "unlimitedCount": "Unlimited",
     "generationsNavBar": "Generations",
     "planNavBar": "My tariff plan",
     "profileNavBar": "Profile",
@@ -283,6 +284,8 @@
     "subscribeCurrentTitle": "Current subscription",
     "status": "Status",
     "statusActive": "Active / until",
+    "statusFree": "Active",
+
     "generationCount": "Number of generations",
     "price": "Cost",
     "changePlan": "Change plan",
@@ -371,6 +374,7 @@
     "free_generation_1200": "1200 generations of interiors",
     "uncommercial": "For non-commercial use",
     "active": "Current plan",
+    "uncommercial": "For non-commercial use",
 
     "month": "month",
     "year": "year",

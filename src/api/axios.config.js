@@ -14,6 +14,7 @@ export const setAuthHeader = token => {
 // Utility to remove JWT
 export const clearAuthHeader = () => {
   api.defaults.headers.common.Authorization = "";
+  localStorage.clear("token");
 };
 
 const api = axios.create({

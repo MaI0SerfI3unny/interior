@@ -8,9 +8,9 @@ import AddRoomButtonContainer from "../AddRoomButton/AddRoomButtonContainer";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { getGenerationFolders } from "../../redux/generationFolders/generationFoldersSelectors";
-import { savePhoto } from "../../redux/generationFolders/generationFoldersSlice";
 import { toastSuccess } from "../../assets/functions/toastNotification";
 import { useNavigate } from "react-router-dom";
+import { savePhotoToFolder } from "../../redux/generationFolders/generationFoldersOperations";
 
 const AddCollectionModalFoldersList = ({
   toggleModal,
@@ -24,8 +24,11 @@ const AddCollectionModalFoldersList = ({
 
   const folders = useSelector(getGenerationFolders);
 
-  function savingSuccessful() {
-    dispatch(savePhoto({ folderId: selectedFolder, photo: result }));
+  function saveToFolder() {
+    const { title } = folders.find(fold => fold.id === selectedFolder);
+    dispatch(
+      savePhotoToFolder({ title, photo: result, folderId: selectedFolder })
+    );
     toastSuccess(t("modal.savingPhoto"));
     navigate("/profile/main");
   }
@@ -51,7 +54,7 @@ const AddCollectionModalFoldersList = ({
         pdS={148}
         wD={"100%"}
         isDisabled={!selectedFolder}
-        toggleModal={savingSuccessful}
+        toggleModal={saveToFolder}
       />
     </AddCollectionModalFoldersListStyles>
   );

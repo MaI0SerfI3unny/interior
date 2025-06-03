@@ -57,10 +57,14 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer, isLoadingAnswer }) => {
       const fullPrompt = `${values.prompt}. Create a style for the ${values.room} in style ${values.style}`;
 
       const imageBase = await convertToBase64(values.original);
+      const {
+        data: { url },
+      } = await api.post("/generate/upload", { photo: imageBase });
 
       const result = await api.post("/ai-interior-gen/generate/", {
         prompt: fullPrompt,
-        image: imageBase,
+        // eslint-disable-next-line no-undef
+        image: `${process.env.REACT_APP_IMG_URL}${url}`,
       });
 
       const photoData = await waitForPhoto(result.data.task_id);

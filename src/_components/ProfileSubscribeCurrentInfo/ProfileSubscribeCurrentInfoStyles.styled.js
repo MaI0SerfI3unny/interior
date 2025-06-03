@@ -12,6 +12,7 @@ export const ProfileSubscribeCurrentInfoStyles = styled.div`
     font-weight: 600;
     color: ${theme.typography.primary};
     line-height: 1.2;
+    text-transform: uppercase;
   }
 
   .change-btn {
@@ -22,6 +23,11 @@ export const ProfileSubscribeCurrentInfoStyles = styled.div`
 
   .info-container {
     display: flex;
+    justify-content: space-between;
+  }
+
+  .just-for-style {
+    width: 100px;
   }
 
   .status,
@@ -45,8 +51,12 @@ export const ProfileSubscribeCurrentInfoStyles = styled.div`
     display: block;
     width: 12px;
     height: 12px;
-    background-color: rgb(0, 201, 54);
     border-radius: 50%;
+  }
+
+  .status::before {
+    background-color: ${({ $isActive }) =>
+      $isActive ? "rgb(0, 201, 54)" : "red"};
   }
 
   @media screen and (max-width: 768px) {
@@ -71,8 +81,8 @@ export const ProfileSubscribeCurrentInfoStyles = styled.div`
   }
 
   @media screen and (max-width: 1440px) {
-    .info-container {
-      justify-content: space-between;
+    .just-for-style {
+      display: none;
     }
   }
 
@@ -93,9 +103,6 @@ export const ProfileSubscribeCurrentInfoStyles = styled.div`
   @media screen and (min-width: 1441px) {
     margin-bottom: 72px;
 
-    .info-container {
-      column-gap: 316px;
-    }
     h3 {
       font-size: 40px;
     }
