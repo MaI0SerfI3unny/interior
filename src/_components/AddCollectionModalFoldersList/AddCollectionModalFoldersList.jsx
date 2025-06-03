@@ -19,17 +19,20 @@ const AddCollectionModalFoldersList = ({
 }) => {
   const { t } = useTranslation();
   const [selectedFolder, setSelectedFolder] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const folders = useSelector(getGenerationFolders);
 
-  function saveToFolder() {
+  async function saveToFolder() {
+    setIsLoading(true);
     const { title } = folders.find(fold => fold.id === selectedFolder);
-    dispatch(
+    await dispatch(
       savePhotoToFolder({ title, photo: result, folderId: selectedFolder })
     );
     toastSuccess(t("modal.savingPhoto"));
+    setIsLoading(false);
     navigate("/profile/main");
   }
 
@@ -55,6 +58,7 @@ const AddCollectionModalFoldersList = ({
         wD={"100%"}
         isDisabled={!selectedFolder}
         toggleModal={saveToFolder}
+        isLoading={isLoading}
       />
     </AddCollectionModalFoldersListStyles>
   );

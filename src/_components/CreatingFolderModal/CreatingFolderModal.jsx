@@ -6,6 +6,7 @@ import { getGenerationFolders } from "../../redux/generationFolders/generationFo
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { savePhotoToNewFolder } from "../../redux/generationFolders/generationFoldersOperations";
+import SmallSpinner from "../SmallSpinner/SmallSpinner";
 
 const CreatingFolderModal = ({
   newFolderName,
@@ -18,6 +19,7 @@ const CreatingFolderModal = ({
   const [errorMessage, setErrorMessage] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   function checkFolderNames(value) {
     if (folders.some(folder => folder.title === value)) {
@@ -34,6 +36,7 @@ const CreatingFolderModal = ({
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
 
     await dispatch(
       savePhotoToNewFolder({
@@ -43,6 +46,9 @@ const CreatingFolderModal = ({
         errorMsg: t("settings.error"),
       })
     );
+
+    setIsLoading(false);
+
     navigate("/profile/main");
   }
 
@@ -60,7 +66,7 @@ const CreatingFolderModal = ({
         />
         {errorMessage && <p className="error">{errorMessage}</p>}
         <button disabled={!newFolderName || errorMessage}>
-          {t("modal.createFolder")}
+          {isLoading ? <SmallSpinner /> : t("modal.createFolder")}
         </button>
       </form>
     </CreatingFolderModalStyles>
