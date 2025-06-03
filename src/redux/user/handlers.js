@@ -4,6 +4,9 @@ export const handleUserInfo = (state, { payload }) => {
   state.image = payload.image;
   state.freeCount = payload.freeCount;
   state.active_plan = payload.active_plan;
+  state.registration_type = payload.registration_type;
+  state.payment_details = payload.payment_details;
+  state.payment_history = payload.payment_history;
 };
 
 export const handlerChangeEmail = (state, { payload }) => {
