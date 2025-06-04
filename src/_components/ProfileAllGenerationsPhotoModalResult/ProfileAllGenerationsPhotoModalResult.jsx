@@ -38,7 +38,11 @@ const ProfileAllGenerationsPhotoModalResult = ({ photo, toggleModal }) => {
 
   return (
     <ProfileAllGenerationsPhotoModalResultStyles>
-      <img src={photo.result} alt="result" />
+      <img
+        // eslint-disable-next-line no-undef
+        src={`${process.env.REACT_APP_IMG_URL}${photo.result}`}
+        alt="result"
+      />
       {location.pathname === "/profile/main" && (
         <div className="btns-container">
           <a href={photo.result} download="photo.jpg">

@@ -28,7 +28,11 @@ const initialState = {
 const userSlice = createSlice({
   name: "user",
   initialState,
-
+  reducers: {
+    useFreeCount: state => {
+      state.freeCount = state.freeCount - 1;
+    },
+  },
   extraReducers: builder => {
     builder
 
@@ -59,6 +63,7 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
+export const { useFreeCount } = userSlice.actions;
 
 // email: "htos@ukr.net";
 // name: "Хтось";
