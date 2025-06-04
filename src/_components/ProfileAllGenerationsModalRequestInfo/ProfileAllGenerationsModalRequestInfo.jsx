@@ -31,7 +31,11 @@ const ProfileAllGenerationsModalRequestInfo = ({ photo }) => {
         {photo.original && (
           <div className="photo-container">
             <h3>{t("generate.yourPhoto")}</h3>
-            <img src={photo.original} alt="original" />
+            <img
+              // eslint-disable-next-line no-undef
+              src={`${process.env.REACT_APP_IMG_URL}${photo.original}`}
+              alt="original"
+            />
           </div>
         )}
         <div className="text-container">
