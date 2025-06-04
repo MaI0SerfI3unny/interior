@@ -23,6 +23,7 @@ const initialState = {
   image: null,
   freeCount: null,
   active_plan: null,
+  payment_history: [],
 };
 
 const userSlice = createSlice({
