@@ -3,36 +3,6 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { getPaymentHistory } from "../../redux/user/selectors";
 import { convertIsoDate } from "../../assets/functions/convertIsoDate";
-// const paymentData = [
-//   {
-//     id: 1,
-//     date: "20.20.2020",
-//     type: "Premium",
-//     price: "5.99",
-//     status: true,
-//   },
-//   {
-//     id: 2,
-//     date: "21.21.2021",
-//     type: "Pro",
-//     price: "9.99",
-//     status: true,
-//   },
-//   {
-//     id: 3,
-//     date: "22.22.2022",
-//     type: "Premium",
-//     price: "5.99",
-//     status: false,
-//   },
-//   {
-//     id: 4,
-//     date: "23.23.2023",
-//     type: "Pro",
-//     price: "9.99",
-//     status: false,
-//   },
-// ];
 
 const ProfileSubscribePaymentHistory = () => {
   const { t } = useTranslation();
