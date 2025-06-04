@@ -16,7 +16,10 @@ const ProfileGenerationItem = ({ photo }) => {
   return (
     <>
       <ProfileGenerationItemStyles onClick={() => setIsOpenModal(true)}>
-        <img src={photo.result} />
+        <img
+          // eslint-disable-next-line no-undef
+          src={`${process.env.REACT_APP_IMG_URL}${photo.result}`}
+        />
         <button type="button" className="more-info-btn">
           <MoreInfoIcon width={40} height={40} />
         </button>

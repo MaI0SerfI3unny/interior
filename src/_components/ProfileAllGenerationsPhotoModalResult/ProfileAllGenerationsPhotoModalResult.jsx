@@ -8,19 +8,23 @@ import { useLocation } from "react-router-dom";
 import { deletePhotoById } from "../../redux/generationFolders/generationFoldersOperations";
 import { useSelector } from "react-redux";
 import { getGenerationFolders } from "../../redux/generationFolders/generationFoldersSelectors";
+import { useState } from "react";
+import SmallSpinner from "../SmallSpinner/SmallSpinner";
 
 const ProfileAllGenerationsPhotoModalResult = ({ photo, toggleModal }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const location = useLocation();
   const folders = useSelector(getGenerationFolders);
+  const [isLoading, setIsLoading] = useState(false);
 
-  function handleDelete() {
+  async function handleDelete() {
+    setIsLoading(true);
     const { id } = folders.find(fold =>
       fold.photos.some(pict => pict.id === photo.id)
     );
 
-    dispatch(
+    await dispatch(
       deletePhotoById({
         photoId: photo.id,
         folderId: id,
@@ -28,6 +32,7 @@ const ProfileAllGenerationsPhotoModalResult = ({ photo, toggleModal }) => {
         successMsg: t("settings.photoDeleted"),
       })
     );
+    setIsLoading(false);
     toggleModal();
   }
 
@@ -43,7 +48,11 @@ const ProfileAllGenerationsPhotoModalResult = ({ photo, toggleModal }) => {
             <ShareIcon width={24} height={24} />
           </button>
           <button type="button" onClick={handleDelete}>
-            <DeleteIcon width={24} height={24} />
+            {isLoading ? (
+              <SmallSpinner />
+            ) : (
+              <DeleteIcon width={24} height={24} />
+            )}
           </button>
         </div>
       )}

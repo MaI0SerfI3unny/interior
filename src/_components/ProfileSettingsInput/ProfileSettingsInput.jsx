@@ -1,7 +1,7 @@
 import { ProfileSettingsInputStyles } from "./ProfileSettingsInputStyles.styled";
 import { useTranslation } from "react-i18next";
 import { useRef, useState, useEffect } from "react";
-import SmallSpinner from "../../SmallSpinner/SmallSpinner";
+import SmallSpinner from "../SmallSpinner/SmallSpinner";
 
 const ProfileSettingsInput = ({
   isChanging,
