@@ -42,7 +42,7 @@ export const ProfileAllGenerationsPhotoModalResultStyles = styled.div`
     width: 664px;
 
     .btns-container {
-      width: calc(48px * 3 + 16px * 2);
+      width: calc(48px * 2 + 16px);
       margin-top: 16px;
 
       button,
