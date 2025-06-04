@@ -1,6 +1,5 @@
 import { ProfileAllGenerationsPhotoModalResultStyles } from "./ProfileAllGenerationsPhotoModalResultStyles.styled";
 import { ReactComponent as CloudIcon } from "../../svg/cloud.svg";
-import { ReactComponent as ShareIcon } from "../../svg/share.svg";
 import { ReactComponent as DeleteIcon } from "../../svg/cart.svg";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
@@ -10,6 +9,7 @@ import { useSelector } from "react-redux";
 import { getGenerationFolders } from "../../redux/generationFolders/generationFoldersSelectors";
 import { useState } from "react";
 import SmallSpinner from "../SmallSpinner/SmallSpinner";
+import { toastError } from "../../assets/functions/toastNotification";
 
 const ProfileAllGenerationsPhotoModalResult = ({ photo, toggleModal }) => {
   const dispatch = useDispatch();
@@ -36,6 +36,25 @@ const ProfileAllGenerationsPhotoModalResult = ({ photo, toggleModal }) => {
     toggleModal();
   }
 
+  const handleDownload = async () => {
+    // eslint-disable-next-line no-undef
+    const imageUrl = `${process.env.REACT_APP_IMG_URL}${photo.result}`;
+    const response = await fetch(imageUrl, { mode: "cors" });
+
+    if (!response.ok) return toastError(t("settings.error"));
+
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "photo.jpg";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <ProfileAllGenerationsPhotoModalResultStyles>
       <img
@@ -45,11 +64,8 @@ const ProfileAllGenerationsPhotoModalResult = ({ photo, toggleModal }) => {
       />
       {location.pathname === "/profile/main" && (
         <div className="btns-container">
-          <a href={photo.result} download="photo.jpg">
+          <button onClick={handleDownload}>
             <CloudIcon width={24} height={24} />
-          </a>
-          <button type="button">
-            <ShareIcon width={24} height={24} />
           </button>
           <button type="button" onClick={handleDelete}>
             {isLoading ? (
