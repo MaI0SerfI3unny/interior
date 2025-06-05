@@ -73,21 +73,25 @@ const ProfileSettingsForm = () => {
         handleSubmit={onNameSave}
         isLoading={isLoadingChangingName}
       />
-      <ProfileSettingsInput
-        isChanging={isChangingEmail}
-        setIsChanging={setIsChangingEmail}
-        title={titleEmail}
-        description={descriptionEmail}
-        changingTitle={changeEmail}
-        inputName="email"
-        initialValue={user.email}
-        handleSubmit={onEmailSave}
-        isLoading={isLoadingChangingEmail}
-      />
-      <ProfileChangePasswordContainer
-        isChanging={isChangingPassword}
-        setIsChanging={setIsChangingPassword}
-      />
+      {user.reg_type === "normal" && (
+        <>
+          <ProfileSettingsInput
+            isChanging={isChangingEmail}
+            setIsChanging={setIsChangingEmail}
+            title={titleEmail}
+            description={descriptionEmail}
+            changingTitle={changeEmail}
+            inputName="email"
+            initialValue={user.email}
+            handleSubmit={onEmailSave}
+            isLoading={isLoadingChangingEmail}
+          />
+          <ProfileChangePasswordContainer
+            isChanging={isChangingPassword}
+            setIsChanging={setIsChangingPassword}
+          />
+        </>
+      )}
 
       <ProfileDeleteAccountContainer toggleModal={setIsDeleting} />
 

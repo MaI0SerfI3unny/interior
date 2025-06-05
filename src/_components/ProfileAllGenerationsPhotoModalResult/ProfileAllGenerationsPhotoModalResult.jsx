@@ -56,7 +56,7 @@ const ProfileAllGenerationsPhotoModalResult = ({ photo, toggleModal }) => {
   };
 
   return (
-    <ProfileAllGenerationsPhotoModalResultStyles>
+    <ProfileAllGenerationsPhotoModalResultStyles $isDeleting={isLoading}>
       <img
         // eslint-disable-next-line no-undef
         src={`${process.env.REACT_APP_IMG_URL}${photo.result}`}
@@ -67,7 +67,7 @@ const ProfileAllGenerationsPhotoModalResult = ({ photo, toggleModal }) => {
           <button onClick={handleDownload}>
             <CloudIcon width={24} height={24} />
           </button>
-          <button type="button" onClick={handleDelete}>
+          <button type="button" onClick={handleDelete} className="delete-btn">
             {isLoading ? (
               <SmallSpinner />
             ) : (

@@ -81,7 +81,6 @@ export const savePhotoToFolder = createAsyncThunk(
       });
 
       toastSuccess(successMsg);
-      console.log(data);
       return { data, folderId };
     } catch (error) {
       toastError(errorMsg);
