@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MainContainerStyles = styled.div`
   margin-left: auto;
   margin-right: auto;
-  min-height: 60vh;
+  /* min-height: 60vh; */
 
   @media screen and (max-width: 768px) {
     width: 360px;
