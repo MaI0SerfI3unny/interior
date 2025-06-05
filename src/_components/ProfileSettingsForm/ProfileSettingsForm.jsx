@@ -73,7 +73,7 @@ const ProfileSettingsForm = () => {
         handleSubmit={onNameSave}
         isLoading={isLoadingChangingName}
       />
-      {user.reg_type !== "google" && (
+      {user.reg_type === "normal" && (
         <>
           <ProfileSettingsInput
             isChanging={isChangingEmail}
