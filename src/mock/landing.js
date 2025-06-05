@@ -44,7 +44,7 @@ export const why_me = [
     img: "https://cdn.lordicon.com/warimioc.json",
   },
   {
-    name: "Індивіальний стиль",
+    name: "Індивідуальний стиль",
     desc: "ШІ адаптує дизайн під твій простір, стиль і побажання — без банальних шаблонів",
     img: "https://cdn.lordicon.com/skpqewwt.json",
   },
