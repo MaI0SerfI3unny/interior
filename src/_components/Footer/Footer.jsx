@@ -8,7 +8,7 @@ export const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="footerContainer">
       <div className={style.footerMain}>
         <div className={style.footerMainContainer}>
           <div className={style.footerMainContainerInfo}>
