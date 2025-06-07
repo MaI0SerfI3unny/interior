@@ -13,7 +13,6 @@ export const GoogleLoginButton = () => {
   const handleGoogleLogin = async () => {
     try {
       const { auth_url } = await dispatch(getOauthUrl()).unwrap();
-      console.log(auth_url, "url");
 
       window.location.href = auth_url;
     } catch (error) {
