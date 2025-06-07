@@ -11,12 +11,16 @@ import { useDispatch } from "react-redux";
 import { saveNewPwd } from "../../redux/user/operations.js";
 import { useTranslation } from "react-i18next";
 
-const RecoveryPwdSchema = Yup.object().shape({
-  new_password: Yup.string().required("Password required"),
-  confirm_password: Yup.string()
-    .oneOf([Yup.ref("new_password"), null], "Passwords must match")
-    .required("Please confirm your password"),
-});
+const RecoveryPwdSchema = t =>
+  Yup.object().shape({
+    new_password: Yup.string()
+      .min(8, t("validation.passwordMin"))
+      .max(64, t("validation.passwordMax"))
+      .required(t("validation.passwordRequired")),
+    confirm_password: Yup.string()
+      .oneOf([Yup.ref("new_password"), null], t("validation.matchPwd"))
+      .required(t("validation.confirmPwd")),
+  });
 
 export const RecoveryPwdForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -59,7 +63,7 @@ export const RecoveryPwdForm = () => {
     <Formik
       initialValues={{ new_password: "", confirm_password: "" }}
       onSubmit={handleSubmit}
-      validationSchema={RecoveryPwdSchema}
+      validationSchema={RecoveryPwdSchema(t)}
     >
       {({ touched, errors }) => (
         <Form className={css.form}>

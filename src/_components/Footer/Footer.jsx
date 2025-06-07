@@ -8,7 +8,7 @@ export const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="footerContainer">
       <div className={style.footerMain}>
         <div className={style.footerMainContainer}>
           <div className={style.footerMainContainerInfo}>
@@ -57,7 +57,8 @@ export const Footer = () => {
       <div className={style.footerAdditional}>
         <div className={style.footerAdditionalContainer}>
           <p className={style.footerAdditionalContainerCopy}>
-            © North Heat & Air {new Date().getFullYear()}. All rights reserved
+            © AI Interior Design {new Date().getFullYear()}. All rights
+            reserved
           </p>
           <div>
             <Link to="/policy">{t("nav.privacy")}</Link>

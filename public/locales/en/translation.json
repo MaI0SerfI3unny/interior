@@ -48,12 +48,15 @@
     "nameRequired": "Name is required",
     "emailInvalid": "Enter a valid email address",
     "emailRequired": "Email is required",
-    "passwordMin": "The password must be at least 1 character long",
+    "passwordMin": "The password must be at least 8 character long",
     "passwordMax": "The password must be no longer than 64 characters",
-    "passwordRequired": "Password is required"
+    "passwordRequired": "Password is required",
+
+    "confirmPwd": "Confirm new password",
+    "matchPwd": "Passwords must match"
   },
   "cta": {
-    "btnName": "Generate Interior"
+    "btnName": "Generate interior"
   },
   "banner": {
     "name": "INTERIOR — YOUR INTERIOR IN ONE CLICK",

@@ -2,7 +2,6 @@ import { AddCollectionModalContainerStyles } from "./AddCollectionModalContainer
 import { useState } from "react";
 import { addCollectionStyles } from "./addCollectionStylesProps";
 import CreatingFolderModal from "../CreatingFolderModal/CreatingFolderModal";
-
 import AddCollectionModalFoldersList from "../AddCollectionModalFoldersList/AddCollectionModalFoldersList";
 
 const AddCollectionModalContainer = ({ toggleModal, result }) => {

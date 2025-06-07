@@ -7,7 +7,7 @@ import {
   toastError,
 } from "../../assets/functions/toastNotification";
 import api from "../../api/axios.config";
-import SmallSpinner from "../../SmallSpinner/SmallSpinner";
+import SmallSpinner from "../SmallSpinner/SmallSpinner";
 
 const initialValues = {
   oldPassword: "",

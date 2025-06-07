@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";
@@ -19,9 +19,20 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
   const isLoggedIn = useSelector(selectisLoggedIn);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY >= 20);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div className={style.header}>
+    <div
+      className={`${style.header} ${scrolled ? style.stuckToTop : style.defaultOffset}`}
+    >
       <div className={style.headerContainer}>
         <Link to="/">
           <img src={logo} alt="logo" />

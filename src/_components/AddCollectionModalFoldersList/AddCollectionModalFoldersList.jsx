@@ -3,7 +3,6 @@ import CloseModalButton from "../CloseModalButton/CloseModalButton";
 import AddRoomCard from "../AddRoomCard/AddRoomCard";
 import SaveResultButton from "../GeneratingAnswer/FooterAnswer/SaveResultButton/SaveResultButton";
 import { useTranslation } from "react-i18next";
-import catBedroom from "../../pictures//cat3.jpg";
 import AddRoomButtonContainer from "../AddRoomButton/AddRoomButtonContainer";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
@@ -19,17 +18,20 @@ const AddCollectionModalFoldersList = ({
 }) => {
   const { t } = useTranslation();
   const [selectedFolder, setSelectedFolder] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const folders = useSelector(getGenerationFolders);
 
-  function saveToFolder() {
+  async function saveToFolder() {
+    setIsLoading(true);
     const { title } = folders.find(fold => fold.id === selectedFolder);
-    dispatch(
+    await dispatch(
       savePhotoToFolder({ title, photo: result, folderId: selectedFolder })
     );
     toastSuccess(t("modal.savingPhoto"));
+    setIsLoading(false);
     navigate("/profile/main");
   }
 
@@ -46,7 +48,6 @@ const AddCollectionModalFoldersList = ({
             folder={folder}
             handleSelectedFolder={setSelectedFolder}
             selectedFolder={selectedFolder}
-            timePhoto={catBedroom}
           />
         ))}
       </ul>
@@ -55,6 +56,7 @@ const AddCollectionModalFoldersList = ({
         wD={"100%"}
         isDisabled={!selectedFolder}
         toggleModal={saveToFolder}
+        isLoading={isLoading}
       />
     </AddCollectionModalFoldersListStyles>
   );

@@ -24,15 +24,19 @@ const initialState = {
   image: null,
   freeCount: null,
   active_plan: null,
-  registration_type: "",
-  payment_details: [],
   payment_history: [],
+  payment_details: [],
+  reg_type: null,
 };
 
 const userSlice = createSlice({
   name: "user",
   initialState,
-
+  reducers: {
+    useFreeCount: state => {
+      state.freeCount = state.freeCount - 1;
+    },
+  },
   extraReducers: builder => {
     builder
 
@@ -74,6 +78,7 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
+export const { useFreeCount } = userSlice.actions;
 
 // email: "htos@ukr.net";
 // name: "Хтось";

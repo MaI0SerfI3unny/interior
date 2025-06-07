@@ -8,13 +8,14 @@ import { toastError } from "../../assets/functions/toastNotification";
 import api from "../../api/axios.config";
 import { convertToBase64 } from "../../assets/functions/convertToBase64";
 import { waitForPhoto } from "../../assets/functions/waitForPhoto";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import DownloadFileInput from "../DownloadFileInput/DownloadFileInput";
 import PromptInput from "../PromptInput/PromptInput";
 import SelectElementContainer from "../SelectElement/SelectElementContainer";
 import { GeneratingFormStyles } from "./GeneratingFormStyles.styled";
 import SubmitButton from "../SubmitButton/SubmitButton";
 import { selectUser } from "../../redux/user/selectors";
+import { useFreeCount } from "../../redux/user/slice";
 
 const validationSchema = Yup.object({
   original: Yup.mixed()
@@ -49,33 +50,44 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer, isLoadingAnswer }) => {
   const initialStylesValues = useStyleOptions();
   const initialRoomValues = useRoomOptions();
   const { freeCount } = useSelector(selectUser);
+  const dispatch = useDispatch();
 
   const handleSubmit = async values => {
     setIsLoadingAnswer(true);
 
     try {
+      let url;
+
+      if (values.original) {
+        const imageBase = await convertToBase64(values.original);
+        const { data } = await api.post("/generate/upload", {
+          photo: imageBase,
+        });
+        url = data.url;
+      }
+
       const fullPrompt = `${values.prompt}. Create a style for the ${values.room} in style ${values.style}`;
 
-      const imageBase = await convertToBase64(values.original);
-      const {
-        data: { url },
-      } = await api.post("/generate/upload", { photo: imageBase });
-
-      const result = await api.post("/ai-interior-gen/generate/", {
-        prompt: fullPrompt,
-        // eslint-disable-next-line no-undef
-        image: `${process.env.REACT_APP_IMG_URL}${url}`,
-      });
+      const requestData = url
+        ? {
+            prompt: fullPrompt,
+            // eslint-disable-next-line no-undef
+            image: `${process.env.REACT_APP_IMG_URL}${url}`,
+          }
+        : { prompt: fullPrompt };
+      const result = await api.post("/ai-interior-gen/generate/", requestData);
 
       const photoData = await waitForPhoto(result.data.task_id);
 
       setResult({
-        original: imageBase,
+        original: url,
         style: values.style,
         room: values.room,
         result: photoData.url,
         prompt: values.prompt,
       });
+
+      dispatch(useFreeCount());
     } catch (error) {
       toastError(t("settings.error"));
     } finally {
@@ -119,11 +131,7 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer, isLoadingAnswer }) => {
 
           <SubmitButton
             disabled={
-              !values.prompt ||
-              !values.style ||
-              isLoadingAnswer ||
-              !values.original ||
-              !freeCount
+              !values.prompt || !values.style || isLoadingAnswer || !freeCount
             }
           />
           <p className="text-count-trying">{t("generate.attentionText")}</p>
