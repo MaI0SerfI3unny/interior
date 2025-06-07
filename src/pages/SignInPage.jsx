@@ -33,6 +33,8 @@ export const SignInPage = () => {
     dispatch(setToken(token));
     dispatch(getUser());
 
+    sessionStorage.setItem("token", token);
+
     navigate(from, { replace: true });
 
     window.history.replaceState({}, document.title, "/signin");
