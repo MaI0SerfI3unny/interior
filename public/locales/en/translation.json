@@ -299,7 +299,7 @@
     "paymentHistoryTitle": "Payment history",
     "paymentDate": "Date",
     "subscribeType": "Subscription",
-    "invoice": "Invoive",
+    "invoice": "Invoice",
     "downloadInvoice": "Download",
     "acceptPayment": "Paid",
     "errorPayment": "Error",
@@ -374,7 +374,6 @@
     "free_generation_1200": "1200 generations of interiors",
     "uncommercial": "For non-commercial use",
     "active": "Current plan",
-    "uncommercial": "For non-commercial use",
 
     "month": "month",
     "year": "year",

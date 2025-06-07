@@ -12,6 +12,7 @@ import {
   getLiqPayUrl,
   saveNewPwd,
   changeUserName,
+  getTariffs,
 } from "./operations.js";
 
 import { sendRecoveryPwdEmail } from "./operations.js";
@@ -50,9 +51,20 @@ const userSlice = createSlice({
       .addCase(logout.fulfilled, () => {
         return initialState;
       })
+      .addCase(getTariffs.fulfilled, state => {
+        state.isLoading = false;
+      })
+      .addCase(getTariffs.pending, state => {
+        state.isLoading = true;
+      })
 
       .addMatcher(
-        isAnyOf(getUser.rejected, getLiqPayUrl.rejected, saveNewPwd.rejected),
+        isAnyOf(
+          getUser.rejected,
+          getLiqPayUrl.rejected,
+          saveNewPwd.rejected,
+          getTariffs.rejected
+        ),
         (state, action) => {
           state.isLoading = false;
           state.isError = action.payload;
