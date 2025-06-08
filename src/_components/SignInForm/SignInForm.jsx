@@ -46,6 +46,8 @@ const SignInForm = () => {
 
     if (values.rememberMe) {
       localStorage.setItem("token", data);
+    } else {
+      sessionStorage.setItem("token", data);
     }
 
     actions.resetForm();

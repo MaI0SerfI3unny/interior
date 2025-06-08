@@ -48,7 +48,8 @@ export const App = () => {
       toastError(t("auth.somethingWentWrong"));
       return;
     }
-    const savedAccessToken = localStorage.getItem("token");
+    const savedAccessToken =
+      sessionStorage.getItem("token") || localStorage.getItem("token");
 
     if (savedAccessToken && !accessToken) {
       dispatch(setToken(savedAccessToken));
