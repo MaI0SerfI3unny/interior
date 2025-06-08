@@ -11,7 +11,7 @@ import photo10 from "@/assets/gallery/9.jpg";
 import photo11 from "@/assets/gallery/10.jpg";
 import photo12 from "@/assets/gallery/11.jpg";
 
-import modalPhoto1 from "@/assets/gallery/modalGallery/modalImage0.jpg";
+import modalPhoto1 from "../assets/gallery/modalGallery/modalImage0.jpg";
 import modalPhoto2 from "@/assets/gallery/modalGallery/modalImage1.jpg";
 import modalPhoto3 from "@/assets/gallery/modalGallery/modalImage2.jpg";
 import modalPhoto4 from "@/assets/gallery/modalGallery/modalImage3.jpg";
