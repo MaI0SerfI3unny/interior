@@ -172,7 +172,7 @@
   "generate": {
     "yourPhoto": "Ваше фото",
     "yourPrompt": "Введіть prompt",
-    "placeholderPrompt": "Напишіть, що ви хочете згенерувати...",
+    "placeholderPrompt": "Напишіть англійською, що ви хочете згенерувати...",
     "chooseRoom": "Обрати кімнату",
     "chooseStyle": "Обрати стиль",
     "btnGenerate": "Згенерувати",
