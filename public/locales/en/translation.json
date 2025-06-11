@@ -291,7 +291,7 @@
     "status": "Status",
     "statusActive": "Active / until",
     "statusFree": "Active",
-
+    "deletedTariff": "Tariff has been deleted successful",
     "generationCount": "Number of generations",
     "price": "Cost",
     "changePlan": "Change plan",

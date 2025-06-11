@@ -28,6 +28,11 @@ const ProfileSettingsInput = ({
     }
   }, [initialValue, isChanging]);
 
+  const isDisabled =
+    initialValue.trim() === inputRef.current?.value.trim() ||
+    isLoading ||
+    !inputRef.current?.value.trim();
+
   return (
     <ProfileSettingsInputStyles>
       {isChanging && (
@@ -54,7 +59,7 @@ const ProfileSettingsInput = ({
                 type="button"
                 className="save-btn"
                 onClick={() => handleSubmit(inputRef.current.value)}
-                disabled={isLoading}
+                disabled={isDisabled}
               >
                 {isLoading ? <SmallSpinner /> : t("settings.saveBtn")}
               </button>

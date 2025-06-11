@@ -104,7 +104,7 @@ export const Gallery = ({ id }) => {
             {heights.slice(0, 12).map((_, i) => (
               <SwiperSlide key={i}>
                 <div key={i} className={style.galleryContainerGridItem}>
-                  <img src={gallery[i]} alt={`img-${i}`} />
+                  <img src={gallery[i].image} alt={`img-${i}`} />
                 </div>
               </SwiperSlide>
             ))}
