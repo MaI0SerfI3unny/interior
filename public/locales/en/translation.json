@@ -178,7 +178,8 @@
     "chooseRoom": "Choose a room",
     "chooseStyle": "Choose a style",
     "btnGenerate": "Generate",
-    "attentionText": "*You have 10 free generations",
+    "attentionText_firstPart": "*You have",
+    "attentionText_secondPart": "free generations",
     "mainWindowDesc": "Display or change your exterior design for a limited time. Just upload a photo or sketch and watch the magic in action.",
     "mainWindowAdvance_0": "Upload an image of your design",
     "mainWindowAdvance_2": "Select the style and type of room",
@@ -247,6 +248,7 @@
   },
   "settings": {
     "unlimitedCount": "Unlimited",
+    "invalidEmailMessage": "Invalid email",
     "generationsNavBar": "Generations",
     "planNavBar": "My tariff plan",
     "profileNavBar": "Profile",

@@ -49,7 +49,7 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer, isLoadingAnswer }) => {
   const { t } = useTranslation();
   const initialStylesValues = useStyleOptions();
   const initialRoomValues = useRoomOptions();
-  const { freeCount } = useSelector(selectUser);
+  const { freeCount, active_plan } = useSelector(selectUser);
   const dispatch = useDispatch();
 
   const handleSubmit = async values => {
@@ -134,7 +134,9 @@ const GeneratingForm = ({ setResult, setIsLoadingAnswer, isLoadingAnswer }) => {
               !values.prompt || !values.style || isLoadingAnswer || !freeCount
             }
           />
-          <p className="text-count-trying">{t("generate.attentionText")}</p>
+          {active_plan?.tariff_name === "Free" && (
+            <p className="text-count-trying">{`${t("generate.attentionText_firstPart")} ${freeCount} ${t("generate.attentionText_secondPart")}`}</p>
+          )}
         </GeneratingFormStyles>
       )}
     </Formik>
