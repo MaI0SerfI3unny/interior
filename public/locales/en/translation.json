@@ -247,6 +247,7 @@
   },
   "settings": {
     "unlimitedCount": "Unlimited",
+    "invalidEmailMessage": "Invalid email",
     "generationsNavBar": "Generations",
     "planNavBar": "My tariff plan",
     "profileNavBar": "Profile",

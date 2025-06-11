@@ -248,7 +248,7 @@
 
   "settings": {
     "unlimitedCount": "Безліміт",
-
+    "invalidEmailMessage": "Невалідна пошта",
     "generationsNavBar": "Генерації",
     "planNavBar": "Мій тарифний план",
     "profileNavBar": "Профіль",

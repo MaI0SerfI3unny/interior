@@ -11,6 +11,8 @@ import ProfileDeleteAccountModal from "../ProfileDeleteAccountModal/ProfileDelet
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "../../redux/user/selectors";
 import { changeUserEmail, changeUserName } from "../../redux/user/operations";
+import { isValidEmail } from "../../assets/functions/checkEmail";
+import { toastError } from "../../assets/functions/toastNotification";
 
 const ProfileSettingsForm = () => {
   const { t } = useTranslation();
@@ -39,6 +41,11 @@ const ProfileSettingsForm = () => {
   }
   async function onEmailSave(value) {
     setIsLoadingChangingEmail(true);
+
+    if (!isValidEmail(value)) {
+      setIsLoadingChangingEmail(false);
+      return toastError(t("settings.invalidEmailMessage"));
+    }
 
     try {
       const successMsg = t("settings.changedEmailSuccess");
