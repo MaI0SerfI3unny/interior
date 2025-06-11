@@ -14,11 +14,21 @@ import { toastError } from "../../assets/functions/toastNotification.js";
 export const register = createAsyncThunk(
   "auth/register",
   async (credentials, thunkAPI) => {
+    const { errorMessage, ...requestData } = credentials;
     try {
-      const { data } = await authAPI.post("/register", credentials);
+      const { data } = await authAPI.post("/register", requestData);
 
       return data;
     } catch (error) {
+      console.log(error.response.data.email[0], "data");
+      if (
+        error.response?.data?.email[0] ===
+        "user with this email already exists."
+      ) {
+        console.log("in error if", errorMessage);
+        toastError(errorMessage);
+      }
+
       return thunkAPI.rejectWithValue(error.message);
     }
   }
