@@ -1,28 +1,28 @@
-import photo1 from "@/assets/gallery/0.png";
-import photo2 from "@/assets/gallery/1.png";
-import photo3 from "@/assets/gallery/2.png";
-import photo4 from "@/assets/gallery/3.png";
-import photo5 from "@/assets/gallery/4.png";
-import photo6 from "@/assets/gallery/5.png";
-import photo7 from "@/assets/gallery/6.png";
-import photo8 from "@/assets/gallery/7.png";
-import photo9 from "@/assets/gallery/8.png";
-import photo10 from "@/assets/gallery/9.png";
-import photo11 from "@/assets/gallery/10.png";
-import photo12 from "@/assets/gallery/11.png";
+import photo1 from "@/assets/gallery/0.jpg";
+import photo2 from "@/assets/gallery/1.jpg";
+import photo3 from "@/assets/gallery/2.jpg";
+import photo4 from "@/assets/gallery/3.jpg";
+import photo5 from "@/assets/gallery/4.jpg";
+import photo6 from "@/assets/gallery/5.jpg";
+import photo7 from "@/assets/gallery/6.jpg";
+import photo8 from "@/assets/gallery/7.jpg";
+import photo9 from "@/assets/gallery/8.jpg";
+import photo10 from "@/assets/gallery/9.jpg";
+import photo11 from "@/assets/gallery/10.jpg";
+import photo12 from "@/assets/gallery/11.jpg";
 
-import modalPhoto1 from "@/assets/gallery/modalGallery/modalImage0.jpg";
-import modalPhoto2 from "@/assets/gallery/modalGallery/modalImage1.jpg";
-import modalPhoto3 from "@/assets/gallery/modalGallery/modalImage2.jpg";
-import modalPhoto4 from "@/assets/gallery/modalGallery/modalImage3.jpg";
-import modalPhoto5 from "@/assets/gallery/modalGallery/modalImage4.jpg";
-import modalPhoto6 from "@/assets/gallery/modalGallery/modalImage5.jpg";
-import modalPhoto7 from "@/assets/gallery/modalGallery/modalImage6.jpg";
-import modalPhoto8 from "@/assets/gallery/modalGallery/modalImage7.jpg";
-import modalPhoto9 from "@/assets/gallery/modalGallery/modalImage8.jpg";
-import modalPhoto10 from "@/assets/gallery/modalGallery/modalImage9.jpg";
-import modalPhoto11 from "@/assets/gallery/modalGallery/modalImage10.jpg";
-import modalPhoto12 from "@/assets/gallery/modalGallery/modalImage11.jpg";
+import bigPhoto1 from "../assets/gallery/modalPhotos/01.webp";
+import bigPhoto2 from "../assets/gallery/modalPhotos/02.webp";
+import bigPhoto3 from "../assets/gallery/modalPhotos/03.webp";
+import bigPhoto4 from "../assets/gallery/modalPhotos/04.webp";
+import bigPhoto5 from "../assets/gallery/modalPhotos/05.webp";
+import bigPhoto6 from "../assets/gallery/modalPhotos/06.webp";
+import bigPhoto7 from "../assets/gallery/modalPhotos/07.webp";
+import bigPhoto8 from "../assets/gallery/modalPhotos/08.webp";
+import bigPhoto9 from "../assets/gallery/modalPhotos/09.webp";
+import bigPhoto10 from "../assets/gallery/modalPhotos/10.webp";
+import bigPhoto11 from "../assets/gallery/modalPhotos/11.webp";
+import bigPhoto12 from "../assets/gallery/modalPhotos/12.webp";
 
 import classic from "@/assets/design_panel/classic.png";
 import provans from "@/assets/design_panel/provans.png";
@@ -159,7 +159,7 @@ export const gallery = [
     prompt: "gallery.first",
     style: "gallery.style.first",
     room: "gallery.room.first",
-    modalImage: modalPhoto1,
+    modalImage: bigPhoto1,
   },
   {
     id: 1,
@@ -167,7 +167,7 @@ export const gallery = [
     prompt: "gallery.second",
     style: "gallery.style.second",
     room: "gallery.room.second",
-    modalImage: modalPhoto2,
+    modalImage: bigPhoto2,
   },
   {
     id: 2,
@@ -175,7 +175,7 @@ export const gallery = [
     prompt: "gallery.third",
     style: "gallery.style.third",
     room: "gallery.room.third",
-    modalImage: modalPhoto3,
+    modalImage: bigPhoto3,
   },
   {
     id: 3,
@@ -183,7 +183,7 @@ export const gallery = [
     prompt: "gallery.fourth",
     style: "gallery.style.fourth",
     room: "gallery.room.fourth",
-    modalImage: modalPhoto4,
+    modalImage: bigPhoto4,
   },
   {
     id: 4,
@@ -191,7 +191,7 @@ export const gallery = [
     prompt: "gallery.fifth",
     style: "gallery.style.fifth",
     room: "gallery.room.fifth",
-    modalImage: modalPhoto5,
+    modalImage: bigPhoto5,
   },
   {
     id: 5,
@@ -199,7 +199,7 @@ export const gallery = [
     prompt: "gallery.sixth",
     style: "gallery.style.sixth",
     room: "gallery.room.sixth",
-    modalImage: modalPhoto6,
+    modalImage: bigPhoto6,
   },
   {
     id: 6,
@@ -207,7 +207,7 @@ export const gallery = [
     prompt: "gallery.seventh",
     style: "gallery.style.seventh",
     room: "gallery.room.seventh",
-    modalImage: modalPhoto7,
+    modalImage: bigPhoto7,
   },
   {
     id: 7,
@@ -215,7 +215,7 @@ export const gallery = [
     prompt: "gallery.eighth",
     style: "gallery.style.eighth",
     room: "gallery.room.eighth",
-    modalImage: modalPhoto8,
+    modalImage: bigPhoto8,
   },
   {
     id: 8,
@@ -223,7 +223,7 @@ export const gallery = [
     prompt: "gallery.ninth",
     style: "gallery.style.ninth",
     room: "gallery.room.ninth",
-    modalImage: modalPhoto9,
+    modalImage: bigPhoto9,
   },
   {
     id: 9,
@@ -231,7 +231,7 @@ export const gallery = [
     prompt: "gallery.tenth",
     style: "gallery.style.tenth",
     room: "gallery.room.tenth",
-    modalImage: modalPhoto10,
+    modalImage: bigPhoto10,
   },
   {
     id: 10,
@@ -239,7 +239,7 @@ export const gallery = [
     prompt: "gallery.eleventh",
     style: "gallery.style.eleventh",
     room: "gallery.room.eleventh",
-    modalImage: modalPhoto11,
+    modalImage: bigPhoto11,
   },
   {
     id: 11,
@@ -247,7 +247,7 @@ export const gallery = [
     prompt: "gallery.twelfth",
     style: "gallery.style.twelfth",
     room: "gallery.room.twelfth",
-    modalImage: modalPhoto12,
+    modalImage: bigPhoto12,
   },
 ];
 

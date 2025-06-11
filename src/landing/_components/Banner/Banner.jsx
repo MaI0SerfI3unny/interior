@@ -4,10 +4,10 @@ import {
 } from "react-compare-slider";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import before from "@/assets/before.png";
+import before from "@/assets/before.webp";
 import { SlideOnScroll } from "../SlideOnScroll/SlideOnScroll";
 import { BannerHeading } from "./BannerHeading/BannerHeading";
-import now from "@/assets/now.jpg";
+import now from "@/assets/now.webp";
 import style from "./style.module.scss";
 import { useSelector } from "react-redux";
 import { selectisLoggedIn } from "../../../redux/user/selectors.js";

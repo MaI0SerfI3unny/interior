@@ -55,14 +55,20 @@ const ProfileAllGenerationsPhotoModalResult = ({ photo, toggleModal }) => {
     URL.revokeObjectURL(url);
   };
 
+  const isProfilePage = location.pathname === "/profile/main";
+
   return (
     <ProfileAllGenerationsPhotoModalResultStyles $isDeleting={isLoading}>
       <img
-        // eslint-disable-next-line no-undef
-        src={`${process.env.REACT_APP_IMG_URL}${photo.result}`}
+        src={
+          isProfilePage
+            ? // eslint-disable-next-line no-undef
+              `${process.env.REACT_APP_IMG_URL}${photo.result}`
+            : photo.result
+        }
         alt="result"
       />
-      {location.pathname === "/profile/main" && (
+      {isProfilePage && (
         <div className="btns-container">
           <button onClick={handleDownload}>
             <CloudIcon width={24} height={24} />
