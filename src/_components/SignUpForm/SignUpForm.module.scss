@@ -191,20 +191,17 @@
   content: "";
   position: absolute;
   display: none;
-}
-
-.customCheckbox input:checked ~ .checkmark::after {
-  display: block;
-}
-
-.customCheckbox .checkmark::after {
   left: 8px;
-  top: 4px;
+  top: 9px;
   width: 5px;
   height: 10px;
   border: solid rgba(43, 42, 41, 1);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+}
+
+.customCheckbox input:checked ~ .checkmark::after {
+  display: block;
 }
 
 .input:active {

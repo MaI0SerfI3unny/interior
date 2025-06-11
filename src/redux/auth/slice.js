@@ -34,6 +34,7 @@ const authSlice = createSlice({
       .addCase(register.fulfilled, handleRegister)
       .addCase(logout.fulfilled, () => {
         localStorage.removeItem("token");
+        sessionStorage.removeItem("token");
         return initialState;
       })
       .addCase(deleteUser.fulfilled, () => {

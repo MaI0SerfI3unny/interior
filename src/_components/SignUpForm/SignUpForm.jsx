@@ -44,6 +44,7 @@ const SignUpForm = () => {
       return;
 
     delete values.conditions;
+    values.errorMessage = t("register.emailExistError");
 
     dispatch(register(values));
     actions.resetForm();

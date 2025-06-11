@@ -25,6 +25,7 @@ export const SubsribesCard = ({
   const buttonText = () => {
     if (usersPlan === name) return t("subscribe.active"); // поточний тариф
     if (name === "Free" && usersPlan) return t("subscribe.limit"); // повернення на Free
+    if (name === "Free" && !usersPlan) return t("subscribe.free");
     return t("subscribe.submit"); // інші випадки або неавторизований
   };
 
@@ -61,7 +62,9 @@ export const SubsribesCard = ({
             css.btnDisabled
         )}
         onClick={() => onSubmit(id, promo)}
-        disabled={usersPlan === name}
+        disabled={
+          usersPlan === name || (name === "Free" && usersPlan !== "Free")
+        }
       >
         {buttonText()}
       </button>
