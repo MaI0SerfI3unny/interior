@@ -40,7 +40,8 @@
     "terms": "Terms of Use",
     "and": " and ",
     "conditions": "Privacy Policy",
-    "submit": "Get started"
+    "submit": "Get started",
+    "emailExistError": "This email address is already in use."
   },
   "validation": {
     "nameMin": "The name must be at least 2 characters long",
@@ -384,7 +385,8 @@
     "year": "year",
     "submit": "Subscribe",
     "value": "Included in the plan:",
-    "limit": "Limit reached"
+    "limit": "Limit reached",
+    "free": "Try for free"
   },
   "notFound": {
     "text": "Page not found",
