@@ -1,40 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userSlice from "./user/slice.js";
+import userReducer from "./user/slice.js";
+import authReducer from "./auth/slice.js";
 import generationFoldersReducer from "./generationFolders/generationFoldersSlice.js";
-import {
-  persistStore,
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import plansReducer from "./plans/slice.js";
 
-const userPersistConfig = {
-  key: "user",
-  storage,
-  whitelist: ["accessToken", "isLoggedIn"],
-};
-
-const persistedUserReducer = persistReducer(userPersistConfig, userSlice);
-
-const perStore = configureStore({
+const store = configureStore({
   reducer: {
-    user: persistedUserReducer,
+    user: userReducer,
+    auth: authReducer,
     generationFolders: generationFoldersReducer,
+    plans: plansReducer,
   },
   // eslint-disable-next-line no-undef
   devTools: process.env.NODE_ENV !== "production",
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
 });
 
-export default perStore;
-export const persistor = persistStore(perStore);
+export default store;

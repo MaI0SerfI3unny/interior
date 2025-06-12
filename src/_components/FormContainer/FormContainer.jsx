@@ -1,6 +1,6 @@
 import css from "./FormContainer.module.scss";
-import bg from "../../assets/loginPage/formBGx1.png";
-import bgX2 from "../../assets/loginPage/formBGx2.png";
+import bg from "../../assets/loginPage/formBGx1.webp";
+import bgX2 from "../../assets/loginPage/formBGx2.webp";
 
 export const FormContainer = ({ children }) => {
   return (

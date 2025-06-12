@@ -10,7 +10,7 @@ import { ReactComponent as Eye } from "../../assets/icons/eye24.svg";
 import { ReactComponent as Hide } from "../../assets/icons/hide24.svg";
 import { useTranslation } from "react-i18next";
 // import { selectIsLoading } from "@/redux/user/selectors.js";
-import { register } from "../../redux/user/operations.js";
+import { register } from "../../redux/auth/operations.js";
 
 const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -44,6 +44,7 @@ const SignUpForm = () => {
       return;
 
     delete values.conditions;
+    values.errorMessage = t("register.emailExistError");
 
     dispatch(register(values));
     actions.resetForm();

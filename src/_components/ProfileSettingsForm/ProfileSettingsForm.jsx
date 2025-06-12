@@ -10,7 +10,9 @@ import ProfileDeleteAccountContainer from "../ProfileDeleteAccountContainer/Prof
 import ProfileDeleteAccountModal from "../ProfileDeleteAccountModal/ProfileDeleteAccountModal";
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "../../redux/user/selectors";
-import { changeUserEmail } from "../../redux/user/operations";
+import { changeUserEmail, changeUserName } from "../../redux/user/operations";
+import { isValidEmail } from "../../assets/functions/checkEmail";
+import { toastError } from "../../assets/functions/toastNotification";
 
 const ProfileSettingsForm = () => {
   const { t } = useTranslation();
@@ -21,15 +23,29 @@ const ProfileSettingsForm = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const [isLoadingChangingEmail, setIsLoadingChangingEmail] = useState(false);
+  const [isLoadingChangingName, setIsLoadingChangingName] = useState(false);
 
   // const [isShowEmailNotification, setIsShowEmailNotification] = useState(false);
 
-  async function onNameSave() {
-    // setName(value);
-    setIsChangingName(false);
+  async function onNameSave(value) {
+    setIsLoadingChangingName(true);
+
+    try {
+      const successMsg = t("settings.changedNameSuccess");
+      const errorMsg = t("settings.error");
+      await dispatch(changeUserName({ name: value, successMsg, errorMsg }));
+    } finally {
+      setIsLoadingChangingName(false);
+      setIsChangingName(false);
+    }
   }
   async function onEmailSave(value) {
     setIsLoadingChangingEmail(true);
+
+    if (!isValidEmail(value)) {
+      setIsLoadingChangingEmail(false);
+      return toastError(t("settings.invalidEmailMessage"));
+    }
 
     try {
       const successMsg = t("settings.changedEmailSuccess");
@@ -62,22 +78,27 @@ const ProfileSettingsForm = () => {
         inputName="name"
         initialValue={user.name}
         handleSubmit={onNameSave}
+        isLoading={isLoadingChangingName}
       />
-      <ProfileSettingsInput
-        isChanging={isChangingEmail}
-        setIsChanging={setIsChangingEmail}
-        title={titleEmail}
-        description={descriptionEmail}
-        changingTitle={changeEmail}
-        inputName="email"
-        initialValue={user.email}
-        handleSubmit={onEmailSave}
-        isLoading={isLoadingChangingEmail}
-      />
-      <ProfileChangePasswordContainer
-        isChanging={isChangingPassword}
-        setIsChanging={setIsChangingPassword}
-      />
+      {user.reg_type === "normal" && (
+        <>
+          <ProfileSettingsInput
+            isChanging={isChangingEmail}
+            setIsChanging={setIsChangingEmail}
+            title={titleEmail}
+            description={descriptionEmail}
+            changingTitle={changeEmail}
+            inputName="email"
+            initialValue={user.email}
+            handleSubmit={onEmailSave}
+            isLoading={isLoadingChangingEmail}
+          />
+          <ProfileChangePasswordContainer
+            isChanging={isChangingPassword}
+            setIsChanging={setIsChangingPassword}
+          />
+        </>
+      )}
 
       <ProfileDeleteAccountContainer toggleModal={setIsDeleting} />
 

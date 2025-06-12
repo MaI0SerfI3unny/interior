@@ -21,6 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectAccessToken,
   selectError,
+  selectIsLoading,
   selectUser,
 } from "../../redux/user/selectors.js";
 import { useEffect } from "react";
@@ -30,6 +31,9 @@ import { PrivateRoute } from "../PrivateRoute/PrivateRoute.jsx";
 import { setAuthHeader } from "../../api/axios.config.js";
 import { toastError } from "../../assets/functions/toastNotification.js";
 import { useTranslation } from "react-i18next";
+import { setToken } from "../../redux/auth/slice.js";
+import { getTariffs } from "../../redux/plans/operations.js";
+import { getFolders } from "../../redux/generationFolders/generationFoldersOperations.js";
 import Smartlook from "smartlook-client";
 
 export const App = () => {
@@ -37,6 +41,7 @@ export const App = () => {
   const accessToken = useSelector(selectAccessToken);
   const user = useSelector(selectUser);
   const error = useSelector(selectError);
+  const isLoading = useSelector(selectIsLoading);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -44,15 +49,25 @@ export const App = () => {
       toastError(t("auth.somethingWentWrong"));
       return;
     }
-    if (accessToken) setAuthHeader(accessToken);
+    const savedAccessToken =
+      sessionStorage.getItem("token") || localStorage.getItem("token");
 
-    const firstLogIn = () => {
-      if (accessToken && !user) {
-        dispatch(getUser());
-      }
-    };
-    firstLogIn();
+    if (savedAccessToken && !accessToken) {
+      dispatch(setToken(savedAccessToken));
+    } else if (accessToken && user.email === "") {
+      setAuthHeader(accessToken);
+
+      dispatch(getFolders());
+
+      dispatch(getUser());
+    }
   }, [accessToken]);
+
+  useEffect(() => {
+    dispatch(getTariffs());
+  }, []);
+
+  if (isLoading) return <div>Loader</div>;
 
   // Smartlook
   useEffect(() => {

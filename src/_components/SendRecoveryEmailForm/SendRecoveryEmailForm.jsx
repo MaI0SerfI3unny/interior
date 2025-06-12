@@ -45,10 +45,8 @@ export const SendRecoveryEmailForm = () => {
     >
       {({ touched, errors }) => (
         <Form className={css.form}>
-          <h2 className={css.title}>Password Recovery</h2>
-          <p className={css.discription}>
-            Enter your email address to recover your password
-          </p>
+          <h2 className={css.title}>{t("recovery.title")}</h2>
+          <p className={css.discription}>{t("recovery.enterEmail")}</p>
           <label className={css.label}>
             Email
             <Field
@@ -64,7 +62,7 @@ export const SendRecoveryEmailForm = () => {
           </label>
 
           <button className={css.button} type="submit">
-            Send
+            {t("recovery.send")}
             {/* {isLoading ? <Loader /> : "Sign in"} */}
           </button>
         </Form>

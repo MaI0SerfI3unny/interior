@@ -1,41 +1,14 @@
 import { ProfileSubscribePaymentHistoryStyles } from "./ProfileSubscribePaymentHistoryStyles.styled";
 import { useTranslation } from "react-i18next";
-import { ReactComponent as DownloadIcon } from "../../svg/cloud.svg";
-
-const paymentData = [
-  {
-    id: 1,
-    date: "20.20.2020",
-    type: "Premium",
-    price: "5.99",
-    status: true,
-  },
-  {
-    id: 2,
-    date: "21.21.2021",
-    type: "Pro",
-    price: "9.99",
-    status: true,
-  },
-  {
-    id: 3,
-    date: "22.22.2022",
-    type: "Premium",
-    price: "5.99",
-    status: false,
-  },
-  {
-    id: 4,
-    date: "23.23.2023",
-    type: "Pro",
-    price: "9.99",
-    status: false,
-  },
-];
+import { useSelector } from "react-redux";
+import { getPaymentHistory } from "../../redux/user/selectors";
+import { convertIsoDate } from "../../assets/functions/convertIsoDate";
 
 const ProfileSubscribePaymentHistory = () => {
   const { t } = useTranslation();
-  return (
+  const paymentData = useSelector(getPaymentHistory);
+
+  return paymentData?.length > 0 ? (
     <ProfileSubscribePaymentHistoryStyles>
       <h2>{t("settings.paymentHistoryTitle")}</h2>
       <table>
@@ -45,33 +18,28 @@ const ProfileSubscribePaymentHistory = () => {
             <th>{t("settings.subscribeType")}</th>
             <th>{t("settings.price")}</th>
             <th>{t("settings.status")}</th>
-            <th>{t("settings.invoice")}</th>
           </tr>
         </thead>
         <tbody>
-          {paymentData.map(({ id, date, type, price, status }) => (
-            <tr key={id}>
-              <td>{date}</td>
-              <td>{type}</td>
+          {paymentData.map(({ created_at, tariff, amount, status }) => (
+            <tr key={created_at}>
+              <td>{convertIsoDate(created_at)}</td>
+              <td>{tariff.name}</td>
               <td>
-                $ {price} / {t("settings.shortMonth")}
+                $ {amount} / {t("settings.shortMonth")}
               </td>
-              <td className={status ? "accepted" : "error"}>
-                {status
+              <td className={status === "success" ? "accepted" : "error"}>
+                {status === "success"
                   ? t("settings.acceptPayment")
                   : t("settings.errorPayment")}
-              </td>
-              <td>
-                <button type="button">
-                  <span>{t("settings.downloadInvoice")}</span>
-                  <DownloadIcon width={24} height={24} />
-                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
     </ProfileSubscribePaymentHistoryStyles>
+  ) : (
+    <></>
   );
 };
 

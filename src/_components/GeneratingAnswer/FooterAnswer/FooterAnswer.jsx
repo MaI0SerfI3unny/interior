@@ -1,14 +1,12 @@
 import { FooterAnswerStyles } from "./FooterAnswerStyles.styled";
 import SaveResultButton from "./SaveResultButton/SaveResultButton";
 import DownloadResultButton from "./DownloadResultButton/DownloadResultButton";
-import ShareResultButton from "./ShareResultButton/ShareResultButton";
 
-const FooterAnswer = ({ toggleModal }) => {
+const FooterAnswer = ({ toggleModal, result }) => {
   return (
     <FooterAnswerStyles>
       <SaveResultButton pdS={21} toggleModal={() => toggleModal(true)} />
-      <DownloadResultButton />
-      <ShareResultButton />
+      <DownloadResultButton result={result} />
     </FooterAnswerStyles>
   );
 };

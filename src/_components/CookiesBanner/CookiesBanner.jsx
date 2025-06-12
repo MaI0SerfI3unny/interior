@@ -37,7 +37,7 @@ export const CookiesBanner = () => {
           <p>
             Для отримання додаткової інформації, будь ласка, ознайомтесь із
             нашою
-            <Link to="/privacyPolicy" className={css.link}>
+            <Link to="/policy" className={css.link}>
               {" "}
               Політикою конфіденційності
             </Link>

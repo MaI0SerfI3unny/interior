@@ -1,11 +1,13 @@
-export const selectUser = state => state.user.user;
+export const selectUser = state => state.user;
 
-export const selectIsLoading = state => state.user.isLoading;
+export const selectIsLoading = state => state.auth.isLoading;
 
-export const selectisLoggedIn = state => state.user.isLoggedIn;
+export const selectisLoggedIn = state => state.auth.isLoggedIn;
 
-export const selectAccessToken = state => state.user.accessToken;
+export const selectAccessToken = state => state.auth.accessToken;
 
-export const selectUserImage = state => state.user.user.image;
+export const selectUserImage = state => state.user.image;
 
-export const selectError = state => state.user.isError;
+export const selectError = state => state.auth.isError;
+
+export const getPaymentHistory = state => state.user.payment_history;

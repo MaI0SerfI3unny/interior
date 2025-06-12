@@ -16,8 +16,6 @@ const GeneratePage = () => {
     setIsShowModal(value);
   }
 
-  console.log(result);
-
   return (
     <>
       <GeneratingPageStyles>

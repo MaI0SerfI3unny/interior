@@ -40,7 +40,8 @@
     "terms": "Terms of Use",
     "and": " and ",
     "conditions": "Privacy Policy",
-    "submit": "Get started"
+    "submit": "Get started",
+    "emailExistError": "This email address is already in use."
   },
   "validation": {
     "nameMin": "The name must be at least 2 characters long",
@@ -48,12 +49,15 @@
     "nameRequired": "Name is required",
     "emailInvalid": "Enter a valid email address",
     "emailRequired": "Email is required",
-    "passwordMin": "The password must be at least 1 character long",
+    "passwordMin": "The password must be at least 8 character long",
     "passwordMax": "The password must be no longer than 64 characters",
-    "passwordRequired": "Password is required"
+    "passwordRequired": "Password is required",
+
+    "confirmPwd": "Confirm new password",
+    "matchPwd": "Passwords must match"
   },
   "cta": {
-    "btnName": "Generate Interior"
+    "btnName": "Generate interior"
   },
   "banner": {
     "name": "INTERIOR — YOUR INTERIOR IN ONE CLICK",
@@ -117,49 +121,49 @@
     "title": "INSPIRATION GALLERY",
     "desc": "Get inspired by ideas from those who have already created their own design",
     "more": "Show more",
-    "first": "A modern living room with large panoramic windows, a wooden ceiling, and warm lighting. The room should feature a large gray sofa with soft cushions in warm tones (yellow, beige, brown), a cozy rug, and a low coffee table. In the background, there is a modern kitchen with dark cabinetry and stylish lighting.",
-    "second": "A modern Scandinavian-style kitchen with eco-design elements. The spacious room features high ceilings, light wooden floors, and panoramic windows. The kitchen cabinets are white, and the island has a stone countertop with a wooden base, complemented by woven bar stools. A copper pendant lamp, a vase with a green branch, minimalist accessories, and a cozy atmosphere complete the look.",
-    "third": "A modern bedroom in contemporary style with minimalist elements. The design features calm, neutral tones—grey, white, and beige. The wall behind the headboard is adorned with a large monochrome forest landscape panel. Clean lines, sleek furniture shapes, built-in lighting, and the symmetrical placement of light fixtures create an atmosphere of tranquility, harmony, and modern comfort.",
-    "fourth": "A modern, cozy minimalist-style bedroom. The room features a low, soft bed with beige bedding and numerous pillows, a wooden wall panel with backlighting, bedside tables, a chair by the window, and light curtains. The atmosphere is calm, warm, and relaxing. The lighting is soft and warm, with spotlights and wall lamps.",
-    "fifth": "A modern loft-style living room with a minimalist approach. A textured grey concrete wall, a large low sofa with warm-toned cushions, soft neon lighting, two round metal coffee tables, and a large potted indoor plant. Panoramic windows with blinds, light curtains, and a cozy atmosphere in an urban apartment.",
-    "sixth": "A modern kitchen in a contemporary style with neoclassical elements. The kitchen features light paneled cabinet fronts, a marble backsplash and countertop, and symmetrically placed pendant globe lamps. The room is decorated in a warm beige and cream color palette with wooden accents on the floor and furniture. A central kitchen island is complemented by tall bar stools. The interior is enhanced with elegant décor and live plants.",
-    "seventh": "A modern-style kitchen with a large island. The kitchen features sleek grey cabinetry, a light stone countertop, and a marble backsplash. Lighting is provided by stylish black pendant lamps, and the interior is designed in a calm color palette. Elegant chairs with soft seats are placed around the island. The atmosphere is understated, modern, and functional.",
-    "eighth": "A romantic and bright Provence-style living room with natural lighting, white walls with classic moldings, a soft white sofa with pastel cushions, a large floral painting, blooming potted trees, gold wall sconces, a round wooden table with peonies, a neutral rug, and herringbone parquet flooring.",
-    "ninth": "A bathroom in a modern style with minimalist elements. The interior is based on natural beige tones and warm wood. One wall is decorated with marble cladding, and above the sink hangs a large round backlit mirror. The sanitary fixtures feature a contemporary design with matte black faucets, while the decorative elements include dried flowers and scented candles.",
-    "tenth": "A modern loft-style bathroom with luxury elements. The walls and floor are clad in marble tiles in grey and brown tones. It features a wall-mounted toilet, a shower with a clear glass partition, and gold fixtures. Wooden cabinets with open shelving, soft ambient lighting, and a stylish rectangular sink complete the look. The atmosphere is modern, elegant, and refined.",
-    "eleventh": "A modern living room combined with a home office, designed in a high-tech style with minimalist elements. The room features a muted color palette of grey and dark blue tones. The space is divided by transparent glass partitions, adding a sense of lightness. In the foreground, there is a soft modular sofa, a white coffee table with fruit, and green live plants in the corners of the room. A concrete wall and large windows with long curtains add to the design. Lighting is provided by modern recessed and track fixtures. In the background, a workspace with a computer is seamlessly integrated into the overall interior.The atmosphere is restrained, modern, and functional.",
-    "twelfth": "A modern minimalist kitchen featuring a concrete kitchen island with built-in LED lighting, tall bar stools with slim black legs and wooden seats. The space includes white glossy handleless cabinets, a black accent wall, a minimalist faucet and sink, and a small green plant in a glass vase. The lighting is dimmed, creating a stylish and understated atmosphere. The color scheme consists of dark grey, black, and white tones, evoking a nighttime interior.",
+    "first": "Modern kitchen-studio, minimalist interior with premium natural materials — stone, wood, black metal, brass accents. Spacious bright room with floor-to-ceiling windows, central kitchen island, built-in appliances, hidden lighting, contemporary furniture in neutral tones (beige, grey, white). Clean lines, no excessive decor, highly functional design.",
+    "second": "Cozy modern bedroom with wooden wall panels, large bed with soft upholstered headboard, minimalist bedside tables with integrated lighting, stylish chandelier with round bulbs, warm ambient lighting, dark curtains, large rug, floor-to-ceiling windows, neutral color palette, calm and serene mood.",
+    "third": "Modern minimalist studio with a large modular grey sofa, round wooden coffee table with candles, floor-to-ceiling panoramic windows overlooking mountains, wood slat accent wall, futuristic wave-shaped pendant light, soft ambient evening lighting, calm and serene atmosphere with natural textures.",
+    "fourth": "Modern minimalist bathroom with a deep freestanding white bathtub, matte dark grey wall tiles, backlit mirror, wooden vanity with vessel sink, open shelves with towels, scented candles, green plants, and soft natural lighting. Calm and spa-like atmosphere with natural textures and warm tones.",
+    "fifth": "Cozy Scandinavian-style living room with a large white sectional sofa, wooden walls, fireplace, low wooden coffee table, floor-to-ceiling bookshelves, and panoramic windows overlooking a snowy forest. Warm, minimalistic and serene atmosphere. Light neutral tones, natural materials, soft textiles and candles for a hygge-inspired space.",
+    "sixth": "Minimalist bedroom with a large low bed, wooden slat accent wall, warm natural tones, floor-to-ceiling windows, clean-lined furniture with no unnecessary decor, built-in lighting, open space, and a calm, serene atmosphere.",
+    "seventh": "Luxurious classical living room with three white curved sofas arranged symmetrically, dark navy blue paneled walls with gold trim and decorative moldings, large monochrome artwork centered above the fireplace, elegant wall sconces and table lamps with warm light, round coffee table with fresh flowers, refined wooden flooring, rich and sophisticated ambiance.",
+    "eighth": "Living room in modern classic style with dark walls, fireplace, dark blue velvet sofa, light accent armchair with wooden legs, round black coffee table, large neutral rug, indoor tree in the corner, and floor-to-ceiling windows. Calm and elegant atmosphere with minimal yet refined decor.",
+    "ninth": "Bright Scandinavian living room with dining area, wooden flooring, cozy beige corner sofa, modern wood pendant lights, lots of natural light, framed artwork on the wall, potted plants, minimal and warm atmosphere.",
+    "tenth": "Elegant classical dining room with dark navy paneled walls, large black wood dining table, soft velvet light grey chairs, gold wall sconces, refined table setting with candles and a central dried floral arrangement. Sophisticated, symmetrical, and luxurious atmosphere.",
+    "eleventh": "Minimalist living room with a large soft beige sectional sofa, low wooden coffee table, built-in shelves with books and decor, hidden lighting, floor-to-ceiling windows overlooking the mountains, wood-paneled walls, and a calm neutral palette. Maximum open space, natural light, and clean modern lines.",
+    "twelfth": "Bright minimalist kitchen with matte white handleless cabinets, open wooden shelves, kitchen island with wooden bar stools, large horizontal window overlooking lush greenery, modern recessed lighting, natural materials, and clean lines. Spacious, airy, and serene ambiance.",
     "style": {
-      "first": "Scandinavian",
-      "second": "Scandinavian",
-      "third": "Contemporary",
-      "fourth": "Minimalism",
-      "fifth": "Loft",
-      "sixth": "Modern",
-      "seventh": "Modern",
-      "eighth": "Provance",
-      "ninth": "Modern",
-      "tenth": "Loft",
-      "eleventh": "Hi-tech",
+      "first": "Loft",
+      "second": "Modern",
+      "third": "Modern",
+      "fourth": "Modern",
+      "fifth": "Scandinavian",
+      "sixth": "Monimalism",
+      "seventh": "Classic",
+      "eighth": "Classic",
+      "ninth": "Scandinavian",
+      "tenth": "Classic",
+      "eleventh": "Monimalism",
       "twelfth": "Monimalism"
     },
     "room": {
-      "first": "Living room",
-      "second": "Kitchen",
-      "third": "Bedroom",
-      "fourth": "Bedroom",
+      "first": "Kitchen",
+      "second": "Bedroom",
+      "third": "Living room",
+      "fourth": "Bathroom",
       "fifth": "Living room",
-      "sixth": "Kitchen",
-      "seventh": "Kitchen",
+      "sixth": "Bedroom",
+      "seventh": "Living room",
       "eighth": "Living room",
-      "ninth": "Bathroom",
-      "tenth": "Bathroom",
+      "ninth": "Living room",
+      "tenth": "Kitchen",
       "eleventh": "Living room",
       "twelfth": "Kitchen"
     }
   },
   "comment": {
-    "title": "Comments",
+    "title": "Reviews",
     "title_item_comment_0": "Andriy Melnyk",
     "desc_item_comment_0": "I am not a design professional, but thanks to this platform I was able to create an interior for my apartment that truly reflects my preferences. It is incredibly simple - I just indicated my wishes, and the result was exactly as I imagined. Many thanks for such a convenient and intuitive tool!",
     "title_item_comment_1": "Olena Kovalchuk",
@@ -174,7 +178,8 @@
     "chooseRoom": "Choose a room",
     "chooseStyle": "Choose a style",
     "btnGenerate": "Generate",
-    "attentionText": "*You have 10 free generations",
+    "attentionText_firstPart": "*You have",
+    "attentionText_secondPart": "free generations",
     "mainWindowDesc": "Display or change your exterior design for a limited time. Just upload a photo or sketch and watch the magic in action.",
     "mainWindowAdvance_0": "Upload an image of your design",
     "mainWindowAdvance_2": "Select the style and type of room",
@@ -242,6 +247,8 @@
     "goToGenerations": "Go to generation"
   },
   "settings": {
+    "unlimitedCount": "Unlimited",
+    "invalidEmailMessage": "Invalid email",
     "generationsNavBar": "Generations",
     "planNavBar": "My tariff plan",
     "profileNavBar": "Profile",
@@ -283,6 +290,8 @@
     "subscribeCurrentTitle": "Current subscription",
     "status": "Status",
     "statusActive": "Active / until",
+    "statusFree": "Active",
+    "deletedTariff": "Tariff has been deleted successful",
     "generationCount": "Number of generations",
     "price": "Cost",
     "changePlan": "Change plan",
@@ -296,7 +305,7 @@
     "paymentHistoryTitle": "Payment history",
     "paymentDate": "Date",
     "subscribeType": "Subscription",
-    "invoice": "Invoive",
+    "invoice": "Invoice",
     "downloadInvoice": "Download",
     "acceptPayment": "Paid",
     "errorPayment": "Error",
@@ -306,22 +315,9 @@
     "getSubscribe": "Subscribe",
     "privelegiesTitle": "Package includes",
     "changedEmailSuccess": "Email changed successfully",
+    "changedNameSuccess": "Name changed successfully",
     "error": "Oops... Something went wrong. Please try again",
-    "passwordChangedSuccess": "Password has been changed successful",
-
-    "subs": {
-      "premium": {
-        "gen_limit": "100 interior generations total"
-      },
-      "pro": {
-        "unlimited_gen": "Unlimited generations"
-      },
-      "shared": {
-        "queue": "No queue for generation",
-        "limited_access": "Limited access to resources",
-        "non_commercial": "For non-commercial use"
-      }
-    }
+    "passwordChangedSuccess": "Password has been changed successful"
   },
   "terms": {
     "pageTitle": "Terms of Use",
@@ -372,24 +368,25 @@
     "info": "Get unlimited access to all features with a subscription",
     "btnMonth": "Monthly",
     "btnYear": "Yearly",
-    "title1": "free",
-    "freefeauters1": "10 interior generations total",
-    "freefeauters2": "Generation queue",
-    "freefeauters3": "Limited access to resources",
-    "freefeauters4": "For non-commercial use",
-    "title2": "premium",
-    "premiumfeauters1": "50 interior generations total",
-    "premiumfeauters2": "No generation queue",
-    "premiumfeauters3": "Limited access to resources",
-    "premiumfeauters4": "For non-commercial use",
-    "title3": "pro",
-    "profeauters1": "Unlimited generations",
-    "profeauters2": "No generation queue",
-    "profeauters3": "Limited access to resources",
-    "profeauters4": "For non-commercial use",
+
+    "free_generation_10": "10 generations of interiors",
+    "queue_waiting": "Queuing per generation",
+    "history_limit_5": "History up to 5 generations",
+    "free_generation_100": "100 generations of interiors",
+    "no_queue": "Generation without waiting in line",
+    "commercial_use": "Available for commercial use",
+    "unlimited_history": "Unlimited history of generations",
+    "unlimited_generation": "Unlimited number of generations",
+    "free_generation_1200": "1200 generations of interiors",
+    "uncommercial": "For non-commercial use",
+    "active": "Current plan",
+
     "month": "month",
-    "submit": "Try Now",
-    "value": "Included in the plan:"
+    "year": "year",
+    "submit": "Subscribe",
+    "value": "Included in the plan:",
+    "limit": "Limit reached",
+    "free": "Try for free"
   },
   "notFound": {
     "text": "Page not found",
@@ -399,12 +396,24 @@
     "greeting": "Hi, ",
     "profile": "My profile",
     "logout": "Log out"
-    },
-  "auth":{
-   "emailSentSuccess": "An email with password reset instructions has been sent. Please check your inbox and spam folder.",
+  },
+
+  "auth": {
+    "emailSentSuccess": "An email with password reset instructions has been sent. Please check your inbox and spam folder.",
     "emailNotFound": "No account was found with this email address.",
     "somethingWentWrong": "Something went wrong, please try again later.",
     "passwordChangedSuccess": "Password has been changed. You can now log in with your new password.",
     "invalidOrExpiredToken": "The password reset token is invalid or has expired. Please try again.",
-    "goToSignin": "Go back to sign in page"  }
+    "goToSignin": "Go back to sign in page"
+  },
+
+  "recovery": {
+    "title": "Recovery Password",
+    "enterEmail": "Enter your email address to recovery your password",
+    "text": "Input the new password for your accaunt",
+    "newPwd": "New password",
+    "confirmPwd": "Confirm new password",
+    "save": "Save",
+    "send": "Send"
+  }
 }

@@ -4,9 +4,9 @@ import CloseModalButton from "../CloseModalButton/CloseModalButton";
 import { useSelector, useDispatch } from "react-redux";
 import { getGenerationFolders } from "../../redux/generationFolders/generationFoldersSelectors";
 import { useState } from "react";
-import { createFolder } from "../../redux/generationFolders/generationFoldersSlice";
-import { toastSuccess } from "../../assets/functions/toastNotification";
 import { useNavigate } from "react-router-dom";
+import { savePhotoToNewFolder } from "../../redux/generationFolders/generationFoldersOperations";
+import SmallSpinner from "../SmallSpinner/SmallSpinner";
 
 const CreatingFolderModal = ({
   newFolderName,
@@ -19,6 +19,7 @@ const CreatingFolderModal = ({
   const [errorMessage, setErrorMessage] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   function checkFolderNames(value) {
     if (folders.some(folder => folder.title === value)) {
@@ -33,10 +34,21 @@ const CreatingFolderModal = ({
     checkFolderNames(e.target.value.trim());
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    dispatch(createFolder({ folderTitle: newFolderName, photo: result }));
-    toastSuccess(t("modal.createdFolder"));
+    setIsLoading(true);
+
+    await dispatch(
+      savePhotoToNewFolder({
+        title: newFolderName,
+        photo: result,
+        successMsg: t("modal.createdFolder"),
+        errorMsg: t("settings.error"),
+      })
+    );
+
+    setIsLoading(false);
+
     navigate("/profile/main");
   }
 
@@ -54,7 +66,7 @@ const CreatingFolderModal = ({
         />
         {errorMessage && <p className="error">{errorMessage}</p>}
         <button disabled={!newFolderName || errorMessage}>
-          {t("modal.createFolder")}
+          {isLoading ? <SmallSpinner /> : t("modal.createFolder")}
         </button>
       </form>
     </CreatingFolderModalStyles>

@@ -44,7 +44,6 @@ export const Gallery = ({ id }) => {
   }, []);
 
   function handleCardClick(id) {
-    console.log("hello");
     const currentPhoto = gallery.find(photo => id === photo.id);
     setSelectedPhoto({
       result: currentPhoto.modalImage,
@@ -105,7 +104,7 @@ export const Gallery = ({ id }) => {
             {heights.slice(0, 12).map((_, i) => (
               <SwiperSlide key={i}>
                 <div key={i} className={style.galleryContainerGridItem}>
-                  <img src={gallery[i]} alt={`img-${i}`} />
+                  <img src={gallery[i].image} alt={`img-${i}`} />
                 </div>
               </SwiperSlide>
             ))}

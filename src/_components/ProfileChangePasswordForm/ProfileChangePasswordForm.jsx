@@ -7,7 +7,7 @@ import {
   toastError,
 } from "../../assets/functions/toastNotification";
 import api from "../../api/axios.config";
-import SmallSpinner from "../../SmallSpinner/SmallSpinner";
+import SmallSpinner from "../SmallSpinner/SmallSpinner";
 
 const initialValues = {
   oldPassword: "",
@@ -17,10 +17,7 @@ const initialValues = {
 
 function isValidPassword(password) {
   const hasMinLength = password.length >= 8;
-  const hasLetter = /[a-zA-Zа-яА-Я]/.test(password);
-  const hasNumber = /\d/.test(password);
-
-  return hasMinLength && hasLetter && hasNumber;
+  return hasMinLength;
 }
 
 const ProfileChangePasswordForm = ({ toggleModal }) => {

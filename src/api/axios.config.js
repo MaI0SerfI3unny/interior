@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { forceLogout } from "../redux/user/slice.js";
+import { forceLogout } from "../redux/auth/slice.js";
 import store from "../redux/store.js";
 
 // eslint-disable-next-line no-undef
@@ -14,6 +14,7 @@ export const setAuthHeader = token => {
 // Utility to remove JWT
 export const clearAuthHeader = () => {
   api.defaults.headers.common.Authorization = "";
+  localStorage.clear("token");
 };
 
 const api = axios.create({
@@ -29,7 +30,7 @@ api.interceptors.response.use(
   error => {
     if (error.response?.status === 401) {
       const state = store.getState();
-      const token = state.user.accessToken;
+      const token = state.auth.accessToken;
 
       if (token) {
         store.dispatch(forceLogout());

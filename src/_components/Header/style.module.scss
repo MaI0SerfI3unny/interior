@@ -2,12 +2,13 @@
 
 .header {
   position: fixed;
+  left: 0;
   width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
   z-index: 2;
-  margin-top: 20px;
+  transition: top 0.3s ease;
 
   .headerContainer {
     position: relative;
@@ -43,7 +44,7 @@
     }
 
     .signBtn {
-      width: 148px;
+      width: 136px;
       height: 48px;
       background: transparent;
       color: #2b2a29;
@@ -54,6 +55,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      margin-left: 11px;
 
       &:hover {
         transition: 0.5s;
@@ -80,6 +82,13 @@
       margin: 0 20px;
     }
   }
+}
+.defaultOffset {
+  top: 20px;
+}
+
+.stuckToTop {
+  top: 0;
 }
 
 .activeLink {

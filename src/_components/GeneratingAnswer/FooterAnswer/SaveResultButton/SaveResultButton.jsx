@@ -1,7 +1,8 @@
 import { SaveResultButtonStyles } from "./SaveResultButtonStyles.styled";
 import { useTranslation } from "react-i18next";
+import SmallSpinner from "../../../SmallSpinner/SmallSpinner";
 
-const SaveResultButton = ({ pdS, toggleModal, isDisabled, wD }) => {
+const SaveResultButton = ({ pdS, toggleModal, isDisabled, wD, isLoading }) => {
   const { t } = useTranslation();
 
   return (
@@ -11,7 +12,7 @@ const SaveResultButton = ({ pdS, toggleModal, isDisabled, wD }) => {
       onClick={toggleModal}
       $wD={wD}
     >
-      {t("generate.save")}
+      {isLoading ? <SmallSpinner /> : t("generate.save")}
     </SaveResultButtonStyles>
   );
 };

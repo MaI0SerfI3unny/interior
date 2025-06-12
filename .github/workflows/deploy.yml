@@ -32,8 +32,14 @@ jobs:
       - name: Install dependencies with Yarn
         run: yarn install
 
+      - name: Create .env file
+        run: |
+          printf "%s\n" "${{ secrets.ENV }}" > .env
+          cat .env
+
       - name: Build the project
-        run: yarn build
+        run: |
+          yarn build
 
       - name: Install rsync
         run: |

@@ -2,50 +2,39 @@ import { ProfileSubscribeChangePlanModalStyles } from "./ProfileSubscribeChangeP
 import CloseModalButton from "../CloseModalButton/CloseModalButton";
 import { useTranslation } from "react-i18next";
 import ProfileSubscribeCard from "../ProfileSubscribeCard/ProfileSubscribeCard";
-import { useEffect, useState } from "react";
 import api from "../../api/axios.config";
-import { toastError } from "../../assets/functions/toastNotification";
+import { getUser } from "../../redux/user/operations";
+import SmallSpinner from "../SmallSpinner/SmallSpinner";
 
-const proDescription = [
-  "settings.subs.pro.unlimited_gen",
-  "settings.subs.shared.queue",
-  "settings.subs.shared.limited_access",
-  "settings.subs.shared.non_commercial",
-];
-
-const premiumDescription = [
-  "settings.subs.premium.gen_limit",
-  "settings.subs.shared.queue",
-  "settings.subs.shared.limited_access",
-  "settings.subs.shared.non_commercial",
-];
+import { useDispatch, useSelector } from "react-redux";
+import { selectPlans } from "../../redux/plans/slice";
+import { selectUser } from "../../redux/user/selectors";
+import { useState } from "react";
+import {
+  toastError,
+  toastSuccess,
+} from "../../assets/functions/toastNotification";
 
 const ProfileSubscribeChangePlanModal = ({ toggleModal }) => {
   const { t } = useTranslation();
-  const [tariffs, setTariffs] = useState(null);
+  const tariffs = useSelector(selectPlans);
+  const user = useSelector(selectUser);
+  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    async function getTariffs() {
-      try {
-        const { data } = await api.get("/tariffs");
-        const updatedData = data.map(sub => ({
-          ...sub,
-          privilegies:
-            sub.name === "Pro"
-              ? proDescription
-              : sub.name === "Premium"
-                ? premiumDescription
-                : [],
-        }));
-        setTariffs(updatedData);
-      } catch (error) {
-        toastError(t("settings.error"));
-        toggleModal(false);
-      }
+  async function deleteTariff() {
+    setIsLoading(true);
+    try {
+      await api.delete("/tariffs/delete");
+      await dispatch(getUser());
+      toastSuccess(t("settings.deletedTariff"));
+      toggleModal(false);
+    } catch (error) {
+      toastError(t("settings.error"));
+    } finally {
+      setIsLoading(false);
     }
-
-    getTariffs();
-  }, []);
+  }
 
   return (
     <ProfileSubscribeChangePlanModalStyles>
@@ -62,9 +51,16 @@ const ProfileSubscribeChangePlanModal = ({ toggleModal }) => {
           )}
       </div>
 
-      <button type="button" className="cancel-btn">
-        {t("settings.cancelSubscribe")}
-      </button>
+      {user?.active_plan?.tariff_name !== "Free" && (
+        <button
+          type="button"
+          className="cancel-btn"
+          disabled={isLoading}
+          onClick={deleteTariff}
+        >
+          {isLoading ? <SmallSpinner /> : t("settings.cancelSubscribe")}
+        </button>
+      )}
     </ProfileSubscribeChangePlanModalStyles>
   );
 };

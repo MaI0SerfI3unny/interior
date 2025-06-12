@@ -1,17 +1,16 @@
 import { Outlet } from "react-router-dom";
-import { Suspense } from "react";
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
-const Layout = () => {
-  return (
-    <>
-      <Header />
-      <Suspense>
-        <Outlet />
-      </Suspense>
-      <Footer />
-    </>
-  );
-};
+import { LayoutMain, LayoutRoot } from "./LayoutStyles.styled";
 
-export default Layout;
+export default function Layout() {
+  return (
+    <LayoutRoot>
+      <Header />
+      <LayoutMain>
+        <Outlet />
+      </LayoutMain>
+      <Footer />
+    </LayoutRoot>
+  );
+}

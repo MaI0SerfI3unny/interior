@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { deleteUser } from "../../redux/user/operations";
 import { useDispatch } from "react-redux";
-import SmallSpinner from "../../SmallSpinner/SmallSpinner";
+import SmallSpinner from "../SmallSpinner/SmallSpinner";
 
 const ProfileDeleteAccountModal = ({ toggleModal }) => {
   const { t } = useTranslation();

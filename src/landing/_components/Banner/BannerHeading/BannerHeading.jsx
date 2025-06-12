@@ -6,14 +6,19 @@ export const BannerHeading = ({ text }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    setDisplayedText("");
+    setIndex(0);
+  }, [text]);
+
+  useEffect(() => {
     if (index < text.length) {
       const timeout = setTimeout(() => {
         setDisplayedText(prev => prev + text[index]);
-        setIndex(index + 1);
+        setIndex(prev => prev + 1);
       }, 50);
       return () => clearTimeout(timeout);
     }
-  }, [index]);
+  }, [index, text]);
 
   const renderStyledText = () => {
     return displayedText.split("").map((char, i) =>
@@ -27,10 +32,12 @@ export const BannerHeading = ({ text }) => {
     );
   };
 
+  const isFinished = index >= text.length;
+
   return (
     <h1 className={style.heading}>
       {renderStyledText()}
-      <span className={style.cursor}>|</span>
+      {!isFinished && <span className={style.cursor}>|</span>}
     </h1>
   );
 };

@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { useState } from "react";
 import css from "./SignInForm.module.scss";
 
-import { login } from "@/redux/user/operations";
+import { login } from "@/redux/auth/operations";
 
 import { ReactComponent as Eye } from "../../assets/icons/eye24.svg";
 import { ReactComponent as Hide } from "../../assets/icons/hide24.svg";
@@ -39,11 +39,17 @@ const SignInForm = () => {
 
   const SigninSchema = getSigninSchema(t);
 
-  const handleSubmit = (values, actions) => {
+  const handleSubmit = async (values, actions) => {
     if (values.email === "" || values.password === "") return;
-    delete values.rememberMe;
 
-    dispatch(login(values));
+    const { data } = await dispatch(login(values)).unwrap();
+
+    if (values.rememberMe) {
+      localStorage.setItem("token", data);
+    } else {
+      sessionStorage.setItem("token", data);
+    }
+
     actions.resetForm();
   };
 

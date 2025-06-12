@@ -13,8 +13,7 @@ export const ProfileAllGenerationsPhotoModalResultStyles = styled.div`
     column-gap: 16px;
   }
 
-  .btns-container > button,
-  .btns-container > a {
+  .btns-container > button {
     background-color: rgb(254, 253, 252);
     cursor: pointer;
     display: flex;
@@ -23,6 +22,11 @@ export const ProfileAllGenerationsPhotoModalResultStyles = styled.div`
     padding: 12px;
     border: 1px solid rgb(254, 253, 252);
     border-radius: 4px;
+  }
+
+  .btns-container > .delete-btn {
+    background-color: ${({ $isDeleting }) =>
+      $isDeleting ? "rgba(43, 42, 41, 1)" : "rgb(254, 253, 252)"};
   }
 
   @media screen and (max-width: 1440px) {
@@ -42,18 +46,15 @@ export const ProfileAllGenerationsPhotoModalResultStyles = styled.div`
     width: 664px;
 
     .btns-container {
-      width: calc(48px * 3 + 16px * 2);
+      width: calc(48px * 2 + 16px);
       margin-top: 16px;
 
-      button,
-      a {
+      button {
         transition: 250ms linear;
       }
 
       button:hover,
-      button:focus,
-      a:hover,
-      a:focus {
+      button:focus {
         border-color: rgb(112, 109, 106);
       }
     }
