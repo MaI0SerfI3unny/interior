@@ -89,11 +89,12 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          transition: 0.5s;
         }
         .active {
-          transition: 0.5s;
-          border: 1px solid #2b2a29;
-          color: #2b2a29;
+          border-color: #706d6a;
+          color: white;
+          background-color: #706d6a;
         }
       }
       .designPanelContainerListControlButton {
@@ -110,10 +111,12 @@
         color: #fefdfc;
         text-decoration: none;
         border: 2px solid #2b2a29;
+        transition: 0.5s;
+
         &:hover {
-          transition: 0.5s;
           background: transparent;
-          color: #2b2a29;
+          background-color: #050029;
+          border-color: #050029;
         }
       }
     }

@@ -43,10 +43,12 @@
         text-decoration: none;
         cursor: pointer;
         border: 2px solid #2b2a29;
-        &:hover {
           transition: 0.5s;
+
+        &:hover {
           background: transparent;
-          color: #2b2a29;
+                  background-color: #050029;
+        border-color: #050029;
         }
       }
     }
