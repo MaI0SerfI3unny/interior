@@ -59,10 +59,11 @@
       color: #fefdfc;
       cursor: pointer;
       border: 2px solid #2b2a29;
+      transition: 0.5s;
       &:hover {
-        transition: 0.5s;
         background: transparent;
-        color: #2b2a29;
+        background-color: #050029;
+        border-color: #050029;
       }
     }
     .bannerContainerSlider {
