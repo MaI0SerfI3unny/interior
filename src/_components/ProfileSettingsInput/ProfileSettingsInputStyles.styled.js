@@ -132,8 +132,8 @@ export const ProfileSettingsInputStyles = styled.div`
     .save-btn {
       transition: 250ms linear;
 
-      &:hover,
-      &:focus {
+      &:not(:disabled)&:hover,
+      &:not(:disabled)&:focus {
         background-color: ${theme.background.buttonHover};
       }
     }
