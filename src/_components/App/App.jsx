@@ -73,7 +73,7 @@ export const App = () => {
   useEffect(() => {
     Smartlook.init("d9dbc6877c59c510733c3f9d57e3fb96a2a3cc5d");
 
-    Smartlook.record({ 
+    Smartlook.record({
       emails: true,
       forms: false,
       numbers: true,
