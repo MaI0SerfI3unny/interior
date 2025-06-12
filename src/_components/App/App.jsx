@@ -30,6 +30,7 @@ import { PrivateRoute } from "../PrivateRoute/PrivateRoute.jsx";
 import { setAuthHeader } from "../../api/axios.config.js";
 import { toastError } from "../../assets/functions/toastNotification.js";
 import { useTranslation } from "react-i18next";
+import Smartlook from "smartlook-client";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -52,6 +53,24 @@ export const App = () => {
     };
     firstLogIn();
   }, [accessToken]);
+
+  // Smartlook
+  useEffect(() => {
+    Smartlook.init("d9dbc6877c59c510733c3f9d57e3fb96a2a3cc5d");
+
+    Smartlook.record({ 
+      emails: true,
+      forms: false,
+      numbers: true,
+    });
+  }, []);
+
+  // Identify user
+  useEffect(() => {
+    if (user) {
+      Smartlook.identify(user.id, { name: user.name, email: user.email });
+    }
+  }, [user]);
 
   return (
     <>

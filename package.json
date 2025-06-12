@@ -37,6 +37,7 @@
     "react-toastify": "^11.0.5",
     "redux-persist": "^6.0.0",
     "sass": "^1.86.3",
+    "smartlook-client": "^10.0.0",
     "styled-components": "^6.1.17",
     "swiper": "^11.2.6",
     "typescript": "4.9.5",
