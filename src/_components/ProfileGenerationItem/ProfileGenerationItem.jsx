@@ -4,7 +4,6 @@ import { ReactComponent as MoreInfoIcon } from "../../svg/more-info-photo.svg";
 import GeneralModal from "../GeneralModal/GeneralModal";
 import { useState } from "react";
 import ProfileAllGenerationsPhotoModal from "../ProfileAllGenerationsPhotoModal/ProfileAllGenerationsPhotoModal";
-import { ReactComponent as SearchSmallIcon } from "../../svg/search-small.svg";
 
 const ProfileGenerationItem = ({ photo }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -31,10 +30,6 @@ const ProfileGenerationItem = ({ photo }) => {
         >
           <DownloadIcon />
         </a>
-
-        <div className="search-tablet">
-          <SearchSmallIcon width={40} height={40} />
-        </div>
       </ProfileGenerationItemStyles>
       {isOpenModal && (
         <GeneralModal toggleModal={() => setIsOpenModal(false)}>

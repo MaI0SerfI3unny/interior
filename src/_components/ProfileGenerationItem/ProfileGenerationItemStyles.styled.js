@@ -58,25 +58,6 @@ export const ProfileGenerationItemStyles = styled.li`
     }
   }
 
-  @media screen and (max-width: 1440px) {
-    .search-tablet {
-      position: absolute;
-      right: 12px;
-      bottom: 12px;
-      background-color: rgba(249, 250, 250, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 4px;
-      border-radius: 4px;
-      transition: 250ms linear;
-    }
-
-    .search-tablet:hover {
-      background-color: rgb(223, 218, 214);
-    }
-  }
-
   @media screen and (min-width: 769px) {
     .download-btn {
       width: 32px;
@@ -97,10 +78,6 @@ export const ProfileGenerationItemStyles = styled.li`
   @media screen and (min-width: 1441px) {
     width: calc((100% - 96px) / 4);
     height: 280px;
-
-    .search-tablet {
-      display: none;
-    }
 
     .download-btn {
       transition: 250ms linear;
